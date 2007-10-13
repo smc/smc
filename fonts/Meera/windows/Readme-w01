@@ -1,0 +1,5 @@
+Meera_w01
+^^^^^^^^^^
+The two fonts viz.  Meera_g01 and Meera_g02 contain same glyphs.So does Meera_w01 too. They only differ in GSUB features. The Meera_w01 uses the uniscribe way while treating the post-base consonents like YA,RA,LA and VA.
+
+This font is largely UNTESTED and your feedbacks are welcome.
