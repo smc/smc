@@ -1,4 +1,4 @@
-/* Transliteration.h
+/* transliteration.h
  *
  * Copyright (C) 2007-2008
  *  Santhosh Thottingal<santhosh00@gmail.com>,

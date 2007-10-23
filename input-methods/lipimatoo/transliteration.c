@@ -1,4 +1,4 @@
-/* Transliteration.c
+/* transliteration.c
  *
  * Copyright (C) 2007-2008
  *  Santhosh Thottingal<santhosh00@gmail.com>,
@@ -22,7 +22,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#include "Transliteration.h"
+#include "transliteration.h"
 /*
 Transliterate the a dhvani phonetic string to malayalam.
 Algorithm:
