@@ -1,5 +1,5 @@
 /*
- *File name: lipimatoo.c
+ *File name: sulekha.c
  *
  * Copyright (C) 2007-2008
  *  Praveen Arimbrathodiyil <pravi.a@gmail.com>,
