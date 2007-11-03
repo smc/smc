@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>യൂണികോഡ്</title>
+<!-- metadata -->
+  <meta name="generator" content="S5">
+  <meta name="version" content="S5 1.1">
+  <meta name="presdate" content="20050728">
+  <meta name="author" content="santhosh thottingal">
+  <meta name="company" content="SMC">
+<!-- configuration parameters -->
+  <meta name="defaultView" content="slideshow">
+  <meta name="controlVis" content="hidden">
+<!-- style sheet links -->
+  <link rel="stylesheet" href="ui/default/slides.css" type="text/css"
+ media="projection" id="slideProj">
+  <link rel="stylesheet" href="ui/default/outline.css" type="text/css"
+ media="screen" id="outlineStyle">
+  <link rel="stylesheet" href="ui/default/print.css" type="text/css"
+ media="print" id="slidePrint">
+  <link rel="stylesheet" href="ui/default/opera.css" type="text/css"
+ media="projection" id="operaFix">
+<!-- embedded styles -->
+  <style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+  </style><!-- S5 JS -->
+  <script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ്ങ്</h1>
+<h2>എന്റെ കമ്പ്യൂട്ടറിന് എന്റെ ഭാഷ</h2>
+</div>
+</div>
+<div class="presentation">
+<div class="slide">
+<center>
+<h1>യൂണികോഡ്</h1>
+<h3>ലോകത്തിലെ എല്ലാ ഭാഷകള്‍ക്കും പര്യാപ്തമായ അക്ഷരങ്ങളുടെ കൂട്ടം<br>
+</h3>
+<br>
+<br>
+<h4>... മലയാളത്തിനും<br>
+</h4>
+</center>
+</div>
+<div class="slide">
+<h1>കമ്പ്യൂട്ടറിന്റെ ഭാഷ<br>
+</h1>
+<ul>
+  <li>1 0 എന്നീ അക്കങ്ങള്‍ മാത്രമുള്ളതാണ് കമ്പ്യൂട്ടറിന്റെ ഭാഷ.<br>
+  </li>
+  <li>ഇതു മാത്രം ഉപയോഗിച്ച് എങ്ങനെ സാധാരണയായുള്ള വിവരങ്ങള്‍ കൈകാര്യം
+ചെയ്യും?<br>
+  </li>
+  <li>അക്ഷരങ്ങള്‍ക്ക് ഒരു സംഖ്യ കൊടുക്കുന്നു.(സംഖ്യകള്‍ക്കും :-))</li>
+  <li>7 ബിറ്റുകളുപയോഗിച്ചായിരുന്നു ഇത് ആദ്യകാലങ്ങളില്‍ ചെയ്തിരുന്നത്.<br>
+  </li>
+  <li>ഇതുപയോഗിച്ച് 128 അക്ഷരങ്ങളേ പ്രതിനിധാനം ചെയാനാകൂ.<br>
+  </li>
+</ul>
+</div>
+<div class="slide">
+<h1>ആസ്കി ASCII<br>
+</h1>
+<ul>
+  <li>ഓരോ അക്ഷരത്തിനും ഒരു ബൈറ്റ് (8 ബിറ്റ് )<br>
+  </li>
+  <li>അപ്പോള്‍ 256 അക്ഷരങ്ങള്‍ ഉപയോഗിക്കാം.<br>
+  </li>
+  <li>ഉദാഹരണം A= 95, B=96...<br>
+  </li>
+  <li>ലാറ്റിന്‍ ലിപി മാത്രമേ പരിഗണീച്ചിരുന്നുള്ളൂ.</li>
+  <li>മറ്റു ഭാഷകളൊന്നും ഇതു കൊണ്ട് പ്രതിനിധാനം ചെയാന്‍ പറ്റില്ല <br>
+  </li>
+  <li>ഇതിന് നാം ഉപയോഗിച്ച കുറുക്കു വഴി ഫോണ്ട് എന്‍കോഡിങ്ങ്.</li>
+  <li>അക്ഷരങ്ങള്‍ ശേഖരിക്കുന്നത് ഇംഗ്ലീഷിലും പ്രദര്‍ശിപ്പിക്കുമ്പോള്‍
+മലയാളത്തിലും..</li>
+  <li>ഫോണ്ടില്‍ ഇംഗ്ലീഷ് അക്ഷരങ്ങളുടെ സ്ഥാനത്ത് മലയാളം അക്ഷരങ്ങള്‍
+വച്ചു.</li>
+  <li>പ്രമുഖ പത്രങ്ങളെല്ലാം ഈ രീതിയാണ് ഇപ്പോളും പിന്തുടരുന്നത്.</li>
+</ul>
+</div>
+<div class="slide">
+<h1>മലയാളം നേരിടുന്ന പ്രശ്നങ്ങള്‍<br>
+</h1>
+<ul>
+  <li>900 ത്തിലധികമുള്ള കൂട്ടക്ഷരങ്ങളുള്ള മലയാളം ഒരു ഫോണ്ടിലൊതുങ്ങില്ല.<br>
+  </li>
+  <li>രചന 6 ആസ്കി ഫോണ്ടുകളുപയോഗിച്ചാണ് എല്ലാ കൂട്ടക്ഷരങ്ങളും കാണിച്ചത്.<br>
+  </li>
+  <li>ഫോണ്ടുകളില്‍ ഈ മാപ്പിങ്ങിന് ഐക്യ രൂപം ഇല്ല.<br>
+  </li>
+  <li>മാതൃഭൂമിയുടെ ഫോണ്ട് ഉപയോഗിച്ച് മലയാള മനോരമയുടെ സൈറ്റ്&nbsp;
+കാണാന്‍ പറ്റില്ല.</li>
+  <li>വിവരങ്ങള്‍‌ക്കൊപ്പം ഫോണ്ടും കൂടി കൈമാറേണ്ട അവസ്ഥ.<br>
+  </li>
+  <li>തിരയാനും തരം തിരിക്കാനും ഏകീകൃത രീതിയില്ല.<br>
+  </li>
+  <li>കമ്പ്യൂട്ടറിന് അറിയില്ല ഇത് മലയാളമാണെന്ന്.</li>
+  <li>ഇംഗ്ലീഷും മലയാളവും ഒരു ഫയലില്‍ പറ്റില്ല.<br>
+  </li>
+</ul>
+</div>
+<div class="slide">
+<h1>യൂണികോഡ്<br>
+</h1>
+<ul>
+  <li>65536 അക്ഷരങ്ങള്‍</li>
+  <li>ഇത് ലോകത്തിലെ എല്ലാ ഭാഷകള്‍ക്കും ഇത് മതിയാണ്.</li>
+  <li>ഓരോ ഭാഷയ്ക്കും അതിന്റേതായ&nbsp; സ്ഥാനം.</li>
+  <li>ആദ്യത്തെ 256 അക്ഷരങ്ങള്‍ ആസ്കിയുടെ തന്നെ.</li>
+  <li>0D00 - 0D7F (3328- 3455) മലയാളത്തിന് വേണ്ടി.</li>
+</ul>
+</div>
+<div class="slide">
+<h1>മലയാളത്തിന്റെ പട്ടിക<br>
+</h1>
+<br>
+<div style="text-align: center;"><img
+ style="width: 663px; height: 356px;"
+ alt="യൂണികോഡിലെ മലയാളം അക്ഷരങ്ങളുടെ പട്ടിക"
+ src="pix/unicode-malayalam-range.png"><br>
+</div>
+<ul>
+</ul>
+</div>
+<div class="slide">
+<h1>യൂണികോഡിന്റെ മെച്ചങ്ങള്‍<br>
+</h1>
+<ul>
+  <li><u></u>മലയാളമായിത്തന്നെ കമ്പ്യൂട്ടര്‍ മനസ്സിലാക്കുന്നു</li>
+  <li>ഏതെങ്കിലുമൊരു യൂണികോഡ് ഫോണ്ടുണ്ടായാല്‍ മതി</li>
+  <li>വെട്ടിച്ചുുരുക്കിയ ലിപിയും മലയാളത്തിന്റെ സ്വതസിദ്ധമായ ലിപിയും
+തമ്മിലുള്ള വ്യത്യാസം ഇല്ലാതായി</li>
+  <li>ഏത് ഫോണ്ടാണോ സിസ്റ്റത്തിലുള്ളത് ആ ലിപിയില്‍ കാണാം</li>
+  <li>ഒന്നിലധികം ഭാഷകള്‍ ഒരേ ഫയലില്‍ സൂക്ഷിയ്ക്കാം</li>
+  <li>പക്ഷേ 3328 - 3455 വരെയുള്ള സ്ഥാനത്ത് 900 ത്തിലധികമുള്ള
+കൂട്ടക്ഷരങ്ങളെങ്ങനെ
+കാണിയ്ക്കും?<br>
+  </li>
+</ul>
+</div>
+<div class="slide">
+<h1>ഓപ്പണ്‍ടൈപ്പ് ഫോണ്ട് സാങ്കേതികവിദ്യ<br>
+</h1>
+<ul>
+  <li><u></u>യൂണികോഡിനൊപ്പം ഇതു കൂടിച്ചേര്‍ന്നപ്പോള്‍ മുഴുവന്‍
+കൂട്ടക്ഷരങ്ങളേയും കാണിയ്ക്കാമെന്ന് വന്നു</li>
+  <li>അക്ഷരങ്ങളുടെ ശ്രേണിയ്ക്കു പകരമായി ഒറ്റ കൂട്ടക്ഷരം മാറ്റി
+വയ്ക്കാമെന്നായി</li>
+  <li>പ + ചന്ദ്രക്കല + ര എന്നതിന് പകരം പ്ര എന്ന് കാണിയ്ക്കുന്നു</li>
+  <li>ജനകീയമായ യൂണികോഡ് ഫോണ്ടുകളാണ് രചന, അഞ്ജലി തുടങ്ങിയവ<br>
+  </li>
+</ul>
+</div>
+<div class="slide">
+<center>
+<h3>സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ്ങ്</h3>
+<br>
+<br>
+ശുഭം
+</center>
+</div>
+</div>
+</body>
+</html>
