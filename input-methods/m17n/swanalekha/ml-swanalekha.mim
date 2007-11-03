@@ -1,0 +1,199 @@
+;; ml-swanalekha.mim -- m17n version of  Swanalekha Malayalam input method
+;; Copyright (C) 2007, Santhosh Thottingal <santhosh00@gmail.com>, Swathanthra Malayalam Computing
+;; This file is part of the m17n database; a sub-part of the m17n
+;; library.
+
+;; The m17n library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The m17n library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the m17n library; if not, write to the Free
+;; Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+;; 02111-1307, USA.
+
+(input-method ml swanalekha)
+
+(description "Swanalekha Malayalam input method")
+
+(title "മ")
+
+(map
+ (starter
+  ("~") ("$") ("^")
+  ("0") ("1") ("2") ("3") ("4")
+  ("5") ("6") ("7") ("8") ("9")
+  ("A") ("B") ("C") ("D") ("E") ("G") ("H") ("I") ("J") ("K") ("L")
+  ("M") ("N") ("O") ("P") ("R") ("S") ("T") ("U") ("Y")
+  ("a") ("b") ("c") ("d") ("e") ("f") ("g") ("h") ("i")
+  ("j") ("k") ("l") ("m") ("n") ("o") ("p") ("q") ("r")
+  ("s") ("t") ("u") ("v") ("w") ("x") ("y") ("z"))
+
+ (consonant
+  ("k" "ക്")
+  ("kh" "ഖ്")
+  ("K" "ഖ്")
+  ("g" "ഗ്")
+  ("gh" "ഘ്")
+  ("G" "ഘ്")
+  ("ng" "ങ്")
+  ("c" "ക്")
+  ("ch" "ച്")
+  ("C" "ഛ്")
+  ("Ch" "ഛ്")
+  ("j" "ജ്")
+  ("J" "ഝ്")
+  ("jh" "ഝ്")
+  ("nj" "ഞ്")
+  ("T" "ഠ്")
+  ("Th" "ഥ്")
+  ("D" "ഡ്")
+  ("Dh" "ഢ്")
+  ("N" "ണ്")
+  ("t" "ട്")
+  ("th" "ത്")
+  ("d" "ദ്")
+  ("dh" "ധ്")
+  ("n" "ന്")
+  ("p" "പ്")
+  ("P" "ഫ്")
+  ("ph" "ഫ്")
+  ("f" "ഫ്")
+  ("b" "ബ്")
+  ("B" "ഭ്")
+  ("bh" "ഭ്")
+  ("m" "മ്")
+  ("y" "യ്")
+  ("r" "ര്")
+  ("R" "റ്")
+  ("l" "ല്")
+  ("L" "ള്")
+  ("v" "വ്")
+  ("w" "വ്")
+  ("S" "ശ്")
+  ("sh" "ഷ്")
+  ("Sh" "ശ്")
+  ("zh" "ഴ്")
+  ("s" "സ്")
+  ("h" "ഹ്")
+  ("TT" "റ്റ്")
+  ("nk" "ങ്ക്")
+  ("nt" "ന്റ്")
+  ("nth" "ന്ത്")
+  ("nch" "ഞ്ച്")
+  ("x" "ക്ഷ്")
+  ("n~" "ന്‍")
+  ("l~" "ല്‍")
+  ("L~" "ല്‍")
+  ("r~" "ര്‍")
+  ("R~" "ര്‍")
+  ("N~" "ണ്‍")
+  ("~" "‌"))
+
+ (independent
+  ("a" "അ")
+  ("aa" "ആ")
+  ("A" "ആ")
+  ("i" "ഇ")
+  ("ii" "ഈ")
+  ("I" "ഈ")
+  ("u" "ഉ")
+  ("oo" "ഊ")
+  ("U" "ഊ")
+  ("uu" "ഊ")
+  ("r^" "ഋ")
+  ("R^" "ൠ")
+  ("l^" "ഌ")
+  ("L^" "ൡ")
+  ("e" "എ")
+  ("E" "ഏ")
+  ("ai" "ഐ")
+  ("ei" "ഐ")
+  ("o" "ഒ")
+  ("O" "ഓ")
+  ("ou" "ഔ")
+  ("au" "ഔ")
+  ("M" "ം")
+  ("m~" "ം")
+  ("H"  "ഃ")
+  ("~~" "~")
+  ("~@" "@")
+  ("~#" "#")
+  ("~$" "$")
+  ("~^" "^")
+  ("~&" "&")
+  ("^" "‍")
+  ("^^" "‌")
+  ("0" "൦")
+  ("1" "൧")
+  ("2" "൨")
+  ("3" "൩")
+  ("4" "൪")
+  ("5" "൫")
+  ("6" "൬")
+  ("7" "൭")
+  ("8" "൮")
+  ("9" "൯"))
+
+ (dependent
+  ("@" (delete @-) "")
+  ("#" (delete @-) "")
+  ("~M" (delete @-) "")
+  ("a" (delete @-) "")
+  ("aa" (delete @-) "ാ")
+  ("A" (delete @-) "ാ")
+  ("i" (delete @-) "ി")
+  ("I" (delete @-) "ീ")
+  ("ii" (delete @-) "ീ")
+  ("ee" (delete @-) "ീ")
+  ("u" (delete @-) "ു")
+  ("U" (delete @-) "ൂ")
+  ("uu" (delete @-) "ൂ")
+  ("oo" (delete @-) "ൂ")
+  ("r^" (delete @-) "ൃ")
+  ("e" (delete @-) "െ")
+  ("E" (delete @-) "േ")
+  ("ai" (delete @-) "ൈ")
+  ("ei" (delete @-) "ൈ")
+  ("o" (delete @-) "ൊ")
+  ("O" (delete @-) "ോ")
+  ("au" (delete @-) "ൗ")
+  ("ou" (delete @-) "ൌ")
+)
+
+ (return
+  ((Return)))
+
+ (backspace
+  ((BackSpace) (undo))))
+
+(state
+ (init
+  (starter (pushback 1) (shift intermediate)))
+
+ (intermediate
+  (consonant (shift second))
+  (independent (shift finish))
+  (backspace)
+  (return (shift init)))
+
+ (second
+  (consonant)
+  (dependent (shift finish))
+  (backspace)
+  (return (shift init)))
+
+ (finish
+  (return)
+  (t (shift init))))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: lisp
+;; End:

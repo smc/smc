@@ -1,0 +1,19 @@
+name_english Malayalam
+name_ascii Malayalam
+name_native മലയാളം
+lang ml
+data-file u-mlym.cset
+data-file u-mlym.cmap
+author:
+  name  Santhosh Thottingal
+  name-native സന്തോഷ് തോട്ടിങ്ങല്‍ 
+  email santhosh00 at gmail dot com
+copyright GPLv3
+url https://savannah.nongnu.org/task/?6787
+version 0.03-1
+source-version 0.3
+complete false
+accurate true
+dict:
+  name ml
+  add ml

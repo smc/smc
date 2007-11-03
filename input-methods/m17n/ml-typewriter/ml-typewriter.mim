@@ -1,0 +1,137 @@
+;; ml-typewriter.mim -- layout of malayalam typewriter
+
+;; This file is part of the m17n contrib; a sub-part of the m17n
+;; library.
+
+;; The library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public License
+;; as published by the Free Software Foundation; either version 2.1 of
+;; the License, or (at your option) any later version.
+
+;; The library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with the library; if not, write to the Free
+;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+(input-method ml typewriter)
+(description "Malayalam input method in SCIM using m17n based on typewriter layout
+
+Author: Jinesh K J <jinesh.k@gmail.com>,Swathantra Malayalam Computing <smc-discuss@googlegroups.com>
+
+I have made a small difference to the original layout one is regarding
+
+U0D0B which was not mapped,i mapped it to vacent ^ symbol.
+next is regarding U0D08 and U0D0A which were not mapped as was created in typewriter using, U0D07/U0D09+U0D57. 
+i mapped them to Y and U respectively.
+
+I cannot find the visarga U0D03 in the typewriter layout. In mapped it to ` sign. 
+")
+
+(title "ക")
+
+(map
+ (trans
+  ("~" "ബ")
+  ("'" "ഃ")
+  ("!" "ണ്ട")
+  ("1" "1")
+  ("@" "ഢ")
+  ("2" "2")
+  ("#" "ല്ല")
+  ("3" "3")
+  ("$" "യ്യ")
+  ("4" "4")
+  ("%" "%")
+  ("5" "5")
+  ("^" "ഋ")
+  ("6" "6")
+  ("&" "ച്ച")
+  ("7" "7")
+  ("*" "ങ്ങ")
+  ("8" "8")
+  ("(" "ങ്ക")
+  ("9" "9")
+  (")" "ക്ക")
+  ("0" "0")
+  ("_" "_")
+  ("-" "-")
+  ("+" "മ്മ")
+  ("=" "ള്ള")
+ ("Q" "ഒ")
+ ("q" "ഴ")
+ ("W" "ഝ")
+ ("w" "ജ")
+ ("E" "ഫ")
+ ("e" "പ")
+ ("R" "ന്‍")
+ ("r" "ന")
+ ("T" "ഇ")
+ ("t" "എ")
+ ("Y" "ഈ")
+ ("y" "റ")
+ ("U" "ഊ")
+ ("u" "യ")
+ ("I" "ു്")
+ ("i" "വ")
+ ("O" "ൗ")
+ ("o" "ൂ")
+ ("P" "ധ")
+ ("p" "ദ")
+  ("{" "ൃ")
+  ("[" "്")
+  ("}" "ഡ")
+  ("]" "ഏ")
+ ("A" "ഠ")
+ ("a" "മ")
+ ("S" "േ")
+ ("s" "െ")
+ ("D" "ഖ")
+ ("d" "ക")
+ ("F" "ഥ")
+ ("f" "ത")
+ ("G" "ര്‍")
+ ("g" "ു")
+ ("H" "ല്‍")
+ ("h" "ല")
+ ("J" "ീ")
+ ("j" "ി")
+ ("K" "ഉ")
+ ("k" "ു")
+ ("L" "അ")
+ ("l" "ാ")
+ (":" "ആ")
+ ("\;" "ം")
+ ("\"" "'")
+ ("'" "ന്ന") 
+ ("|" "ഹ")
+ ("\\" "‌ത്ത")
+ ("Z" "ഘ")
+ ("z" "ഗ")
+ ("X" "​ള്‍")
+ ("x" "ള")
+ ("C" "ശ")
+ ("c" "സ")
+ ("V" "ഛ")
+ ("v" "ച")
+ ("B" "ഞ")
+ ("b" "ങ")
+ ("N" "ണ്‍")
+ ("n" "ണ")
+ ("M" "ട്ട")
+ ("m" "ട")
+ ("<" "ഷ")
+ ("," ",")
+ (">" "ഭ")
+ ("." ".")
+ ("/" "പ്പ")
+ ("?" "?")
+ ))
+
+(state
+  (init
+    (trans)))
