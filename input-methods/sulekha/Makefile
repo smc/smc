@@ -14,10 +14,9 @@
 
 
 
-
-pkgdatadir = $(datadir)/Spell
-pkglibdir = $(libdir)/Spell
-pkgincludedir = $(includedir)/Spell
+pkgdatadir = $(datadir)/sulekha
+pkglibdir = $(libdir)/sulekha
+pkgincludedir = $(includedir)/sulekha
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -30,11 +29,11 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = sulekha$(EXEEXT)
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/configure AUTHORS COPYING \
-	ChangeLog INSTALL NEWS depcomp install-sh missing
+	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
+	config.guess config.sub depcomp install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -42,26 +41,22 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
+CONFIG_HEADER = config.h
 CONFIG_CLEAN_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)"
-binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
-PROGRAMS = $(bin_PROGRAMS)
-am_sulekha_OBJECTS = suggestions.$(OBJEXT) Transliteration.$(OBJEXT) \
-	sulekha.$(OBJEXT)
-sulekha_OBJECTS = $(am_sulekha_OBJECTS)
-am__DEPENDENCIES_1 =
-sulekha_DEPENDENCIES = $(am__DEPENDENCIES_1)
-DEFAULT_INCLUDES = -I.
-depcomp = $(SHELL) $(top_srcdir)/depcomp
-am__depfiles_maybe = depfiles
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-CCLD = $(CC)
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(sulekha_SOURCES)
-DIST_SOURCES = $(sulekha_SOURCES)
+SOURCES =
+DIST_SOURCES =
+RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+	html-recursive info-recursive install-data-recursive \
+	install-dvi-recursive install-exec-recursive \
+	install-html-recursive install-info-recursive \
+	install-pdf-recursive install-ps-recursive install-recursive \
+	installcheck-recursive installdirs-recursive pdf-recursive \
+	ps-recursive uninstall-recursive
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+  distclean-recursive maintainer-clean-recursive
 ETAGS = etags
 CTAGS = ctags
+DIST_SUBDIRS = $(SUBDIRS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -79,18 +74,22 @@ AUTOCONF = ${SHELL} /home/santhosh/dev/sulekha/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/santhosh/dev/sulekha/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/santhosh/dev/sulekha/missing --run automake-1.10
 AWK = gawk
-BASH = /bin/sh
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O -Wall
+CFLAGS = -g -O2
+CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"Spell\" -DPACKAGE_TARNAME=\"Spell\" -DPACKAGE_VERSION=\"0.8\" -DPACKAGE_STRING=\"Spell\ 0.8\" -DPACKAGE_BUGREPORT=\"santhosh\" -DPACKAGE=\"Spell\" -DVERSION=\"0.8\"
+DEBUG = 1
+DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
+EGREP = /bin/grep -E
 EXEEXT = 
+GREP = /bin/grep
+HTML_DIR = ${datadir}/gtk-doc/html
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -103,20 +102,24 @@ LTLIBOBJS =
 MAKEINFO = ${SHELL} /home/santhosh/dev/sulekha/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
-PACKAGE = Spell
-PACKAGE_BUGREPORT = santhosh
-PACKAGE_NAME = Spell
-PACKAGE_STRING = Spell 0.8
-PACKAGE_TARNAME = Spell
-PACKAGE_VERSION = 0.8
+PACKAGE = sulekha
+PACKAGE_BUGREPORT = santhosh00@gmail.com
+PACKAGE_NAME = sulekha
+PACKAGE_STRING = sulekha 0.0.11
+PACKAGE_TARNAME = sulekha
+PACKAGE_VERSION = 0.0.11
+PANGO_CFLAGS = -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+PANGO_LIBS = -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0  
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 SET_MAKE = 
 SHELL = /bin/sh
+SPELLER_LIB = -laspell
 STRIP = 
 SULEKHA_CFLAGS = -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng12  
 SULEKHA_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0  
-VERSION = 0.8
+SULEKHA_PACKAGES = gtk+-2.0
+VERSION = 0.0.11
 abs_builddir = /home/santhosh/dev/sulekha
 abs_srcdir = /home/santhosh/dev/sulekha
 abs_top_builddir = /home/santhosh/dev/sulekha
@@ -158,21 +161,11 @@ sysconfdir = ${prefix}/etc
 target_alias = 
 top_builddir = .
 top_srcdir = .
-sulekha_INCLUDES = -I/. ${SULEKHA_LIBS}
-sulekha_LDADD = -laspell ${SULEKHA_CFLAGS}
-sulekha_DESTDIR = ../bin/
-sulekha_TARGET = ../bin/sulekha
-sulekha_SOURCES = \
-	suggestions.c \
-	suggestions.h \
-	Transliteration.c \
-	Transliteration.h \
-	sulekha.c
-
-all: all-am
+SUBDIRS = src
+all: config.h
+	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .c .o .obj
 am--refresh:
 	@:
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
@@ -206,56 +199,93 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 	cd $(srcdir) && $(AUTOCONF)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
-install-binPROGRAMS: $(bin_PROGRAMS)
-	@$(NORMAL_INSTALL)
-	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
-	@list='$(bin_PROGRAMS)'; for p in $$list; do \
-	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
-	  if test -f $$p \
-	  ; then \
-	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
-	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
-	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
-	  else :; fi; \
+
+config.h: stamp-h1
+	@if test ! -f $@; then \
+	  rm -f stamp-h1; \
+	  $(MAKE) $(AM_MAKEFLAGS) stamp-h1; \
+	else :; fi
+
+stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
+	@rm -f stamp-h1
+	cd $(top_builddir) && $(SHELL) ./config.status config.h
+$(srcdir)/config.h.in:  $(am__configure_deps) 
+	cd $(top_srcdir) && $(AUTOHEADER)
+	rm -f stamp-h1
+	touch $@
+
+distclean-hdr:
+	-rm -f config.h stamp-h1
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run `make' without going through this Makefile.
+# To change the values of `make' variables: instead of editing Makefiles,
+# (1) if the variable is set in `config.status', edit `config.status'
+#     (which will cause the Makefiles to be regenerated when you run `make');
+# (2) otherwise, pass the desired values on the `make' command line.
+$(RECURSIVE_TARGETS):
+	@failcom='exit 1'; \
+	for f in x $$MAKEFLAGS; do \
+	  case $$f in \
+	    *=* | --[!k]*);; \
+	    *k*) failcom='fail=yes';; \
+	  esac; \
+	done; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+$(RECURSIVE_CLEAN_TARGETS):
+	@failcom='exit 1'; \
+	for f in x $$MAKEFLAGS; do \
+	  case $$f in \
+	    *=* | --[!k]*);; \
+	    *k*) failcom='fail=yes';; \
+	  esac; \
+	done; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done && test -z "$$fail"
+tags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) tags); \
 	done
-
-uninstall-binPROGRAMS:
-	@$(NORMAL_UNINSTALL)
-	@list='$(bin_PROGRAMS)'; for p in $$list; do \
-	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
-	  echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
-	  rm -f "$(DESTDIR)$(bindir)/$$f"; \
+ctags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) ctags); \
 	done
-
-clean-binPROGRAMS:
-	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-sulekha$(EXEEXT): $(sulekha_OBJECTS) $(sulekha_DEPENDENCIES) 
-	@rm -f sulekha$(EXEEXT)
-	$(LINK) $(sulekha_OBJECTS) $(sulekha_LDADD) $(LIBS)
-
-mostlyclean-compile:
-	-rm -f *.$(OBJEXT)
-
-distclean-compile:
-	-rm -f *.tab.c
-
-include ./$(DEPDIR)/Transliteration.Po
-include ./$(DEPDIR)/suggestions.Po
-include ./$(DEPDIR)/sulekha.Po
-
-.c.o:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c $<
-
-.c.obj:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
@@ -267,11 +297,24 @@ ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	mkid -fID $$unique
 tags: TAGS
 
-TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+TAGS: tags-recursive $(HEADERS) $(SOURCES) config.h.in $(TAGS_DEPENDENCIES) \
 		$(TAGS_FILES) $(LISP)
 	tags=; \
 	here=`pwd`; \
-	list='$(SOURCES) $(HEADERS)  $(LISP) $(TAGS_FILES)'; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      tags="$$tags $$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	list='$(SOURCES) $(HEADERS) config.h.in $(LISP) $(TAGS_FILES)'; \
 	unique=`for i in $$list; do \
 	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
 	  done | \
@@ -283,11 +326,11 @@ TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
 	    $$tags $$unique; \
 	fi
 ctags: CTAGS
-CTAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+CTAGS: ctags-recursive $(HEADERS) $(SOURCES) config.h.in $(TAGS_DEPENDENCIES) \
 		$(TAGS_FILES) $(LISP)
 	tags=; \
 	here=`pwd`; \
-	list='$(SOURCES) $(HEADERS)  $(LISP) $(TAGS_FILES)'; \
+	list='$(SOURCES) $(HEADERS) config.h.in $(LISP) $(TAGS_FILES)'; \
 	unique=`for i in $$list; do \
 	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
 	  done | \
@@ -331,6 +374,23 @@ distdir: $(DISTFILES)
 	    test -f $(distdir)/$$file \
 	    || cp -p $$d/$$file $(distdir)/$$file \
 	    || exit 1; \
+	  fi; \
+	done
+	list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test -d "$(distdir)/$$subdir" \
+	    || $(MKDIR_P) "$(distdir)/$$subdir" \
+	    || exit 1; \
+	    distdir=`$(am__cd) $(distdir) && pwd`; \
+	    top_distdir=`$(am__cd) $(top_distdir) && pwd`; \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$top_distdir" \
+	        distdir="$$distdir/$$subdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+	        distdir) \
+	      || exit 1; \
 	  fi; \
 	done
 	-find $(distdir) -type d ! -perm -777 -exec chmod a+rwx {} \; -o \
@@ -431,21 +491,19 @@ distcleancheck: distclean
 	       $(distcleancheck_listfiles) ; \
 	       exit 1; } >&2
 check-am: all-am
-check: check-am
-all-am: Makefile $(PROGRAMS)
-installdirs:
-	for dir in "$(DESTDIR)$(bindir)"; do \
-	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
-	done
-install: install-am
-install-exec: install-exec-am
-install-data: install-data-am
-uninstall: uninstall-am
+check: check-recursive
+all-am: Makefile config.h
+installdirs: installdirs-recursive
+installdirs-am:
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-am
+installcheck: installcheck-recursive
 install-strip:
 	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
 	  install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
@@ -461,82 +519,80 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-am
+clean: clean-recursive
 
-clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+clean-am: clean-generic mostlyclean-am
 
-distclean: distclean-am
+distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
-distclean-am: clean-am distclean-compile distclean-generic \
-	distclean-tags
+distclean-am: clean-am distclean-generic distclean-hdr distclean-tags
 
-dvi: dvi-am
+dvi: dvi-recursive
 
 dvi-am:
 
-html: html-am
+html: html-recursive
 
-info: info-am
+info: info-recursive
 
 info-am:
 
 install-data-am:
 
-install-dvi: install-dvi-am
+install-dvi: install-dvi-recursive
 
-install-exec-am: install-binPROGRAMS
+install-exec-am:
 
-install-html: install-html-am
+install-html: install-html-recursive
 
-install-info: install-info-am
+install-info: install-info-recursive
 
 install-man:
 
-install-pdf: install-pdf-am
+install-pdf: install-pdf-recursive
 
-install-ps: install-ps-am
+install-ps: install-ps-recursive
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-am
+maintainer-clean: maintainer-clean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
-mostlyclean: mostlyclean-am
+mostlyclean: mostlyclean-recursive
 
-mostlyclean-am: mostlyclean-compile mostlyclean-generic
+mostlyclean-am: mostlyclean-generic
 
-pdf: pdf-am
+pdf: pdf-recursive
 
 pdf-am:
 
-ps: ps-am
+ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-binPROGRAMS
+uninstall-am:
 
-.MAKE: install-am install-strip
+.MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) install-am \
+	install-strip
 
-.PHONY: CTAGS GTAGS all all-am am--refresh check check-am clean \
-	clean-binPROGRAMS clean-generic ctags dist dist-all dist-bzip2 \
-	dist-gzip dist-shar dist-tarZ dist-zip distcheck distclean \
-	distclean-compile distclean-generic distclean-tags \
-	distcleancheck distdir distuninstallcheck dvi dvi-am html \
-	html-am info info-am install install-am install-binPROGRAMS \
-	install-data install-data-am install-dvi install-dvi-am \
-	install-exec install-exec-am install-html install-html-am \
-	install-info install-info-am install-man install-pdf \
-	install-pdf-am install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
-	uninstall-am uninstall-binPROGRAMS
+.PHONY: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) CTAGS GTAGS \
+	all all-am am--refresh check check-am clean clean-generic \
+	ctags ctags-recursive dist dist-all dist-bzip2 dist-gzip \
+	dist-shar dist-tarZ dist-zip distcheck distclean \
+	distclean-generic distclean-hdr distclean-tags distcleancheck \
+	distdir distuninstallcheck dvi dvi-am html html-am info \
+	info-am install install-am install-data install-data-am \
+	install-dvi install-dvi-am install-exec install-exec-am \
+	install-html install-html-am install-info install-info-am \
+	install-man install-pdf install-pdf-am install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
+	pdf-am ps ps-am tags tags-recursive uninstall uninstall-am
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -64,8 +64,10 @@
 #define aspell pspell
 #endif
 
-const int debug = 0;
+const int debug = 1;
 const int quiet = 0;
+int check = 1;
+int replace = 0;
 
 struct _SulekhaSpell
 {
@@ -79,6 +81,7 @@ struct _SulekhaSpell
 };
 
 static void sulekhaspell_free (SulekhaSpell * spell);
+static void replace_by_transliterated_word (SulekhaSpell * spell);
 
 #define SULEKHASPELL_OBJECT_KEY "sulekhaspell"
 
@@ -153,16 +156,14 @@ check_word (SulekhaSpell * spell, GtkTextBuffer * buffer,
 	    GtkTextIter * start, GtkTextIter * end)
 {
   char *text;
-  char *oldword;
   text = gtk_text_buffer_get_text (buffer, start, end, FALSE);
   if (debug)
     g_print ("checking: %s\n", text);
-  g_print ("[santhosh]checking: %s\n", text);
   text = transliterate_ml (text, 0, strlen (text));
-  g_print ("[santhosh]After transliteration checking: %s\n", text);
   if (g_unichar_isdigit (*text) == FALSE)	/* don't check numbers */
     if (aspell_speller_check (spell->speller, text, -1) == FALSE)
       gtk_text_buffer_apply_tag (buffer, spell->tag_highlight, start, end);
+
   g_free (text);
 }
 
@@ -185,6 +186,7 @@ check_range (SulekhaSpell * spell, GtkTextBuffer * buffer,
 
   GtkTextIter wstart, wend, cursor, precursor;
   gboolean inword, highlight;
+
   if (debug)
     {
       g_print ("check_range: ");
@@ -194,28 +196,39 @@ check_range (SulekhaSpell * spell, GtkTextBuffer * buffer,
     }
 
 
-
+//inside word
   if (gtk_text_iter_inside_word (&end))
-    gtk_text_iter_forward_word_end (&end);
-  if (!gtk_text_iter_starts_word (&start))
+    gtk_text_iter_forward_word_end (&end);	//move the end to the end of the word
+//start of the word
+  if (!gtk_text_iter_starts_word (&start))	//not at the beginning of the word
     {
-      if (gtk_text_iter_inside_word (&start) ||
-	  gtk_text_iter_ends_word (&start))
+      if (gtk_text_iter_inside_word (&start)
+	  || gtk_text_iter_ends_word (&start))
 	{
-	  gtk_text_iter_backward_word_start (&start);
+	  gtk_text_iter_backward_word_start (&start);	//move the start to the start of the  word
 	}
       else
 	{
 	  /* if we're neither at the beginning nor inside a word,
 	   * me must be in some spaces.
-	   * skip forward to the beginning of the next word. */
-	  //gtk_text_buffer_remove_tag(buffer, tag_highlight, &start, &end);
+	   * skip forward to the beginning of the next word. 
+	   */
 	  if (gtk_text_iter_forward_word_end (&start))
 	    gtk_text_iter_backward_word_start (&start);
 	}
     }
+  /*
+   * Now start is at the start of the word and end is at the end of the word
+   * Initializes iter with the current position of mark.
+   */
   gtk_text_buffer_get_iter_at_mark (buffer, &cursor,
 				    gtk_text_buffer_get_insert (buffer));
+/*gtk_text_buffer_get_insert: Returns the mark that represents the cursor (insertion point). Equivalent to calling 
+ *  gtk_text_buffer_get_mark() to get the mark named "insert",
+ * but very slightly more efficient, and involves less typing.
+ */
+
+
 
   precursor = cursor;
   gtk_text_iter_backward_char (&precursor);
@@ -250,6 +263,7 @@ check_range (SulekhaSpell * spell, GtkTextBuffer * buffer,
 
       inword = (gtk_text_iter_compare (&wstart, &cursor) < 0) &&
 	(gtk_text_iter_compare (&cursor, &wend) <= 0);
+      //i.e start is before cursor and cursor is less than end--> cursor in between the word
 
       if (inword && !force_all)
 	{
@@ -260,11 +274,14 @@ check_range (SulekhaSpell * spell, GtkTextBuffer * buffer,
 	    check_word (spell, buffer, &wstart, &wend);
 	  else
 	    spell->deferred_check = TRUE;
+
 	}
-      else
+      else			//cursor at the end of the word. now check the spelling
 	{
+	  g_print ("checking\n");
 	  check_word (spell, buffer, &wstart, &wend);
 	  spell->deferred_check = FALSE;
+
 	}
 
       /* now move wend to the beginning of the next word, */
@@ -277,6 +294,7 @@ check_range (SulekhaSpell * spell, GtkTextBuffer * buffer,
       /* and then pick this as the new next word beginning. */
       wstart = wend;
     }
+
 }
 
 static void
@@ -307,16 +325,38 @@ static void
 insert_text_after (GtkTextBuffer * buffer, GtkTextIter * iter,
 		   gchar * text, gint len, SulekhaSpell * spell)
 {
-  GtkTextIter start;
+  GtkTextIter start, end;
 
   if (debug)
-    g_print ("insert\n");
+    g_print ("insert %s\n", text );
+  /*-----------------------------------*/
 
-  /* we need to check a range of text. */
-  gtk_text_buffer_get_iter_at_mark (buffer, &start, spell->mark_insert_start);
-  check_range (spell, buffer, start, *iter, FALSE);
+  if (!gtk_text_iter_ends_word (iter))
+    {
+      g_print ("ivideyaanu mone kali\n");
 
-  gtk_text_buffer_move_mark (buffer, spell->mark_insert_end, iter);
+      replace_by_transliterated_word (spell);
+      gtk_text_buffer_get_iter_at_mark (buffer, &end, spell->mark_insert_end);
+      gtk_text_buffer_get_iter_at_mark (buffer, &start,
+					spell->mark_insert_start);
+
+
+      check_range (spell, buffer, start, end, FALSE);
+
+    //  gtk_text_buffer_move_mark (buffer, spell->mark_insert_end, &end);
+    }
+/*-----------------------------------*/
+  else
+    {
+      /* we need to check a range of text. */
+      gtk_text_buffer_get_iter_at_mark (buffer, &start,
+					spell->mark_insert_start);
+
+
+      check_range (spell, buffer, start, *iter, FALSE);
+
+      gtk_text_buffer_move_mark (buffer, spell->mark_insert_end, iter);
+    }
 }
 
 /* deleting is more simple:  we're given the range of deleted text.
@@ -369,7 +409,7 @@ add_to_dictionary (GtkWidget * menuitem, SulekhaSpell * spell)
 
   get_word_extents_from_mark (buffer, &start, &end, spell->mark_click);
   word = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
-
+  word = transliterate_ml (word, 0, strlen (word));
   aspell_speller_add_to_personal (spell->speller, word, strlen (word));
   aspell_speller_save_all_word_lists (spell->speller);
 
@@ -429,24 +469,99 @@ replace_word (GtkWidget * menuitem, SulekhaSpell * spell)
   g_free (oldword);
 }
 
-GtkWidget *
-build_suggestion_menu (SulekhaSpell * spell, GtkTextBuffer * buffer,
-		       const char *word)
+static void
+replace_by_transliterated_word (SulekhaSpell * spell)
 {
-  const char *suggestion;
-  GtkWidget *topmenu, *menu;
-  GtkWidget *mi;
-  GtkWidget *hbox;
-  int count = 0;
-  void *spelldata;
-  const AspellWordList *suggestions;
-  AspellStringEnumeration *elements;
-  char *label;
-  //santhosh
-  word = transliterate_ml (word, 0, strlen (word));
+  char *oldword;
+  const char *newword;
+  GtkTextIter start, end;
+  GtkTextBuffer *buffer;
 
-  //end santhosh
-  topmenu = menu = gtk_menu_new ();
+  buffer = gtk_text_view_get_buffer (spell->view);
+
+  get_word_extents_from_mark (buffer, &start, &end,spell->mark_insert_end);
+  oldword = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
+  // newword = gtk_label_get_text (GTK_LABEL (GTK_BIN (menuitem)->child));
+  newword = transliterate_ml (oldword, 0, strlen (oldword));
+  // if (debug)
+  if (1)
+    {
+      g_print ("old word: '%s'\n", oldword);
+      print_iter ("s", &start);
+      print_iter ("e", &end);
+      g_print ("\nnew word: '%s'\n", newword);
+    }
+
+  gtk_text_buffer_delete (buffer, &start, &end);
+  gtk_text_buffer_insert (buffer, &start, newword, -1);
+
+
+  g_free (oldword);
+  g_print ("\nReplaced\n");
+}
+
+
+static void
+populate_popup (GtkTextView * textview, GtkMenu * menu, SulekhaSpell * spell)
+{
+  GtkWidget *img, *mi;
+  const AspellWordList *suggestions;
+  GtkWidget *topmenu;
+  AspellStringEnumeration *elements;
+  int count = 0;
+  char *label;
+  GtkTextBuffer *buffer = gtk_text_view_get_buffer (textview);
+  GtkTextIter start, end;
+  char *word;
+  const char *suggestion;
+  topmenu = menu;
+  /* we need to figure out if they picked a misspelled word. */
+  get_word_extents_from_mark (buffer, &start, &end, spell->mark_click);
+
+  /* if our highlight algorithm ever messes up, 
+   * this isn't correct, either. */
+  if (!gtk_text_iter_has_tag (&start, spell->tag_highlight))
+    return;			/* word wasn't misspelled. */
+
+  /* menu separator comes first. */
+  mi = gtk_menu_item_new ();
+  gtk_widget_show (mi);
+  gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
+
+  word = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
+
+  /* - Ignore All */
+  mi = gtk_image_menu_item_new_with_label (_("Ignore All"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
+				 gtk_image_new_from_stock (GTK_STOCK_REMOVE,
+							   GTK_ICON_SIZE_MENU));
+  g_signal_connect (G_OBJECT (mi), "activate", G_CALLBACK (ignore_all),
+		    spell);
+  gtk_widget_show_all (mi);
+  gtk_menu_shell_prepend (GTK_MENU_SHELL (topmenu), mi);
+
+  word = transliterate_ml (word, 0, strlen (word));
+/* + Add to Dictionary */
+  label = g_strdup_printf (_("Add \"%s\" to Dictionary"), word);
+  mi = gtk_image_menu_item_new_with_label (label);
+  g_free (label);
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
+				 gtk_image_new_from_stock (GTK_STOCK_ADD,
+							   GTK_ICON_SIZE_MENU));
+  g_signal_connect (G_OBJECT (mi), "activate", G_CALLBACK (add_to_dictionary),
+		    spell);
+  gtk_widget_show_all (mi);
+  gtk_menu_shell_prepend (GTK_MENU_SHELL (topmenu), mi);
+  /* menu separator comes first. */
+  mi = gtk_menu_item_new ();
+  gtk_widget_show (mi);
+  gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
+  /* then, on top of it, the suggestions menu. */
+  img = gtk_image_new_from_stock (GTK_STOCK_SPELL_CHECK, GTK_ICON_SIZE_MENU);
+  mi = gtk_image_menu_item_new_with_label (_("Spelling Suggestions"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi), img);
+
+
 
   suggestions = aspell_speller_suggest (spell->speller, word, -1);
   elements = aspell_word_list_elements (suggestions);
@@ -469,15 +584,15 @@ build_suggestion_menu (SulekhaSpell * spell, GtkTextBuffer * buffer,
       /* build a set of menus with suggestions. */
       while (suggestion != NULL)
 	{
-	  if (count == 10)
+	  if (count == 5)
 	    {
-	      mi = gtk_menu_item_new ();
-	      gtk_widget_show (mi);
-	      gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
+//            mi = gtk_menu_item_new ();
+//            gtk_widget_show (mi);
+//            gtk_menu_shell_insert (GTK_MENU_SHELL (menu), mi,count+1);
 
 	      mi = gtk_menu_item_new_with_label (_("More..."));
 	      gtk_widget_show (mi);
-	      gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
+	      gtk_menu_shell_insert (GTK_MENU_SHELL (menu), mi, count + 1);
 
 	      menu = gtk_menu_new ();
 	      gtk_menu_item_set_submenu (GTK_MENU_ITEM (mi), menu);
@@ -487,7 +602,7 @@ build_suggestion_menu (SulekhaSpell * spell, GtkTextBuffer * buffer,
 	  g_signal_connect (G_OBJECT (mi), "activate",
 			    G_CALLBACK (replace_word), spell);
 	  gtk_widget_show (mi);
-	  gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
+	  gtk_menu_shell_insert (GTK_MENU_SHELL (menu), mi, count);
 	  count++;
 	  suggestion = aspell_string_enumeration_next (elements);
 	}
@@ -495,71 +610,15 @@ build_suggestion_menu (SulekhaSpell * spell, GtkTextBuffer * buffer,
 
   delete_aspell_string_enumeration (elements);
 
-  /* Separator */
-  mi = gtk_menu_item_new ();
-  gtk_widget_show (mi);
-  gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
-
-  /* + Add to Dictionary */
-  label = g_strdup_printf (_("Add \"%s\" to Dictionary"), word);
-  mi = gtk_image_menu_item_new_with_label (label);
-  g_free (label);
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				 gtk_image_new_from_stock (GTK_STOCK_ADD,
-							   GTK_ICON_SIZE_MENU));
-  g_signal_connect (G_OBJECT (mi), "activate", G_CALLBACK (add_to_dictionary),
-		    spell);
-  gtk_widget_show_all (mi);
-  gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
-
-  /* - Ignore All */
-  mi = gtk_image_menu_item_new_with_label (_("Ignore All"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				 gtk_image_new_from_stock (GTK_STOCK_REMOVE,
-							   GTK_ICON_SIZE_MENU));
-  g_signal_connect (G_OBJECT (mi), "activate", G_CALLBACK (ignore_all),
-		    spell);
-  gtk_widget_show_all (mi);
-  gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
-
-  return topmenu;
-}
-
-static void
-populate_popup (GtkTextView * textview, GtkMenu * menu, SulekhaSpell * spell)
-{
-  GtkWidget *img, *mi;
-  GtkTextBuffer *buffer = gtk_text_view_get_buffer (textview);
-  GtkTextIter start, end;
-  char *word;
-
-  /* we need to figure out if they picked a misspelled word. */
-  get_word_extents_from_mark (buffer, &start, &end, spell->mark_click);
-
-  /* if our highlight algorithm ever messes up, 
-   * this isn't correct, either. */
-  if (!gtk_text_iter_has_tag (&start, spell->tag_highlight))
-    return;			/* word wasn't misspelled. */
-
-  /* menu separator comes first. */
-  mi = gtk_menu_item_new ();
-  gtk_widget_show (mi);
-  gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
-
-  /* then, on top of it, the suggestions menu. */
-  img = gtk_image_new_from_stock (GTK_STOCK_SPELL_CHECK, GTK_ICON_SIZE_MENU);
-  mi = gtk_image_menu_item_new_with_label (_("Spelling Suggestions"));
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi), img);
-
-  word = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
-  gtk_menu_item_set_submenu (GTK_MENU_ITEM (mi),
-			     build_suggestion_menu (spell, buffer, word));
 
   g_free (word);
 
+
   gtk_widget_show_all (mi);
   gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
 }
+
+
 
 /* when the user right-clicks on a word, they want to check that word.
  * here, we do NOT  move the cursor to the location of the clicked-upon word
@@ -627,6 +686,9 @@ sulekhaspell_set_language_internal (SulekhaSpell * spell, const gchar * lang,
   if (lang)
     aspell_config_replace (config, "language-tag", lang);
   aspell_config_replace (config, "encoding", "utf-8");
+  //aspell_config_replace (config, "sug-edit-dist", "2");
+  aspell_config_replace (config, "sug-mode", "ultra");
+
   err = new_aspell_speller (config);
   delete_aspell_config (config);
 

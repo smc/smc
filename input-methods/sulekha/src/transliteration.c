@@ -79,11 +79,12 @@ transliterate_ml (char *phonetic_string, int start, int end)
   int length = 0;
   int i = start;
   length = end - start;
+//   printf("length %d\n", length);
   ml_string = (char *) malloc (length * 4 * sizeof (char));
   ml_string[0] = '\0';
   while (i < end)
     {
-
+// printf("i %d\n", i);
       switch (phonetic_string[i])
 	{
 	  //Vowels
@@ -879,7 +880,9 @@ transliterate_ml (char *phonetic_string, int start, int end)
 	  strcat (ml_string, "\340\264\261");
 	  break;
 	default:
-	  strcat (ml_string, phonetic_string[i]);	//Not recognized
+
+	  // strcat (ml_string, phonetic_string[i]);     //Not recognized
+	  return phonetic_string;	// it is not a maglish, return the string and stop this work
 	  break;
 	}
 
@@ -896,6 +899,7 @@ transliterate_ml (char *phonetic_string, int start, int end)
 	  strcat (ml_string, "\340\265\215");	//virama - implicit virama for conjuct formation
 
 	}
+
       i++;
 
 

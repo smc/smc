@@ -151,9 +151,9 @@ sysconfdir = ${prefix}/etc
 target_alias = 
 top_builddir = ..
 top_srcdir = ..
-AM_CFLAGS = @GTKSPELL_CFLAGS@  -laspell
+AM_CFLAGS = -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng12    -laspell
 INCLUDES = -I$(top_srcdir)
-LDADD = @GTKSPELL_LIBS@ 
+LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangocairo-1.0 -lfontconfig -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXfixes -lpango-1.0 -lcairo -lX11 -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0   
 sulekha_SOURCES = sulekha.c sulekhaspell.c sulekhaspell.h transliteration.c transliteration.h
 all: all-am
 

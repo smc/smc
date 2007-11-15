@@ -1,7 +1,7 @@
 noinst_PROGRAMS = sulekha
-AM_CFLAGS = @GTKSPELL_CFLAGS@  -laspell
+AM_CFLAGS = @SULEKHA_CFLAGS@  -laspell
 INCLUDES = -I$(top_srcdir)
-LDADD = @GTKSPELL_LIBS@ 
+LDADD = @SULEKHA_LIBS@ 
 sulekha_SOURCES =sulekha.c sulekhaspell.c sulekhaspell.h transliteration.c transliteration.h
 
 
