@@ -1,0 +1,6 @@
+TODO
+1. handle comment lines in error pattern file- comments starts with #
+2. Handle empty lines
+3. For each error pattern, add an error description and dignosis . it can be in this format 
+	errorpatter   - description, diagnosis
+4. Improve the report
