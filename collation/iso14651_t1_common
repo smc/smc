@@ -661,9 +661,10 @@ collating-symbol <g-halant>
 # mlvw- denotes Malayalam vowel
 # ml-anuswara - denoted Malayalam Anuswara
 # ml-visarga - dentos Malayalam Visarga
-# <NKT> denotes Nukta characters
-# <NUM> denotes Numerals
-#
+# consonant + virama is considered half of consonant or consonant without vowel part
+# so it consonant + virama should be considered as cluster and should be 
+# sorted before the consonant. All consonants are considered to have an implicit a vowel
+# part associated with it.
 collating-element <ml-chillu-n> from "<U0D28><U0D4D>"
 collating-element <ml-chillu-nn> from "<U0D23><U0D4D>"
 collating-element <ml-chillu-r> from "<U0D30><U0D4D>"
