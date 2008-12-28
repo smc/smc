@@ -1,0 +1,12 @@
+AUTHORS:
+	Santhosh Thottingal <santhosh.thottingal@gamil.com>
+	Nishan Naseer <nishan.naseer@gamil.com>
+
+A Swathanthra Malayalam Computing Project 
+Detailed Documentation: http://smc.org.in/Payyans
+
+INSTALL:
+	As root
+	#python setup.py install 
+
+Enjoy :)
