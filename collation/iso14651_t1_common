@@ -659,7 +659,6 @@ collating-symbol <g-halant>
 # dvd- denotes vowel modifier
 # mlvs-  denotes Malayalam vowel sign
 # mlvw- denotes Malayalam vowel
-# ml-anuswara - denoted Malayalam Anuswara
 # ml-visarga - dentos Malayalam Visarga
 # consonant + virama is considered half of consonant or consonant without vowel part
 # so it consonant + virama should be considered as cluster and should be 
@@ -777,7 +776,6 @@ collating-symbol <mlvs-ai>
 collating-symbol <mlvs-shorto>
 collating-symbol <mlvs-o>
 collating-symbol <mlvs-au>
-collating-symbol <ml-anuswara>
 collating-symbol <ml-visarga>
 collating-symbol <ml-virama>
 
@@ -1442,7 +1440,6 @@ endif
 <ml-ba>
 <ml-bba>
 <ml-bha>
-<ml-anuswara>
 <ml-ma>
 <ml-ya>
 <ml-ra>
@@ -3438,7 +3435,7 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D06> <mlvw-aa> ;<BAS>;<MIN>;IGNORE
 <U0D07> <mlvw-i> ;<BAS>;<MIN>;IGNORE
 <U0D08> <mlvw-ii> ;<BAS>;<MIN>;IGNORE
-<U0D0D> <mlvw-u> ;<BAS>;<MIN>;IGNORE
+<U0D09> <mlvw-u> ;<BAS>;<MIN>;IGNORE
 <U0D0A> <mlvw-uu>;<BAS>;<MIN>;IGNORE
 <U0D0B> <mlvw-vocalicr>;<BAS>;<MIN>;IGNORE
 <U0D60> <mlvw-vocalicrr>;<BAS>;<MIN>;IGNORE
@@ -3498,7 +3495,7 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D2C>  "<ml-ba><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-bh>  "<ml-bha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D2D>  "<ml-bha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<U0D01>  "<ml-ma><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ം = മ + ് 
+<U0D02>  "<ml-ma><ml-virama>";<BAS>;<MIN>;IGNORE # ം = മ + ് 
 <U0D2E>  "<ml-ma><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # മ = മ + ് + അ 
 <ml-y>  "<ml-ya><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D2F>  "<ml-ya><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
