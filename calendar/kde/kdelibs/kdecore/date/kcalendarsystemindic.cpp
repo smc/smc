@@ -255,7 +255,22 @@ QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 
 QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
 {
-    return KCalendarSystem::addMonths( date, nmonths );
+	QDate result = date;
+	int m = month( date );
+	int y = year( date );
+	if ( nmonths < 0 ) {
+		m += 12;
+		y -= 1;
+	}
+	--m; // this only works if we start counting at zero
+	m += nmonths;
+	y += m / 12;
+	m %= 12;
+	++m;
+	
+	setYMD( result, y, m, day( date ) );
+	
+	return result;
 }
 
 QDate KCalendarSystemIndic::addDays( const QDate &date, int ndays ) const
@@ -286,7 +301,7 @@ int KCalendarSystemIndic::daysInYear( const QDate &date ) const
 
 int KCalendarSystemIndic::daysInMonth( const QDate &date ) const
 {
-    return KCalendarSystem::daysInMonth( date );
+	return KCalendarSystemSaka::getMonthLength(date.year(),date.month());
 }
 
 int KCalendarSystemIndic::daysInWeek( const QDate &date ) const
@@ -297,20 +312,11 @@ int KCalendarSystemIndic::daysInWeek( const QDate &date ) const
 
 int KCalendarSystemIndic::dayOfYear( const QDate &date ) const
 {
-    //Base class takes the jd of the given date, and subtracts the jd of the first day of that year
-    //but in QDate 1 Jan -4713 is not a valid date, so special case it here.
+QDate first;
+    setYMD( first, year( date ), 1, 1 );
 
-    // Don't bother with validity check here, not needed, leave to base class
-    if ( year( date ) == -4713 ) {
-        QDate secondDayOfYear;
-        if ( setDate( secondDayOfYear, -4713, 1, 2 ) ) {
-            return ( date.toJulianDay() - secondDayOfYear.toJulianDay() + 2 );
-        }
-    } else {
-        return KCalendarSystem::dayOfYear( date );
-    }
+    return first.daysTo( date ) + 1;
 
-    return -1;
 }
 
 int KCalendarSystemIndic::dayOfWeek( const QDate &date ) const
@@ -325,7 +331,6 @@ int KCalendarSystemIndic::weekNumber( const QDate &date, int * yearNum ) const
 
 bool KCalendarSystemIndic::isLeapYear( int year ) const
 {
-    // Use QDate's so we match it's weird changover from Indic to Julian
     return QDate::isLeapYear( year );
 }
 
