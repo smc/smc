@@ -53,7 +53,7 @@ int KCalendarSystemSaka::getMonthLength(int greg_year, int month)
 		month =  month%12;
 	}
 
-	if( QDate::isLeapYear( greg_year + get_era_start()) && month == 0) {
+	if( QDate::isLeapYear( greg_year - get_era_start()) && month == 0) {
 		return 31;
 	}
 
@@ -255,22 +255,22 @@ QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 
 QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
 {
-	QDate result = date;
-	int m = month( date );
-	int y = year( date );
-	if ( nmonths < 0 ) {
-		m += 12;
-		y -= 1;
-	}
-	--m; // this only works if we start counting at zero
-	m += nmonths;
-	y += m / 12;
-	m %= 12;
-	++m;
-	
-	setYMD( result, y, m, day( date ) );
-	
-	return result;
+QDate result = date;
+
+    while ( nmonths > 0 ) {
+        result = addDays( result, daysInMonth( result ) );
+        --nmonths;
+    }
+
+    while ( nmonths < 0 ) {
+        // get the number of days in the previous month to be consistent with
+        // addMonths where nmonths > 0
+        int nDaysInMonth = daysInMonth( addDays( result, -day( result ) ) );
+        result = addDays( result, -nDaysInMonth );
+        ++nmonths;
+    }
+
+    return result;
 }
 
 QDate KCalendarSystemIndic::addDays( const QDate &date, int ndays ) const
