@@ -1,5 +1,6 @@
 /*
- 	Copyright (c) 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+ 	Copyright (c) 2008-2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+	Copyright (c) 2008-2009 Praveen Arimbrathodiyil <pravi.a@gmail.com>
  
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -42,26 +43,12 @@ public:
 	static int get_era_start(void) { return SAKA_ERA_START; }	
 	static int get_year_start(void) { return SAKA_YEAR_START; }	
         static double gregorianToJD(int year, int month, int date);
-	static int getMonthLength(int greg_year, int month);
+	static int getMonthLength(int greg_year, int greg_month);
         static double SakaToJD(int year, int month, int date);
 
 };
-int KCalendarSystemSaka::getMonthLength(int greg_year, int month)
+int KCalendarSystemSaka::getMonthLength(int greg_year, int greg_month)
 {
-	if (month < 0 || month > 11) {
-		greg_year += month/12;
-		month =  month%12;
-	}
-
-	if( QDate::isLeapYear( greg_year - get_era_start()) && month == 0) {
-		return 31;
-	}
-
-	if(month >= 1 && month <=5) {
-		return 31;
-	}
-
-	return 30;
 }
 /*
  * This routine converts an Indian date to the corresponding Julian date"
@@ -166,49 +153,46 @@ bool KCalendarSystemIndic::setYMD( QDate &date, int y, int m, int d ) const
 
 int KCalendarSystemIndic::year( const QDate &date ) const
 {
-    return KCalendarSystem::year( date ) - KCalendarSystemSaka::get_era_start();
+    // Saka Year lags behind Gregorian Year by 80 days.
+    // Saka Year starts on March 22 normally and
+    // on March 21 in leap years.
+
+    int saka_year, saka_start=22;
+    saka_year = KCalendarSystem::year( date ) - KCalendarSystemSaka::get_era_start();
+    if (KCalendarSystem::isLeapYear(date.year())) {
+    	saka_start=21;
+    }
+    if ((date.month() <=3) && (date.day() < saka_start)) {
+    	--saka_year;
+    }
+
+    return saka_year;
 }
 
 int KCalendarSystemIndic::month( const QDate &date ) const
 {
-    double jdAtStartOfGregYear;
-    int leapMonth, IndianYear, yday, sakaMonth, sakaDayOfMonth, mday;
-    int sakaYear =  KCalendarSystemIndic::year(date);        // Year in Saka era
-    jdAtStartOfGregYear = KCalendarSystemSaka::gregorianToJD( date.year(), 1, 1); // JD at start of Gregorian year
-    double julianDay=KCalendarSystemSaka::gregorianToJD( date.year(),  date.month(),  date.day());
-    yday = (int)(julianDay - jdAtStartOfGregYear);              // Day number in Gregorian year (starting from 0)
-    if (yday < KCalendarSystemSaka::get_year_start()) {
-    	//  Day is at the end of the preceding Saka year
-	sakaYear -= 1;
-	leapMonth = KCalendarSystem::isLeapYear(date.year() - 1) ? 31 : 30; // Days in leapMonth this year, previous Gregorian year
-	yday += leapMonth + (31 * 5) + (30 * 3) + 10;
-    } else {
-    	leapMonth = KCalendarSystem::isLeapYear(date.year()) ? 31 : 30; // Days in leapMonth this year
-	yday -= KCalendarSystemSaka::get_year_start();
-    }
-    if (yday < leapMonth) {
-    	sakaMonth = 0;
-	sakaDayOfMonth = yday + 1;
-    } else {
-    	mday = yday - leapMonth;
-                if (mday < (31 * 5)) {
-                        sakaMonth = (int)floor(mday / 31) + 1;
-                        sakaDayOfMonth = (mday % 31) + 1;
-                } else {
-                        mday -= 31 * 5;
-			sakaMonth = (int)floor(mday / 30) + 6;
-                        sakaDayOfMonth = (mday % 30) + 1;
-                }
-        }
+	int month, day;
+	// It is based on the table from wikipedia
+	int Saka[12][2] = 
+	{{11,21},{12,20},{1, 22},{2,21},{3,22},{4,22},{5,23},{6,23},{7,23},{8,23},{9,22},{10,22}};
+	  
+	month=date.month();
+	day=date.day();
 
-	/*Month is 0 based.converting it to 1 based*/
-        if(sakaMonth == 12) {
-                sakaMonth = 1;
-        } else {
-                sakaMonth = sakaMonth +1;
-        }
-    return sakaMonth;
+	// In a Leap Year Chaithram starts in March 21
 
+	if (KCalendarSystem::isLeapYear(date.year()))
+		Saka[2][1]=21;
+	
+	// We need to handle days before Jan 21 separately.
+	if (month > 1 ) {
+		if (day > Saka[month-1][1])
+			return Saka[month-1][0];
+		return Saka[month-2][0];
+	}
+	if (day > Saka[month-1][1])
+		return Saka[month-1][0];
+	return Saka[11][0];
 }
 
 int KCalendarSystemIndic::day( const QDate &date ) const
@@ -301,7 +285,16 @@ int KCalendarSystemIndic::daysInYear( const QDate &date ) const
 
 int KCalendarSystemIndic::daysInMonth( const QDate &date ) const
 {
-	return KCalendarSystemSaka::getMonthLength(date.year(),date.month());
+	int month, day;
+	month=date.month();
+	day=date.day();
+	if (month > 6)
+		return 30;
+	if (month>1)
+		return 31;
+	if (KCalendarSystem::isLeapYear(date.year()))
+		return 31;
+	return 30;
 }
 
 int KCalendarSystemIndic::daysInWeek( const QDate &date ) const
