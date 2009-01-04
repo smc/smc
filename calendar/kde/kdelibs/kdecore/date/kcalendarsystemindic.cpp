@@ -176,8 +176,8 @@ int KCalendarSystemIndic::month( const QDate &date ) const
 	int Saka[12][2] = 
 	{{11,21},{12,20},{1, 22},{2,21},{3,22},{4,22},{5,23},{6,23},{7,23},{8,23},{9,22},{10,22}};
 	  
-	month=date.month();
-	day=date.day();
+	month=KCalendarSystem::month( date );
+	day=KCalendarSystem::day( date );
 
 	// In a Leap Year Chaithram starts in March 21
 
