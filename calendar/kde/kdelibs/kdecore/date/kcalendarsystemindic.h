@@ -73,7 +73,7 @@ public:
     virtual int dayOfYear( const QDate &date ) const;
     virtual int dayOfWeek( const QDate &date ) const;
 
-    virtual int weekNumber( const QDate &date, int *yearNum = 0 ) const;
+    virtual int weekNumber( const QDate &date, int * yearNum =0 ) const;
 
     virtual bool isLeapYear( int year ) const;
     virtual bool isLeapYear( const QDate &date ) const;

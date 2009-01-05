@@ -47,9 +47,7 @@ public:
         static double SakaToJD(int year, int month, int date);
 
 };
-int KCalendarSystemSaka::getMonthLength(int greg_year, int greg_month)
-{
-}
+
 /*
  * This routine converts an Indian date to the corresponding Julian date"
  * year   The year in Saka Era according to Indian calendar.
@@ -167,6 +165,8 @@ int KCalendarSystemIndic::year( const QDate &date ) const
     }
 
     return saka_year;
+    
+   return KCalendarSystem::year( date );
 }
 
 int KCalendarSystemIndic::month( const QDate &date ) const
@@ -231,15 +231,12 @@ int KCalendarSystemIndic::day( const QDate &date ) const
 
 QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 {
-    QDate result = date;
-    int y = year( date ) + nyears;
-    setYMD( result, y, month( date ), day( date ) );
-    return result;
+    return KCalendarSystem::addYears( date, nyears);
 }
 
 QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
 {
-QDate result = date;
+/*QDate result = date;
 
     while ( nmonths > 0 ) {
         result = addDays( result, daysInMonth( result ) );
@@ -255,6 +252,8 @@ QDate result = date;
     }
 
     return result;
+    */
+    return KCalendarSystem::addMonths(date, nmonths);
 }
 
 QDate KCalendarSystemIndic::addDays( const QDate &date, int ndays ) const
@@ -270,12 +269,14 @@ int KCalendarSystemIndic::monthsInYear( const QDate &date ) const
 
 int KCalendarSystemIndic::weeksInYear( const QDate &date ) const
 {
-    return KCalendarSystem::weeksInYear( date );
+   Q_UNUSED( date )
+   return 52;
 }
 
 int KCalendarSystemIndic::weeksInYear( int year ) const
 {
-    return KCalendarSystem::weeksInYear( year );
+   Q_UNUSED( year )
+   return 52;
 }
 
 int KCalendarSystemIndic::daysInYear( const QDate &date ) const
@@ -286,8 +287,9 @@ int KCalendarSystemIndic::daysInYear( const QDate &date ) const
 int KCalendarSystemIndic::daysInMonth( const QDate &date ) const
 {
 	int month, day;
-	month=date.month();
-	day=date.day();
+//	month=date.month();
+	month=KCalendarSystemIndic::month( date );
+	day=KCalendarSystemIndic::day( date );
 	if (month > 6)
 		return 30;
 	if (month>1)
@@ -305,11 +307,15 @@ int KCalendarSystemIndic::daysInWeek( const QDate &date ) const
 
 int KCalendarSystemIndic::dayOfYear( const QDate &date ) const
 {
-QDate first;
-    setYMD( first, year( date ), 1, 1 );
-
-    return first.daysTo( date ) + 1;
-
+    int days;
+    int month=KCalendarSystemIndic::month( date );
+    if (month < 7 )
+        days=(month-1) * 31 + KCalendarSystemIndic::day( date );
+    else
+    	days= 6 * 31 +  (month - 7) * 30 + KCalendarSystemIndic::day( date );
+    if ( ! KCalendarSystem::isLeapYear(date.year()) && month !=1 )
+    	--days;
+    return days;
 }
 
 int KCalendarSystemIndic::dayOfWeek( const QDate &date ) const
@@ -319,7 +325,12 @@ int KCalendarSystemIndic::dayOfWeek( const QDate &date ) const
 
 int KCalendarSystemIndic::weekNumber( const QDate &date, int * yearNum ) const
 {
-    return KCalendarSystem::weekNumber( date, yearNum );
+    int days, weeks;
+    days=KCalendarSystemIndic::dayOfYear( date );
+    weeks = days/7;
+    if (days%7)
+    	++weeks;
+    return weeks;
 }
 
 bool KCalendarSystemIndic::isLeapYear( int year ) const

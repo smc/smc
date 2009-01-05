@@ -32,11 +32,13 @@ void KCalendarTest::testTypes()
     QVERIFY( lst.contains("hebrew") );
     QVERIFY( lst.contains("hijri") );
     QVERIFY( lst.contains("jalali") );
+    QVERIFY( lst.contains("indic") );
 
     QCOMPARE( KCalendarSystem::calendarLabel("gregorian"), QString("Gregorian") );
     QCOMPARE( KCalendarSystem::calendarLabel("hebrew"),    QString("Hebrew") );
     QCOMPARE( KCalendarSystem::calendarLabel("hijri"),     QString("Hijri") );
     QCOMPARE( KCalendarSystem::calendarLabel("jalali"),    QString("Jalali") );
+    QCOMPARE( KCalendarSystem::calendarLabel("indic"),    QString("Indic") );
 }
 
 void KCalendarTest::testLocale()
@@ -53,6 +55,9 @@ void KCalendarTest::testLocale()
     KGlobal::locale()->setCalendar("jalali");
     calendar = KGlobal::locale()->calendar();
     QCOMPARE( calendar->calendarType(), QString("jalali") );
+    KGlobal::locale()->setCalendar("indic");
+    calendar = KGlobal::locale()->calendar();
+    QCOMPARE( calendar->calendarType(), QString("indic") );
 }
 
 void KCalendarTest::testGregorian()
@@ -112,6 +117,39 @@ void KCalendarTest::testHijri()
     QCOMPARE( newDate.year(), 2561 );
     QCOMPARE( newDate.month(), 11 );
     QCOMPARE( newDate.day(), 30 );
+}
+
+void KCalendarTest::testIndic()
+{
+    const KCalendarSystem *calendar = KCalendarSystem::create(QString( "indic" ));
+    QDate testDate( 2005, 9, 10 );
+
+    QCOMPARE( calendar->daysInYear(testDate), 365 );
+    QCOMPARE( calendar->daysInMonth(testDate), 31 );
+    QCOMPARE( calendar->weeksInYear(testDate.year()), 52 );
+    QCOMPARE( calendar->weekNumber(testDate), 25 );
+    QCOMPARE( calendar->dayOfYear(testDate), 173 );
+
+    QVERIFY( calendar->setYMD( testDate, 2000, 3, 1 ) );
+// Not sure if it should return Saka year.
+    QCOMPARE( calendar->year(testDate), 1921 );
+    QCOMPARE( calendar->month(testDate), 12 );
+    QCOMPARE( calendar->day(testDate), 11 );
+
+    QDate newDate = calendar->addYears(testDate, 4);
+// doubt    
+    QCOMPARE( newDate.year(), 2004 );
+    QCOMPARE( calendar->daysInYear(newDate), 365 );
+
+    newDate = calendar->addMonths( testDate, -4 );
+    QCOMPARE( newDate.year(), 1999 );
+    QCOMPARE( newDate.month(), 11 );
+    QCOMPARE( newDate.day(), 1 );
+
+    newDate = calendar->addDays( newDate, 20 );
+    QCOMPARE( newDate.year(), 1999 );
+    QCOMPARE( newDate.month(), 11 );
+    QCOMPARE( newDate.day(), 21 );
 }
 
 
@@ -222,6 +260,53 @@ void KCalendarTest::testHijriYmd()
 // Jalali Calendar System
 
 void KCalendarTest::testJalaliBasic()
+{
+    const KCalendarSystem *calendar = KCalendarSystem::create(QString( "jalali" ));
+
+    QCOMPARE( calendar->calendarType(), QString("jalali") );
+    QCOMPARE( KCalendarSystem::calendarLabel( QString("jalali") ), QString("Jalali") );
+
+    QCOMPARE( calendar->epoch(), QDate( 622, 3, 19 ) );
+    QCOMPARE( calendar->earliestValidDate(), QDate( 622, 3, 19 ) );
+    QCOMPARE( calendar->latestValidDate(), QDate( 10621, 3, 17 ) );
+
+    testValid( calendar, 10000, 13, 32, QDate( 1, 1, 1 ) );
+
+    QCOMPARE( calendar->isLeapYear( 1386 ), false );
+    QCOMPARE( calendar->isLeapYear( 1387 ), true );
+    QCOMPARE( calendar->isLeapYear( QDate( 2008, 1, 1 ) ), false );
+    QEXPECT_FAIL("", "Not working right, 2009-01-01 should be 1387, verify", Continue);
+    QCOMPARE( calendar->isLeapYear( QDate( 2009, 1, 1 ) ), true );
+
+    QCOMPARE( calendar->daysInWeek( QDate( 2007, 1, 1 ) ), 7 );
+    QCOMPARE( calendar->monthsInYear( QDate( 2007, 1, 1 ) ), 12 );
+
+    testYear(  calendar, QDate( 2005, 8, 31 ), 1384, QString("84"), QString("1384") );
+    testMonth( calendar, QDate( 2005, 8, 31 ),    6, QString("6"),  QString("06") );
+    testDay(   calendar, QDate( 2005, 8, 31 ),    9, QString("9"),  QString("09") );
+
+    testWeekDayName( calendar, 3, QDate( 2005, 8, 31 ),
+                     QString("4sh"), QString("Chahar shanbe") );
+    testMonthName( calendar, 6, 1384, QDate( 2005, 8, 31 ),
+                   QString("Sha"), QString("Shahrivar"),
+                   QString("of Sha"), QString("of Shahrivar") );
+
+    QCOMPARE( calendar->monthsInYear( QDate( 2005, 8, 31 ) ), 12 );
+
+    QCOMPARE( calendar->weekStartDay(), 1 );
+    QCOMPARE( calendar->weekDayOfPray(), 5 );
+
+    QCOMPARE( calendar->isProleptic(), false );
+    QCOMPARE( calendar->isLunar(), false );
+    QCOMPARE( calendar->isLunisolar(), false );
+    QCOMPARE( calendar->isSolar(), true );
+}
+
+
+
+// Indic Calendar System
+
+void KCalendarTest::testIndicBasic()
 {
     const KCalendarSystem *calendar = KCalendarSystem::create(QString( "jalali" ));
 
