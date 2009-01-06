@@ -48,16 +48,17 @@ public:
 
 };
 
-/*
+
+ double KCalendarSystemSaka::gregorianToJD(int year, int month, int date) {
+	QDate qdate(year,month,date);
+	return qdate.toJulianDay();
+ }
+ /*
  * This routine converts an Indian date to the corresponding Julian date"
  * year   The year in Saka Era according to Indian calendar.
  * month  The month according to Indian calendar (between 1 to 12)
  * date   The date in month 
  */
- double KCalendarSystemSaka::gregorianToJD(int year, int month, int date) {
-	QDate qdate(year,month,date);
-	return qdate.toJulianDay();
- }
  double KCalendarSystemSaka::SakaToJD(int year, int month, int date) {
 	int leapMonth, gyear, m;
 	double start, jd;
@@ -114,7 +115,7 @@ QDate KCalendarSystemIndic::epoch() const
 
 QDate KCalendarSystemIndic::earliestValidDate() const
 {
-    return KCalendarSystem::earliestValidDate();
+    return QDate::fromString( "00790322", "yyyyMMdd" );
 }
 
 QDate KCalendarSystemIndic::latestValidDate() const
