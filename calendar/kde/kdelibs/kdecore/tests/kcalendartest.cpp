@@ -308,14 +308,14 @@ void KCalendarTest::testJalaliBasic()
 
 void KCalendarTest::testIndicBasic()
 {
-    const KCalendarSystem *calendar = KCalendarSystem::create(QString( "jalali" ));
+    const KCalendarSystem *calendar = KCalendarSystem::create(QString( "indic" ));
 
-    QCOMPARE( calendar->calendarType(), QString("jalali") );
-    QCOMPARE( KCalendarSystem::calendarLabel( QString("jalali") ), QString("Jalali") );
+    QCOMPARE( calendar->calendarType(), QString("indic") );
+    QCOMPARE( KCalendarSystem::calendarLabel( QString("indic") ), QString("Indic") );
 
-    QCOMPARE( calendar->epoch(), QDate( 622, 3, 19 ) );
-    QCOMPARE( calendar->earliestValidDate(), QDate( 622, 3, 19 ) );
-    QCOMPARE( calendar->latestValidDate(), QDate( 10621, 3, 17 ) );
+    QCOMPARE( calendar->epoch(), QDate( 79, 3, 22 ) );
+    QCOMPARE( calendar->earliestValidDate(), QDate( 79, 3, 22 ) );
+    QCOMPARE( calendar->latestValidDate(), QDate( 9999, 12, 31 ) );
 
     testValid( calendar, 10000, 13, 32, QDate( 1, 1, 1 ) );
 

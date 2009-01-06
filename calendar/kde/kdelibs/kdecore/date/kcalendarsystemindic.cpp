@@ -107,12 +107,14 @@ QString KCalendarSystemIndic::calendarType() const
 
 QDate KCalendarSystemIndic::epoch() const
 {
-    return QDate::fromJulianDay( 1721426 );
+    // Saka Era starts at 22 March 79 in Gregarian Calendar
+    // We get 23 March 79 if convert back from Julian day 1749994.5 :-(
+    return QDate::fromString( "00790322", "yyyyMMdd" );
 }
 
 QDate KCalendarSystemIndic::earliestValidDate() const
 {
-    return QDate::fromJulianDay( 1 );
+    return KCalendarSystem::earliestValidDate();
 }
 
 QDate KCalendarSystemIndic::latestValidDate() const
@@ -166,7 +168,6 @@ int KCalendarSystemIndic::year( const QDate &date ) const
 
     return saka_year;
     
-   return KCalendarSystem::year( date );
 }
 
 int KCalendarSystemIndic::month( const QDate &date ) const
