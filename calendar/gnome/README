@@ -1,0 +1,7 @@
+We need to discuss this with kde-core team and find a way to have GNOME and other desktops use the calendar without a full dependancy on kdelibs. 
+
+Some options are
+
+1) Move calendar to a separate library
+2) Integrate it with any libraries that every one depends like glibc
+3) Keep a local copy of date directory - not a good idea
