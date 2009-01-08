@@ -160,13 +160,15 @@ int KCalendarSystemIndic::year( const QDate &date ) const
 
     int saka_year, saka_start=22;
     saka_year = KCalendarSystem::year( date ) - KCalendarSystemSaka::get_era_start();
-    if (KCalendarSystem::isLeapYear(date.year())) {
+    //    kDebug() <<"saka_year" << saka_year;
+    if (KCalendarSystemIndic::isLeapYear(saka_year)) {
     	saka_start=21;
     }
     if ((date.month() <=3) && (date.day() < saka_start)) {
     	--saka_year;
     }
 
+    //    kDebug() <<"saka_year just before return" << saka_year;
     return saka_year;
     
 }
@@ -337,12 +339,14 @@ int KCalendarSystemIndic::weekNumber( const QDate &date, int * yearNum ) const
 
 bool KCalendarSystemIndic::isLeapYear( int year ) const
 {
-    return QDate::isLeapYear( year );
+  //  kDebug() << "year" << year;
+    return QDate::isLeapYear( year + 78);
 }
 
 bool KCalendarSystemIndic::isLeapYear( const QDate &date ) const
 {
-    return KCalendarSystem::isLeapYear( date );
+  int year = KCalendarSystemIndic::year(date);
+    return KCalendarSystemIndic::isLeapYear( year );
 }
 
 QString KCalendarSystemIndic::monthName( int month, int year, MonthNameFormat format ) const
@@ -352,29 +356,29 @@ QString KCalendarSystemIndic::monthName( int month, int year, MonthNameFormat fo
     if ( format == ShortNamePossessive ) {
         switch ( month ) {
         case 1:
-            return ki18nc( "of Chaitra",   "of Chaitra" ).toString( locale() );
+            return ki18nc( "of Chaitra",   "of Chai" ).toString( locale() );
         case 2:
-            return ki18nc( "of Vaisakha",  "of Vaisakha" ).toString( locale() );
+            return ki18nc( "of Vaisakha",  "of Vai" ).toString( locale() );
         case 3:
-            return ki18nc( "of Jyaistha",     "of Jyaistha" ).toString( locale() );
+            return ki18nc( "of Jyaistha",     "of Jyai" ).toString( locale() );
         case 4:
-            return ki18nc( "of Asadha",     "of Asadha" ).toString( locale() );
+            return ki18nc( "of Asadha",     "of Asa" ).toString( locale() );
         case 5:
-            return ki18nc( "of Sravana", "of Sravana" ).toString( locale() );
+            return ki18nc( "of Sravana", "of Sra" ).toString( locale() );
         case 6:
-            return ki18nc( "of Bhadra",      "of Bhadra" ).toString( locale() );
+            return ki18nc( "of Bhadra",      "of Bha" ).toString( locale() );
         case 7:
-            return ki18nc( "of Asvina",      "of Asvina" ).toString( locale() );
+            return ki18nc( "of Asvina",      "of Asvi" ).toString( locale() );
         case 8:
-            return ki18nc( "of Kartika",    "of Kartika" ).toString( locale() );
+            return ki18nc( "of Kartika",    "of Ka" ).toString( locale() );
         case 9:
-            return ki18nc( "of Agrahayana", "of Agrahayana" ).toString( locale() );
+            return ki18nc( "of Agrahayana", "of Agra" ).toString( locale() );
         case 10:
-            return ki18nc( "of Pausa",   "of Pausa" ).toString( locale() );
+            return ki18nc( "of Pausa",   "of Pau" ).toString( locale() );
         case 11:
-            return ki18nc( "of Magha",  "of Magha" ).toString( locale() );
+            return ki18nc( "of Magha",  "of Ma" ).toString( locale() );
         case 12:
-            return ki18nc( "of Phalguna",  "of Phalguna" ).toString( locale() );
+            return ki18nc( "of Phalguna",  "of Pha" ).toString( locale() );
         default:
             return QString();
         }
@@ -428,15 +432,15 @@ QString KCalendarSystemIndic::monthName( int month, int year, MonthNameFormat fo
         case 7:
             return ki18nc( "Asvina", "Asvi" ).toString( locale() );
         case 8:
-            return ki18nc( "Kartika", "Kar" ).toString( locale() );
+            return ki18nc( "Kartika", "Ka" ).toString( locale() );
         case 9:
             return ki18nc( "Agrahayana", "Agra" ).toString( locale() );
         case 10:
-            return ki18nc( "Pausa", "Pausha" ).toString( locale() );
+            return ki18nc( "Pausa", "Pau" ).toString( locale() );
         case 11:
-            return ki18nc( "Magha", "Magha" ).toString( locale() );
+            return ki18nc( "Magha", "Ma" ).toString( locale() );
         case 12:
-            return ki18nc( "Phalguna", "Phal" ).toString( locale() );
+            return ki18nc( "Phalguna", "Pha" ).toString( locale() );
         default:
             return QString();
         }
@@ -483,13 +487,13 @@ QString KCalendarSystemIndic::weekDayName( int weekDay, WeekDayNameFormat format
 {
     if ( format == ShortDayName ) {
         switch ( weekDay ) {
-        case 1:  return ki18nc( "Somvar",    "Som" ).toString( locale() );
-        case 2:  return ki18nc( "Mangalvar",   "Mangal" ).toString( locale() );
-        case 3:  return ki18nc( "Budhavar", "Budha" ).toString( locale() );
-        case 4:  return ki18nc( "Brihaspativar",  "Briha" ).toString( locale() );
-        case 5:  return ki18nc( "Shukravar",    "Shukra" ).toString( locale() );
-        case 6:  return ki18nc( "Shanivar",  "Shani" ).toString( locale() );
-        case 7:  return ki18nc( "Ravivar",    "Ravi" ).toString( locale() );
+        case 1:  return ki18nc( "Somvar",    "So" ).toString( locale() );
+        case 2:  return ki18nc( "Mangalvar",   "Ma" ).toString( locale() );
+        case 3:  return ki18nc( "Budhavar", "Bu" ).toString( locale() );
+        case 4:  return ki18nc( "Brihaspativar",  "Bri" ).toString( locale() );
+        case 5:  return ki18nc( "Shukravar",    "Shu" ).toString( locale() );
+        case 6:  return ki18nc( "Shanivar",  "Sha" ).toString( locale() );
+        case 7:  return ki18nc( "Ravivar",    "Ra" ).toString( locale() );
         default: return QString();
         }
     }
