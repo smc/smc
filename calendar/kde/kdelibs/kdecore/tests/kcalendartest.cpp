@@ -319,29 +319,28 @@ void KCalendarTest::testIndicBasic()
 
     testValid( calendar, 10000, 13, 32, QDate( 1, 1, 1 ) );
 
-    QCOMPARE( calendar->isLeapYear( 1386 ), false );
-    QCOMPARE( calendar->isLeapYear( 1387 ), true );
+    QCOMPARE( calendar->isLeapYear( 1929 ), false );
+    QCOMPARE( calendar->isLeapYear( 1930 ), true );
     QCOMPARE( calendar->isLeapYear( QDate( 2008, 1, 1 ) ), false );
-    QEXPECT_FAIL("", "Not working right, 2009-01-01 should be 1387, verify", Continue);
     QCOMPARE( calendar->isLeapYear( QDate( 2009, 1, 1 ) ), true );
 
     QCOMPARE( calendar->daysInWeek( QDate( 2007, 1, 1 ) ), 7 );
     QCOMPARE( calendar->monthsInYear( QDate( 2007, 1, 1 ) ), 12 );
 
-    testYear(  calendar, QDate( 2005, 8, 31 ), 1384, QString("84"), QString("1384") );
+    testYear(  calendar, QDate( 2005, 8, 31 ), 1927, QString("27"), QString("1927") );
     testMonth( calendar, QDate( 2005, 8, 31 ),    6, QString("6"),  QString("06") );
     testDay(   calendar, QDate( 2005, 8, 31 ),    9, QString("9"),  QString("09") );
 
     testWeekDayName( calendar, 3, QDate( 2005, 8, 31 ),
-                     QString("4sh"), QString("Chahar shanbe") );
-    testMonthName( calendar, 6, 1384, QDate( 2005, 8, 31 ),
-                   QString("Sha"), QString("Shahrivar"),
-                   QString("of Sha"), QString("of Shahrivar") );
+                     QString("Bu"), QString("Budhavar") );
+    testMonthName( calendar, 6, 1927, QDate( 2005, 8, 31 ),
+                   QString("Bha"), QString("Bhadra"),
+                   QString("of Bha"), QString("of Bhadra") );
 
     QCOMPARE( calendar->monthsInYear( QDate( 2005, 8, 31 ) ), 12 );
 
     QCOMPARE( calendar->weekStartDay(), 1 );
-    QCOMPARE( calendar->weekDayOfPray(), 5 );
+    QCOMPARE( calendar->weekDayOfPray(), 7 );
 
     QCOMPARE( calendar->isProleptic(), false );
     QCOMPARE( calendar->isLunar(), false );
