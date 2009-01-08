@@ -1,0 +1,41 @@
+Chathans 0.1
+============
+Chathans is a GTK frontend to Payyans, a Malayalam ASCII to Unicode converter.
+No surprise; Payyans and Chathans, both are named after famous characters of the
+same names created by famous Malayalam writer V.K.N
+
+Authors
+=======
+Chathans is written by Rajeesh K Nambiar <rajeeshknambiar@gmail.com> as his first
+stand alone attempt on a GTK project.
+Payyans is a library written in Python which converts ASCII files to Unicode, by
+Santhosh Thottingal <santhosh.thottingal@gmail.com> and Nishan Naseer
+<nishan.naseer@gmail.com>.
+
+Payyans and Chathans are projects by Swathanthra Malayalam Computing <http://smc.org.in>
+
+Copyright
+=========
+Copyright (c) 2008, Rajeesh K Nambiar
+
+Chathans is a free software; you can redistribute it and/or modify it under the terms
+of GNU General Public License as published by the Free Software Foundation, either
+version 3 of the License, or (at your option) any later version.
+
+Chathans is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+Bugs & Feature Requests
+=======================
+If you find any bug, or you like to have some nice feature in Chathans, please report them
+to Rajeesh at <rajeeshknambiar@gmail.com>
+
+How to Install
+==============
+Chathans requires Payyans to be installed to function correctly.
+
+1. Untar the source package by 'tar xjf Chathans-0.1.tar.bz2' and go to the directory 'Chathans-0.1'
+2. Do a './configure --prefix=/usr' followed by 'make' and 'make install'. Alternatively, run the 'install.sh' file
+3. If no error is reported, Chathans will be installed properly. Run '/usr/bin/chathans'.
+

@@ -1,0 +1,8 @@
+CHANGELOG
+=========
+
+Version 0.1
+-----------
+
+First incarnation of Chathans. Purely written in GTK/Glade.
+A patch for Payyans to return error values is also developed.

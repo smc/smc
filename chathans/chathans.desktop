@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Chathans
+Name[ml]=ചാത്തന്‍സ് പരിവര്‍ത്തകന്‍
+Comment=Converts Malayalam ASCII text/pdf files to Unicode
+Comment[ml]=ആസ്കി ടെക്സ്റ്റ്/പി.ഡി.എഫ് ഫയലുകള്‍ യൂനികോഡിലേക്ക് മാറ്റുക
+Exec=chathans
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=user_icon
+Categories=GTK;Utility;Applications;
