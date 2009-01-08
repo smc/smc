@@ -160,13 +160,15 @@ int KCalendarSystemIndic::year( const QDate &date ) const
 
     int saka_year, saka_start=22;
     saka_year = KCalendarSystem::year( date ) - KCalendarSystemSaka::get_era_start();
-    if (QDate::isLeapYear(date.year()+78)) {
+    //    kDebug() <<"saka_year" << saka_year;
+    if (KCalendarSystemIndic::isLeapYear(saka_year)) {
     	saka_start=21;
     }
     if ((date.month() <=3) && (date.day() < saka_start)) {
     	--saka_year;
     }
 
+    //    kDebug() <<"saka_year just before return" << saka_year;
     return saka_year;
     
 }
