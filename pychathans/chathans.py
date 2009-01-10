@@ -147,9 +147,15 @@ class Chathans (gtk.Window):
 			   
 		# ഓഹ്, പയ്യന്‍! നീ വ്യാഘ്രമാകുന്നു.
 		payyan = Payyans(self.AsciiFile, self.UnicodeFile, self.MappingFile)
-		payyan.ascii2unicode()
+		status = payyan.ascii2unicode()
+		print status
+		if status == None:
+			msg = "Coversion Done - Unicode file :" + self.UnicodeFile
+		if status == 1:
+			msg = "Could not find the pdftotext utility. Exiting..."
+		if status == 2:
+			msg = "Syntax Error in Mapping file. Exiting..."
 		# കത്തിച്ചു കഴിഞ്ഞു.
-		msg = "Coversion Done - Unicode file :" + self.UnicodeFile
 		dlg = gtk.MessageDialog(self.get_toplevel(),
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_INFO,
