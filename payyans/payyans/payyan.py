@@ -101,7 +101,7 @@ class Payyan:
 				print "The input file is a PDF file. To convert this the  pdftotext  utility is required. "
 				print "This feature is available only for GNU/Linux Operating system."
 				'''ഊഹും. കൊന്നാലും ഇനി മുന്നോട്ടില്ല. മുന്നില്‍ മറ്റവനാകുന്നു. ഏതു്? '''
-				sys.exit(1)
+				return 1	# Error - no pdftotext !
 			else:
 				self.input_filename =  self.input_filename.split(".") [0]+ ".txt"
 		if self.input_filename :
@@ -198,7 +198,7 @@ class Payyan:
 					print "Error: Syntax Error in the Ascii to Unicode Map in line number ",  line_number
 				  	print "Line: "+ text
 				  	'''പരിപാടി നിര്‍ത്താം '''
-				  	sys.exit(2) 
+				  	return 2	# Error - Syntax error in Mapping file 
 			'''ഇടതന്‍'''				  	
 	 		lhs = line.split("=") [ 0 ]  
 	 		'''വലതന്‍'''
