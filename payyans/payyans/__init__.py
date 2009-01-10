@@ -21,6 +21,6 @@ class Payyans:
 		
 		
 	def ascii2unicode(self):
-		self.payyan.Ascii2Uni()
+		return self.payyan.Ascii2Uni()
 	def unicode2ascii(self):
-		self.payyan.Uni2Ascii()
+		return self.payyan.Uni2Ascii()
