@@ -13,7 +13,7 @@ setup(name='payyans',
       url='http://smc.org.in/Payyans',
       license = 'http://www.gnu.org/copyleft/gpl.html',
       packages=['payyans'],
-      data_files=[('/usr/share/payyans/maps',['maps/karthika.map']),
+      data_files=[('/usr/share/payyans/maps',['maps/karthika.map','maps/indulekha.map','maps/revathi.map']),
 		   ('/usr/bin',['payyans/payyans']),
 	       ('/usr/share/payyans/docs',['docs/README','docs/LICENSE','docs/ChangeLog'])]
       )
