@@ -131,32 +131,30 @@ class Chathans (gtk.Window):
 		self.UnicodeFile = self.unicode_btn.get_filename()
 		
 		if (   self.AsciiFile 	== None
-		   or  self.MappingFile == None
-		   or  self.UnicodeFile == None ):
+		   or  self.MappingFile == None ):
 			   dlg = gtk.MessageDialog(self.get_toplevel(),
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_INFO,
 					gtk.BUTTONS_OK,
-					"Please select all the files")
+					"Please select both ASCII file and Mapping file")
 			   dlg.run()
 			   dlg.destroy()
 			   return
 			   
-		# Check the extenstion of ASCII file for Text/PDF '''
-		#(inp_file, inp_ext) = os.path.splitext(self.AsciiFile)
-		#if string.upper(inp_ext) == ".PDF":
-		#	self.PdfFile = self.AsciiFile
-		#	self.AsciiFile = None
+		if self.UnicodeFile == None:
+			(inp_file, inp_ext) = os.path.splitext(self.AsciiFile)
+			self.UnicodeFile = inp_file + "-unicode" + ".txt"
 			   
 		# ഓഹ്, പയ്യന്‍! നീ വ്യാഘ്രമാകുന്നു.
 		payyan = Payyans(self.AsciiFile, self.UnicodeFile, self.MappingFile)
 		payyan.ascii2unicode()
 		# കത്തിച്ചു കഴിഞ്ഞു.
+		msg = "Coversion Done - Unicode file :" + self.UnicodeFile
 		dlg = gtk.MessageDialog(self.get_toplevel(),
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_INFO,
 					gtk.BUTTONS_OK,
-					"Conversion Done !!")
+					msg)
 		dlg.run()
 		dlg.destroy()
 				
