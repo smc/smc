@@ -4,7 +4,7 @@ from distutils.core import setup
 
 doclines = __doc__.split("\n")
 setup(name='payyans',
-      version='0.4',
+      version='0.5',
       description=doclines[0],
       long_description = "\n".join(doclines[:]),
       platforms = ["Linux"],
@@ -15,5 +15,5 @@ setup(name='payyans',
       packages=['payyans'],
       data_files=[('/usr/share/payyans/maps',['maps/karthika.map']),
 		   ('/usr/bin',['payyans/payyans']),
-		    ('/usr/share/payyans/docs',['docs/README','docs/LICENSE','docs/ChangeLog'])]
+	       ('/usr/share/payyans/docs',['docs/README','docs/LICENSE','docs/ChangeLog'])]
       )
