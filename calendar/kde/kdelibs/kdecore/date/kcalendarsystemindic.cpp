@@ -144,7 +144,7 @@ bool KCalendarSystemIndic::isValid( const QDate &date ) const
 bool KCalendarSystemIndic::setDate( QDate &date, int year, int month, int day ) const
 {
   // Gets its value in Saka that need to be converted into Gregorian 
-  kDebug() << "setDate: year, month , day"<< year << month << day;
+  //  kDebug() << "setDate: year, month , day"<< year << month << day;
   date = QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(year, month, day) );
   return true;
 }
@@ -288,7 +288,9 @@ int KCalendarSystemIndic::weeksInYear( int year ) const
 
 int KCalendarSystemIndic::daysInYear( const QDate &date ) const
 {
-    return KCalendarSystem::daysInYear( date );
+  if (KCalendarSystemIndic::isLeapYear(KCalendarSystemIndic::year(date)))
+    return 366;
+  return 365;
 }
 
 int KCalendarSystemIndic::daysInMonth( const QDate &date ) const
