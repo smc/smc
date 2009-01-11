@@ -59,7 +59,7 @@ public:
  * month  The month according to Indian calendar (between 1 to 12)
  * date   The date in month 
  */
- double KCalendarSystemSaka::SakaToJD(int year, int month, int date) {
+ double KCalendarSystemSaka::SakaToJD(int year, int month, int day) {
 	int leapMonth, gyear, m;
 	double start, jd;
 
@@ -75,7 +75,7 @@ public:
 	}
 
 	if (month == 1) {
-		jd = start + (date - 1);
+		jd = start + (day - 1);
 	} else {
 		jd = start + leapMonth;
 		m = month - 2;
@@ -85,7 +85,7 @@ public:
 			m = month - 7;
 			jd += m * 30;
 		}
-		jd += date - 1;
+		jd += day - 1;
 	}
 
 	return jd;
@@ -143,13 +143,16 @@ bool KCalendarSystemIndic::isValid( const QDate &date ) const
 
 bool KCalendarSystemIndic::setDate( QDate &date, int year, int month, int day ) const
 {
-    return KCalendarSystem::setDate( date, year, month, day );
+  // Gets its value in Saka that need to be converted into Gregorian 
+  kDebug() << "setDate: year, month , day"<< year << month << day;
+  date = QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(year, month, day) );
+  return true;
 }
 
 // Deprecated
 bool KCalendarSystemIndic::setYMD( QDate &date, int y, int m, int d ) const
 {
-    return KCalendarSystem::setDate( date, y, m, d );
+    return KCalendarSystemIndic::setDate( date, y, m, d );
 }
 
 int KCalendarSystemIndic::year( const QDate &date ) const
