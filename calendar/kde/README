@@ -12,3 +12,5 @@ Follow the steps given below to build the code.
 	- run kdecore/tests/kcalendartest
 	- kdecore/tests/kcalendartest -functions (for listing available tests)
 	- kdecore/tests/kcalendartest testName -v2 (for running named test with detailed output)
+
+See video of the working calendar http://blip.tv/file/1656477
