@@ -137,7 +137,7 @@ void KCalendarTest::testIndic()
 
     QDate newDate = calendar->addYears(testDate, 4);
 // doubt    
-    QCOMPARE( newDate.year(), 2004 );
+    QCOMPARE( newDate.year(), 2082 );
     QCOMPARE( calendar->daysInYear(newDate), 365 );
 
     newDate = calendar->addMonths( testDate, -4 );
