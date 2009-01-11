@@ -185,7 +185,8 @@ int KCalendarSystemIndic::month( const QDate &date ) const
 	  
 	month=KCalendarSystem::month( date );
 	day=KCalendarSystem::day( date );
-
+	kDebug() << "year, month, day" << KCalendarSystem::year (date) << month << day;
+	kDebug() << "year, date.month, date.day" << KCalendarSystem::year (date) << date.month() << date.day();
 	// In a Leap Year Chaithram starts in March 21
 
 	if (KCalendarSystem::isLeapYear(date.year()))
@@ -193,11 +194,11 @@ int KCalendarSystemIndic::month( const QDate &date ) const
 	
 	// We need to handle days before Jan 21 separately.
 	if (month > 1 ) {
-		if (day > Saka[month-1][1])
+		if (day >= Saka[month-1][1])
 			return Saka[month-1][0];
 		return Saka[month-2][0];
 	}
-	if (day > Saka[month-1][1])
+	if (day >= Saka[month-1][1])
 		return Saka[month-1][0];
 	return Saka[11][0];
 }
