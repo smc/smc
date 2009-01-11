@@ -185,8 +185,6 @@ int KCalendarSystemIndic::month( const QDate &date ) const
 	  
 	month=KCalendarSystem::month( date );
 	day=KCalendarSystem::day( date );
-	kDebug() << "year, month, day" << KCalendarSystem::year (date) << month << day;
-	kDebug() << "year, date.month, date.day" << KCalendarSystem::year (date) << date.month() << date.day();
 	// In a Leap Year Chaithram starts in March 21
 
 	if (KCalendarSystem::isLeapYear(date.year()))
@@ -239,7 +237,12 @@ int KCalendarSystemIndic::day( const QDate &date ) const
 
 QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 {
-    return KCalendarSystem::addYears( date, nyears);
+  int saka_year, saka_month, saka_day;
+  kDebug() << "year, month, day" << date.year() << date.month() << date.day();
+  saka_year = KCalendarSystemIndic::year( date );
+  saka_month = KCalendarSystemIndic::month( date );
+  saka_day =  KCalendarSystemIndic::day( date );
+  return QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year+nyears, saka_month, saka_day) );
 }
 
 QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
