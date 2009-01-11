@@ -1,7 +1,7 @@
 00-database-dictfmt-1.10.11
 	smc.org.in
 00-database-short
-Dict-En-Ml
+freedict-eng-mal
 abbey
 		1. കന്യകാമഠം
 		2. മഠത്തോട് ബന്ധപ്പെട്ട ദേവാലയം
