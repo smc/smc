@@ -131,10 +131,9 @@ void KCalendarTest::testIndic()
     QCOMPARE( calendar->dayOfYear(testDate), 173 );
 
     QVERIFY( calendar->setYMD( testDate, 2000, 3, 1 ) );
-// Not sure if it should return Saka year.
-    QCOMPARE( calendar->year(testDate), 1921 );
-    QCOMPARE( calendar->month(testDate), 12 );
-    QCOMPARE( calendar->day(testDate), 11 );
+    QCOMPARE( calendar->year(testDate), 2000 );
+    QCOMPARE( calendar->month(testDate), 3 );
+    QCOMPARE( calendar->day(testDate), 1 );
 
     QDate newDate = calendar->addYears(testDate, 4);
 // doubt    
