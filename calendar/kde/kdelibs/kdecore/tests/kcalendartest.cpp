@@ -141,14 +141,14 @@ void KCalendarTest::testIndic()
     QCOMPARE( calendar->daysInYear(newDate), 365 );
 
     newDate = calendar->addMonths( testDate, -4 );
-    QCOMPARE( newDate.year(), 1999 );
-    QCOMPARE( newDate.month(), 11 );
-    QCOMPARE( newDate.day(), 1 );
+    QCOMPARE( newDate.year(), 2078 );
+    QCOMPARE( newDate.month(), 1 );
+    QCOMPARE( newDate.day(), 21 );
 
     newDate = calendar->addDays( newDate, 20 );
-    QCOMPARE( newDate.year(), 1999 );
-    QCOMPARE( newDate.month(), 11 );
-    QCOMPARE( newDate.day(), 21 );
+    QCOMPARE( newDate.year(), 2078 );
+    QCOMPARE( newDate.month(), 2 );
+    QCOMPARE( newDate.day(), 10 );
 }
 
 
