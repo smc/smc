@@ -238,7 +238,6 @@ int KCalendarSystemIndic::day( const QDate &date ) const
 QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 {
   int saka_year, saka_month, saka_day;
-  kDebug() << "year, month, day" << date.year() << date.month() << date.day();
   saka_year = KCalendarSystemIndic::year( date );
   saka_month = KCalendarSystemIndic::month( date );
   saka_day =  KCalendarSystemIndic::day( date );
@@ -247,24 +246,22 @@ QDate KCalendarSystemIndic::addYears( const QDate &date, int nyears ) const
 
 QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
 {
-/*QDate result = date;
-
-    while ( nmonths > 0 ) {
-        result = addDays( result, daysInMonth( result ) );
-        --nmonths;
-    }
-
-    while ( nmonths < 0 ) {
-        // get the number of days in the previous month to be consistent with
-        // addMonths where nmonths > 0
-        int nDaysInMonth = daysInMonth( addDays( result, -day( result ) ) );
-        result = addDays( result, -nDaysInMonth );
-        ++nmonths;
-    }
-
-    return result;
-    */
-    return KCalendarSystem::addMonths(date, nmonths);
+  int saka_year, saka_month, saka_day, change;
+  saka_year = KCalendarSystemIndic::year( date );
+  saka_month = KCalendarSystemIndic::month( date );
+  saka_day =  KCalendarSystemIndic::day( date );
+  change = saka_month + nmonths;
+  if (change < 0 ) {
+    saka_year -= ( abs(change)/12 + 1 );
+    saka_month = 12 + change%12;
+  }
+  else if (change >= 12) {
+      saka_year += (change/12)+1;
+      saka_month = change%12;
+  } else {
+    saka_month += nmonths;
+  }
+  return QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
 }
 
 QDate KCalendarSystemIndic::addDays( const QDate &date, int ndays ) const
