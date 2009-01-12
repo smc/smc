@@ -251,8 +251,9 @@ QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
   saka_year = KCalendarSystemIndic::year( date );
   saka_month = KCalendarSystemIndic::month( date );
   saka_day =  KCalendarSystemIndic::day( date );
+  kDebug() << "before" << saka_year << saka_month << saka_day;
   change = saka_month + nmonths;
-  if (change < 0 ) {
+  if (change <= 0 ) {
     saka_year -= ( abs(change)/12 + 1 );
     saka_month = 12 + change%12;
   }
@@ -262,6 +263,9 @@ QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
   } else {
     saka_month += nmonths;
   }
+  kDebug() << "after" << saka_year << saka_month << saka_day << KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day);
+  QDate test = QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
+  kDebug() << "year" << KCalendarSystemIndic::year (test);
   return QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
 }
 
