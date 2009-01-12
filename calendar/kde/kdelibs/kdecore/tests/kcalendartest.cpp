@@ -136,7 +136,6 @@ void KCalendarTest::testIndic()
     QCOMPARE( calendar->day(testDate), 1 );
 
     QDate newDate = calendar->addYears(testDate, 4);
-// doubt    
     QCOMPARE( newDate.year(), 2082 );
     QCOMPARE( calendar->daysInYear(newDate), 365 );
 
@@ -149,7 +148,14 @@ void KCalendarTest::testIndic()
     QCOMPARE( newDate.year(), 2078 );
     QCOMPARE( newDate.month(), 2 );
     QCOMPARE( newDate.day(), 10 );
+    
+    QDate myDate(2009, 1, 11);
+    QCOMPARE( calendar->year(myDate), 1930);
+    myDate = calendar->addDays(myDate, 32);
+    QCOMPARE(myDate.month(),2);
+    QCOMPARE( calendar->day(myDate),23);
 }
+
 
 
 void KCalendarTest::testGregorianBasic()
