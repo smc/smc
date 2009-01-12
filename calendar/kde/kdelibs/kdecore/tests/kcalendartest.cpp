@@ -150,10 +150,10 @@ void KCalendarTest::testIndic()
     QCOMPARE( newDate.day(), 10 );
     
     QDate myDate(2009, 1, 11);
-    QCOMPARE( calendar->year(myDate), 1930);
-    myDate = calendar->addDays(myDate, 32);
-    QCOMPARE(myDate.month(),2);
-    QCOMPARE( calendar->day(myDate),23);
+    QVERIFY( calendar->setDate( myDate, 1938, 1, 7) );
+    myDate = calendar->addMonths( myDate, -1 );
+    QCOMPARE( calendar->year( myDate ), 1937 );
+    QCOMPARE( calendar->month( myDate ), 12 );
 }
 
 
