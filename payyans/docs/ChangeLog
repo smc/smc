@@ -1,13 +1,15 @@
 Change Log:
+	version 0.6
+		* Added word2Unicode and word2ASCII APIs
+		* Move the doc files to /usr/share/doc/pyanns-<ver> directory
 	version 0.5
 		* Python API fixes
 		* pdf option detection from input file name extension
 	version 0.4
 		* bidirectional conversion
-    version 0.3
-    	* minor fixes
-    Version 0.2:
+	version 0.3
+		* minor fixes
+	Version 0.2:
 		* Renamed rules.map to karthika.map and corrected some mappings
 	Version 0.1:
 		* First release
- 
