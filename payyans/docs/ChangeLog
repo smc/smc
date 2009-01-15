@@ -1,7 +1,7 @@
 Change Log:
 	version 0.6
 		* Added word2Unicode and word2ASCII APIs
-		* Move the doc files to /usr/share/doc/pyanns-<ver> directory
+		* Move the doc files to /usr/share/doc/payyans-<ver> directory
 	version 0.5
 		* Python API fixes
 		* pdf option detection from input file name extension
