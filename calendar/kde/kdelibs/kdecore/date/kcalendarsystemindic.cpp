@@ -162,19 +162,21 @@ int KCalendarSystemIndic::year( const QDate &date ) const
     // Saka Year starts on March 22 normally and
     // on March 21 in leap years.
 
-    int saka_year, saka_start=22;
-    saka_year = KCalendarSystem::year( date ) - KCalendarSystemSaka::get_era_start();
-    //    kDebug() <<"saka_year" << saka_year;
-    if (KCalendarSystemIndic::isLeapYear(saka_year)) {
-    	saka_start=21;
-    }
-    if ((date.month() <=3) && (date.day() < saka_start)) {
-    	--saka_year;
-    }
+  int year, month, day, saka_year, saka_start=22;
+  year = date.year();
+  month = date.month();
+  day = date.day();
+  saka_year = year - KCalendarSystemSaka::get_era_start();
 
-    //    kDebug() <<"saka_year just before return" << saka_year;
+  if ( month > 3 )
     return saka_year;
-    
+  if ( month == 3 && day >= saka_start )
+    return saka_year;
+
+  // In a leap year Saka year start on March 21
+  if ( month == 3 && day == 21 && QDate::isLeapYear( year ) )
+    return saka_year;
+  return --saka_year;
 }
 
 int KCalendarSystemIndic::month( const QDate &date ) const
@@ -251,7 +253,6 @@ QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
   saka_year = KCalendarSystemIndic::year( date );
   saka_month = KCalendarSystemIndic::month( date );
   saka_day =  KCalendarSystemIndic::day( date );
-  kDebug() << "before" << saka_year << saka_month << saka_day;
   change = saka_month + nmonths;
   if (change <= 0 ) {
     saka_year -= ( abs(change)/12 + 1 );
@@ -263,10 +264,7 @@ QDate KCalendarSystemIndic::addMonths( const QDate &date, int nmonths ) const
   } else {
     saka_month += nmonths;
   }
-  kDebug() << "after" << saka_year << saka_month << saka_day << KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day);
-  QDate test = QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
-  kDebug() << "year" << KCalendarSystemIndic::year (test);
-  return QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
+    return QDate::fromJulianDay( KCalendarSystemSaka::SakaToJD(saka_year, saka_month, saka_day) );
 }
 
 QDate KCalendarSystemIndic::addDays( const QDate &date, int ndays ) const
@@ -350,7 +348,6 @@ int KCalendarSystemIndic::weekNumber( const QDate &date, int * yearNum ) const
 
 bool KCalendarSystemIndic::isLeapYear( int year ) const
 {
-  //  kDebug() << "year" << year;
     return QDate::isLeapYear( year + 78);
 }
 
