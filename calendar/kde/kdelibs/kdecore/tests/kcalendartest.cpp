@@ -152,8 +152,35 @@ void KCalendarTest::testIndic()
     QDate myDate(2009, 1, 11);
     QVERIFY( calendar->setDate( myDate, 1938, 1, 7) );
     myDate = calendar->addMonths( myDate, -1 );
+    QCOMPARE( myDate.year(), 2016 );
     QCOMPARE( calendar->year( myDate ), 1937 );
     QCOMPARE( calendar->month( myDate ), 12 );
+
+    myDate = QDate::QDate(2009, 3, 22);
+    QCOMPARE( calendar->year( myDate ), 1931 );
+    QCOMPARE( calendar->month( myDate ), 1 );
+    QCOMPARE( calendar->day( myDate ), 1 );
+
+    myDate = QDate::QDate(2009, 3, 21);
+    QCOMPARE( calendar->year( myDate ), 1930 );
+    QCOMPARE( calendar->month( myDate ), 12 );
+    QCOMPARE( calendar->day( myDate ), 30 );
+
+    myDate = QDate::QDate(2008, 3, 22);
+    QCOMPARE( calendar->year( myDate ), 1930 );
+    QCOMPARE( calendar->month( myDate ), 1 );
+    QCOMPARE( calendar->day( myDate ), 2 );
+
+    myDate = QDate::QDate(2008, 3, 21);
+    QCOMPARE( calendar->year( myDate ), 1930 );
+    QCOMPARE( calendar->month( myDate ), 1 );
+    QCOMPARE( calendar->day( myDate ), 1 );
+
+    myDate = QDate::QDate(2008, 3, 20);
+    QCOMPARE( calendar->year( myDate ), 1929 );
+    QCOMPARE( calendar->month( myDate ), 12 );
+    QCOMPARE( calendar->day( myDate ), 30 );
+
 }
 
 
