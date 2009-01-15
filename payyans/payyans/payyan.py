@@ -1,7 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Payyans Ascii to Unicode Convertor
-# Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>, Nishan Naseer <nishan.naseer@gmail.com>, Manu S Madhav <manusmad@gmail.com>
+# Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
+# Nishan Naseer <nishan.naseer@gmail.com>, Manu S Madhav <manusmad@gmail.com>,
+# Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
 # http://www.smc.org.in
 #
 # This program is free software; you can redistribute it and/or modify
@@ -42,6 +44,35 @@ class Payyan:
 		self.mapping_filename=""
 		self.pdf=0
 		
+	def word2ASCII(self, unicode_text):
+		index = 0
+		prebase_letter = ""
+		ascii_text=""
+		while index < len(unicode_text):
+			'''കൂട്ടക്ഷരങ്ങള്‍ക്കൊരു കുറുക്കുവഴി'''
+			for charNo in [3,2,1]:
+				letter = unicode_text[index:index+charNo]
+				if letter in self.rulesDict:
+					ascii_letter = self.rulesDict[letter]
+					letter = letter.encode('utf8')
+					'''കിട്ടിയ അക്ഷരങ്ങളുടെ അപ്പുറത്തും ഇപ്പുറത്തും സ്വരചിഹ്നങ്ങള്‍ ഫിറ്റ് ചെയ്യാനുള്ള ബദ്ധപ്പാട്'''
+					if letter == 'ൈ':	# പിറകില്‍ രണ്ടു സാധനം പിടിപ്പിക്കുക
+						ascii_text = ascii_text[:-1] + ascii_letter*2 + ascii_text[-1:]
+					elif (letter == 'ോ') | (letter == 'ൊ') | (letter == 'ൌ'):		#മുമ്പിലൊന്നും പിറകിലൊന്നും
+						ascii_text = ascii_text[:-1] + ascii_letter[0] + ascii_text[-1:] + ascii_letter[1]
+					elif (letter == 'െ') | (letter == 'േ') |(letter == '്ര'):		#പിറകിലൊന്നുമാത്രം
+						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
+					else:
+						ascii_text = ascii_text + ascii_letter						
+					index = index+charNo
+					break
+				else:
+					'''നോക്കിയിട്ടു കിട്ടുന്നില്ല ബായി'''				
+					ascii_letter = letter
+					ascii_text = ascii_text + ascii_letter
+			index = index + 1
+		return ascii_text
+		
 	def Uni2Ascii(self):
 		self.direction="u2a"
 		self.rulesDict = self.LoadRules()
@@ -57,38 +88,38 @@ class Payyan:
    			text =uni_file.readline()
 			if text == "":
 				break
-			index = 0
-			ascii_text = ""
-			prebase_letter=""
-			while index < len(text):
-				'''കൂട്ടക്ഷരങ്ങള്‍ക്കൊരു കുറുക്കുവഴി'''
-				for charNo in [3,2,1]:
-					letter = text[index:index+charNo]
-					if letter in self.rulesDict:
-						ascii_letter = self.rulesDict[letter]
-						letter = letter.encode('utf8')
-						'''കിട്ടിയ അക്ഷരങ്ങളുടെ അപ്പുറത്തും ഇപ്പുറത്തും സ്വരചിഹ്നങ്ങള്‍ ഫിറ്റ് ചെയ്യാനുള്ള ബദ്ധപ്പാട്'''
-						if letter == 'ൈ':	# പിറകില്‍ രണ്ടു സാധനം പിടിപ്പിക്കുക
-							ascii_text = ascii_text[:-1] + ascii_letter*2 + ascii_text[-1:]
-						elif (letter == 'ോ') | (letter == 'ൊ') | (letter == 'ൌ'):		#മുമ്പിലൊന്നും പിറകിലൊന്നും
-							ascii_text = ascii_text[:-1] + ascii_letter[0] + ascii_text[-1:] + ascii_letter[1]
-						elif (letter == 'െ') | (letter == 'േ') |(letter == '്ര'):		#പിറകിലൊന്നുമാത്രം
-							ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
-						else:
-							ascii_text = ascii_text + ascii_letter						
-						index = index+charNo
-						break
-				else:
-					'''നോക്കിയിട്ടു കിട്ടുന്നില്ല ബായി'''				
-					ascii_letter = letter
-					ascii_text = ascii_text + ascii_letter
-					index = index + 1
+			ascii_text = ""	
+			# ഹീന ജാതിയിലേയ്ക്ക് തരം താഴ്ത്ത്വാ !
+			self.word2ASCII(text)
 									
 			if self.output_filename :
 				output_file.write(ascii_text)
 			else:
 				print ascii_text.encode('utf-8')
-		return "പയ്യന്‍ നല്ലോരു യൂണിക്കോട് ഫയലില്‍ കേറി നെരങ്ങി ആസ്ക്കിയാക്കി. ദൈവമേ, ഈ പയ്യനു നല്ലബുദ്ധി തോന്നിക്കണേ..."
+		''' പയ്യന്‍ നല്ലോരു യൂണിക്കോട് ഫയലില്‍ കേറി നെരങ്ങി ആസ്ക്കിയാക്കി. ദൈവമേ, ഈ പയ്യനു നല്ലബുദ്ധി തോന്നിക്കണേ... '''
+		return 0
+		
+	def word2Unicode(self, ascii_text):
+		index = 0
+		prebase_letter = ""
+		unicode_text = ""
+		while index < len(ascii_text):
+			letter = ascii_text[index]
+			if letter in self.rulesDict:
+				unicode_letter = self.rulesDict[letter]
+			else:
+				unicode_letter = letter	
+			if(self.isPrebase(unicode_letter)):
+				prebase_letter = unicode_letter 
+			else:
+				if  ((unicode_letter.encode('utf-8') == "എ") | ( unicode_letter.encode('utf-8') == "ഒ" )):
+					unicode_text = unicode_text +  self.getVowelSign(prebase_letter , unicode_letter)
+				else:
+					unicode_text = unicode_text + unicode_letter+ prebase_letter
+				prebase_letter=""	
+
+			index = index + 1
+		return unicode_text	# മതം മാറ്റി തിരിച്ചു കൊടുക്ക്വാ ! 
 	
 	def Ascii2Uni(self):
 		self.direction="a2u"	
@@ -118,31 +149,17 @@ class Payyan:
    			text =ascii_file.readline()
 			if text == "":
 				break
-			index = 0
 			unicode_text = ""
-			prebase_letter=""
-			while index < len(text):
-				letter = text[index]
-				if letter in self.rulesDict:
-					unicode_letter = self.rulesDict[letter]
-				else:
-					unicode_letter = letter	
-				if(self.isPrebase(unicode_letter))	:
-					prebase_letter = unicode_letter 
-				else:
-					if  ((unicode_letter.encode('utf-8') == "എ") | ( unicode_letter.encode('utf-8') == "ഒ" )):
-						unicode_text = unicode_text +  self.getVowelSign(prebase_letter , unicode_letter)
-					else:
-						unicode_text = unicode_text + unicode_letter+ prebase_letter
-					prebase_letter=""	
-
-				index = index + 1 
+			''' അങ്ങട്ട് മതം മാറ്റ്വാ... ആസ്കിതനും നാസ്തികനും ഒന്നന്നെ! '''
+			unicode_text = self.word2Unicode(text)
+			
 			if self.output_filename :
 				output_file.write(unicode_text)
 			else:
 				print unicode_text.encode('utf-8')
 
-		return "പയ്യന്റെ അവതാരോദ്ദേശ്യം പൂര്‍ണ്ണമായിരിക്കുന്നു. ഇനി മടക്കം. റിട്ടേണ്‍...!"
+		''' പയ്യന്റെ അവതാരോദ്ദേശ്യം പൂര്‍ണ്ണമായിരിക്കുന്നു. ഇനി മടക്കം. റിട്ടേണ്‍...! '''
+		return 0
 
 	def getVowelSign(self, vowel_letter, vowel_sign_letter):
 		vowel=  vowel_letter.encode('utf-8')
