@@ -42,6 +42,7 @@ class Payyan:
 		self.input_filename =""
 		self.output_filename=""
 		self.mapping_filename=""
+		self.rulesDict=None
 		self.pdf=0
 		
 	def word2ASCII(self, unicode_text):
