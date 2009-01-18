@@ -72,12 +72,12 @@ class Payyan:
 					'''നോക്കിയിട്ടു കിട്ടുന്നില്ല ബായി'''				
 					ascii_letter = letter
 					ascii_text = ascii_text + ascii_letter
-			index = index + 1
+					index = index + 1
 		return ascii_text
 		
 	def Uni2Ascii(self):
-		self.direction="u2a"
-		self.rulesDict = self.LoadRules()
+		#self.direction="u2a"
+		#self.rulesDict = self.LoadRules()
 		'''പണിതുടങ്ങട്ടെ'''
 		if self.input_filename :
 			uni_file = codecs.open(self.input_filename, encoding = 'utf-8', errors = 'ignore')
@@ -92,7 +92,7 @@ class Payyan:
 				break
 			ascii_text = ""	
 			# ഹീന ജാതിയിലേയ്ക്ക് തരം താഴ്ത്ത്വാ !
-			self.word2ASCII(text)
+			ascii_text = self.word2ASCII(text)
 									
 			if self.output_filename :
 				output_file.write(ascii_text)
@@ -126,8 +126,8 @@ class Payyan:
 		return unicode_text	# മതം മാറ്റി തിരിച്ചു കൊടുക്ക്വാ ! 
 	
 	def Ascii2Uni(self):
-		self.direction="a2u"	
-		self.rulesDict = self.LoadRules()
+		#self.direction="a2u"	
+		#self.rulesDict = self.LoadRules()
 		if self.pdf :
 			command = "pdftotext '" + self.input_filename +"'"
 			process = os.popen(command, 'r')

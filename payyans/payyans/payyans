@@ -62,7 +62,6 @@ class Payyan:
 			print "\tInvalid direction"
 			error_exit()
 		p=Payyans(options.input_filename ,options.output_filename, options.mapping_filename)
-		p.ascii2unicode()
 		if options.direction == 'a2u':		
 			p.ascii2unicode()
 		else:
