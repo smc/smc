@@ -48,8 +48,9 @@ class Payyan:
 		index = 0
 		prebase_letter = ""
 		ascii_text=""
-		self.direction="u2a"
-		self.rulesDict = self.LoadRules()
+		self.direction = "u2a"
+		if self.rulesDict == None:
+			self.rulesDict = self.LoadRules()
 		while index < len(unicode_text):
 			'''കൂട്ടക്ഷരങ്ങള്‍ക്കൊരു കുറുക്കുവഴി'''
 			for charNo in [3,2,1]:
@@ -105,11 +106,12 @@ class Payyan:
 		return 0
 		
 	def word2Unicode(self, ascii_text):
-		self.direction="a2u"
-		self.rulesDict = self.LoadRules()
 		index = 0
 		prebase_letter = ""
 		unicode_text = ""
+		self.direction="a2u"
+		if self.rulesDict == None:
+			self.rulesDict = self.LoadRules()
 		while index < len(ascii_text):
 			letter = ascii_text[index]
 			if letter in self.rulesDict:
