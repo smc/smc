@@ -50,8 +50,7 @@ class Payyan:
 		prebase_letter = ""
 		ascii_text=""
 		self.direction = "u2a"
-		if self.rulesDict == None:
-			self.rulesDict = self.LoadRules()
+		self.rulesDict = self.LoadRules()
 		while index < len(unicode_text):
 			'''കൂട്ടക്ഷരങ്ങള്‍ക്കൊരു കുറുക്കുവഴി'''
 			for charNo in [3,2,1]:
@@ -111,8 +110,7 @@ class Payyan:
 		prebase_letter = ""
 		unicode_text = ""
 		self.direction="a2u"
-		if self.rulesDict == None:
-			self.rulesDict = self.LoadRules()
+		self.rulesDict = self.LoadRules()
 		while index < len(ascii_text):
 			letter = ascii_text[index]
 			if letter in self.rulesDict:
@@ -200,6 +198,8 @@ class Payyan:
 		'''
 		ഈ സംഭവമാണു് മാപ്പിങ്ങ് ഫയല്‍ എടുത്തു് വായിച്ചു പഠിക്കുന്നതു്.
 		'''
+		if(self.rulesDict):
+			return self.rulesDict
 		rules_dict = dict()
 		line = []
 		line_number = 0
