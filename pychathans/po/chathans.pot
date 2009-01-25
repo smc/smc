@@ -1,0 +1,108 @@
+# Chathans Localization template file.
+# Copyright (c) 2009 Rajeesh K Nambiar
+# This file is distributed under the same license as Chathans package.
+# Rajeesh K Nambiar <rajeeshknambiar@gmail.com>, 2009.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-24 14:26+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: chathans.py:29
+msgid "Chathans requires PyGTK"
+msgstr ""
+
+#: chathans.py:36
+msgid "Chathans require Payyans"
+msgstr ""
+
+#: chathans.py:45
+msgid "Chathans"
+msgstr ""
+
+#: chathans.py:69
+msgid "ASCII File : "
+msgstr ""
+
+#: chathans.py:70
+msgid "Mapping File : "
+msgstr ""
+
+#: chathans.py:71
+msgid "Unicode File : "
+msgstr ""
+
+#: chathans.py:74
+msgid "Select the ASCII File (.txt,.pdf)"
+msgstr ""
+
+#: chathans.py:75
+msgid "Select the ASCII-Unicode Mapping File"
+msgstr ""
+
+#: chathans.py:76
+msgid "Select Output Unicode File"
+msgstr ""
+
+#: chathans.py:83
+msgid "Convert"
+msgstr ""
+
+#: chathans.py:85
+msgid "Quit"
+msgstr ""
+
+#: chathans.py:87
+msgid "About"
+msgstr ""
+
+#: chathans.py:149
+msgid "Please select both ASCII file and Mapping file"
+msgstr ""
+
+#: chathans.py:163
+msgid "Coversion Done - Unicode file :"
+msgstr ""
+
+#: chathans.py:165
+msgid "Could not find the pdftotext utility. Exiting..."
+msgstr ""
+
+#: chathans.py:167
+msgid "Syntax Error in Mapping file. Exiting..."
+msgstr ""
+
+#: chathans.py:182
+msgid "Chathans: Rajeesh K Nambiar <rajeeshknambiar@gmail.com>"
+msgstr ""
+
+#: chathans.py:183
+msgid ""
+"Payyans : Santhosh Thottingal, Nishan Naseer,\n"
+"\t\t  Manu S Madhav, Rajeesh K Nambiar"
+msgstr ""
+
+#: chathans.py:185
+msgid ""
+"Chathans is an easy to use GUI frontend to Payyans ASCII<->Unicode Converter"
+msgstr ""
+
+#: chathans.py:190
+msgid "Copyright (c) Rajeesh K Nambiar"
+msgstr ""
+
+#: chathans.py:191
+msgid "Chathans is licensed under GNU GPL version 3"
+msgstr ""
+
+#: chathans.py:203
+msgid "Do you really want to Quit?"
+msgstr ""
