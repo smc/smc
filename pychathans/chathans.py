@@ -19,24 +19,34 @@
 import os
 import sys
 import string
+import locale
+import gettext
+from gettext import gettext as _
 
 try:
 	import gtk
 except ImportError:
 	''' ചാത്തന്‍സിന് കള്‍സില്ലെന്നോ? '''
-	print "Chathans requires PyGTK"
+	print _("Chathans requires PyGTK")
 	raise SystemExit
 	
 try:
 	from payyans import Payyans
 except ImportError:
 	''' ഹൈയ്, പയ്യന്റെ ദുര്‍ജ്ജനസംസര്‍ഗ്ഗമില്ലാതെ നോം സാധനം തൊടാറില്ല! '''
-	print "Chathans require Payyans"
+	print _("Chathans require Payyans")
 	raise SystemExit
 
-name = "Chathans"
-version = "0.2"
+
+PACKAGE = "chathans"
+gettext.bindtextdomain(PACKAGE, sys.prefix+"/share/locale/")
+gettext.textdomain(PACKAGE)
+#_ = gettext.gettext
+
+name = _("Chathans")
+version = "0.3"
 title = name + " " + version
+
 
 class Chathans (gtk.Window):
 	''' ചാത്തന്‍സ് അഥവാ സര്‍ ചാത്തു. വിക്ടോറിയാ രാജ്ഞിയില്‍ നിന്നും നേരിട്ട് പ്രഭുത്വം ! '''
@@ -45,10 +55,11 @@ class Chathans (gtk.Window):
 		self.MappingFile = None
 		self.UnicodeFile = None
 		self.PdfFile	 = None
+
 		self.__init_gui()
 		
 	def __init_gui(self):
-		''' പൂമുഖം തുറന്ന്, ദര്‍ശനം നല്‍കാം... '''
+		''' പൂമുഖം തുറന്ന്, ദര്‍ശനം നല്‍കാം... '''		
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
 		self.set_title(title)
 		self.set_default_size(340, 160)
@@ -56,25 +67,25 @@ class Chathans (gtk.Window):
 		self.connect("destroy", self.__quit)
 		
 		# ലേബലടിക്ക്.
-		ascii_lbl   = gtk.Label("ASCII File : ")
-		mapping_lbl = gtk.Label("Mapping File : ")
-		unicode_lbl = gtk.Label("Unicode File : ")
+		ascii_lbl   = gtk.Label(_("ASCII File : "))
+		mapping_lbl = gtk.Label(_("Mapping File : "))
+		unicode_lbl = gtk.Label(_("Unicode File : "))
 		
 		# പ്രമാണോം പത്രോം ആധാരോം എടുക്ക്വാ..
-		ascii_btn   = gtk.FileChooserButton("Select the ASCII File (.txt,.pdf)")
-		mapping_btn = gtk.FileChooserButton("Select the ASCII-Unicode Mapping File")
-		unicode_btn = gtk.FileChooserButton("Select Output Unicode File")
+		ascii_btn   = gtk.FileChooserButton(_("Select the ASCII File (.txt,.pdf)"))
+		mapping_btn = gtk.FileChooserButton(_("Select the ASCII-Unicode Mapping File"))
+		unicode_btn = gtk.FileChooserButton(_("Select Output Unicode File"))
 		
 		# മാപ്പ്, സാധാരണ എവിടെ കിട്ടും? അല്ല, എവിടെ കിട്ടും?
 		mapping_dir = sys.prefix + "/share/payyans/maps/"
 		mapping_btn.set_current_folder(mapping_dir)
 		
 		# Define the Actions. Lets get some action, baby!
-		convert_btn = gtk.Button("Convert", gtk.STOCK_CONVERT)
+		convert_btn = gtk.Button(_("Convert"), gtk.STOCK_CONVERT)
 		convert_btn.connect("clicked", self.__convert_file)
-		cancel_btn = gtk.Button("Quit", gtk.STOCK_QUIT)
+		cancel_btn = gtk.Button(_("Quit"), gtk.STOCK_QUIT)
 		cancel_btn.connect("clicked", self.__quit)
-		about_btn = gtk.Button("About", gtk.STOCK_ABOUT)
+		about_btn = gtk.Button(_("About"), gtk.STOCK_ABOUT)
 		about_btn.connect("clicked", self.__show_about)
 		
 		# Add File Filter for ASCII input file. അരിപ്പ!
@@ -136,7 +147,7 @@ class Chathans (gtk.Window):
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_INFO,
 					gtk.BUTTONS_OK,
-					"Please select both ASCII file and Mapping file")
+					_("Please select both ASCII file and Mapping file"))
 			   dlg.run()
 			   dlg.destroy()
 			   return
@@ -150,11 +161,11 @@ class Chathans (gtk.Window):
 		status = payyan.ascii2unicode()
 		print status
 		if status == None:
-			msg = "Coversion Done - Unicode file :" + self.UnicodeFile
+			msg = _("Coversion Done - Unicode file :") + self.UnicodeFile
 		if status == 1:
-			msg = "Could not find the pdftotext utility. Exiting..."
+			msg = _("Could not find the pdftotext utility. Exiting...")
 		if status == 2:
-			msg = "Syntax Error in Mapping file. Exiting..."
+			msg = _("Syntax Error in Mapping file. Exiting...")
 		# കത്തിച്ചു കഴിഞ്ഞു.
 		dlg = gtk.MessageDialog(self.get_toplevel(),
 					gtk.DIALOG_MODAL,
@@ -169,14 +180,16 @@ class Chathans (gtk.Window):
 	def __show_about(self, event):
 		''' അധികപ്രസംഗം !!! '''
 		dlg = gtk.AboutDialog()
+		autxt1  = _("Chathans: Rajeesh K Nambiar <rajeeshknambiar@gmail.com>")
+		autxt2  = _("Payyans : Santhosh Thottingal, Nishan Naseer,\n\t\t  Manu S Madhav, Rajeesh K Nambiar")
+		authors = ["\n" + autxt1 + "\n\n" + autxt2]
+		comments= _("Chathans is an easy to use GUI frontend to Payyans ASCII<->Unicode Converter")
 		dlg.set_name(name)
 		dlg.set_version(version)
-		autxt1 = "Chathans frontend : Rajeesh K Nambiar <rajeeshknambiar@gmail.com>"
-		autxt2 = "Payyans : Santhosh Thottingal, Nishan Naseer, Manu S Madhav"
-		authors = ["\n" + autxt1 + "\n" + autxt2]
 		dlg.set_authors(authors)
-		dlg.set_copyright("Copyright (c) Rajeesh K Nambiar")
-		dlg.set_license("Licensed under GNU GPL version 3")
+		dlg.set_comments(comments)
+		dlg.set_copyright(_("Copyright (c) Rajeesh K Nambiar"))
+		dlg.set_license(_("Chathans is licensed under GNU GPL version 3"))
 		dlg.set_website("http://smc.org.in/Payyans")
 		
 		dlg.run()
@@ -188,7 +201,7 @@ class Chathans (gtk.Window):
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_QUESTION,
 					gtk.BUTTONS_YES_NO,
-					"Do you really want to Quit?")
+					_("Do you really want to Quit?"))
 		if ( dlg.run() == gtk.RESPONSE_YES ):
 			dlg.destroy()
 			gtk.main_quit()
