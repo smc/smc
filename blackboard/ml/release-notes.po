@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: release-notes 5.0\n"
+"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: Attribute 'lang' of: <book>
+#: en/release-notes.dbk:8
+msgid "en"
+msgstr ""
+
+# type: Content of: <book><title>
+#: en/release-notes.dbk:9
+msgid "Release Notes for &debian; &release; (&releasename;), &arch-title;"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author><contrib>
+#: en/release-notes.dbk:16 en/release-notes.dbk:22
+msgid "current release"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:19
+msgid "<author> <firstname>Luk</firstname> <surname>Claes</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:23
+msgid ""
+"<email>doc-update@release.debian.org</email> </author> <author> "
+"<firstname>Josip</firstname> <surname>Rodin</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author><contrib>
+#: en/release-notes.dbk:28 en/release-notes.dbk:33 en/release-notes.dbk:38
+#: en/release-notes.dbk:43 en/release-notes.dbk:48 en/release-notes.dbk:53
+#: en/release-notes.dbk:58 en/release-notes.dbk:63 en/release-notes.dbk:68
+msgid "old release"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:29
+msgid ""
+"</author> <author> <firstname>Bob</firstname> <surname>Hilliard</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:34
+msgid ""
+"</author> <author> <firstname>Adam</firstname> <surname>Di Carlo</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:39
+msgid ""
+"</author> <author> <firstname>Anne</firstname> <surname>Bezemer</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:44
+msgid ""
+"</author> <author> <firstname>Rob</firstname> <surname>Bradford</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:49
+msgid "</author> <author> <firstname>Frans</firstname> <surname>Pop</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:54
+msgid ""
+"</author> <author> <firstname>Andreas</firstname> <surname>Barth</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:59
+msgid ""
+"</author> <author> <firstname>Javier</firstname> <surname>Fernández-Sanguino "
+"Peña</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><author>
+#: en/release-notes.dbk:64
+msgid ""
+"</author> <author> <firstname>Steve</firstname> <surname>Langasek</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><pubdate>
+#: en/release-notes.dbk:71
+msgid "2008-08-06"
+msgstr ""

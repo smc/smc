@@ -1,0 +1,2280 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: release-notes 5.0\n"
+"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: Content of: <chapter><title>
+#: en/upgrading.dbk:9
+msgid "Upgrades from previous releases"
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:11
+msgid "Preparing for the upgrade"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:13
+msgid ""
+"We suggest that before upgrading you also read the information in <xref "
+"linkend=\"information\"/> .  That chapter covers potential issues not "
+"directly related to the upgrade process but which could still be important "
+"to know about before you begin."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:19
+msgid "Back up any data or configuration information"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:21
+msgid ""
+"Before upgrading your system, it is strongly recommended that you make a "
+"full backup, or at least back up any data or configuration information you "
+"can't afford to lose.  The upgrade tools and process are quite reliable, but "
+"a hardware failure in the middle of an upgrade could result in a severely "
+"damaged system."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:28
+msgid ""
+"The main things you'll want to back up are the contents of <filename>/etc</"
+"filename>, <filename>/var/lib/dpkg</filename>, <filename>/var/lib/aptitude/"
+"pkgstates</filename> and the output of <literal>dpkg --get-selections *</"
+"literal> (the quotes are important)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:34
+msgid ""
+"The upgrade process itself does not modify anything in the <filename>/home</"
+"filename> directory.  However, some applications (e.g.  parts of the Mozilla "
+"suite, and the GNOME and KDE desktop environments) are known to overwrite "
+"existing user settings with new defaults when a new version of the "
+"application is first started by a user.  As a precaution, you may want to "
+"make a backup of the hidden files and directories (dotfiles) in users' home "
+"directories.  This backup may help to restore or recreate the old settings.  "
+"You may also want to inform users about this."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:44
+msgid ""
+"Any package installation operation must be run with superuser privileges, so "
+"either login as root or use <command>su</command> or <command>sudo</command> "
+"to gain the necessary access rights."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:49
+msgid ""
+"The upgrade has a few preconditions; you should check them before actually "
+"executing the upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:55
+msgid "Inform users in advance"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:57
+msgid ""
+"It's wise to inform all users in advance of any upgrades you're planning, "
+"although users accessing your system via an <command>ssh</command> "
+"connection should notice little during the upgrade, and should be able to "
+"continue working."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:63
+msgid ""
+"If you wish to take extra precautions, back up or unmount users' partitions "
+"(<filename>/home</filename>) before upgrading."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:67
+msgid ""
+"You will probably have to do a kernel upgrade when upgrading to "
+"&releasename;, so a reboot will normally be necessary.  Typically, this will "
+"be done after the upgrade is finished."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:74
+msgid "Prepare for recovery"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:76
+msgid ""
+"Because of the many changes in the kernel between &oldreleasename; and "
+"&releasename; regarding drivers, hardware discovery and the naming and "
+"ordering of device files, there is a real risk that you may experience "
+"problems rebooting your system after the upgrade.  A lot of known potential "
+"issues are documented in this and the next chapters of these Release Notes."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:83
+msgid ""
+"For that reason it makes sense to ensure that you will be able to recover if "
+"your system should fail to reboot or, for remotely managed systems, fail to "
+"bring up networking."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:88
+msgid ""
+"If you are upgrading remotely via an <command>ssh</command> link it is "
+"highly recommended that you take the necessary precautions to be able to "
+"access the server through a remote serial terminal.  There is a chance that, "
+"after upgrading the kernel and rebooting, some devices will be renamed (as "
+"described in <xref linkend=\"device-reorder\"/> ) and you will have to fix "
+"the system configuration through a local console.  Also, if the system is "
+"rebooted accidentally in the middle of an upgrade there is a chance you will "
+"need to recover using a local console."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:98
+msgid ""
+"The most obvious thing to try first is to reboot with your old kernel.  "
+"However, for various reasons documented elsewhere in this document, this is "
+"not guaranteed to work."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:103
+msgid ""
+"If that fails, you will need an alternative way to boot your system so you "
+"can access and repair it.  One option is to use a special rescue image or a "
+"Linux live CD.  After booting from that, you should be able to mount your "
+"root file system and <literal>chroot</literal> into it to investigate and "
+"fix the problem."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:110
+msgid ""
+"Another option we'd like to recommend is to use the <emphasis>rescue mode</"
+"emphasis> of the &releasename; Debian Installer.  The advantage of using the "
+"installer is that you can choose between its many installation methods for "
+"one that best suits your situation.  For more information, please consult "
+"the section Recovering a Broken System in chapter 8 of the <ulink url="
+"\"http://www.debian.org/releases/stable/installmanual\">Installation Guide</"
+"ulink> and the <ulink url=\"http://wiki.debian.org/DebianInstaller/FAQ"
+"\">Debian Installer FAQ</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><title>
+#: en/upgrading.dbk:120
+msgid "Debug shell during boot using initrd"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para><footnote>
+#: en/upgrading.dbk:122
+msgid ""
+"The <systemitem role=\"package\">initramfs-tools</systemitem> includes a "
+"debug shell<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para><footnote><para>
+#: en/upgrading.dbk:123
+msgid ""
+"This feature can be disabled by adding the parameter <literal>panic=0</"
+"literal> to your boot parameters."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:124
+msgid ""
+"</footnote> in the initrds it generates.  If for example the initrd is "
+"unable to mount your root file system, you will be dropped into this debug "
+"shell which has basic commands available to help trace the problem and "
+"possibly fix it."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:130
+msgid ""
+"Basic things to check are: presence of correct device files in <filename>/"
+"dev</filename>; what modules are loaded (<literal>cat /proc/modules</"
+"literal>); output of <command>dmesg</command> for errors loading drivers.  "
+"The output of <command>dmesg</command> will also show what device files have "
+"been assigned to which disks; you should check that against the output of "
+"<literal>echo $ROOT</literal> to make sure that the root file system is on "
+"the expected device."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:139
+msgid ""
+"If you do manage to fix the problem, typing <literal>exit</literal> will "
+"quit the debug shell and continue the boot process at the point it failed.  "
+"Of course you will also need to fix the underlying problem and regenerate "
+"the initrd so the next boot won't fail again."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:149
+msgid "Prepare a safe environment for the upgrade"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:151
+msgid ""
+"The distribution upgrade should be done either locally from a textmode "
+"virtual console (or a directly connected serial terminal), or remotely via "
+"an <command>ssh</command> link."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:156
+msgid ""
+"In order to gain extra safety margin when upgrading remotely, we suggest "
+"that you run upgrade processes in the virtual console provided by the "
+"<command>screen</command> program, which enables safe reconnection and "
+"ensures the upgrade process is not interrupted even if the remote connection "
+"process fails."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:163
+msgid ""
+"<emphasis role=\"strong\">Important!</emphasis> You should <emphasis>not</"
+"emphasis> upgrade using <command>telnet</command>, <command>rlogin</"
+"command>, <command>rsh</command>, or from an X session managed by "
+"<command>xdm</command>, <command>gdm</command> or <command>kdm</command> etc "
+"on the machine you are upgrading.  That is because each of those services "
+"may well be terminated during the upgrade, which can result in an "
+"<emphasis>inaccessible</emphasis> system that is only half-upgraded."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:177
+msgid "Support for 2.2-kernels has been dropped"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:179
+msgid ""
+"In case you run a kernel prior to 2.4.1, you need to upgrade to (at least) "
+"the 2.4-series before upgrading <systemitem role=\"package\">glibc</"
+"systemitem>.  This should be done before starting the upgrade.  It is "
+"recommended that you directly upgrade to the 2.6.8 kernel available in "
+"&oldreleasename;, instead of upgrading to a 2.4 kernel."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:190
+msgid "Checking system status"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:192
+msgid ""
+"The upgrade process described in this chapter has been designed for upgrades "
+"from pure &oldreleasename; systems without third-party packages.  In "
+"particular, there are known problems with third-party packages which install "
+"programs under <filename>/usr/X11R6/bin/</filename> causing problems with "
+"upgrades due to the X.Org transition (<xref linkend=\"xorg\"/> ).  For "
+"greatest reliability of the upgrade process, you may wish to remove third-"
+"party packages from your system before you begin upgrading."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:201
+msgid ""
+"This procedure also assumes your system has been updated to the latest point "
+"release of &oldreleasename;.  If you have not done this or are unsure, "
+"follow the instructions in <xref linkend=\"old-upgrade\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:206
+msgid "Review actions pending in package manager"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:208
+msgid ""
+"In some cases, the use of <command>apt-get</command> for installing packages "
+"instead of <command>aptitude</command> might make <command>aptitude</"
+"command> consider a package as unused and schedule it for removal.  In "
+"general, you should make sure the system is fully up-to-date and clean "
+"before proceeding with the upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:215
+msgid ""
+"Because of this you should review if there are any pending actions in the "
+"package manager <command>aptitude</command>.  If a package is scheduled for "
+"removal or update in the package manager, it might negatively impact the "
+"upgrade procedure.  Note that correcting this is only possible if your "
+"<filename>sources.list</filename> still points to <emphasis>&oldreleasename;"
+"</emphasis>; and not to <emphasis>stable</emphasis> or "
+"<emphasis>&releasename;</emphasis>; see <xref linkend=\"old-sources\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:224
+msgid ""
+"To do this, you have to run <command>aptitude</command>'s user interface and "
+"press 'g' (Go).  If it shows any actions, you should review them and either "
+"fix them or implement the suggested actions.  If no actions are suggested "
+"you will be presented with a message saying No packages are scheduled to be "
+"installed, removed, or upgraded."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:233
+msgid "Disabling APT pinning"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:235
+msgid ""
+"If you have configured APT to install certain packages from a distribution "
+"other than stable (e.g.  from testing), you may have to change your APT "
+"pinning configuration (stored in <filename>/etc/apt/preferences</filename>) "
+"to allow the upgrade of packages to the versions in the new stable release.  "
+"Further information on APT pinning can be found in <citerefentry> "
+"<refentrytitle>apt_preferences</refentrytitle> <manvolnum>5</manvolnum> </"
+"citerefentry>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:246
+msgid "Checking packages status"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:248
+msgid ""
+"Regardless of the method used for upgrading, it is recommended that you "
+"check the status of all packages first, and verify that all packages are in "
+"an upgradable state.  The following command will show any packages which "
+"have a status of Half-Installed or Failed-Config, and those with any error "
+"status."
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:253
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg --audit\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:257
+msgid ""
+"You could also inspect the state of all packages on your system using "
+"<command>dselect</command>, <command>aptitude</command>, or with commands "
+"such as"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:261
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg -l | pager\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:265
+msgid "or"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:267
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg --get-selections * &gt; ~/curr-pkgs.txt\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:271
+msgid ""
+"It is desirable to remove any holds before upgrading.  If any package that "
+"is essential for the upgrade is on hold, the upgrade will fail."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:275
+msgid ""
+"Note that <command>aptitude</command> uses a different method for "
+"registering packages that are on hold than <command>apt-get</command> and "
+"<command>dselect</command>.  You can identify packages on hold for "
+"<command>aptitude</command> with"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:280
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude search ~ahold | grep ^.h\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:284
+msgid ""
+"If you want to check which packages you had on hold for <command>apt-get</"
+"command>, you should use"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:287
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg --get-selections | grep hold\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:291
+msgid ""
+"If you changed and recompiled a package locally, and didn't rename it or put "
+"an epoch in the version, you must put it on hold to prevent it from being "
+"upgraded."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:296
+msgid ""
+"The hold package state for <command>aptitude</command> can be changed using:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:298
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude hold <replaceable>package_name</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:302
+msgid ""
+"Replace <literal>hold</literal> with <literal>unhold</literal> to unset the "
+"hold state."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:306
+msgid ""
+"If there is anything you need to fix, it is best to make sure your "
+"<filename>sources.list</filename> still refers to &oldreleasename; as "
+"explained in <xref linkend=\"old-sources\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:313
+msgid "Unofficial sources and backports"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:315
+msgid ""
+"If you have any non-Debian packages on your system, you should be aware that "
+"these may be removed during the upgrade because of conflicting "
+"dependencies.  If these packages were installed by adding an extra package "
+"archive in your <filename>/etc/apt/sources.list</filename>, you should check "
+"if that archive also offers packages compiled for &releasename; and change "
+"the source line accordingly at the same time as your source lines for Debian "
+"packages."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/upgrading.dbk:323
+msgid ""
+"Some users may have unofficial backported newer versions of packages that "
+"<emphasis>are</emphasis> in Debian installed on their &oldreleasename; "
+"system.  Such packages are most likely to cause problems during an upgrade "
+"as they may result in file conflicts<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/upgrading.dbk:326
+msgid ""
+"Debian's package management system normally does not allow a package to "
+"remove or replace a file owned by another package unless it has been defined "
+"to replace that package."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:328
+msgid ""
+"</footnote>.  Section <xref linkend=\"trouble\"/> has some information on "
+"how to deal with file conflicts if they should occur."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:337
+msgid "Manually unmarking packages"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:339
+msgid ""
+"To prevent <command>aptitude</command> from removing some packages that were "
+"pulled in through dependencies, you need to manually unmark them as "
+"<emphasis>auto</emphasis> packages.  This includes OpenOffice and Vim for "
+"desktop installs:"
+msgstr ""
+
+# type: Content of: <chapter><section><screen>
+#: en/upgrading.dbk:344
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude unmarkauto openoffice.org vim\n"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:348
+msgid ""
+"And 2.6 kernel images if you have installed them using a kernel metapackage:"
+msgstr ""
+
+# type: Content of: <chapter><section><screen>
+#: en/upgrading.dbk:350
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude unmarkauto $(dpkg-query -W 'kernel-image-2.6.*' | cut -f1)\n"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:354
+msgid ""
+"Note: You can review which packages are marked as <emphasis>auto</emphasis> "
+"in aptitude by running:"
+msgstr ""
+
+# type: Content of: <chapter><section><screen>
+#: en/upgrading.dbk:357
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude search 'i~M &lt;package name&gt;'\n"
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:363
+msgid "Preparing sources for APT"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:365
+msgid ""
+"Before starting the upgrade you must set up <systemitem role=\"package"
+"\">apt</systemitem>'s configuration file for package lists, <filename>/etc/"
+"apt/sources.list</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:370
+msgid ""
+"<systemitem role=\"package\">apt</systemitem> will consider all packages "
+"that can be found via any <literal>deb</literal> line, and install the "
+"package with the highest version number, giving priority to the first "
+"mentioned lines (that way, in case of multiple mirror locations, you'd "
+"typically first name a local harddisk, then CD-ROMs, and then HTTP/FTP "
+"mirrors)."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:377
+msgid ""
+"A release can often be referred to by both its codename (e.g.  "
+"&oldreleasename;, &releasename;) and by its status name (i.e.  oldstable, "
+"stable, testing, unstable).  Referring to a release by its codename has the "
+"advantage that you will never be surprised by a new release and for this "
+"reason is the approach taken here.  It does of course mean that you will "
+"have to watch out for release announcements yourself.  If you use the status "
+"name instead, you will just see loads of updates for packages available as "
+"soon as a release has happened."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:386
+msgid "Adding APT Internet sources"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:388
+msgid ""
+"The default configuration is set up for installation from main Debian "
+"Internet servers, but you may wish to modify <filename>/etc/apt/sources."
+"list</filename> to use other mirrors, preferably a mirror that is network-"
+"wise closest to you."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:393
+msgid ""
+"Debian HTTP or FTP mirror addresses can be found at <ulink url=\"http://www."
+"debian.org/distrib/ftplist\"></ulink> (look at the Full list of mirrors "
+"section).  HTTP mirrors are generally speedier than FTP mirrors."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:398
+msgid ""
+"For example, suppose your closest Debian mirror is <literal>http://mirrors."
+"kernel.org/debian/</literal>.  When inspecting that mirror with a web "
+"browser or FTP program, you will notice that the main directories are "
+"organized like this:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:403
+#, no-wrap
+msgid ""
+"\n"
+"http://mirrors.kernel.org/debian/dists/&releasename;/main/binary-i386/...\n"
+"http://mirrors.kernel.org/debian/dists/&releasename;/contrib/binary-i386/...\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:408
+msgid ""
+"To use this mirror with <command>apt</command>, you add this line to your "
+"<filename>sources.list</filename> file:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:411
+#, no-wrap
+msgid ""
+"\n"
+"deb http://mirrors.kernel.org/debian &releasename; main contrib\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:415 en/upgrading.dbk:448
+msgid ""
+"Note that the `<literal>dists</literal>' is added implicitly, and the "
+"arguments after the release name are used to expand the path into multiple "
+"directories."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:419 en/upgrading.dbk:452
+msgid ""
+"After adding your new sources, disable the previously existing <literal>deb</"
+"literal> lines in <filename>sources.list</filename> by placing a hash sign "
+"(<literal>#</literal>) in front of them."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:426
+msgid "Adding APT sources for a local mirror"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:428
+msgid ""
+"Instead of using HTTP or FTP packages mirrors, you may wish to modify "
+"<filename>/etc/apt/sources.list</filename> to use a mirror on a local disk "
+"(possibly mounted over NFS)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:433
+msgid ""
+"For example, your packages mirror may be under <filename>/var/ftp/debian/</"
+"filename>, and have main directories like this:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:436
+#, no-wrap
+msgid ""
+"\n"
+"/var/ftp/debian/dists/&releasename;/main/binary-i386/...\n"
+"/var/ftp/debian/dists/&releasename;/contrib/binary-i386/...\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:441
+msgid ""
+"To use this with <command>apt</command>, add this line to your "
+"<filename>sources.list</filename> file:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:444
+#, no-wrap
+msgid ""
+"\n"
+"deb file:/var/ftp/debian &releasename; main contrib\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:459
+msgid "Adding APT source from CD-ROM or DVD"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:461
+msgid ""
+"If you want to use CDs <emphasis>only</emphasis>, comment out the existing "
+"<literal>deb</literal> lines in <filename>/etc/apt/sources.list</filename> "
+"by placing a hash sign (<literal>#</literal>) in front of them."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:466
+msgid ""
+"Make sure there is a line in <filename>/etc/fstab</filename> that enables "
+"mounting your CD-ROM drive at the <filename>/cdrom</filename> mount point "
+"(the exact <filename>/cdrom</filename> mount point is required for "
+"<command>apt-cdrom</command>).  For example, if <filename>/dev/hdc</"
+"filename> is your CD-ROM drive, <filename>/etc/fstab</filename> should "
+"contain a line like:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:473
+#, no-wrap
+msgid ""
+"\n"
+"/dev/hdc /cdrom auto defaults,noauto,ro 0 0\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:477
+msgid ""
+"Note that there must be <emphasis>no spaces</emphasis> between the words "
+"<literal>defaults,noauto,ro</literal> in the fourth field."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:481
+msgid "To verify it works, insert a CD and try running"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:483
+#, no-wrap
+msgid ""
+"\n"
+"# mount /cdrom    # this will mount the CD to the mount point\n"
+"# ls -alF /cdrom  # this should show the CD's root directory\n"
+"# umount /cdrom   # this will unmount the CD\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:489
+msgid "Next, run:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:491
+#, no-wrap
+msgid ""
+"\n"
+"# apt-cdrom add\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:495
+msgid ""
+"for each Debian Binary CD-ROM you have, to add the data about each CD to "
+"APT's database."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:503
+msgid "Upgrading packages"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:505
+msgid ""
+"The recommended way to upgrade from previous &debian; releases is to use the "
+"package management tool <command>aptitude</command>.  This program makes "
+"safer decisions about package installations than running <command>apt-get</"
+"command> directly."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:511
+msgid ""
+"Don't forget to mount all needed partitions (notably the root and <filename>/"
+"usr</filename> partitions) read-write, with a command like:"
+msgstr ""
+
+# type: Content of: <chapter><section><screen>
+#: en/upgrading.dbk:514
+#, no-wrap
+msgid ""
+"\n"
+"# mount -o remount,rw /<replaceable>mountpoint</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:518
+msgid ""
+"Next you should double-check that the APT source entries (in <filename>/etc/"
+"apt/sources.list</filename>) refer either to <literal>&releasename;</"
+"literal> or to <literal>stable</literal>.  There should not be any sources "
+"entries pointing to &oldreleasename;.  Note: source lines for a CD-ROM will "
+"often refer to <literal>unstable</literal>; although this may be confusing, "
+"you should <emphasis>not</emphasis> change it."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:526
+msgid "Recording the session"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:528
+msgid ""
+"It is strongly recommended that you use the <command>/usr/bin/script</"
+"command> program to record a transcript of the upgrade session.  Then if a "
+"problem occurs, you will have a log of what happened, and if needed, can "
+"provide exact information in a bug report.  To start the recording, type:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:533
+#, no-wrap
+msgid ""
+"\n"
+"# script -t 2&gt;~/upgrade-&releasename;.time -a ~/upgrade-&releasename;.script\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:537
+msgid ""
+"or similar.  Do not put the typescript file in a temporary directory such as "
+"<filename>/tmp</filename> or <filename>/var/tmp</filename> (files in those "
+"directories may be deleted during the upgrade or during any restart)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:542
+msgid ""
+"The typescript will also allow you to review information that has scrolled "
+"off-screen.  Just switch to VT2 (using <literal>Alt-F2</literal>) and, after "
+"logging in, use <literal>less -R ~root/upgrade-&releasename;.script</"
+"literal> to view the file."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:548
+msgid ""
+"After you have completed the upgrade, you can stop <command>script</command> "
+"by typing <literal>exit</literal> at the prompt."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:554
+msgid ""
+"If you have used the <emphasis>-t</emphasis> switch for <command>script</"
+"command> you can use the <command>scriptreplay</command> program to replay "
+"the whole session:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:558
+#, no-wrap
+msgid ""
+"\n"
+"# scriptreplay ~/upgrade-&releasename;.time ~/upgrade-&releasename;.script\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:564
+msgid "Updating the package list"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:566
+msgid ""
+"First the list of available packages for the new release needs to be "
+"fetched.  This is done by executing:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:569 en/upgrading.dbk:893
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude update\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:573
+msgid ""
+"Running this the first time new sources are updated will print out some "
+"warnings related to the availability of the sources.  These warnings are "
+"harmless and will not appear if you rerun the command again."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:580
+msgid "Make sure you have sufficient space for the upgrade"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:582
+msgid ""
+"You have to make sure before upgrading your system that you have sufficient "
+"hard disk space when you start the full system upgrade described in <xref "
+"linkend=\"upgrading-other\"/> .  First, any package needed for installation "
+"that is fetched from the network is stored in <filename>/var/cache/apt/"
+"archives</filename> (and the <filename>partial/</filename> subdirectory, "
+"during download), so you must make sure you have enough space on the file "
+"system partition that holds <filename>/var/</filename> to temporarily "
+"download the packages that will be installed in your system.  After the "
+"download, you will probably need more space in other file system partitions "
+"in order to both install upgraded packages (which might contain bigger "
+"binaries or more data) and new packages that will be pulled in for the "
+"upgrade.  If your system does not have sufficient space you might end up "
+"with an incomplete upgrade that might be difficult to recover from."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:598
+msgid ""
+"Both <command>aptitude</command> and <command>apt</command> will show you "
+"detailed information of the disk space needed for the installation.  Before "
+"executing the upgrade, you can see this estimate by running:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:602
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude -y -s -f --with-recommends dist-upgrade\n"
+"[ ... ]\n"
+"XXX upgraded, XXX newly installed, XXX to remove and XXX not upgraded.\n"
+"Need to get xx.xMB/yyyMB of archives. After unpacking AAAMB will be used.\n"
+"Would download/install/remove packages.\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/upgrading.dbk:610
+msgid "<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/upgrading.dbk:610
+msgid ""
+"Running this command at the beginning of the upgrade process may give an "
+"error, for the reasons described in the next sections.  In that case you "
+"will need to wait until you've done the minimal system upgrade as in <xref "
+"linkend=\"minimal-upgrade\"/> and upgraded your kernel as in <xref linkend="
+"\"upgrading-kernel\"/> before running this command to estimate the disk "
+"space."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:615 en/upgrading.dbk:784
+msgid "</footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:618
+msgid ""
+"If you do not have enough space for the upgrade, make sure you free up space "
+"beforehand.  You can:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:624
+msgid ""
+"Remove packages that have been previously downloaded for installation (at "
+"<filename>/var/cache/apt/archive</filename>).  Cleaning up the package cache "
+"by running <command>apt-get clean</command> or <command>aptitude clean</"
+"command> will remove all previously downloaded package files."
+msgstr ""
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:632
+msgid ""
+"Remove old packages you no longer use.  If you have <command>popularity-"
+"contest</command> installed, you can use <command>popcon-largest-unused</"
+"command> to list the packages you do not use in the system that occupy the "
+"most space.  You can also use <command>deborphan</command> or "
+"<command>debfoster</command> to find obsolete packages (see <xref linkend="
+"\"obsolete\"/> ).  Alternatively you can start <command>aptitude</command> "
+"in visual mode and find obsolete packages under Obsolete and Locally Created "
+"Packages."
+msgstr ""
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:644
+msgid ""
+"Remove packages taking up too much space, which are not currently needed "
+"(you can always reinstall them after the upgrade).  You can list the "
+"packages that take up most of the disk space with <command>dpigs</command> "
+"(available in the <systemitem role=\"package\">debian-goodies</systemitem> "
+"package) or with <command>wajig</command> (running <literal>wajig size</"
+"literal>)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:662
+msgid ""
+"Temporarily move to another system, or permanently remove, system logs "
+"residing under <filename>/var/log/</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:668
+msgid ""
+"Note that in order to safely remove packages, it is advisable to switch your "
+"<filename>sources.list</filename> back to &oldreleasename; as described in "
+"<xref linkend=\"old-sources\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:675
+msgid "Minimal system upgrade"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:677
+msgid ""
+"Because of certain necessary package conflicts between &oldreleasename; and "
+"&releasename;, running <literal>aptitude dist-upgrade</literal> directly "
+"will often remove large numbers of packages that you will want to keep.  We "
+"therefore recommend a two-part upgrade process, first a minimal upgrade to "
+"overcome these conflicts, then a full <literal>dist-upgrade</literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:684
+msgid "First, run:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:686
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude upgrade\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:690
+msgid ""
+"This has the effect of upgrading those packages which can be upgraded "
+"without requiring any other packages to be removed or installed."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:694
+msgid "Follow the minimal upgrade with:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:696
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install initrd-tools\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:700
+msgid ""
+"This step will automatically upgrade <systemitem role=\"package\">libc6</"
+"systemitem> and <systemitem role=\"package\">locales</systemitem> and will "
+"pull in SELinux support libraries (<systemitem role=\"package\">libselinux1</"
+"systemitem>).  At this point, some running services will be restarted, "
+"including <command>xdm</command>, <command>gdm</command> and <command>kdm</"
+"command>.  As a consequence, local X11 sessions will be disconnected."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:709
+msgid ""
+"The next step will vary depending on the set of packages that you have "
+"installed.  These release notes give general advice about which method "
+"should be used, but if in doubt, it is recommended that you examine the "
+"package removals proposed by each method before proceeding."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:715
+msgid ""
+"Some common packages that are expected to be removed include <systemitem "
+"role=\"package\">base-config</systemitem>, <systemitem role=\"package"
+"\">hotplug</systemitem>, <systemitem role=\"package\">xlibs</systemitem>, "
+"<systemitem role=\"package\">netkit-inetd</systemitem>, <systemitem role="
+"\"package\">python2.3</systemitem>, <systemitem role=\"package\">xfree86-"
+"common</systemitem>, and <systemitem role=\"package\">xserver-common</"
+"systemitem>.  For a more complete list of packages obsoleted in "
+"&releasename;, see <xref linkend=\"obsolete\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><title>
+#: en/upgrading.dbk:726
+msgid "Upgrading a desktop system"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:728
+msgid ""
+"This upgrade path has been verified to work on systems with the "
+"&oldreleasename; <literal>desktop</literal> task installed.  It is probably "
+"the method that will give the best results on systems with the "
+"<literal>desktop</literal> task installed, or with the <literal>gnome</"
+"literal> or <literal>kde</literal> packages installed."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:735
+msgid ""
+"It is probably <emphasis>not</emphasis> the correct method to use if you do "
+"not already have the <systemitem role=\"package\">libfam0c102</systemitem> "
+"and <systemitem role=\"package\">xlibmesa-glu</systemitem> packages "
+"installed:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><screen>
+#: en/upgrading.dbk:739 en/upgrading.dbk:771
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg -l libfam0c102 | grep ^ii\n"
+"# dpkg -l xlibmesa-glu | grep ^ii\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:744
+msgid "If you do have a full desktop system installed, run:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><screen>
+#: en/upgrading.dbk:746
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install libfam0 xlibmesa-glu\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><title>
+#: en/upgrading.dbk:752
+msgid "Upgrading a system with some X packages installed"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:754
+msgid ""
+"Systems with some X packages installed, but not the full <literal>desktop</"
+"literal> task, require a different method.  This method applies in general "
+"to systems with <systemitem role=\"package\">xfree86-common</systemitem> "
+"installed, including some server systems which have <systemitem role="
+"\"package\">tasksel</systemitem> server tasks installed as some of these "
+"tasks include graphical management tools.  It is likely the correct method "
+"to use on systems which run X, but do not have the full <literal>desktop</"
+"literal> task installed."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><screen>
+#: en/upgrading.dbk:763
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg -l xfree86-common | grep ^ii\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:767
+msgid ""
+"First, check whether you have the <systemitem role=\"package\">libfam0c102</"
+"systemitem> and <systemitem role=\"package\">xlibmesa-glu</systemitem> "
+"packages installed."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para><footnote>
+#: en/upgrading.dbk:776
+msgid ""
+"If you do not have <systemitem role=\"package\">libfam0c102</systemitem> "
+"installed, do not include <systemitem role=\"package\">libfam0</systemitem> "
+"in the following commandline.  If you do not have <systemitem role=\"package"
+"\">xlibmesa-glu</systemitem> installed, do not include it in the following "
+"commandline.  <footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para><footnote><para>
+#: en/upgrading.dbk:780
+msgid ""
+"This command will determine whether you need libfam0 and xlibmesa-glu "
+"installed, and auto-select them for you:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para><footnote><screen>
+#: en/upgrading.dbk:782
+#, no-wrap
+msgid ""
+" # aptitude install x11-common \\ $(dpkg-query --showformat\n"
+"'${Package} ${Status}\\n' -W libfam0c102 xlibmesa-glu \\ | grep 'ok installed$' |\n"
+"sed -e's/ .*//; s/c102//') "
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><screen>
+#: en/upgrading.dbk:786
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install x11-common <replaceable>libfam0</replaceable> <replaceable>xlibmesa-glu</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:790
+msgid ""
+"Note that installing <systemitem role=\"package\">libfam0</systemitem> will "
+"also install the File Alteration Monitor (<systemitem role=\"package\">fam</"
+"systemitem>) as well as the RPC portmapper (<systemitem role=\"package"
+"\">portmap</systemitem>) if not already available in your system.  Both "
+"packages will enable a new network service in the system although they can "
+"both be configured to be bound to the (internal) loopback network device."
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><title>
+#: en/upgrading.dbk:800
+msgid "Upgrading a system with no X support installed"
+msgstr ""
+
+# type: Content of: <chapter><section><section><section><para>
+#: en/upgrading.dbk:802
+msgid ""
+"On a system with no X, no additional <literal>aptitude install</literal> "
+"command should be required, and you can move on to the next step."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:810
+msgid "Upgrading the kernel"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:812
+msgid ""
+"The <systemitem role=\"package\">udev</systemitem> version in &releasename; "
+"does not support kernel versions earlier than 2.6.15 (which includes "
+"&oldreleasename; 2.6.8 kernels), and the <systemitem role=\"package\">udev</"
+"systemitem> version in &oldreleasename; will not work properly with the "
+"latest kernels.  In addition, installing the &releasename; version of "
+"<systemitem role=\"package\">udev</systemitem> will force the removal of "
+"<systemitem role=\"package\">hotplug</systemitem>, used by Linux 2.4 kernels."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:821
+msgid ""
+"As a consequence, the previous kernel package will probably not boot "
+"properly after this upgrade.  Similarly, there is a time window during the "
+"upgrade in which <systemitem role=\"package\">udev</systemitem> has been "
+"upgraded but the latest kernel has not been installed.  If the system were "
+"to be rebooted at this point, in the middle of the upgrade, it might not be "
+"bootable because of drivers not being properly detected and loaded.  (See "
+"<xref linkend=\"upgrade-preparations\"/> for recommendations on preparing "
+"for this possibility if you are upgrading remotely.)"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:831
+msgid ""
+"Unless your system has the <literal>desktop</literal> task installed, or "
+"other packages that would cause an unacceptable number of package removals, "
+"it is therefore recommended that you upgrade the kernel on its own at this "
+"point."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:836
+msgid "To proceed with this kernel upgrade, run:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:838
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install linux-image-2.6-<replaceable>flavor</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:842
+msgid ""
+"See <xref linkend=\"kernel-metapackage\"/> for help in determining which "
+"flavor of kernel package you should install."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:846
+msgid ""
+"In the desktop case, it is unfortunately not possible to ensure the new "
+"kernel package is installed immediately after the new <systemitem role="
+"\"package\">udev</systemitem> is installed, so there is a window of unknown "
+"length when your system will have no kernel installed with full hotplug "
+"support.  See <xref linkend=\"newkernel\"/> for information on configuring "
+"your system to not depend on hotplug for booting."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:856
+msgid "Upgrading the rest of the system"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:858
+msgid ""
+"You are now ready to continue with the main part of the upgrade.  Execute:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:860
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude dist-upgrade\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:864
+msgid ""
+"This will perform a complete upgrade of the system, i.e.  install the newest "
+"available versions of all packages, and resolve all possible dependency "
+"changes between packages in different releases.  If necessary, it will "
+"install some new packages (usually new library versions, or renamed "
+"packages), and remove any conflicting obsoleted packages."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:871
+msgid ""
+"When upgrading from a set of CD-ROMs, you will be asked to insert specific "
+"CDs at several points during the upgrade.  You might have to insert the same "
+"CD multiple times; this is due to inter-related packages that have been "
+"spread out over the CDs."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:877
+msgid ""
+"New versions of currently installed packages that cannot be upgraded without "
+"changing the install status of another package will be left at their current "
+"version (displayed as held back).  This can be resolved by either using "
+"<command>aptitude</command> to choose these packages for installation or by "
+"trying <literal>aptitude -f install <replaceable>package</replaceable></"
+"literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:887
+msgid "Getting package signatures"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:889
+msgid ""
+"After the upgrade, with the new version of <command>apt</command> you can "
+"now update your package information, which will include the new package "
+"signature checking mechanism:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:897
+msgid ""
+"The upgrade will have already retrieved and enabled the signing keys for "
+"Debian's package archives.  If you add other (unofficial) package sources, "
+"<command>apt</command> will print warnings related to its inability to "
+"confirm that packages downloaded from them are legitimate and have not been "
+"tampered with.  For more information please see <xref linkend=\"pkgmgmt\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:904
+msgid ""
+"You will notice that, since you are using the new version of <command>apt</"
+"command>, it will download package differences files (<literal>pdiff</"
+"literal>) instead of the full package index list.  For more information on "
+"this feature please read <xref linkend=\"apt-pdiff\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:912
+msgid "Possible issues during upgrade"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:914
+msgid ""
+"If an operation using <command>aptitude</command>, <command>apt-get</"
+"command>, or <command>dpkg</command> fails with the error"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:917
+#, no-wrap
+msgid ""
+"\n"
+"E: Dynamic MMap ran out of room\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:921
+msgid ""
+"the default cache space is insufficient.  You can solve this by either "
+"removing or commenting lines you don't need in <filename>/etc/apt/sources."
+"list</filename> or by increasing the cache size.  The cache size can be "
+"increased by setting <literal>APT::Cache-Limit</literal> in <filename>/etc/"
+"apt/apt.conf</filename>.  The following command will set it to a value that "
+"should be sufficient for the upgrade:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:928
+#, no-wrap
+msgid ""
+"\n"
+"# echo 'APT::Cache-Limit 12500000;' &gt;&gt; /etc/apt/apt.conf\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:932
+msgid "This assumes that you do not yet have this variable set in that file."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:935
+msgid ""
+"Sometimes it's necessary to enable the <literal>APT::Force-LoopBreak</"
+"literal> option in APT to be able to temporarily remove an essential package "
+"due to a Conflicts/Pre-Depends loop.  <command>aptitude</command> will alert "
+"you of this and abort the upgrade.  You can work around that by specifying "
+"<literal>-o APT::Force-LoopBreak=1</literal> option on <command>aptitude</"
+"command> command line."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:943
+msgid ""
+"It is possible that a system's dependency structure can be so corrupt as to "
+"require manual intervention.  Usually this means using <command>aptitude</"
+"command> or"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:947
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg --remove <replaceable>package_name</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:951
+msgid "to eliminate some of the offending packages, or"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:953
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude -f install\n"
+"# dpkg --configure --pending\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:958
+msgid ""
+"In extreme cases you might have to force re-installation with a command like"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:960
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg --install <replaceable>/path/to/package_name.deb</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:964
+msgid ""
+"File conflicts should not occur if you upgrade from a pure &oldreleasename; "
+"system, but can occur if you have unofficial backports installed.  A file "
+"conflict will result in an error like:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:968
+#, no-wrap
+msgid ""
+"\n"
+"Unpacking <replaceable>&lt;package-foo&gt;</replaceable> (from <replaceable>&lt;package-foo-file&gt;</replaceable>) ...\n"
+"dpkg: error processing <replaceable>&lt;package-foo&gt;</replaceable> (--install):\n"
+" trying to overwrite `<replaceable>&lt;some-file-name&gt;</replaceable>',\n"
+" which is also in package <replaceable>&lt;package-bar&gt;</replaceable>\n"
+"dpkg-deb: subprocess paste killed by signal (Broken pipe)\n"
+" Errors were encountered while processing:\n"
+" <replaceable>&lt;package-foo&gt;</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:978
+msgid ""
+"You can try to solve a file conflict by forcibly removing the package "
+"mentioned on the <emphasis>last</emphasis> line of the error message:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:981
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg -r --force-depends <replaceable>package_name</replaceable>\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:985
+msgid ""
+"After fixing things up, you should be able to resume the upgrade by "
+"repeating the previously described <literal>aptitude</literal> commands."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:989
+msgid ""
+"During the upgrade, you will be asked questions regarding the configuration "
+"or re-configuration of several packages.  When you are asked if any file in "
+"the <filename>/etc/init.d</filename> or <filename>/etc/terminfo</filename> "
+"directories, or the <filename>/etc/manpath.config</filename> file should be "
+"replaced by the package maintainer's version, it's usually necessary to "
+"answer `yes' to ensure system consistency.  You can always revert to the old "
+"versions, since they will be saved with a <literal>.dpkg-old</literal> "
+"extension."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:998
+msgid ""
+"If you're not sure what to do, write down the name of the package or file "
+"and sort things out at a later time.  You can search in the typescript file "
+"to review the information that was on the screen during the upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:1007
+msgid "Upgrading your kernel and related packages"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1009
+msgid ""
+"This section explains how to upgrade your kernel and identifies potential "
+"issues related to this upgrade.  You can either install one of the "
+"<systemitem role=\"package\">linux-image-*</systemitem> packages provided by "
+"Debian, or compile a customized kernel from source."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1015
+msgid ""
+"Note that a lot of information in this section is based on the assumption "
+"that you will be using one of the modular Debian kernels, together with "
+"<systemitem role=\"package\">initramfs-tools</systemitem> and <systemitem "
+"role=\"package\">udev</systemitem>.  If you choose to use a custom kernel "
+"that does not require an initrd or if you use a different initrd generator, "
+"some of the information may not be relevant for you."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1023
+msgid ""
+"Note also that if <systemitem role=\"package\">udev</systemitem> is "
+"<emphasis>not</emphasis> installed on your system, it is still possible to "
+"use <systemitem role=\"package\">hotplug</systemitem> for hardware discovery."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1028
+msgid ""
+"If you are currently using a 2.4 kernel, you should also read <xref linkend="
+"\"upgrade-to-2.6\"/> carefully."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1032
+msgid "Installing the kernel metapackage"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1034
+msgid ""
+"When you dist-upgrade from &oldreleasename; to &releasename;, it is strongly "
+"recommended that you install a new linux-image-2.6-* metapackage.  This "
+"package may be installed automatically by the dist-upgrade process.  You can "
+"verify this by running:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:1038
+#, no-wrap
+msgid ""
+"\n"
+"# dpkg -l linux-image* | grep ^ii\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1042
+msgid ""
+"If you do not see any output, then you will need to install a new linux-"
+"image package by hand.  To see a list of available linux-image-2.6 "
+"metapackages, run:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:1045
+#, no-wrap
+msgid ""
+"\n"
+"# apt-cache search linux-image-2.6- | grep -v transition\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1049
+msgid ""
+"If you are unsure about which package to select, run <literal>uname -r</"
+"literal> and look for a package with a similar name.  For example, if you "
+"see '2.4.27-3-686', it is recommended that you install <systemitem role="
+"\"package\">linux-image-2.6-686</systemitem>.  (Note that the 386 flavor no "
+"longer exists; if you are currently using the 386 kernel flavor, you should "
+"install the 486 flavor instead.) You may also use <command>apt-cache</"
+"command> to see a long description of each package in order to help choose "
+"the best one available.  For example:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:1058
+#, no-wrap
+msgid ""
+"\n"
+"# apt-cache show linux-image-2.6-686\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1062
+msgid ""
+"You should then use <literal>aptitude install</literal> to install it.  Once "
+"this new kernel is installed you should reboot at the next available "
+"opportunity to get the benefits provided by the new kernel version."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1067
+msgid ""
+"For the more adventurous there is an easy way to compile your own custom "
+"kernel on &debian;.  Install the <systemitem role=\"package\">kernel-"
+"package</systemitem> tool and read the documentation in <filename>/usr/share/"
+"doc/kernel-package</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1075
+msgid "Upgrading from a 2.6 kernel"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1077
+msgid ""
+"If you are currently running a 2.6 series kernel from &oldreleasename; this "
+"upgrade will take place automatically after you do a full upgrade of the "
+"system packages (as described in <xref linkend=\"upgradingpackages\"/> )."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1082
+msgid ""
+"If possible, it is to your advantage to upgrade the kernel package "
+"separately from the main <literal>dist-upgrade</literal> to reduce the "
+"chances of a temporarily non-bootable system.  See <xref linkend=\"upgrading-"
+"kernel\"/> for a description of this process.  Note that this should only be "
+"done after the minimal upgrade process described in <xref linkend=\"minimal-"
+"upgrade\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1089
+msgid ""
+"You can also take this step if you are using your own custom kernel and want "
+"to use the kernel available in &releasename;.  If your kernel version is not "
+"supported by <systemitem role=\"package\">udev</systemitem> then it is "
+"recommended that you upgrade after the minimal upgrade.  If your version is "
+"supported by <systemitem role=\"package\">udev</systemitem> you can safely "
+"wait until after the full system upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1099
+msgid "Upgrading from a 2.4 kernel"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1101
+msgid ""
+"If you have a 2.4 kernel installed, and your system relies on <systemitem "
+"role=\"package\">hotplug</systemitem> for its hardware detection you should "
+"first upgrade to a 2.6 series kernel from &oldreleasename; before attempting "
+"the upgrade.  Make sure that the 2.6 series kernel boots your system and all "
+"your hardware is properly detected before you perform the upgrade.  The "
+"<systemitem role=\"package\">hotplug</systemitem> package is removed from "
+"the system (in favor of <systemitem role=\"package\">udev</systemitem>) when "
+"you do a full system upgrade.  If you do not do the kernel upgrade before "
+"this your system might not boot up properly from this point on.  Once you "
+"have done an upgrade to a 2.6 series kernel in &oldreleasename; you can do a "
+"kernel upgrade as described in <xref linkend=\"upgrade-from-2.6\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/upgrading.dbk:1114
+msgid ""
+"If your system does not rely on <systemitem role=\"package\">hotplug</"
+"systemitem><footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/upgrading.dbk:1115
+msgid ""
+"You can have the kernel modules needed by your system loaded statically "
+"through proper configuration of <filename>/etc/modules</filename>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1117
+msgid ""
+"</footnote> you can delay the kernel upgrade to after you have done a full "
+"system upgrade, as described in <xref linkend=\"upgrading-other\"/> .  Once "
+"your system has been upgraded you can then do the following (changing the "
+"kernel package name to the one most suited to your system by substituting "
+"<emphasis>&lt;flavor&gt;</emphasis>):"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:1123
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install linux-image-2.6-&lt;flavor&gt;\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1129
+msgid "Device enumeration reordering"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1131
+msgid ""
+"&releasename; features a more robust mechanism for hardware discovery than "
+"previous releases.  However, this may cause changes in the order devices are "
+"discovered on your system, affecting the order in which device names are "
+"assigned.  For example, if you have two network adapters that are associated "
+"with two different drivers, the devices eth0 and eth1 refer to may be "
+"swapped.  Please note that the new mechanism means that if you e.g.  "
+"exchange ethernet adapters in a running &releasename; system, the new "
+"adapter will also get a new interface name."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/upgrading.dbk:1140
+msgid ""
+"For network devices, you can avoid this reordering by using <systemitem role="
+"\"package\">udev</systemitem> rules, more specifically, through the "
+"definitions at <filename>/etc/udev/rules.d/z25_persistent-net.rules</"
+"filename><footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/upgrading.dbk:1144
+msgid ""
+"The rules there are automatically generated by the script <filename>/etc/"
+"udev/rules.d/z45_persistent-net-generator.rules</filename> to have "
+"persistent names for network interfaces.  Delete this symlink to disable "
+"persistent device naming for NICs by <systemitem role=\"package\">udev</"
+"systemitem>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1148
+msgid ""
+"</footnote>.  Alternatively you can use the <command>ifrename</command> "
+"utility to bind physical devices to specific names at boot time.  See "
+"<citerefentry> <refentrytitle>ifrename</refentrytitle> <manvolnum>8</"
+"manvolnum> </citerefentry> and <citerefentry> <refentrytitle>iftab</"
+"refentrytitle> <manvolnum>5</manvolnum> </citerefentry> for more "
+"information.  The two alternatives (<systemitem role=\"package\">udev</"
+"systemitem> and <command>ifrename</command>) should not be used at the same "
+"time."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1158
+msgid ""
+"For storage devices, you can avoid this reordering by using <systemitem role="
+"\"package\">initramfs-tools</systemitem> and configuring it to load storage "
+"device driver modules in the same order they are currently loaded.  To do "
+"this, identify the order the storage modules on your system were loaded by "
+"looking at the output of <command>lsmod</command>.  <command>lsmod</command> "
+"lists modules in the reverse order that they were loaded in, i.e., the first "
+"module in the list was the last one loaded.  Note that this will only work "
+"for devices which the kernel enumerates in a stable order (like PCI devices)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1168
+msgid ""
+"However, removing and reloading modules after initial boot will affect this "
+"order.  Also, your kernel may have some drivers linked statically, and these "
+"names will not appear in the output of <command>lsmod</command>.  You may be "
+"able to decipher these driver names and load order from looking at "
+"<filename>/var/log/kern.log</filename>, or the output of <command>dmesg</"
+"command>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1176
+msgid ""
+"Add these module names to <filename>/etc/initramfs-tools/modules</filename> "
+"in the order they should be loaded at boot time.  Some module names may have "
+"changed between &oldreleasename; and &releasename;.  For example, "
+"sym53c8xx_2 has become sym53c8xx."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1181
+msgid ""
+"You will then need to regenerate your initramfs image(s) by executing "
+"<literal>update-initramfs -u -k all</literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1185
+msgid ""
+"Once you are running a &releasename; kernel and <systemitem role=\"package"
+"\">udev</systemitem>, you may reconfigure your system to access disks by an "
+"alias that is not dependent upon driver load order.  These aliases reside in "
+"the <filename>/dev/disk/</filename> hierarchy."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1193
+msgid "Boot timing issues"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1195
+msgid ""
+"If an initrd created with <systemitem role=\"package\">initramfs-tools</"
+"systemitem> is used to boot the system, in some cases the creation of device "
+"files by <systemitem role=\"package\">udev</systemitem> can happen too late "
+"for the boot scripts to act on."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1202
+msgid ""
+"The usual symptoms are that the boot will fail because the root file system "
+"cannot be mounted and you are dropped into a debug shell, but that when you "
+"check afterwards, all devices that are needed are present in <filename>/dev</"
+"filename>.  This has been observed in cases where the root file system is on "
+"a USB disk or on RAID, especially if lilo is used."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1209
+msgid ""
+"A workaround for this issue is to use the boot parameter "
+"<literal>rootdelay=<replaceable>9</replaceable></literal>.  The value for "
+"the timeout (in seconds) may need to be adjusted."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:1218
+msgid "Things to do before rebooting"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1220
+msgid ""
+"When <literal>aptitude dist-upgrade</literal> has finished, the formal "
+"upgrade is complete, but there are some other things that should be taken "
+"care of <emphasis>before</emphasis> the next reboot."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1225
+msgid "Converting from devfs"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1227
+msgid ""
+"Debian kernels no longer include support for <literal>devfs</literal>, so "
+"<literal>devfs</literal> users will need to convert their systems manually "
+"before booting an &releasename; kernel."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1232
+msgid ""
+"If you see the string 'devfs' in <filename>/proc/mounts</filename>, you are "
+"most likely using <literal>devfs</literal>.  Any configuration files that "
+"reference <literal>devfs</literal>-style names will need to be adjusted to "
+"use <systemitem role=\"package\">udev</systemitem>-style names.  Files that "
+"are likely to refer to <literal>devfs</literal>-style device names include "
+"<filename>/etc/fstab</filename>, <filename>/etc/lilo.conf</filename>, "
+"<filename>/boot/grub/menu.lst</filename>, and <filename>/etc/inittab</"
+"filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1242
+msgid ""
+"More information about potential issues is available in bug report <ulink "
+"url=\"http://bugs.debian.org/341152\">#341152</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1248
+msgid "Rerun lilo"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1250
+msgid ""
+"If you are using <systemitem role=\"package\">lilo</systemitem> as your "
+"bootloader (it is the default bootloader for some installations of "
+"&oldreleasename;) it is strongly recommended that you rerun <command>lilo</"
+"command> after the upgrade:"
+msgstr ""
+
+# type: Content of: <chapter><section><section><screen>
+#: en/upgrading.dbk:1254
+#, no-wrap
+msgid ""
+"\n"
+"# /sbin/lilo\n"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1258
+msgid ""
+"Notice this is needed even if you did not upgrade your system's kernel, as "
+"<command>lilo</command>'s second stage will change due to the package "
+"upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1262
+msgid ""
+"Also, review the contents of your <filename>/etc/kernel-img.conf</filename> "
+"and make sure that you have <emphasis>do_bootloader = Yes</emphasis> in it.  "
+"That way the bootloader will always be rerun after a kernel upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1267
+msgid ""
+"If you encounter any issues when running <command>lilo</command>, review the "
+"symbolic links in <filename>/</filename> to <filename>vmlinuz</filename> and "
+"<filename>initrd</filename> and the contents of your <filename>/etc/lilo."
+"conf</filename> for discrepancies."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/upgrading.dbk:1273
+msgid ""
+"If you forgot to rerun <command>lilo</command> before the reboot or the "
+"system is accidentally rebooted before you could do this manually, your "
+"system might fail to boot.  Instead of the lilo prompt, you will only see "
+"<emphasis>LI</emphasis> when booting the system<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/upgrading.dbk:1276
+msgid ""
+"For more information on <command>lilo</command>'s boot error codes please "
+"see <ulink url=\"http://tldp.org/HOWTO/Bootdisk-HOWTO/a1483.html\">The Linux "
+"Bootdisk HOWTO</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1279
+msgid ""
+"</footnote>.  See <xref linkend=\"recovery\"/> for information on how to "
+"recover from this."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1285
+msgid "Upgrading mdadm"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1287
+msgid ""
+"mdadm now needs a configuration file to assemble MD arrays (RAID) from the "
+"initial ramdisk and during the system initialisation sequence.  Please make "
+"sure to read and act upon the instructions in <filename>/usr/share/doc/mdadm/"
+"README.upgrading-2.5.3.gz</filename> after the package has been upgraded "
+"<emphasis role=\"strong\">and before you reboot</emphasis>.  The latest "
+"version of this file is available at <ulink url=\"http://svn.debian.org/wsvn/"
+"pkg-mdadm/mdadm/trunk/debian/README.upgrading-2.5.3?op=file\"></ulink>; "
+"please consult it in case of problems."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:1301
+msgid "Preparing for the next release"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1303
+msgid ""
+"After the upgrade there are several things you can do to prepare for the "
+"next release."
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1309
+msgid ""
+"If using <command>grub</command>, edit <filename>/etc/kernel-img.conf</"
+"filename> and adjust the location of the <command>update-grub</command> "
+"program changing <filename>/sbin/update-grub</filename> to <filename>/usr/"
+"sbin/update-grub</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1318
+msgid ""
+"If the new kernel image metapackage was pulled in as a dependency of the old "
+"one, it will be marked as automatically installed, which should be corrected:"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><screen>
+#: en/upgrading.dbk:1321
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude unmarkauto $(dpkg-query -W 'linux-image-2.6-*' | cut -f1)\n"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1327
+msgid "Remove &oldreleasename;'s kernel metapackages by running:"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><screen>
+#: en/upgrading.dbk:1329
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude purge kernel-image-2.6-&lt;flavor&gt;\n"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1335
+msgid ""
+"Move any configuration options from <filename>/etc/network/options</"
+"filename> to <filename>/etc/sysctl.conf</filename>.  Please see <filename>/"
+"usr/share/doc/netbase/README.Debian</filename> for details."
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1342
+msgid ""
+"Remove obsolete and unused packages as described in <xref linkend=\"obsolete"
+"\"/> .  You should review which configuration files they use and consider "
+"purging the packages to remove their configuration files"
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:1351
+msgid "Deprecated packages"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1353
+msgid ""
+"With the release of <literal>Lenny</literal> a bigger number of server "
+"packages will be deprecated, thus updating to newer versions of those now "
+"will save you from trouble when updating to <literal>Lenny</literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1358
+msgid "This includes the following packages:"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1363
+msgid "apache (1.x), successor is apache2"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1368
+msgid "bind8, successor is bind9"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1373
+msgid "php4, successor is php5"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1378
+msgid "postgresql-7.4, successor is postgresql-8.1"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/upgrading.dbk:1383
+msgid "exim 3, successor is exim4"
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/upgrading.dbk:1390
+msgid "Obsolete packages"
+msgstr ""
+
+# type: Content of: <chapter><section><para><footnote>
+#: en/upgrading.dbk:1392
+msgid ""
+"Introducing several thousand new packages, &releasename; also retires and "
+"omits more than two thousand old packages that were in &oldreleasename;.  It "
+"provides no upgrade path for these obsolete packages.  While nothing "
+"prevents you from continuing to use an obsolete package where desired, the "
+"Debian project will usually discontinue security support for it a year after "
+"&releasename;'s release<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><para><footnote><para>
+#: en/upgrading.dbk:1396
+msgid ""
+"Or for as long as there is not another release in that time frame.  "
+"Typically only two stable releases are supported at any given time."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1398
+msgid ""
+"</footnote>, and will not normally provide other support in the meantime.  "
+"Replacing them with available alternatives, if any, is recommended."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1403
+msgid ""
+"There are many reasons why packages might have been removed from the "
+"distribution: they are no longer maintained upstream; there is no longer a "
+"Debian Developer interested in maintaining the packages; the functionality "
+"they provide has been superseded by different software (or a new version); "
+"or they are no longer considered suitable for &releasename; due to bugs in "
+"them.  In the latter case, packages might still be present in the unstable "
+"distribution."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1411
+msgid ""
+"Detecting which packages in an updated system are obsolete is easy since the "
+"package management front-ends will mark them as such.  If you are using "
+"<command>aptitude</command>, you will see a listing of these packages in the "
+"Obsolete and Locally Created Packages entry.  <command>dselect</command> "
+"provides a similar section but the listing it presents might differ.  Also, "
+"if you have used <command>aptitude</command> to manually install packages in "
+"&oldreleasename; it will have kept track of those packages you manually "
+"installed and will be able to mark as obsolete those packages pulled in by "
+"dependencies alone which are no longer needed if a package has been "
+"removed.  Also, <command>aptitude</command>, unlike <command>deborphan</"
+"command> will not mark as obsolete packages that you manually installed, as "
+"opposed to those that were automatically installed through dependencies."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1425
+msgid ""
+"There are additional tools you can use to find obsolete packages such as "
+"<command>deborphan</command>, <command>debfoster</command> or "
+"<command>cruft</command>.  <command>deborphan</command> is highly "
+"recommended, although it will (in default mode) only report obsolete "
+"libraries: packages in the libs or oldlibs sections that are not used by any "
+"other packages.  Do not blindly remove the packages these tools present, "
+"especially if you are using aggressive non-default options that are prone to "
+"produce false positives.  It is highly recommended that you manually review "
+"the packages suggested for removal (i.e.  their contents, size and "
+"description) before you remove them."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/upgrading.dbk:1436
+msgid ""
+"The <ulink url=\"http://bugs.debian.org/\">Debian Bug Tracking System</"
+"ulink> often provides additional information on why the package was "
+"removed.  You should review both the archived bug reports for the package "
+"itself and the archived bug reports for the <ulink url=\"http://bugs.debian."
+"org/cgi-bin/pkgreport.cgi?pkg=ftp.debian.org&amp;archive=yes\">ftp.debian."
+"org pseudo-package</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/upgrading.dbk:1444
+msgid "Dummy packages"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1446
+msgid ""
+"Some packages from &oldreleasename; have been split into several packages in "
+"&releasename;, often to improve system maintainability.  To ease the upgrade "
+"path in such cases, &releasename; often provides dummy packages: empty "
+"packages that have the same name as the old package in &oldreleasename; with "
+"dependencies that cause the new packages to be installed.  These dummy "
+"packages are considered obsolete packages after the upgrade and can be "
+"safely removed."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/upgrading.dbk:1454
+msgid ""
+"Most (but not all) dummy packages' descriptions indicate their purpose.  "
+"Package descriptions for dummy packages are not uniform, however, so you "
+"might also find <command>deborphan</command> with the <literal>--guess</"
+"literal> options useful to detect them in your system.  Note that some dummy "
+"packages are not intended to be removed after an upgrade but are, instead, "
+"used to keep track of the current available version of a program over time."
+msgstr ""

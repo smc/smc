@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: release-notes 5.0\n"
+"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: Content of: <appendix><title>
+#: en/old-stuff.dbk:9
+msgid "Managing your &oldreleasename; system"
+msgstr ""
+
+# type: Content of: <appendix><para>
+#: en/old-stuff.dbk:11
+msgid ""
+"This appendix contains information on how to make sure you can install or "
+"upgrade &oldreleasename; packages before you upgrade to &releasename;.  This "
+"should only be necessary in specific situations."
+msgstr ""
+
+# type: Content of: <appendix><section><title>
+#: en/old-stuff.dbk:16
+msgid "Upgrading your &oldreleasename; system"
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:18
+msgid ""
+"Basically this is no different than any other upgrade of &oldreleasename; "
+"you've been doing.  The only difference is that you first need to make sure "
+"your package list still contains &oldreleasename; packages as explained in "
+"<xref linkend=\"old-sources\"/> ."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:24
+msgid ""
+"If you upgrade your system using a Debian mirror, it will automatically be "
+"upgraded to the latest &oldreleasename; point release."
+msgstr ""
+
+# type: Content of: <appendix><section><title>
+#: en/old-stuff.dbk:30
+msgid "Checking your sources list"
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:32
+msgid ""
+"If any of the lines in your <filename>/etc/apt/sources.list</filename> refer "
+"to 'stable', you are effectively already using &releasename;.  If you have "
+"already run <literal>apt-get update</literal>, you can still get back "
+"without problems following the procedure below."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:38
+msgid ""
+"If you have also already installed packages from &releasename;, there "
+"probably is not much point in installing packages from &oldreleasename; "
+"anymore.  In that case you will have to decide for yourself whether you want "
+"to continue or not.  It is possible to downgrade packages, but that is not "
+"covered here."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:44
+msgid ""
+"Open the file <filename>/etc/apt/sources.list</filename> with your favorite "
+"editor (as root) and check all lines beginning with <literal>deb http:</"
+"literal> or <literal>deb ftp:</literal> for a reference to <literal>stable</"
+"literal>.  If you find any, change <literal>stable</literal> to "
+"<literal>&oldreleasename;</literal>."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:51
+msgid ""
+"If you have any lines starting with <literal>deb file:</literal>, you will "
+"have to check for yourself if the location they refer to contains a "
+"&oldreleasename; or an &releasename; archive."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:56
+msgid ""
+"<emphasis role=\"strong\">Important!</emphasis> Do not change any lines that "
+"begin with <literal>deb cdrom:</literal>.  Doing so would invalidate the "
+"line and you would have to run <command>apt-cdrom</command> again.  Do not "
+"be alarmed if a 'cdrom' source line refers to <literal>unstable</literal>.  "
+"Although confusing, this is normal."
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:63
+msgid "If you've made any changes, save the file and execute"
+msgstr ""
+
+# type: Content of: <appendix><section><screen>
+#: en/old-stuff.dbk:65
+#, no-wrap
+msgid ""
+"\n"
+"# apt-get update\n"
+msgstr ""
+
+# type: Content of: <appendix><section><para>
+#: en/old-stuff.dbk:69
+msgid "to refresh the package list."
+msgstr ""
