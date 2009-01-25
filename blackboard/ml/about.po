@@ -6,11 +6,160 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-10-27 03:39-0400\n"
+"Project-Id-Version: release-notes 5.0\n"
+"POT-Creation-Date: 2008-08-07 07:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: Content of: <chapter><title>
+#: en/about.dbk:9
+msgid "Introduction"
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:11
+msgid ""
+"The primary goals of these Release Notes are to inform users of major "
+"changes in this release of the &debian; distribution, to provide information "
+"on how to upgrade safely from the previous release to the current release "
+"and finally to inform users of known potential issues they could encounter "
+"when upgrading to or using the &releasename; release."
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:19
+msgid ""
+"Note that it is impossible to list every known issue and that therefore a "
+"selection has been made based on a combination of the expected prevalence "
+"and impact of issues."
+msgstr ""
+
+# type: Content of: <chapter><para><footnote>
+#: en/about.dbk:24
+msgid ""
+"The most recent version of this document is always available at <ulink url="
+"\"&url-release-notes;\"></ulink>.  If the version you are reading is more "
+"than a month old<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><para><footnote><para>
+#: en/about.dbk:26
+msgid ""
+"As listed on the front page of the PDF version and in the footer of the HTML "
+"version."
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:28
+msgid "</footnote>, you might wish to obtain the latest version."
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:31
+msgid ""
+"Please note that we only support and document upgrading from the previous "
+"release of Debian (in this case, the upgrade from &oldreleasename;).  If you "
+"need to upgrade from older releases, we suggest you read previous editions "
+"of the release notes and upgrade to &oldreleasename; first."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/about.dbk:39
+msgid "Reporting bugs on this document"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:41
+msgid ""
+"We have attempted to test all the different upgrade steps described in this "
+"document and we have also tried to anticipate all the possible issues our "
+"users might encounter."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:46
+msgid ""
+"Nevertheless, if you think you have found any bug in this documentation "
+"(incorrect information or information that is missing), please file a bug in "
+"the <ulink url=\"&url-bts;\">bug tracking system</ulink> against the "
+"<systemitem role=\"package\">release-notes</systemitem> package."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/about.dbk:55
+msgid "Contributing upgrade reports"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:57
+msgid ""
+"We welcome any information from users related to upgrades from "
+"&oldreleasename; to &releasename;.  If you are willing to share information "
+"please file a bug in the <ulink url=\"&url-bts;\">bug tracking system</"
+"ulink> against the <systemitem role=\"package\">upgrade-reports</systemitem> "
+"package with your results.  We request that you compress any attachments "
+"that are included (using <command>gzip</command>)."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:66
+msgid ""
+"Please include the following information when submitting your upgrade report:"
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#.  TODO: check status of #494028 about apt-get vs. aptitude 
+#.  TODO: any more things to add here? 
+#: en/about.dbk:74
+msgid ""
+"The status of your package database before and after the upgrade: "
+"<command>dpkg</command>'s status database available at <filename>/var/lib/"
+"dpkg/status</filename> and <command>aptitude</command>'s package state "
+"information, available at <filename>/var/lib/aptitude/pkgstates</filename>.  "
+"You should have made a backup before the upgrade as described at <xref "
+"linkend=\"data-backup\"/> , but you can also find backups of this "
+"information in <filename>/var/backups</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/about.dbk:86
+msgid ""
+"Session logs using <command>script</command>, as described in <xref linkend="
+"\"record-session\"/> ."
+msgstr ""
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
+#: en/about.dbk:92
+msgid ""
+"Your <command>aptitude</command> logs, available at <filename>/var/log/"
+"aptitude</filename>."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:98
+msgid ""
+"Note: you should take some time to review and remove any sensitive and/or "
+"confidential information from the logs before including them in a bug report "
+"as the information will be published in a public database."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/about.dbk:106
+msgid "Sources for this document"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/about.dbk:108
+msgid ""
+"This document is generated using <systemitem role=\"package\">docbook-xsl</"
+"systemitem>.  Sources for the Release Notes are available in the SVN "
+"repository of the <emphasis>Debian Documentation Project</emphasis>.  You "
+"can use the <ulink url=\"&url-svn-release-notes;\">web interface</ulink> to "
+"access its files individually through the web and see their changes.  For "
+"more information on how to access the SVN please consult the <ulink url="
+"\"&url-ddp-svn-info;\">Debian Documentation Project SVN pages</ulink>."
+msgstr ""

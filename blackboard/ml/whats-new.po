@@ -6,11 +6,864 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-10-27 03:39-0400\n"
+"Project-Id-Version: release-notes 5.0\n"
+"POT-Creation-Date: 2008-08-07 07:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Transfer-Encoding: ENCODING"
+
+# type: Content of: <chapter><title>
+#: en/whats-new.dbk:9
+msgid "What's new in &debian; &release;"
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/whats-new.dbk:11
+msgid ""
+"The <ulink url=\"&url-wiki-newinlenny;\">Wiki</ulink> has more information "
+"about this topic."
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/whats-new.dbk:15
+msgid "This release adds official support for the armel EABI."
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/whats-new.dbk:18
+msgid ""
+"The following are the officially supported architectures for &debian; "
+"&releasename;:"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:24
+msgid "Intel x86 ('i386')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:29
+msgid "Alpha ('alpha')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:34
+msgid "SPARC ('sparc')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:39
+msgid "PowerPC ('powerpc')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:44
+msgid "ARM ('arm')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:49
+msgid "MIPS ('mips' (big-endian) and 'mipsel' (little-endian))"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:54
+msgid "Intel Itanium ('ia64')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:59
+msgid "HP PA-RISC ('hppa')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:64
+msgid "S/390 ('s390')"
+msgstr ""
+
+# type: Content of: <chapter><itemizedlist><listitem><para>
+#: en/whats-new.dbk:69
+msgid "AMD64 ('amd64'"
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: en/whats-new.dbk:74
+msgid ""
+"You can read more about port status, and port-specific information for your "
+"architecture at the <ulink url=\"http://www.debian.org/ports/i386/\">Debian "
+"port web pages</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/whats-new.dbk:79
+msgid "What's new in the distribution?"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:85
+msgid ""
+"This new release of Debian again comes with a lot more software than its "
+"predecessor &oldreleasename;; the distribution includes over &packages-new; "
+"new packages, for a total of over &packages-total; packages.  Most of the "
+"software in the distribution has been updated: over 10700 software packages "
+"(this is 68% of all packages in &oldreleasename;).  Also, a significant "
+"number of packages (over 3500, 23% of the packages in &oldreleasename;) have "
+"for various reasons been removed from the distribution.  You will not see "
+"any updates for these packages and they will be marked as 'obsolete' in "
+"package management front-ends."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:97
+msgid "With this release, &debian; updates from X.Org 7.1 to X.Org 7.3."
+msgstr ""
+
+# type: Content of: <chapter><section><para><footnote>
+#: en/whats-new.dbk:100
+msgid ""
+"&debian; again ships with several desktop applications and environments.  "
+"Among others it now includes the desktop environments GNOME 2.22<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><para><footnote><para>
+#: en/whats-new.dbk:103
+msgid "With some modules from GNOME 2.20."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:104
+msgid ""
+"</footnote>, KDE 3.5.9, and Xfce 4.4.2.  Productivity applications have also "
+"been upgraded, including the office suites OpenOffice.org 2.4.1 and KOffice "
+"1.6.3 as well as GNUcash 2.2.6, GNUmeric 1.8.3 and Abiword 2.6.4."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:110
+msgid ""
+"Updates of other desktop applications include the upgrade to Evolution 2.6.3 "
+"and Gaim 2.0.  The Mozilla suite has also been updated: <command>iceweasel</"
+"command> (version 3.0.1) is the unbranded <command>Firefox</command> web "
+"browser and <command>icedove</command> (version 2.0.0.14) is the unbranded "
+"<command>Thunderbird</command> mail client."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:116
+msgid ""
+"Among many others, this release also includes the following software updates:"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><thead><row><entry>
+#: en/whats-new.dbk:126
+msgid "Package"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><thead><row><entry>
+#: en/whats-new.dbk:127
+msgid "Version in &oldreleasename;"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><thead><row><entry>
+#: en/whats-new.dbk:128
+msgid "Version in &releasename;"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:133
+msgid "Apache"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:134
+msgid "2.2.3"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:135
+msgid "2.2.9"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:138
+msgid "BIND DNS Server"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:139
+msgid "9.3.4"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:140
+msgid "9.5.0"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:143
+msgid "Courier MTA"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:144
+msgid "0.53.3"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:145
+msgid "0.60.0"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:148
+msgid "Dia"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:149
+msgid "0.95.0"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:150
+msgid "0.96.1"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:153
+msgid "Ekiga VoIP Client"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:154
+msgid "2.0.3"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:155
+msgid "2.0.12"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:158
+msgid "Exim default email server"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:159
+msgid "4.63"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:160
+msgid "4.69"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:163
+msgid "GNU Compiler Collection as default compiler"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:164
+msgid "4.1.1"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:165
+msgid "4.3.1"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:168
+msgid "GIMP"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:169
+msgid "2.2.13"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:170
+msgid "2.4.6"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:173
+msgid "the GNU C library"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:174
+msgid "2.3.6"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:175
+msgid "2.7"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:178
+msgid "lighttpd"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:179
+msgid "1.4.13"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:180
+msgid "1.4.19"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:183
+msgid "maradns"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:184
+msgid "1.2.12.04"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:185
+msgid "1.3.07.08"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:188
+msgid "MySQL"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:189
+msgid "5.0.32"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:190
+msgid "5.0.51a"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:193
+msgid "OpenLDAP"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:194
+msgid "2.3.30"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:195
+msgid "2.4.10"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:198
+msgid "OpenSSH"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:199
+msgid "4.3"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:200
+msgid "4.7 (TODO: 5.1?)"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:203
+msgid "PHP"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:204
+msgid "5.2.0"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:205
+msgid "5.2.6"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:208
+msgid "Postfix MTA"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:209
+msgid "2.3.8"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:210 en/whats-new.dbk:220
+msgid "2.5.2"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:213
+msgid "PostgreSQL"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:214
+msgid "7.5.22"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:215
+msgid "8.3.3"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:218
+msgid "Python"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:219
+msgid "2.4.4"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:223
+msgid "Tomcat"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:224
+msgid "5.5.20"
+msgstr ""
+
+# type: Content of: <chapter><section><informaltable><tgroup><tbody><row><entry>
+#: en/whats-new.dbk:225
+msgid "5.5.26"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:234
+msgid ""
+"The official &debian; distribution now ships on 19 to 23 binary CDs "
+"(depending on the architecture) and a similar number of source CDs.  A DVD "
+"version of the distribution is also available."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:239
+msgid "Debian now supports Linux Standards Base (LSB), version 3.2."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:242
+msgid "Package management"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:245
+msgid ""
+"<command>aptitude</command> is the preferred program for package management "
+"from console.  <command>aptitude</command> supports most command line "
+"operations of <command>apt-get</command> and has proven to be better at "
+"dependency resolution than <command>apt-get</command>.  If you are still "
+"using <command>dselect</command>, you should switch to <systemitem role="
+"\"package\">aptitude</systemitem> as the official frontend for package "
+"management."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:254
+msgid ""
+"For &releasename; an advanced conflict resolving mechanism has been "
+"implemented in <command>aptitude</command> that will try to find the best "
+"solution if conflicts are detected because of changes in dependencies "
+"between packages."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:263
+msgid "backports.org/backports.debian.org"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:264
+msgid "TODO: write about probability backports.org becoming official"
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:268
+msgid "debian-volatile now an official service"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:270
+msgid ""
+"The <emphasis>debian-volatile</emphasis> service that was introduced as an "
+"unofficial service with the release of &oldreleasename; has now become an "
+"official Debian GNU/Linux service."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote>
+#: en/whats-new.dbk:275
+msgid ""
+"This means that it now uses a <literal>.debian.org</literal> "
+"address<footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para><footnote><para>
+#: en/whats-new.dbk:276
+msgid ""
+"The old <literal>volatile.debian.net</literal> address will also remain "
+"valid for the time being."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:278
+msgid ""
+"</footnote>.  Please make sure to update your <filename>/etc/apt/sources."
+"list</filename> accordingly if you were already using this service."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:283
+msgid ""
+"<emphasis>debian-volatile</emphasis> allows users to easily update stable "
+"packages that contain information that quickly goes out of date.  Examples "
+"are a virus scanner's signatures list or a spam filter's pattern set.  For "
+"more information and a list of mirrors, please see the archive's <ulink url="
+"\"http://volatile.debian.org/\">web page</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/whats-new.dbk:295
+msgid "System improvements"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:297
+msgid ""
+"There have been a number of changes in the distribution that will benefit "
+"new installations of &releasename;, but may not be automatically applied on "
+"upgrades from &oldreleasename;.  This section gives an overview of the most "
+"relevant changes."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:303
+msgid "SELinux priority standard, but not enabled by default"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:306
+msgid ""
+"The packages needed for SELinux support have been promoted to priority "
+"<emphasis>standard</emphasis>.  This means that they will be installed by "
+"default during new installations.  For existing systems you can install "
+"SELinux using:"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><screen>
+#: en/whats-new.dbk:311
+#, no-wrap
+msgid ""
+"\n"
+"# aptitude install selinux-basics\n"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:315
+msgid ""
+"Note that SELinux support is <emphasis>not</emphasis> enabled by default.  "
+"Information on setting up and enabling SELinux can be found on the <ulink "
+"url=\"http://wiki.debian.org/SELinux\">Debian Wiki</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:322
+msgid "New default inet superdaemon"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:325
+msgid ""
+"The default inet superdaemon for &releasename; is <systemitem role=\"package"
+"\">openbsd-inetd</systemitem> instead of <systemitem role=\"package\">netkit-"
+"inetd</systemitem>.  It will not be started if no services are configured, "
+"which is true by default.  The new default daemon will be installed "
+"automatically on upgrade."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:334
+msgid "Default <command>vi</command> clone changed"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:337
+msgid ""
+"The <command>vi</command> clone installed by default is now a compact "
+"version of <command>vim</command> (<systemitem role=\"package\">vim-tiny</"
+"systemitem>)  instead of <systemitem role=\"package\">nvi</systemitem>."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:344
+msgid ""
+"Changes in default features for <literal>ext2</literal>/<literal>ext3</"
+"literal>"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:347
+msgid ""
+"New ext2 and ext3 file systems will be created with features "
+"<emphasis>dir_index</emphasis> and <emphasis>resize_inode</emphasis> enabled "
+"by default.  The first feature speeds up operations on directories with many "
+"files; the second makes it possible to resize a file system on-line (i.e.  "
+"while it is mounted)."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para><footnote>
+#: en/whats-new.dbk:354
+msgid ""
+"Users upgrading from &oldreleasename; could consider adding the "
+"<emphasis>dir_index</emphasis> flag manually using <command>tune2fs</"
+"command><footnote>"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para><footnote><para>
+#: en/whats-new.dbk:356
+msgid ""
+"The flag <emphasis>filetype</emphasis> should already be set on most file "
+"systems, except possibly on systems installed before &oldreleasename;."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:358
+msgid ""
+"</footnote>; the <emphasis>resize_inode</emphasis> flag cannot be added to "
+"an existing file system.  It is possible to check which flags are set for a "
+"file system using <literal>dumpe2fs -h</literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:366
+msgid "Better support for UTF-8"
+msgstr ""
+
+# type: Content of: <chapter><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:369
+msgid ""
+"A number of additional applications will be set up to use UTF-8 by default "
+"or have better UTF-8 support than before."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:376
+msgid ""
+"The <ulink url=\"http://wiki.debian.org/Etch2LennyUpgrade\">Debian Wiki</"
+"ulink> has some additional information about changes between "
+"&oldreleasename; and &releasename;."
+msgstr ""
+
+# type: Content of: <chapter><section><title>
+#: en/whats-new.dbk:382
+msgid "Major kernel-related changes"
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:384
+msgid ""
+"&debian; &release; ships with kernel version &kernelversion; for all "
+"architectures; the release is not compatible with 2.4 kernels."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:388
+msgid ""
+"There have been major changes both in the kernel itself and in the packaging "
+"of the kernel for Debian.  Some of these changes complicate the upgrade "
+"procedure and can potentially result in problems while rebooting the system "
+"after the upgrade to &releasename;.  This section gives an overview of the "
+"most important changes; potential issues and information on how to work "
+"around them is included in later chapters."
+msgstr ""
+
+# type: Content of: <chapter><section><para>
+#: en/whats-new.dbk:396
+msgid ""
+"If you are currently using a 2.4 kernel, you should read <xref linkend="
+"\"upgrade-to-2.6\"/> carefully."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:400
+msgid "Changes in kernel packaging"
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:403
+msgid "Kernel packages renamed"
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:406
+msgid ""
+"All Linux kernel packages have been renamed from <literal>kernel-*</literal> "
+"to <literal>linux-*</literal> to clean up the namespace.  This will make it "
+"easier to include non-Linux kernels in Debian in the future."
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:414
+msgid "Flavor 386 replaced with 486"
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:417
+msgid ""
+"As support for 80386 processors was dropped with &oldreleasename;, the 386 "
+"kernel flavor has now been dropped as well and replaced by a new 486 flavor."
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
+#: en/whats-new.dbk:424
+msgid "Standard kernels have SMP abilities"
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:427
+msgid "No news here."
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
+#: en/whats-new.dbk:430
+msgid ""
+"Multiprocessor systems no longer require an <literal>*-smp</literal> flavor "
+"of the Linux kernel.  For &arch-title;, <literal>linux-image</literal> "
+"packages without the <literal>-smp</literal> suffix support both "
+"uniprocessor and multiprocessor systems.  (The one exception is the 486 "
+"flavor, which only supports a single processor.)"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:441
+msgid ""
+"Where possible, dummy transition packages that depend on the new packages "
+"have been provided for the dropped packages."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:447
+msgid "New utilities to generate initrds"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:449
+msgid ""
+"The Debian kernel image packages for &arch-title; require an initrd for "
+"booting the system.  Because of changes in the kernel, the utility used to "
+"generate initrds in &oldreleasename;, <systemitem role=\"package\">initrd-"
+"tools</systemitem> can no longer be used and has been deprecated.  Two new "
+"utilities have been developed that replace it: <systemitem role=\"package"
+"\">initramfs-tools</systemitem> and <systemitem role=\"package\">yaird</"
+"systemitem>.  The concepts behind the new utilities are very different; an "
+"overview is available on the <ulink url=\"http://wiki.debian.org/"
+"InitrdReplacementOptions\">Debian Wiki</ulink>.  Both will generate an "
+"initrd using the <emphasis>initramfs</emphasis> file system, which is a "
+"compressed <command>cpio</command> archive.  The default and recommended "
+"utility is <systemitem role=\"package\">initramfs-tools</systemitem>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:464
+msgid ""
+"Upgrading to an &releasename; kernel will cause <systemitem role=\"package"
+"\">initramfs-tools</systemitem> to be installed by default.  If you are "
+"upgrading from a 2.4 kernel to a 2.6 Debian kernel, you must use <systemitem "
+"role=\"package\">initramfs-tools</systemitem>.  Using <systemitem role="
+"\"package\">yaird</systemitem> will cause linux-image-2.6 installations to "
+"fail if you are running a 2.2 or 2.4 kernel."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:472
+msgid ""
+"The package <systemitem role=\"package\">initrd-tools</systemitem> is still "
+"included in &releasename; because it is needed for upgrades from "
+"&oldreleasename;.  It will be dropped for the next release."
+msgstr ""
+
+# type: Content of: <chapter><section><section><title>
+#: en/whats-new.dbk:479
+msgid "Dynamic <filename>/dev</filename> management and hardware discovery"
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:481
+msgid ""
+"&releasename; kernels no longer provide support for <literal>devfs</literal>."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:484
+msgid ""
+"The replacement for <literal>devfs</literal> is <systemitem role=\"package"
+"\">udev</systemitem>, a userspace implementation of devfs."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:488
+msgid ""
+"<systemitem role=\"package\">udev</systemitem> is mounted over the "
+"<filename>/dev</filename> directory and will populate that directory with "
+"devices supported by the kernel.  It will also dynamically add and remove "
+"devices as kernel modules are loaded or unloaded respectively, based on "
+"events generated by the kernel.  <command>udev</command> is a lot more "
+"versatile than <literal>devfs</literal> and offers services that are used by "
+"other packages like <systemitem role=\"package\">hal</systemitem> (hardware "
+"abstraction layer)."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:497
+msgid ""
+"In combination with the kernel, <systemitem role=\"package\">udev</"
+"systemitem> also takes care of hardware discovery and module loading for "
+"detected devices.  Because of this it conflicts with <systemitem role="
+"\"package\">hotplug</systemitem>.  In &oldreleasename;, <systemitem role="
+"\"package\">discover</systemitem> could also be used for loading modules "
+"during the boot process, but its new version in &releasename; no longer "
+"provides that function.  <systemitem role=\"package\">discover</systemitem> "
+"is still used by X.Org to detect what graphics controller is present in the "
+"system."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:507
+msgid ""
+"If you install a Debian kernel image, <systemitem role=\"package\">udev</"
+"systemitem> will be installed by default as <systemitem role=\"package"
+"\">initramfs-tools</systemitem> depends on it."
+msgstr ""
+
+# type: Content of: <chapter><section><section><para>
+#: en/whats-new.dbk:512
+msgid ""
+"You can avoid installing <systemitem role=\"package\">udev</systemitem> by "
+"compiling a custom non-modular kernel or by using an alternative initrd "
+"generator, such as <systemitem role=\"package\">yaird</systemitem>.  "
+"However, <systemitem role=\"package\">initramfs-tools</systemitem> is the "
+"recommended initrd generator."
+msgstr ""
