@@ -691,6 +691,7 @@ collating-element <ml-p> from "<U0D2A><U0D4D>"
 collating-element <ml-ph> from "<U0D2B><U0D4D>"
 collating-element <ml-b> from "<U0D2C><U0D4D>"
 collating-element <ml-bh> from "<U0D2D><U0D4D>"
+collating-element <ml-m> from "<U0D2E><U0D4D>"
 collating-element <ml-y> from "<U0D2F><U0D4D>"
 collating-element <ml-v> from "<U0D35><U0D4D>"
 collating-element <ml-s> from "<U0D38><U0D4D>"
@@ -760,7 +761,6 @@ collating-symbol <ml-sa>
 collating-symbol <ml-ha>
 collating-symbol <ml-avagrah>
 collating-symbol <ml-zha>
-collating-symbol <mlvs-a>
 collating-symbol <mlvs-aa>
 collating-symbol <mlvs-i>
 collating-symbol <mlvs-ii>
@@ -1379,24 +1379,6 @@ endif
 #
 # collation weights in order
 
-
-<mlvs-aa>
-<mlvs-i>
-<mlvs-ii>
-<mlvs-u>
-<mlvs-uu>
-<mlvs-vocalicr>
-<mlvs-vocalicrr>
-<mlvs-vocalicl>
-<mlvs-vocalicll>
-<mlvs-shorte>
-<mlvs-e>
-<mlvs-ai>
-<mlvs-shorto>
-<mlvs-o>
-<mlvs-au>
-<ml-virama>
-<ml-visarga>
 <mlvw-shorta>
 <mlvw-aa>
 <mlvw-i>
@@ -1453,6 +1435,23 @@ endif
 <ml-zha>
 <ml-rra>
 <ml-avagrah>
+<ml-virama>
+<mlvs-aa>
+<mlvs-i>
+<mlvs-ii>
+<mlvs-u>
+<mlvs-uu>
+<mlvs-vocalicr>
+<mlvs-vocalicrr>
+<mlvs-vocalicl>
+<mlvs-vocalicll>
+<mlvs-shorte>
+<mlvs-e>
+<mlvs-ai>
+<mlvs-shorto>
+<mlvs-o>
+<mlvs-au>
+<ml-visarga>
 
 order_start <SPECIAL>;forward;backward;forward;forward,position
 #
@@ -3447,8 +3446,8 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D12> <mlvw-shorto>;<BAS>;<MIN>;IGNORE
 <U0D13> <mlvw-o>;<BAS>;<MIN>;IGNORE
 <U0D14> <mlvw-au>;<BAS>;<MIN>;IGNORE
-<ml-chillu-k> "<ml-ka><ml-virama>";<BAS>;<MIN>;IGNORE # ക =ക   + ്  + zwj
-<U0D15>  "<ml-ka><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ക =ക   + ്  + അ
+<ml-chillu-k>  "<ml-ka><ml-virama>";<BAS>;<MIN>;IGNORE
+<U0D15>  "<ml-ka><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-kh>  "<ml-kha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D16>  "<ml-kha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-g>   "<ml-ga><ml-virama>";<BAS>;<MIN>;IGNORE
@@ -3477,17 +3476,17 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D22>  "<ml-dha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-chillu-nn> "<ml-nna><ml-virama>";<BAS>;<MIN>;IGNORE # ണ്‍ = ണ  + ്  + zwj
 <U0D23>  "<ml-nna><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ണ = ണ + ് + അ 
-<ml-th>  "<ml-tha><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-th>   "<ml-tha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D24>  "<ml-tha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-thh>  "<ml-thha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D25>  "<ml-thha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<ml-dd>  "<ml-dda><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-dd>   "<ml-dda><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D26>  "<ml-dda><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-ddh>  "<ml-ddha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D27>   "<ml-ddha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<ml-chillu-n> "<ml-na><ml-virama>";<BAS>;<MIN>;IGNORE # ന്‍= ന  + ്  + zwj
-<U0D28>  "<ml-na><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE  #ന = ന + ് + അ
-<ml-p>  "<ml-pa><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-chillu-n> "<ml-chillu-n>";<BAS>;<MIN>;IGNORE # ന്‍= ന  + ്  + zwj
+<U0D28>  "<ml-chillu-n><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE  #ന = ന + ് + അ
+<ml-p>   "<ml-pa><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D2A>  "<ml-pa><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-ph>  "<ml-pha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D2B>  "<ml-pha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
@@ -3495,23 +3494,24 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D2C>  "<ml-ba><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-bh>  "<ml-bha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D2D>  "<ml-bha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<U0D02>  "<ml-ma><ml-virama>";<BAS>;<MIN>;IGNORE # ം = മ + ് 
+<U0D02>  "<ml-ma><ml-virama>";<BAS>;<MIN>;IGNORE # ം = മ + ്
+<ml-m>   "<ml-ma><ml-virama>";"<BAS><ml-virama>";<MIN>;IGNORE # ം = മ + ്  
 <U0D2E>  "<ml-ma><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # മ = മ + ് + അ 
-<ml-y>  "<ml-ya><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-y>  <ml-ya>;<BAS>;<MIN>;IGNORE
 <U0D2F>  "<ml-ya><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-chillu-r> "<ml-ra><ml-virama>";<BAS>;<MIN>;IGNORE # ര = ര + ്  + zwj
 <U0D30>  "<ml-ra><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ര = ര + ് + അ 
-<ml-chillu-l> "<ml-la><ml-virama>";<BAS>;<MIN>;IGNORE # ല്‍ = ല + ്  + zwj
+<ml-chillu-l> <ml-la>;<BAS>;<MIN>;IGNORE # ല്‍ = ല + ്  + zwj
 <U0D32>  "<ml-la><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ല = ല + ് + അ 
-<ml-v>  "<ml-va><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-v>   "<ml-va><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D35>  "<ml-va><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-ss>  "<ml-ssa><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D37>  "<ml-ssa><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-sh>  "<ml-sha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D36>  "<ml-sha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<ml-s>  "<ml-sa><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-s>   "<ml-sa><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D38>  "<ml-sa><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
-<ml-h>  "<ml-ha><ml-virama>";<BAS>;<MIN>;IGNORE
+<ml-h>   "<ml-ha><ml-virama>";<BAS>;<MIN>;IGNORE
 <U0D39>  "<ml-ha><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE
 <ml-chillu-ll> "<ml-lla><ml-virama>";<BAS>;<MIN>;IGNORE # ള്‍ = ള  + ്  + zwj
 <U0D33>  "<ml-lla><ml-virama><mlvw-shorta>";<BAS>;<MIN>;IGNORE # ള = ള + ് + അ 
