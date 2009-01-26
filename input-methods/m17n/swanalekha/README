@@ -1,0 +1,31 @@
+Swanalekha Transliteration based Input Method for Indic Languages
+=================================================================
+
+Features
+---------
+* Transliteration based input method for gnu/linux systems
+* Flexible transliteration scheme with the help of context menus showing candidates for the typed english letter sequence
+* Since it is not following strict transliteration schema, it is easy to learn
+
+TODO
+----
+Only Malayalam is complete as of now. Other keymaps need to be optimized for those languages
+
+
+Required Packages
+-----------------
+m17n-db, m17n-contrib , scim-m17n
+
+
+Installation
+------------
+Run the install.sh with root permission or using sudo
+
+License
+------------
+All keymaps are licensed under GPLv3 or later version
+
+Authors
+-----------
+* Santhosh Thottingal <santhosh.thottingal at gmail.com>
+* Parag Namade <pnamade at redhat.com
