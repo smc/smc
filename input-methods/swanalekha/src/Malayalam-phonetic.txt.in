@@ -1,6 +1,6 @@
 ### File header must not be modified
 ### This file must be encoded into UTF-8.
-### This table was created by Santhosh Thottingal<santhosh00@gmail.com>, Swathanthra Malayalam Computing
+### This table was created by Santhosh Thottingal <santhosh.thottingal@gmail.com>, , Swathanthra Malayalam Computing(htp://smc.org.in)
 ### Thanks to Hussain K H and other members of Swathanthra Malayalam Computing for valuable suggestions.
 SCIM_Generic_Table_Phrase_Library_TEXT
 VERSION_1_0
@@ -23,13 +23,13 @@ ICON = /usr/share/scim/icons/Malayalam-phonetic.png
 NAME = Swanalekha
 
 ### The local names of this table 
-NAME.ml_IN =സ്വനലേഖ
+NAME.ml_IN = സ്വനലേഖ
 
 ### Supported languages of this table
 LANGUAGES = ml
 
 ### The author of this table
-AUTHOR = Santhosh Thottingal <santhosh00@gmail.com>, Swathanthra Malayalam Computing
+AUTHOR = Santhosh Thottingal <santhosh.thottingal@gmail.com>
 
 ### Prompt string to be displayed in the status area.
 STATUS_PROMPT = Ml
@@ -201,13 +201,17 @@ ou ഔ
 @aM ം
 k ക്
 k കു്
+k ക്‍ 
 c ക്
 c കു്
-k ക്ക്​
+c ക്‍ 
+k ക്ക്
 k ക്കു്
 k കെ
 ck ക്ക്
 k^ ക്
+k_ ക്‍ 
+k~ ക്‍ 
 ka ക
 ca ക
 ca കാ
@@ -317,7 +321,7 @@ Ki കി
 Kii ഖീ
 Kee ഖീ
 Kee കീ
-KI ഖ
+KI ഖീ
 Ku ഖു
 Ku കു 
 Kuu ഖൂ
@@ -344,7 +348,7 @@ KaH ഖഃ
 g ഗ്
 g ഗു്
 g ജി
-g^ ഗ്​
+g^ ഗ്
 ga ഗ
 ga ജ
 ga ക
@@ -467,7 +471,7 @@ ng ങ്ങ്
 ng ങ്ങു്
 ng ങ്
 ng ങു്
-ng^ ങ്​
+ng^ ങ്
 Nga ങ
 Nga ങ്ങ
 Ngaa ങാ
@@ -508,8 +512,8 @@ nguu ങ്ങൂ
 nguu ങൂ
 ngoo ങ്ങൂ
 ngoo ങൂ
-ngU ങൂ
 ngU ങ്ങൂ
+ngU ങൂ
 ngR ങ്ങൃ
 ngR ങൃ
 nge ങ്ങെ
@@ -737,7 +741,7 @@ JaH ഝഃ
 nj ഞ്
 nj ഞ്ഞ്
 nj ഞ്ഞു്
-nj^ ഞ്​
+nj^ ഞ്
 nja ഞ
 nja ഞ്ച
 nja ഞ്ഞ
@@ -1069,7 +1073,7 @@ thaM ത്തം
 thaH തഃ
 Th ഥ്
 Th ഥു്
-Th^ ഥ്​
+Th^ ഥ്
 Tha ഥ
 Tha ത
 Thaa ഥാ	
@@ -1108,6 +1112,88 @@ Thau ഥൌ
 Thou ഥൌ
 ThaM ഥം
 ThaH ഥഃ
+TH ഥ്
+TH ഥു്
+TH^ ഥ്
+THa ഥ
+THa ത
+THaa ഥാ	
+THaa താ
+THA ഥാ
+THi ഥി
+THi തി
+THi ത്ഥി
+THii ഥീ
+THee ഥീ
+THee തീ
+THI ഥീ
+THu ഥു
+THu തു
+THuu ഥൂ
+THuu തൂ
+THoo ഥൂ
+THoo തൂ
+THU ഥൂ
+THU തൂ
+THR ഥൃ
+THR തൃ
+THe ഥെ
+THe ദി
+THe തെ 
+THE ഥേ
+THae ഥേ
+THai ഥൈ
+THai തൈ
+THei ഥൈ
+THei തെയ്
+THo ഥൊ
+THO ഥോ
+THau ഥൗ
+THau ഥൌ
+THou ഥൌ
+THaM ഥം
+THaH ഥഃ
+tH ഥ്
+tH ഥു്
+tH^ ഥ്
+tHa ഠ
+tHa ത
+tHaa ഠാ	
+tHaa താ
+tHA ഠാ
+tHi ഠി
+tHi തി
+tHi ത്ഠി
+tHii ഠീ
+tHee ഠീ
+tHee തീ
+tHI ഠീ
+tHu ഥു
+tHu തു
+tHuu ഥൂ
+tHuu തൂ
+tHoo ഥൂ
+tHoo തൂ
+tHU ഥൂ
+tHU തൂ
+tHR ഥൃ
+tHR തൃ
+tHe ഠെ
+tHe ദി
+tHe തെ 
+tHE ഠേ
+tHae ഠേ
+tHai ഠൈ
+tHai തൈ
+tHei ഠൈ
+tHei തെയ്
+tHo ഠൊ
+tHO ഠോ
+tHau ഠൗ
+tHau ഠൌ
+tHou ഠൌ
+tHaM ഠം
+tHaH ഠഃ
 d ദ്
 d ദു്
 d ട്
@@ -1327,7 +1413,7 @@ PaM പം
 PaH പഃ
 f ഫ്
 f എഫ്
-f^ ഫ്​
+f^ ഫ്
 fa ഫ
 faa ഫാ	
 fA ഫാ
@@ -1353,7 +1439,7 @@ faM ഫം
 faH ഫഃ
 F ഫ്
 F എഫ്
-F^ ഫ്​
+F^ ഫ്
 Fa ഫ
 Faa ഫാ	
 FA ഫാ
@@ -1466,7 +1552,7 @@ bhaH ഭഃ
 B ഭ്
 B ബ്
 B ബി
-B^ ഭ്​
+B^ ഭ്
 Ba ഭ
 Ba ബ
 Ba ബാ
@@ -1572,12 +1658,13 @@ y യു്
 y യ്യ്
 y യ്യു്
 y വൈ
-y^ യ്​
+y^ യ്
 ya യ
 yaa യാ	
 yA യാ
 yi യി
 yii യീ
+yee യീ
 yI യീ	
 yu യു
 yuu യൂ
@@ -1603,6 +1690,7 @@ Yaa യാ
 YA യാ
 Yi യി
 Yii യീ
+Yee യീ
 YI യീ	
 Yu യു
 Yuu യൂ
@@ -1748,7 +1836,7 @@ L ള്‍
 L ളു്
 L എല്‍
 L ള്ള്
-L^ ള്​
+L^ ള്
 L_ ള്‍
 L~ ള്‍
 La ള
@@ -1829,8 +1917,8 @@ vau വൌ
 vou വൌ
 vaM വം
 vaH വഃ
-w^ വ്
 w വ്
+w വു്
 w വ്വ്
 w ഡബ്ല്യൂ
 w^ വ്
@@ -1890,7 +1978,7 @@ s സ്സ്
 s സു്
 s സ്സു്
 s എസ്
-s^ സ്​
+s^ സ്
 sa സ
 sa ശ
 saa സാ
@@ -1927,11 +2015,12 @@ sou സൌ
 saM സം
 saH സഃ
 S ശ്
+S ശു്
 S സ്
 S ശ്ശ്
 S ശ്ശു്
 S എസ്
-S^ ശ്​
+S^ ശ്
 Sa ശ
 Sa സ
 Saa ശാ
@@ -2173,6 +2262,7 @@ xaH ക്ഷഃ
 T ടി
 T റ്റി
 TT റ്റ്
+TT റ്റു്
 TT ടി.ടി.
 TT^ റ്റ്
 TTa റ്റ
@@ -2203,7 +2293,7 @@ TTaM റ്റം
 TTah റ്റഃ
 nk ങ്ക്
 nk ങ്കു്
-nk^ ങ്ക്​
+nk^ ങ്ക്
 nka ങ്ക
 nkaa ങ്കാ	
 nkA ങ്കാ
@@ -2230,6 +2320,7 @@ nkou ങ്കൌ
 nkaM ങ്കം
 nkaH ങ്കഃ
 nch ഞ്ച്
+nch ഞ്ചു്
 nch^ ഞ്ച്
 ncha ഞ്ച
 ncha ഞ്ചാ
@@ -2258,7 +2349,7 @@ nchaM ഞ്ചം
 nchaH ഞ്ചഃ
 nth ന്ത്
 nth ന്തു്
-nth^ ന്ത്​
+nth^ ന്ത്
 ntha ന്ത
 ntha ന്ദ
 nthaa ന്താ	
@@ -2287,6 +2378,7 @@ nthou ന്തൌ
 nthaM ന്തം
 nthaH ന്തഃ
 nt ന്റ്
+nt ന്റു്
 nt^ ന്റ്
 nta ന്റ
 nta ണ്ട
