@@ -1,0 +1,27 @@
+[Desktop Entry]
+Exec=tamatrix
+Icon=kscreensaver
+Type=Service
+X-KDE-ServiceTypes=ScreenSaver
+TryExec=xscreensaver
+Actions=InWindow;Root;Setup;
+X-KDE-Category=OpenGL Screen Savers
+X-KDE-Type=OpenGL
+Name=Tamil Matrix
+
+[Desktop Action Setup]
+Exec=kxsconfig tamatrix
+Name=Setup...
+
+
+
+[Desktop Action InWindow]
+Exec=kxsrun tamatrix -- -window-id %w
+Name=Display in Specified Window
+NoDisplay=true
+
+[Desktop Action Root]
+Exec=kxsrun tamatrix -- -root
+Name=Display in Root Window
+
+NoDisplay=true

@@ -1,0 +1,29 @@
+[Desktop Entry]
+Exec=mlmatrix
+Icon=kscreensaver
+Type=Service
+X-KDE-ServiceTypes=ScreenSaver
+TryExec=xscreensaver
+Actions=InWindow;Root;Setup;
+X-KDE-Category=OpenGL Screen Savers
+X-KDE-Type=OpenGL
+Name=Malayalam Matrix
+Name[ml_IN]=മലയാളം മെട്രിക്സ്
+
+[Desktop Action Setup]
+Exec=kxsconfig mlmatrix
+Name=Setup...
+Name[ml]=ക്രമീകരണം...
+
+
+[Desktop Action InWindow]
+Exec=kxsrun mlmatrix -- -window-id %w
+Name=Display in Specified Window
+Name[ml]=പറഞ്ഞ ജാലകത്തില്‍ കാണിയ്ക്കുക.
+NoDisplay=true
+
+[Desktop Action Root]
+Exec=kxsrun mlmatrix -- -root
+Name=Display in Root Window
+Name[ml]=റൂട്ട് ജാലകത്തില്‍ കാണിയ്ക്കുക
+NoDisplay=true

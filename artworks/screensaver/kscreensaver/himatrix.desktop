@@ -1,0 +1,27 @@
+[Desktop Entry]
+Exec=himatrix
+Icon=kscreensaver
+Type=Service
+X-KDE-ServiceTypes=ScreenSaver
+TryExec=xscreensaver
+Actions=InWindow;Root;Setup;
+X-KDE-Category=OpenGL Screen Savers
+X-KDE-Type=OpenGL
+Name=Hindi Matrix
+
+[Desktop Action Setup]
+Exec=kxsconfig himatrix
+Name=Setup...
+
+
+
+[Desktop Action InWindow]
+Exec=kxsrun himatrix -- -window-id %w
+Name=Display in Specified Window
+NoDisplay=true
+
+[Desktop Action Root]
+Exec=kxsrun himatrix -- -root
+Name=Display in Root Window
+
+NoDisplay=true

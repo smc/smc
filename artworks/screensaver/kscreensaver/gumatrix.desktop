@@ -1,0 +1,27 @@
+[Desktop Entry]
+Exec=gumatrix
+Icon=kscreensaver
+Type=Service
+X-KDE-ServiceTypes=ScreenSaver
+TryExec=xscreensaver
+Actions=InWindow;Root;Setup;
+X-KDE-Category=OpenGL Screen Savers
+X-KDE-Type=OpenGL
+Name=Gujarati Matrix
+
+[Desktop Action Setup]
+Exec=kxsconfig gumatrix
+Name=Setup...
+
+
+
+[Desktop Action InWindow]
+Exec=kxsrun gumatrix -- -window-id %w
+Name=Display in Specified Window
+NoDisplay=true
+
+[Desktop Action Root]
+Exec=kxsrun gumatrix -- -root
+Name=Display in Root Window
+
+NoDisplay=true
