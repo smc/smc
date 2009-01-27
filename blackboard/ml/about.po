@@ -1,14 +1,14 @@
-# Copyright (C).
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2009.
+# This file is distributed under the same license as the release-notes package.
 #
-# , 2009.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com> , 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: release-notes 5.0\n"
 "POT-Creation-Date: 2009-01-26 19:48-0800\n"
 "PO-Revision-Date: 2009-01-26 23:54-0800\n"
-"Last-Translator: \n"
-"Language-Team: Malayalam <smc-discuss@googlegroups.com>\n"
+"Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
+"Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
