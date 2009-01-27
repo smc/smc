@@ -1,127 +1,162 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2009.
+# This file is distributed under the same license as the release-notes package.
 #
-#, fuzzy
+# Syam Krishnan <syamcr@gmail.com>, 2009.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: release-notes 5.0\n"
-"POT-Creation-Date: 2008-08-07 07:55+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2009-01-26 19:48-0800\n"
+"PO-Revision-Date: 2009-01-27 00:39-0800\n"
+"Last-Translator: \n"
+"Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+# type: Attribute 'lang' of: <chapter>
+#: en/moreinfo.dbk:7
+msgid "en"
+msgstr "en"
 
 # type: Content of: <chapter><title>
-#: en/moreinfo.dbk:9
+#: en/moreinfo.dbk:8
 msgid "More information on &debian;"
-msgstr ""
+msgstr "&debian; - കൂടുതല്‍ വിവരങ്ങള്‍"
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:11
+#: en/moreinfo.dbk:10
 msgid "Further reading"
-msgstr ""
+msgstr "ഇനിയും വിവരങ്ങള്‍ക്ക് വായിക്കുക"
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:13
+#: en/moreinfo.dbk:12
 msgid ""
 "Beyond these release notes and the installation guide, further documentation "
 "on &debian; is available from the Debian Documentation Project (DDP), whose "
 "goal is to create high-quality documentation for Debian users and "
 "developers.  Documentation, including the Debian Reference, Debian New "
 "Maintainers Guide, and Debian FAQ are available, and many more.  For full "
-"details of the existing resources see the <ulink url=\"http://www.debian.org/"
-"doc/ddp\">DDP website</ulink>."
+"details of the existing resources see the <ulink url=\"&url-ddp;\">DDP "
+"website</ulink>."
 msgstr ""
+"&debian; വിതരണത്തിനെക്കുറിച്ചുള്ള ഇനിയും കൂടുതല്‍ വിവരങ്ങള്‍ ഡെബിയന്റെ സഹായക്കുറിപ്പിനുള്ള സംരംഭത്തില്‍ "
+"(DDP) നിന്ന് ലഭ്യമാണ്. ഡെബിയന്‍ ഉപയോക്താക്കള്‍ക്കും രചയിതാക്കള്‍ക്കും വേണ്ടി നല്ല നിലവാരം "
+"പുലര്‍ത്തുന്ന സഹായക്കുറിപ്പുകള്‍ തയ്യാറാക്കുന്ന ഈ  സംരംഭത്തില്‍ നിന്ന് ഡെബിയന്‍ റഫറന്‍സ്, ഡെബിയന്‍ പുതിയ "
+"പരിപാലകര്‍ക്കായുള്ള വഴികാട്ടി, ഡെബിയന്‍ FAQ മുതലായ കുറിപ്പുകള്‍ ലഭ്യമാണ്. കൂടുതല്‍ വിവരങ്ങള്‍ക്കായി <"
+"ulink "
+"url=\"http://www.debian.org/doc/ddp\">DDP വെബ്സൈറ്റ്</ulink> കാണുക."
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:22
+#: en/moreinfo.dbk:21
 msgid ""
 "Documentation for individual packages is installed into <filename>/usr/share/"
 "doc/<replaceable>package</replaceable></filename>.  This may include "
 "copyright information, Debian specific details and any upstream "
 "documentation."
 msgstr ""
+"ഓരോ പാക്കേജിനുമുള്ള സഹായക്കുറിപ്പുകള്‍ <filename>/usr/share/doc/<replaceable>package</"
+"replaceable></filename> എന്നയിടത്തിലേക്ക് പകര്‍ത്തിയിട്ടുണ്ട്. പകര്‍പ്പവകാശം, ഡെബിയനുമായി "
+"ബന്ധപ്പെട്ട കാര്യങ്ങള്‍, ഉറവയില്‍ നിന്നുള്ള സഹായകുറിപ്പുകള്‍ മുതലായവ അവിടെയുണ്ടാകാം."
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:30
+#: en/moreinfo.dbk:29
 msgid "Getting help"
-msgstr ""
+msgstr "സഹായം ലഭിക്കാന്‍"
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:32
+#: en/moreinfo.dbk:31
 msgid ""
 "There are many sources of help, advice and support for Debian users, but "
 "these should only be considered if research into documentation of the issue "
 "has exhausted all sources.  This section provides a short introduction into "
 "these which may be helpful for new Debian users."
 msgstr ""
+"ഡെബിയന്‍ ഉപയോക്താക്കള്‍ക്കു സഹായത്തിനും ഉപദേശത്തിനും പിന്തുണയ്ക്കും പല ഉറവിടങ്ങളുമുണ്ടു്, പക്ഷേ അവ എല്ലാ "
+"ഉറവിടവുമുപയോഗിച്ചു് പ്രശ്നത്തിന്റെ എല്ലാ വശങ്ങളും രേഖപ്പെടുത്താനുള്ള ഗവേഷണം നടത്തിയതിനു് ശേഷമായിരിയ്ക്കണം."
+" പുതിയ ഡെബിയന്‍ ഉപയോക്താക്കള്‍ക്കും സഹായകരമാകുന്ന ഇവയ്ക്കൊരു ആമുഖം നല്‍കുകയാണു് ഈ ഭാഗത്തു്."
 
 # type: Content of: <chapter><section><section><title>
-#: en/moreinfo.dbk:38
+#: en/moreinfo.dbk:37
 msgid "Mailing lists"
-msgstr ""
+msgstr "മെയിലിങ്ങ് ലിസ്റ്റുകള്‍"
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:40
+#: en/moreinfo.dbk:39
 msgid ""
 "The mailing lists of most interest to Debian users are the debian-user list "
 "(English) and other debian-user-<replaceable>language</replaceable> lists "
 "(for other languages).  For information on these lists and details of how to "
-"subscribe see <ulink url=\"http://lists.debian.org/\"></ulink>.  Please "
+"subscribe see <ulink url=\"&url-debian-list-archives;\"></ulink>.  Please "
 "check the archives for answers to your question prior to posting and also "
 "adhere to standard list etiquette."
 msgstr ""
+"debian-user-list (ആംഗലേയം), debian-user-<replaceable>ഭാഷ</replaceable> "
+"ലിസ്റ്റുകള്‍ (മറ്റു ഭാഷകള്‍) എന്നീ ഈമെയില്‍-കൂട്ടങ്ങള്‍ ഡെബിയന്‍ ഉപയോക്താക്കള്‍ക്ക് ഉപകാരപ്രദമാണ്. "
+"ഇവയെക്കുറിച്ച് കൂടുതല്‍ വിവരങ്ങള്‍ക്കും, വരിക്കാരാകാനും <ulink url=\"http://lists.debian."
+"org/\"></ulink> കാണുക. ചോദ്യങ്ങള്‍ ചോദിക്കുന്നതിന് മുമ്പു് ഈമെയില്‍ കൂട്ടത്തിന്റെ ശേഖരങ്ങളില്‍ "
+"തെരയുക, കൂടാതെ ഈമെയില്‍-കൂട്ടങ്ങളില്‍ സാമാന്യ മര്യാദകള്‍ പാലിക്കുക."
 
 # type: Content of: <chapter><section><section><title>
-#: en/moreinfo.dbk:50
+#: en/moreinfo.dbk:49
 msgid "Internet Relay Chat"
-msgstr ""
+msgstr "ഇന്റര്‍നെറ്റ് റിലേ ചാറ്റ്"
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:52
+#: en/moreinfo.dbk:51
 msgid ""
 "Debian has an IRC channel dedicated to the support and aid of Debian users "
 "located on the OFTC IRC network.  To access the channel, point your favorite "
 "IRC client at irc.debian.org and join #debian."
 msgstr ""
+"ഡെബിയന്‍ ഉപയോക്താക്കള്‍ക്ക് സഹായത്തിനായി OFTC IRC ശൃംഖലയില്‍ ഒരു പ്രത്യേകം ചാനല്‍ തന്നെയുണ്ട്. "
+"നിങ്ങളുടെ IRC പ്രയോഗം ഉപയോഗിച്ച് irc.debian.org-ലെ #debian ചാനലില്‍ ചേരുക."
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:57
+#: en/moreinfo.dbk:56
 msgid ""
 "Please follow the channel guidelines, respecting other users fully.  The "
-"guidelines are available at the <ulink url=\"http://wiki.debian.org/DebianIRC"
-"\">Debian Wiki</ulink>."
+"guidelines are available at the <ulink url=\"&url-wiki;DebianIRC\">Debian "
+"Wiki</ulink>."
 msgstr ""
+"ചാനലിലെ നിയമങ്ങളും മര്യാദകളും പാലിക്കുക. മറ്റുപയോക്താക്കളെ ബഹുമാനിക്കുക. നിര്‍ദ്ദേശങ്ങള്‍ ഇവിടെ "
+"ലഭ്യമാണ്: <ulink url=\"&url-wiki;DebianIRC\">Debian Wiki</ulink>."
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:62
+#: en/moreinfo.dbk:61
 msgid ""
-"For more information on OFTC please visit the <ulink url=\"http://www.oftc."
-"net/\">website</ulink>."
+"For more information on OFTC please visit the <ulink url=\"&url-irc-host;"
+"\">website</ulink>."
 msgstr ""
+"OFTC-യെക്കുറിച്ചുള്ള കൂടുതല്‍ വിവരങ്ങള്‍ക്ക് <ulink url=\"&url-irc-host;\">വെബ്സൈറ്റ്</"
+"ulink> സന്ദര്‍ശിക്കുക."
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:70
+#: en/moreinfo.dbk:69
 msgid "Reporting bugs"
-msgstr ""
+msgstr "പിശകുകള്‍ ചൂണ്ടിക്കാണിക്കാന്‍"
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:72
+#: en/moreinfo.dbk:71
 msgid ""
 "We strive to make &debian; a high quality operating system, however that "
 "does not mean that the packages we provide are totally free of bugs.  "
-"Consistent with Debian's open development philosophy and as a service to our "
-"users, we provide all the information on reported bugs at our own Bug "
-"Tracking System (BTS).  The BTS is browseable at <ulink url=\"http://bugs."
-"debian.org/\">bugs.debian.org</ulink>."
+"Consistent with Debian's <quote>open development</quote> philosophy and as a "
+"service to our users, we provide all the information on reported bugs at our "
+"own Bug Tracking System (BTS).  The BTS is browseable at <ulink url=\"&url-"
+"bts;\"></ulink>."
 msgstr ""
+"&debian; ഒരു ഉന്നത നിലവാരം പുലര്‍ത്തുന്ന ഒരു പ്രവര്‍ത്തകസംവിധാനമാക്കാന്‍ ഞങ്ങള്‍ അഹോരാത്രം "
+"പ്രവര്‍ത്തിക്കുന്നുണ്ടെങ്കിലും ഞങ്ങള്‍ വിതരണം ചെയ്യുന്ന പാക്കേജുകളില്‍ പിശകുകളൊട്ടുമില്ല "
+"എന്നവകാശപ്പെടാനാവില്ല. ഡെബിയന്റെ സുതാര്യമായ സംവിധാനം പ്രകാരം, ഞങ്ങളുടെ പിഴവുകള്‍ നിരീക്ഷിയ്ക്കാനുള്ള "
+"സംവിധാനത്തിലൂടെ (BTS) ചൂണ്ടിക്കാണിക്കപ്പെട്ട പിശകുകളുടെ എല്ലാ വിവരങ്ങളും ലഭ്യമാണ്. BTS "
+"ഇവിടെ ലഭ്യമാണ്: <ulink url=\"&url-"
+"bts;\">bugs.debian.org</ulink>."
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:80
+#: en/moreinfo.dbk:79
 msgid ""
 "If you find a bug in the distribution or in packaged software that is part "
 "of it, please report it so that it can be properly fixed for future "
@@ -129,59 +164,90 @@ msgid ""
 "so that we can trace bugs and developers can get in contact with submitters "
 "should additional information be needed."
 msgstr ""
+"ഈ വിതരണത്തിലോ, അതില്‍ ഉള്‍പ്പെട്ട ഏതെങ്കിലും പാക്കേജിലോ എന്തെങ്കിലും പിശകുകള്‍ കണ്ടെത്തിയാല്‍ അവ "
+"ശരിയാക്കുന്നതിലേക്കായി ഞങ്ങളെ അറിയിക്കാന്‍ താത്പര്യപ്പെടുന്നു. ഇതിന് നിങ്ങള്‍ക്ക് ഒരു ഈമെയില്‍ "
+"വിലാസം ആവശ്യമാണ്. ഞങ്ങളുടെ ശ്രദ്ധയില്‍ പെടുത്തുന്ന പിശകുകള്‍ നിരീക്ഷിക്കാനും കൂടുതല്‍ വിവരങ്ങള്‍ "
+"ആരായാനുമാണ് നിങ്ങളുടെ വിലാസം വേണ്ടിവരുന്നത്."
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:87
+#: en/moreinfo.dbk:86
 msgid ""
 "You can submit a bug report using the program <command>reportbug</command> "
 "or manually using email.  You can read more about the Bug Tracking System "
 "and how to use it by reading the reference cards (available at <filename>/"
 "usr/share/doc/debian</filename> if you have <systemitem role=\"package\">doc-"
-"debian</systemitem> installed) or online at the <ulink url=\"http://bugs."
-"debian.org/\">Bug Tracking System</ulink>."
+"debian</systemitem> installed) or online at the <ulink url=\"&url-bts;\">Bug "
+"Tracking System</ulink>."
 msgstr ""
+"<command>reportbug</command> എന്ന പ്രോഗ്രാം ഉപയോഗിച്ചോ, ഈമെയില്‍ മുഖേനെയോ നിങ്ങള്‍ക്ക് "
+"പിശകുകള്‍ ചൂണ്ടിക്കാണിക്കാം. പിഴവുകള്‍ നിരീക്ഷിയ്ക്കാനുള്ള സംവിധാനത്തെക്കുറിച്ച് കൂടുതല്‍ അറിയാന്‍ "
+"സഹായക്കുറിപ്പുകള്‍ (<systemitem role=\"package\">doc-debian</systemitem> ഉണ്ടെങ്കില്‍ "
+"ഇവിടെ: <filename>/usr/share/doc/debian</filename>) വായിക്കുകയോ <ulink url="
+"\"http://bugs.debian.org/\">പിഴവുകള്‍ നിരീക്ഷിയ്ക്കാനുള്ള സംവിധാനം</ulink> കാണുകയോ ചെയ്യുക."
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:97
+#: en/moreinfo.dbk:96
 msgid "Contributing to Debian"
-msgstr ""
+msgstr "ഡെബിയന്‍ സംരംഭത്തിലേക്ക് നിങ്ങളുടെ സംഭാവന"
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:99
+#: en/moreinfo.dbk:98
 msgid ""
 "You do not need to be an expert to contribute to Debian.  By assisting users "
-"with problems on the various user support <ulink url=\"http://lists.debian."
-"org/\">lists</ulink> you are contributing to the community.  Identifying "
-"(and also solving) problems related to the development of the distribution "
-"by participating on the development <ulink url=\"http://lists.debian.org/"
-"\">lists</ulink> is also extremely helpful.  To maintain Debian's high "
-"quality distribution, <ulink url=\"http://bugs.debian.org/\">submit bugs</"
+"with problems on the various user support <ulink url=\"&url-debian-list-"
+"archives;\">lists</ulink> you are contributing to the community.  "
+"Identifying (and also solving) problems related to the development of the "
+"distribution by participating on the development <ulink url=\"&url-debian-"
+"list-archives;\">lists</ulink> is also extremely helpful.  To maintain "
+"Debian's high quality distribution, <ulink url=\"&url-bts;\">submit bugs</"
 "ulink> and help developers track them down and fix them.  If you have a way "
 "with words then you may want to contribute more actively by helping to write "
-"<ulink url=\"http://www.debian.org/doc/ddp\">documentation</ulink> or <ulink "
-"url=\"http://www.debian.org/international/\">translate</ulink> existing "
-"documentation into your own language."
+"<ulink url=\"&url-ddp;\">documentation</ulink> or <ulink url=\"&url-debian-"
+"i18n;\">translate</ulink> existing documentation into your own language."
 msgstr ""
+"ഡെബിയനില്‍ എന്തെങ്കിലും സംഭാവന ചെയ്യാന്‍ നിങ്ങള്‍ ഒരു വിദഗ്ദ്ധനാകണമെന്നൊന്നുമില്ല. മറ്റുപയോക്താക്കളെ "
+"സഹായിക്കുവാനുള്ള <ulink url=\"&url-debian-list-"
+"archives;\">ലിസ്റ്റുകള്‍</ulink> വഴി നിങ്ങള്‍ക്ക് "
+"ഡെബിയന്‍ സമൂഹത്തിന് നല്ല സംഭാവന നല്കാന്‍ സാധിക്കും. ഈ വിതരണം തയാറാക്കുന്നതിനിടയില്‍ വരുന്ന "
+"പ്രശ്നങ്ങള്‍ കണ്ടുപിടിക്കുന്നതും ശരിയാക്കുന്നതിനും വികസന <ulink url=\"&url-debian-"
+"list-archives;\">ലിസ്റ്റുകളില്‍</ulink> പങ്കെടുക്കുന്നതും. വളരെയേറെ സഹായകരമാണ്. ഡെബിയന്റെ ഉയര്‍ന്ന "
+"നിലവാരം നിലനിര്‍ത്തുന്നതിന് വേണ്ടി  <ulink url=\"&url-bts;\">പിശകുകള്‍ "
+"ചൂണ്ടിക്കാണിക്കുകയും</ulink> അവ ശരിയാക്കാന്‍ സഹായിക്കുകയും ചെയ്യുക. താങ്കള്‍ക്ക് രചനാപാടവം "
+"ഉണ്ടെങ്കില്‍ പുതിയ <ulink url=\"&url-ddp;\">സഹായക്കുറിപ്പുകള്‍</"
+"ulink> എഴുതുവാനും ഉള്ളവ താങ്കളുടെ ഭാഷയിലേക്ക് <ulink url=\"&url-debian-"
+"i18n;/\">തര്‍ജ്ജമ</ulink> ചെയ്യുവാനും സഹായിക്കുക."
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:114
+#: en/moreinfo.dbk:113
 msgid ""
 "If you can dedicate more time, you could manage a piece of the Free Software "
 "collection within Debian.  Especially helpful is if people adopt or maintain "
 "items that people have requested for inclusion within Debian.  The <ulink "
-"url=\"http://www.debian.org/devel/wnpp/\">Work Needing and Prospective "
-"Packages database</ulink> details this information.  If you have an interest "
-"in specific groups then you may find enjoyment in contributing to some of "
-"Debian's subprojects which include ports to particular architectures, <ulink "
-"url=\"http://www.debian.org/devel/debian-jr/\">Debian Jr.</ulink> and <ulink "
-"url=\"http://www.debian.org/devel/debian-med/\">Debian Med</ulink>."
+"url=\"&url-wnpp;\">Work Needing and Prospective Packages database</ulink> "
+"details this information.  If you have an interest in specific groups then "
+"you may find enjoyment in contributing to some of Debian's subprojects which "
+"include ports to particular architectures, <ulink url=\"&url-debian-jr;"
+"\">Debian Jr.</ulink> and <ulink url=\"&url-debian-med;\">Debian Med</ulink>."
 msgstr ""
+"നിങ്ങള്‍ക്ക് അല്‍പം കൂടി സമയം ചെലവഴിക്കാമെങ്കില്‍ ഡെബിയന്റെ ഏതെങ്കിലും സ്വതന്ത്രസോഫ്റ്റ്‌വെയര്‍ ഭാഗം "
+"പരിപാലിക്കുന്നതിനെക്കുറിച്ച് ചിന്തിക്കാം. ഡെബിയനില്‍ ഉള്‍പ്പെടുത്തിക്കാണാന്‍ ഉപയോക്താക്കള്‍ "
+"ആഗ്രഹിക്കുന്ന ഏതെങ്കിലും ഭാഗം ഏറ്റെടുക്കുന്നത് വളരെയേറെ സഹായകരമായിരിക്കും. ഈ വിവരങ്ങള്‍ ഇവിടെ "
+"ലഭ്യമാണ്: <ulink url=\"&url-wnpp;\">ശ്രമം ആവശ്യമുള്ളതും വരാന്‍ പോകുന്നതുമായവ</ulink>. പ്രത്യേക "
+"കൂട്ടങ്ങളില്‍ നിങ്ങള്‍ക്കു് താത്പര്യമുണ്ടെങ്കില്‍ ulink url=\"&url-debian-jr;"
+"\">ഡെബിയന്‍ ജൂനിയര്‍</ulink>, <ulink url=\"&url-debian-med;\">ഡെബിയന്‍ വൈദ്യം</ulink> തുടങ്ങി പ്രത്യേക "
+"വാസ്തുവിദ്യയിലേയ്ക്കുള്ള മാറ്റം വരെയുള്ള ഡെബിയന്റെ ഉപസംരംഭങ്ങളില്‍ പങ്കെടുക്കുന്നതില്‍ നിങ്ങള്‍ക്കു് "
+"സന്തോഷം കണ്ടെത്താം."
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:125
+#: en/moreinfo.dbk:124
 msgid ""
 "In any case, if you are working in the free software community in any way, "
 "as a user, programmer, writer or translator you are already helping the free "
 "software effort.  Contributing is rewarding and fun, and as well as allowing "
 "you to meet new people it gives you that warm fuzzy feeling inside."
 msgstr ""
+"നിങ്ങള്‍ ഏതെങ്കിലും തരത്തില്‍ സ്വതന്ത്രസോഫ്റ്റ്‌വെയര്‍ സമൂഹത്തില്‍ പ്രവര്‍ത്തിക്കുന്നയാളാണെങ്കില്‍, "
+"ഉപയോക്താവ്, പ്രോഗ്രാമര്‍, എഴുത്ത്, തര്‍ജ്ജമ, എങ്ങിനെയോ ആകട്ടെ, നിങ്ങള്‍ ഇപ്പോള്‍തന്നെ ഈ പ്രസ്ഥാനത്തെ "
+"സഹായിച്ചുകൊണ്ടിരിക്കുകയാണ്. നിങ്ങളുടെ പങ്കാളിത്തം മനസ്സിന് സന്തോഷമേകുമെന്നു മാത്രമല്ല പുതിയ "
+"സുഹൃത്തുക്കളെ പരിചയപ്പെടാനും വഴിയൊരുക്കും."
+

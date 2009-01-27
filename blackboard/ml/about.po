@@ -1,101 +1,123 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2009.
+# This file is distributed under the same license as the release-notes package.
 #
-#, fuzzy
+# Praveen Arimbrathodiyil <pravi.a@gmail.com> , 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: release-notes 5.0\n"
-"POT-Creation-Date: 2008-08-07 07:55+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2009-01-26 19:48-0800\n"
+"PO-Revision-Date: 2009-01-26 23:54-0800\n"
+"Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
+"Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Malayalam\n"
+"X-Poedit-Country: INDIA\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+# type: Attribute 'lang' of: <chapter>
+#: en/about.dbk:7
+msgid "en"
+msgstr "en"
 
 # type: Content of: <chapter><title>
-#: en/about.dbk:9
+#: en/about.dbk:8
 msgid "Introduction"
-msgstr ""
+msgstr "ആമുഖം"
 
 # type: Content of: <chapter><para>
-#: en/about.dbk:11
+#: en/about.dbk:10
 msgid ""
-"The primary goals of these Release Notes are to inform users of major "
-"changes in this release of the &debian; distribution, to provide information "
-"on how to upgrade safely from the previous release to the current release "
-"and finally to inform users of known potential issues they could encounter "
-"when upgrading to or using the &releasename; release."
+"This document informs users of the &debian; distribution about major changes "
+"in version &release; (codenamed \"&releasename;\")."
 msgstr ""
+"ഈ രചന &debian; വിതരണത്തിന്റെ ഉപയോക്താക്കളെ &release; (\"&releasename;\" എന്നു് രഹസ്യനാമം) "
+"പതിപ്പിലെ പ്രധാന മാറ്റങ്ങള്‍ അറിയിയ്ക്കുന്നു."
 
 # type: Content of: <chapter><para>
-#: en/about.dbk:19
+#: en/about.dbk:14
+msgid ""
+"The release notes provide information on how to upgrade safely from the "
+"release &oldrelease; (codenamed &oldreleasename;) to the current release and "
+"inform users of known potential issues they could encounter in that process."
+msgstr ""
+"ഈ പ്രസാധനക്കുറിപ്പുകള്‍ ഇപ്പോളത്തെ &oldrelease; (&oldreleasename; എന്നു് രഹസ്യനാമം) പതിപ്പില്‍ "
+"നിന്നും പുതിയ "
+"പതിപ്പിലേയ്ക്കു് സുരക്ഷിതമായി കയറാനുള്ള വിവരങ്ങളും ഈ പ്രക്രിയയില്‍ അഭിമുഖീകരിയ്ക്കാന്‍ "
+"സാധ്യതയുള്ള പ്രശ്നങ്ങളും ഉപയോക്താക്കളെ അറിയിയ്ക്കും."
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:20
+msgid ""
+"You can get the most recent version of this document from <ulink url=\"&url-"
+"release-notes;\"></ulink>.  If in doubt, check the date of document at the "
+"first page and make sure you are reading a current version."
+msgstr ""
+"നിങ്ങള്‍ക്കു് ഈ രചനയുടെ ഏറ്റവും പുതിയ പതിപ്പു് <ulink url=\"&url-"
+"release-notes;\"></ulink> ല്‍ നിന്നും ലഭിയ്ക്കും. സംശയമാണെങ്കില്‍ രചനയിലെ ആദ്യത്തെ താളിലെ തിയ്യതി "
+"നോക്കി നിങ്ങള്‍ പുതുക്കിയ പതിപ്പാണു് വായിയ്ക്കുന്നതെന്നുറപ്പാക്കുക."
+
+# type: Content of: <chapter><para>
+#: en/about.dbk:27
 msgid ""
 "Note that it is impossible to list every known issue and that therefore a "
 "selection has been made based on a combination of the expected prevalence "
 "and impact of issues."
 msgstr ""
-
-# type: Content of: <chapter><para><footnote>
-#: en/about.dbk:24
-msgid ""
-"The most recent version of this document is always available at <ulink url="
-"\"&url-release-notes;\"></ulink>.  If the version you are reading is more "
-"than a month old<footnote>"
-msgstr ""
-
-# type: Content of: <chapter><para><footnote><para>
-#: en/about.dbk:26
-msgid ""
-"As listed on the front page of the PDF version and in the footer of the HTML "
-"version."
-msgstr ""
+"അറിയാവുന്ന എല്ലാ പ്രശ്നങ്ങളേയും ഇവിടെ രേഖപ്പെടുത്തുവാന്‍ സാധ്യമല്ല എന്നു് പ്രത്യേകം ശ്രദ്ധിയ്ക്കുക "
+"അതുകൊണ്ടു് തന്ന കൂടുതലായി വരാനുള്ള സാധ്യതയും പ്രശ്നത്തിന്റെ പ്രാധാന്യവും അടിസ്ഥാനമാക്കിയാണു് "
+"തെരഞ്ഞെടുപ്പു് നടത്തിയതു്."
 
 # type: Content of: <chapter><para>
-#: en/about.dbk:28
-msgid "</footnote>, you might wish to obtain the latest version."
-msgstr ""
-
-# type: Content of: <chapter><para>
-#: en/about.dbk:31
+#: en/about.dbk:33
 msgid ""
 "Please note that we only support and document upgrading from the previous "
-"release of Debian (in this case, the upgrade from &oldreleasename;).  If you "
+"release of Debian (in this case, the upgrade from &oldrelease;).  If you "
 "need to upgrade from older releases, we suggest you read previous editions "
-"of the release notes and upgrade to &oldreleasename; first."
+"of the release notes and upgrade to &oldrelease; first."
 msgstr ""
+"ഡെബിയന്റെ മുമ്പത്തെ പതിപ്പില്‍ നിന്നും (ഇവിടെ, &oldrelease; ല്‍ നിന്നുമുള്ള കയറ്റം) കയറാന്‍ "
+"മാത്രമേ ഞങ്ങള്‍ പിന്തുണയ്ക്കുകയോ കുറിപ്പുകള്‍ തയ്യാറാക്കുകയോ ചെയ്യൂ എന്നു് ദയവായി ഓര്‍ക്കുക. "
+"നിങ്ങള്‍ക്കു് അതിലും പഴയ പതിപ്പില്‍ നിന്നാണു് കയറുന്നതെങ്കില്‍ മുമ്പത്തെ പതിപ്പിന്റെ "
+"പ്രസാധനക്കുറിപ്പുകള്‍ നോക്കി ആദ്യം &oldrelease; ല്‍ കയറാന്‍ ഞങ്ങള്‍ നിര്‍ദ്ദേശിയ്ക്കുന്നു."
 
 # type: Content of: <chapter><section><title>
-#: en/about.dbk:39
+#: en/about.dbk:41
 msgid "Reporting bugs on this document"
-msgstr ""
+msgstr "ഈ രചനയിലെ പിഴവുകള്‍ അറിയിയ്ക്കാന്‍"
 
 # type: Content of: <chapter><section><para>
-#: en/about.dbk:41
+#: en/about.dbk:43
 msgid ""
 "We have attempted to test all the different upgrade steps described in this "
 "document and we have also tried to anticipate all the possible issues our "
 "users might encounter."
 msgstr ""
+"ഈ രചനയില്‍ വിവരിച്ച പുതുക്കുവാനുള്ള വിവിധ നടപടിക്രമങ്ങളെല്ലാം പരീക്ഷിയ്ക്കാന്‍ ഞങ്ങള്‍ "
+"ശ്രമിച്ചിട്ടുണ്ടു്, അതുപോലെ തന്നെ ഞങ്ങളുടെ ഉപയോക്താക്കള്‍ അഭിമുഖീകരിച്ചേയ്ക്കാവുന്ന "
+"പ്രശ്നങ്ങളെല്ലാം മുമ്പേതന്നെ അറിയിയ്ക്കാന്‍ ശ്രമിച്ചിട്ടുണ്ടു്."
 
 # type: Content of: <chapter><section><para>
-#: en/about.dbk:46
+#: en/about.dbk:48
 msgid ""
 "Nevertheless, if you think you have found any bug in this documentation "
 "(incorrect information or information that is missing), please file a bug in "
 "the <ulink url=\"&url-bts;\">bug tracking system</ulink> against the "
 "<systemitem role=\"package\">release-notes</systemitem> package."
 msgstr ""
+"എന്നിരുന്നാലും നിങ്ങള്‍ ഈ സഹായക്കുറിപ്പില്‍ എന്തെങ്കിലും പിഴവു് കാണുകയാണെങ്കില്‍ (തെറ്റായ വിവരമോ "
+"കാണാത്ത വിവരമോ) <ulink url=\"&url-bts;\">പിഴവുകള്‍ നിരീക്ഷിയ്ക്കുന്ന സംവിധാനത്തില്‍</ulink> <"
+"systemitem role=\"package\">release-notes</systemitem> എന്ന പൊതിയിലെ ഒരു പിഴവാണെന്നു് അറിയിയ്ക്കുക."
 
 # type: Content of: <chapter><section><title>
-#: en/about.dbk:55
+#: en/about.dbk:57
 msgid "Contributing upgrade reports"
-msgstr ""
+msgstr "പുതുക്കലിന്റെ അനുഭവങ്ങള്‍ അറിയിയ്ക്കാന്‍"
 
 # type: Content of: <chapter><section><para>
-#: en/about.dbk:57
+#: en/about.dbk:59
 msgid ""
 "We welcome any information from users related to upgrades from "
 "&oldreleasename; to &releasename;.  If you are willing to share information "
@@ -104,62 +126,113 @@ msgid ""
 "package with your results.  We request that you compress any attachments "
 "that are included (using <command>gzip</command>)."
 msgstr ""
+"&oldreleasename; ല്‍ നിന്നും &releasename; യിലേയ്ക്കുള്ള കയറ്റവുമായി ബന്ധപ്പെട്ട എന്തു് വിവരവും "
+"ഞങ്ങളുടെ ഉപയോക്താക്കളില്‍ നിന്നും സ്വാഗതം ചെയ്യുന്നു. നിങ്ങള്‍ വിവരം പങ്കുവെയ്ക്കാന്‍ "
+"തയ്യാറാണെങ്കില്‍ <ulink url=\"&url-bts;\">പിഴവുകള്‍ നിരീക്ഷിയ്ക്കുന്ന സംവിധാനത്തില്‍</ulink> <"
+"systemitem role=\"package\">upgrade-reports</systemitem> എന്ന പൊതിയിലെ ഒരു പിഴവാണെന്നു് "
+"അറിയിയ്ക്കുക. ഉള്‍പ്പെടുത്തുന്ന അനുബന്ധങ്ങള്‍ (<command>gzip</command> ഉപയോഗിച്ചു്) ചുരുക്കാന്‍ "
+"ഞങ്ങള്‍ അഭ്യാര്‍ത്ഥിയ്ക്കുന്നു."
 
 # type: Content of: <chapter><section><para>
-#: en/about.dbk:66
-msgid ""
-"Please include the following information when submitting your upgrade report:"
+#: en/about.dbk:68
+msgid "Please include the following information when submitting your upgrade report:"
 msgstr ""
+"പുതുക്കലിന്റെ അറിയിപ്പു് സമര്‍പ്പിയ്ക്കുമ്പോള്‍ ദയവായി താഴെ പറയുന്ന വിവരം കൂടി ഉള്‍പ്പെടുത്തുക:"
+
+# type: Content of: <chapter><section><itemizedlist><listitem><para><programlisting>
+#: en/about.dbk:75
+#, no-wrap
+msgid ""
+"\n"
+"TODO: check status of #494028 about apt-get vs. aptitude\n"
+"TODO: any more things to add here?\n"
+msgstr ""
+"\n"
+"ചെയ്യാനുള്ളതു്: apt-get vs. aptitude നെക്കുറിച്ചുള്ള  #494028 ന്റെ സ്ഥിതി പരിശോദിയ്ക്കുക\n"
+"ചെയ്യാനുള്ളതു്: ഇവിടെ ചേര്‍ക്കാനിനി എന്തെങ്കിലുമുണ്ടോ?"
 
 # type: Content of: <chapter><section><itemizedlist><listitem><para>
-#.  TODO: check status of #494028 about apt-get vs. aptitude 
-#.  TODO: any more things to add here? 
-#: en/about.dbk:74
+#: en/about.dbk:80
 msgid ""
 "The status of your package database before and after the upgrade: "
 "<command>dpkg</command>'s status database available at <filename>/var/lib/"
 "dpkg/status</filename> and <command>aptitude</command>'s package state "
 "information, available at <filename>/var/lib/aptitude/pkgstates</filename>.  "
 "You should have made a backup before the upgrade as described at <xref "
-"linkend=\"data-backup\"/> , but you can also find backups of this "
-"information in <filename>/var/backups</filename>."
+"linkend=\"data-backup\"/>, but you can also find backups of this information "
+"in <filename>/var/backups</filename>."
 msgstr ""
-
-# type: Content of: <chapter><section><itemizedlist><listitem><para>
-#: en/about.dbk:86
-msgid ""
-"Session logs using <command>script</command>, as described in <xref linkend="
-"\"record-session\"/> ."
-msgstr ""
+"നിങ്ങളുടെ പൊതികളുടെ ഡാറ്റാബേസിന്റെ പുതുക്കലിന്റെ മുമ്പും ശേഷവുമുള്ള സ്ഥിതി: "
+"<command>dpkg</command> യുടെ സ്ഥിതി കാണിയ്ക്കുന്ന ഡാറ്റാബേസ് <filename>/var/lib/"
+"dpkg/status</filename> ലും <command>aptitude</command> ന്റെ സ്ഥിതി കാണിയ്ക്കുന്ന ഡാറ്റാബേസ് <"
+"filename>/var/lib/aptitude/pkgstates</filename> "
+"ലഭ്യമാണു്. <xref "
+"linkend=\"data-backup\"/> ല്‍ പുതുക്കലിന്റെ മുമ്പേ കരുതല്‍ പകര്‍പ്പെടുക്കാന്‍ നിങ്ങള്‍ "
+"ശ്രദ്ധിയ്ക്കണം, പക്ഷേ ഈ വിവരത്തിന്റെ കരുതല്‍ പകര്‍പ്പുകള്‍ <filename>/var/backups</filename> ലും "
+"കാണാവുന്നതാണു്."
 
 # type: Content of: <chapter><section><itemizedlist><listitem><para>
 #: en/about.dbk:92
 msgid ""
-"Your <command>aptitude</command> logs, available at <filename>/var/log/"
-"aptitude</filename>."
+"Session logs using <command>script</command>, as described in <xref linkend="
+"\"record-session\"/>."
 msgstr ""
+"<xref linkend="
+"\"record-session\"/> എന്നിടത്തു് വിശദീകരിച്ചതു് പോലെ <command>script</command> ഉപയോഗിച്ചു് "
+"പ്രവര്‍ത്തനവേള ലോഗ് ചെയ്യും."
 
-# type: Content of: <chapter><section><para>
+# type: Content of: <chapter><section><itemizedlist><listitem><para>
 #: en/about.dbk:98
 msgid ""
-"Note: you should take some time to review and remove any sensitive and/or "
+"Your <systemitem role=\"package\">apt</systemitem> logs, available at "
+"<filename>/var/log/apt/term.log</filename> or your <command>aptitude</"
+"command> logs, available at <filename>/var/log/aptitude</filename>."
+msgstr ""
+"നിങ്ങളുടെ <systemitem role=\"package\">apt</systemitem> ലോഗുകള്‍ <filename>/var/log/apt/term.log<"
+"/filename> ലും അല്ലെങ്കില്‍ <command>aptitude</"
+"command> ലോഗുകള്‍ <filename>/var/log/aptitude</filename> ലും ലഭ്യമാണു്."
+
+# type: Content of: <chapter><section><note><para>
+#: en/about.dbk:107
+msgid ""
+"You should take some time to review and remove any sensitive and/or "
 "confidential information from the logs before including them in a bug report "
 "as the information will be published in a public database."
 msgstr ""
+"നിങ്ങളുടെ ലോഗുകള്‍ എല്ലാവര്‍ക്കും കാണാവുന്ന ഡാറ്റാബേസിലാണു് സൂക്ഷിയ്ക്കുന്നതെന്നതിനാല്‍ "
+"അയയ്ക്കുന്നതിനു് മുമ്പു് ഒന്നു് കൂടി വിലയിരുത്തി രഹസ്യമായ വിവരങ്ങളെന്തെങ്കിലും പിഴവറിയ്ക്കുന്ന "
+"അറിയിപ്പില്‍ നിന്നും നീക്കം ചെയ്തുവെന്നു് ഉറപ്പുവരുത്തുക."
 
 # type: Content of: <chapter><section><title>
-#: en/about.dbk:106
+#: en/about.dbk:116
 msgid "Sources for this document"
-msgstr ""
+msgstr "ഈ രചനയുടെ ഉറവിടം"
 
 # type: Content of: <chapter><section><para>
-#: en/about.dbk:108
+#: en/about.dbk:118
 msgid ""
-"This document is generated using <systemitem role=\"package\">docbook-xsl</"
-"systemitem>.  Sources for the Release Notes are available in the SVN "
-"repository of the <emphasis>Debian Documentation Project</emphasis>.  You "
-"can use the <ulink url=\"&url-svn-release-notes;\">web interface</ulink> to "
-"access its files individually through the web and see their changes.  For "
-"more information on how to access the SVN please consult the <ulink url="
-"\"&url-ddp-svn-info;\">Debian Documentation Project SVN pages</ulink>."
+"The source of this document is in DocBook XML<indexterm><primary>DocBook "
+"XML</primary></indexterm> format. The HTML version is generated using "
+"<systemitem role=\"package\">docbook-xsl</systemitem> and <systemitem role="
+"\"package\">xsltproc</systemitem>. The PDF version is generated using "
+"<systemitem role=\"package\">dblatex</systemitem> or <systemitem role="
+"\"package\">xmlroff</systemitem>. Sources for the Release Notes are "
+"available in the SVN repository of the <emphasis>Debian Documentation "
+"Project</emphasis>.  You can use the <ulink url=\"&url-svn-release-notes;"
+"\">web interface</ulink> to access its files individually through the web "
+"and see their changes.  For more information on how to access the SVN please "
+"consult the <ulink url=\"&url-ddp-svn-info;\">Debian Documentation Project "
+"SVN pages</ulink>."
 msgstr ""
+"ഈ രചനയുടെ ഉറവിടം ഡോക്ബുക്ക് എക്സ്എംഎല്‍ <indexterm><primary>DocBook "
+"XML</primary></indexterm> ഫോര്‍മാറ്റിലാണു്. എച്ച്ടിഎംഎല്‍ പതിപ്പു് <systemitem role=\"package\">"
+"docbook-xsl</systemitem> "
+" ഉപയോഗിച്ചാണു് സൃഷ്ടിച്ചിരിയ്ക്കുന്നതു്. പിഡിഎഫ് <systemitem role=\"package\">dblatex</systemitem> "
+"അല്ലെങ്കില്‍ <systemitem role="
+"\"package\">xmlroff</systemitem> ഉപയോഗിച്ചാണു് സൃഷ്ടിച്ചിരിയ്ക്കുന്നതു്. പ്രസാധനക്കുറിപ്പുകളുടെ "
+"ഉറവിടം <emphasis>ഡെബിയന്റെ സഹായക്കുറിപ്പുകളുടെ സംരംഭത്തിന്റെ</emphasis> "
+"എസ്‌വിഎന്‍ ശേഖരത്തില്‍ ലഭ്യമാണു്. നിങ്ങള്‍ക്കും <ulink url=\"&url-svn-release-notes;"
+"\">വെബ് വിനിമയതലം</ulink> ഉപയോഗിച്ചു് വെബ്ബിലൂടെ ഓരോ ഫയലായി എടുക്കാവുന്നതാണു്. എസ്‌വിഎന്‍ "
+"ലഭ്യമാക്കാനുള്ള കൂടുതല്‍ വിവരങ്ങള്‍ക്കു് <ulink url=\"&url-ddp-svn-info;\">ഡെബിയന്റെ "
+"സഹായക്കുറിപ്പുകളുടെ സംരംഭത്തിന്റെ എസ്‌വിഎന്‍ താളുകള്‍</ulink> നോക്കുക."
+
