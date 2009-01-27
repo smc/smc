@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: release-notes 5.0\n"
-"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-01-26 19:48-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,88 +16,362 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING"
 
 # type: Attribute 'lang' of: <book>
-#: en/release-notes.dbk:8
+#: en/release-notes.dbk:7
 msgid "en"
 msgstr ""
 
 # type: Content of: <book><title>
-#: en/release-notes.dbk:9
+#: en/release-notes.dbk:8
 msgid "Release Notes for &debian; &release; (&releasename;), &arch-title;"
 msgstr ""
 
-# type: Content of: <book><bookinfo><authorgroup><author><contrib>
-#: en/release-notes.dbk:16 en/release-notes.dbk:22
-msgid "current release"
-msgstr ""
-
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:19
-msgid "<author> <firstname>Luk</firstname> <surname>Claes</surname>"
-msgstr ""
-
-# type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:23
-msgid ""
-"<email>doc-update@release.debian.org</email> </author> <author> "
-"<firstname>Josip</firstname> <surname>Rodin</surname>"
+#: en/release-notes.dbk:12
+msgid "<author> <firstname>Josip</firstname> <surname>Rodin</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author><contrib>
-#: en/release-notes.dbk:28 en/release-notes.dbk:33 en/release-notes.dbk:38
-#: en/release-notes.dbk:43 en/release-notes.dbk:48 en/release-notes.dbk:53
-#: en/release-notes.dbk:58 en/release-notes.dbk:63 en/release-notes.dbk:68
-msgid "old release"
+#: en/release-notes.dbk:15 en/release-notes.dbk:20 en/release-notes.dbk:25 en/release-notes.dbk:30 en/release-notes.dbk:35 en/release-notes.dbk:40 en/release-notes.dbk:45 en/release-notes.dbk:50 en/release-notes.dbk:55
+msgid "prior release"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:29
-msgid ""
-"</author> <author> <firstname>Bob</firstname> <surname>Hilliard</surname>"
+#: en/release-notes.dbk:16
+msgid "</author> <author> <firstname>Bob</firstname> <surname>Hilliard</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:34
-msgid ""
-"</author> <author> <firstname>Adam</firstname> <surname>Di Carlo</surname>"
+#: en/release-notes.dbk:21
+msgid "</author> <author> <firstname>Adam</firstname> <surname>Di Carlo</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:39
-msgid ""
-"</author> <author> <firstname>Anne</firstname> <surname>Bezemer</surname>"
+#: en/release-notes.dbk:26
+msgid "</author> <author> <firstname>Anne</firstname> <surname>Bezemer</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:44
-msgid ""
-"</author> <author> <firstname>Rob</firstname> <surname>Bradford</surname>"
+#: en/release-notes.dbk:31
+msgid "</author> <author> <firstname>Rob</firstname> <surname>Bradford</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:49
+#: en/release-notes.dbk:36
 msgid "</author> <author> <firstname>Frans</firstname> <surname>Pop</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:54
-msgid ""
-"</author> <author> <firstname>Andreas</firstname> <surname>Barth</surname>"
+#: en/release-notes.dbk:41
+msgid "</author> <author> <firstname>Andreas</firstname> <surname>Barth</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:59
+#: en/release-notes.dbk:46
 msgid ""
 "</author> <author> <firstname>Javier</firstname> <surname>Fernández-Sanguino "
 "Peña</surname>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><authorgroup><author>
-#: en/release-notes.dbk:64
+#: en/release-notes.dbk:51
+msgid "</author> <author> <firstname>Steve</firstname> <surname>Langasek</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><editor>
+#: en/release-notes.dbk:56
 msgid ""
-"</author> <author> <firstname>Steve</firstname> <surname>Langasek</surname>"
+"</author> <editor> <firstname>W. Martin</firstname> "
+"<surname>Borgert</surname>"
+msgstr ""
+
+# type: Content of: <book><bookinfo><authorgroup><editor><contrib>
+#: en/release-notes.dbk:60
+msgid "current release"
 msgstr ""
 
 # type: Content of: <book><bookinfo><pubdate>
-#: en/release-notes.dbk:71
+#: en/release-notes.dbk:64
 msgid "2008-08-06"
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><warning><para>
+#: en/release-notes.dbk:68
+msgid ""
+"At this moment not all contributors may have agreed to put the release notes "
+"under GPL2 or under any DFSG free license.  See <ulink "
+"url=\"http://bugs.debian.org/332782\">bug #332782</ulink> for the current "
+"state."
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: en/release-notes.dbk:76
+msgid ""
+"This document is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License, version 2, as published "
+"by the Free Software Foundation."
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: en/release-notes.dbk:82
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: en/release-notes.dbk:89
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: en/release-notes.dbk:94
+msgid ""
+"The license text can also be found at <ulink "
+"url=\"http://www.gnu.org/copyleft/gpl.html\">http://www.gnu.org/copyleft/gpl.html</ulink> "
+"and <filename>/usr/share/common-licenses/GPL-2</filename> on &debian;."
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:120
+msgid "ACPI"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:121
+msgid "Advanced Configuration and Power Interface"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:124
+msgid "ALSA"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:125
+msgid "Advanced Linux Sound Architecture"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:128
+msgid "APM"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:129
+msgid "Advanced Power Management"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:132
+msgid "CD"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:133
+msgid "Compact Disc"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:136
+msgid "DNS"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:137
+msgid "Domain Name System"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:140
+msgid "DVD"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:141
+msgid "Digital Versatile Disc"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:144
+msgid "GIMP"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:145
+msgid "GNU Image Manipulation Program"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:148
+msgid "GNU"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:149
+msgid "GNU's Not Unix"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:152
+msgid "IDE"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:153
+msgid "Integrated Drive Electronics"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:156
+msgid "LDAP"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:157
+msgid "Lightweight Directory Access Protocol"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:160
+msgid "LILO"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:161
+msgid "LInux LOader"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:164
+msgid "LSB"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:165
+msgid "Linux Standards Base"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:168
+msgid "LVM"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:169
+msgid "Logical Volume Manager"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:172
+msgid "MTA"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:173
+msgid "Mail Transport Agent"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:176
+msgid "NFS"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:177
+msgid "Network File System"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:180
+msgid "NIC"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:181
+msgid "Network Interface Card"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:184
+msgid "NIS"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:185
+msgid "Network Information Service"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:188
+msgid "OSS"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:189
+msgid "Open Sound System"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:192
+msgid "RAID"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:193
+msgid "Redundant Array of Independent Disks"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:196
+msgid "SATA"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:197
+msgid "Serial Advanced Technology Attachment"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:200
+msgid "USB"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:201
+msgid "Universal Serial Bus"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:204
+msgid "UUID"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:205
+msgid "Universally Unique Identifier"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:208
+msgid "VGA"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:209
+msgid "Video Graphics Array"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossterm>
+#: en/release-notes.dbk:212
+msgid "WPA"
+msgstr ""
+
+# type: Content of: <book><glossary><glossentry><glossdef><para>
+#: en/release-notes.dbk:213
+msgid "Wi-Fi Protected Access"
 msgstr ""

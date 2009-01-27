@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: release-notes 5.0\n"
-"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-01-26 19:48-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,13 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: Attribute 'lang' of: <chapter>
+#: en/installing.dbk:7
+msgid "en"
+msgstr ""
+
 # type: Content of: <chapter><title>
-#: en/installing.dbk:9
+#: en/installing.dbk:8
 msgid "Installation System"
 msgstr ""
 
 # type: Content of: <chapter><para>
-#: en/installing.dbk:11
+#: en/installing.dbk:10
 msgid ""
 "The Debian Installer is the official installation system for Debian.  It "
 "offers a variety of installation methods.  Which methods are available to "
@@ -29,22 +34,22 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><para>
-#: en/installing.dbk:16
+#: en/installing.dbk:15
 msgid ""
 "Images of the installer for &releasename; can be found together with the "
-"Installation Guide on the <ulink url=\"http://www.debian.org/releases/stable/"
-"debian-installer/\">Debian website</ulink>."
+"Installation Guide on the <ulink url=\"&url-installer;\">Debian "
+"website</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><para>
-#: en/installing.dbk:22
+#: en/installing.dbk:20
 msgid ""
 "The Installation Guide is also included on the first CD/DVD of the official "
 "Debian CD/DVD sets, at:"
 msgstr ""
 
 # type: Content of: <chapter><screen>
-#: en/installing.dbk:25
+#: en/installing.dbk:23
 #, no-wrap
 msgid ""
 "\n"
@@ -52,370 +57,231 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><para>
-#: en/installing.dbk:29
+#: en/installing.dbk:27
 msgid ""
-"You may also want to check the <ulink url=\"http://www.debian.org/releases/"
-"stable/debian-installer/index#errata\">errata</ulink> for debian-installer "
-"for a list of known issues."
+"You may also want to check the <ulink "
+"url=\"&url-installer;index#errata\">errata</ulink> for debian-installer for "
+"a list of known issues."
 msgstr ""
 
 # type: Content of: <chapter><section><title>
-#: en/installing.dbk:34
+#: en/installing.dbk:32
 msgid "What's new in the installation system?"
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/installing.dbk:36
+#: en/installing.dbk:34
 msgid ""
 "There has been a lot of development on the Debian Installer since its first "
-"official release with &oldreleasename; resulting in both improved hardware "
-"support and some exciting new features."
+"official release with &debian; 3.1 (<quote>sarge</quote>)  resulting in both "
+"improved hardware support and some exciting new features."
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/installing.dbk:41
+#: en/installing.dbk:40
 msgid ""
 "In these Release Notes we'll only list the major changes in the installer.  "
 "If you are interested in an overview of the detailed changes since "
 "&oldreleasename;, please check the release announcements for the "
 "&releasename; beta and RC releases available from the Debian Installer's "
-"<ulink url=\"http://www.debian.org/devel/debian-installer/News/\">news "
-"history</ulink>."
+"<ulink url=\"&url-installer-news;\">news history</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
-#: en/installing.dbk:48
+#: en/installing.dbk:47
 msgid "Major changes"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:51
-msgid "No reboot during the installation"
+#: en/installing.dbk:50
+msgid "Support for loading firmware during installation"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:54
+#: en/installing.dbk:53
 msgid ""
-"Previously, the installation was split into two parts: setting up the base "
-"system and making it bootable, followed by a reboot and after that the "
-"execution of <command>base-config</command> which would take care of things "
-"like user setup, setup of the package management system and installation of "
-"additional packages (using tasksel)."
+"It is now possible to load firmware binary files from removable media when "
+"they're provided externally to Debian installation media."
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
+#: en/installing.dbk:59
+msgid ""
+"Support for installation from Microsoft Windows "
+"<indexterm><primary>Microsoft Windows</primary></indexterm>"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:61
+#: en/installing.dbk:63
 msgid ""
-"For &releasename; the second stage has been integrated into Debian Installer "
-"itself.  This has a number of advantages, including increased security and "
-"the fact that after the reboot at the end of the installation the new system "
-"should already have the correct timezone and, if you installed the Desktop "
-"environment, will at once start the graphical user interface."
+"The installation media are now provided with an application that allows "
+"preparing the system to install Debian, from Microsoft Windows environments."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
 #: en/installing.dbk:70
-msgid "UTF-8 encoding default for new systems"
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:73
-msgid ""
-"The installer will set up systems to use UTF-8 encoding rather than the old "
-"language-specific encodings (like ISO-8859-1, EUC-JP or KOI-8)."
+msgid "<acronym>SATA</acronym> <acronym>RAID</acronym> support"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:79
-msgid "More flexible partitioning"
+#: en/installing.dbk:77
+msgid "Early upgrade of packages with security fixes"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:82
+#: en/installing.dbk:80
 msgid ""
-"It is now possible to set up file systems on an LVM volume using guided "
-"partitioning."
+"When used with a functional network access, the installer will upgrade all "
+"packages that were updated since the initial release of &releasename;. This "
+"upgrade happens during the installation step, before the installed system is "
+"booted."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:86
+#: en/installing.dbk:85
 msgid ""
-"The installer is also able to set up encrypted file systems.  Using manual "
-"partitioning you have the choice between <literal>dm-crypt</literal> and "
-"<literal>loop-aes</literal>, using a passphrase or a random key, and you can "
-"tune various other options.  Using guided partitioning, the installer will "
-"create an encrypted LVM partition that contains any other file systems "
-"(except <filename>/boot</filename>) as logical volumes."
+"As a consequence, the installed system is less likely to be vulnerable to "
+"security issues that were discovered and fixed between the release time of "
+"&releasename; and the installation time."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:96
-msgid "Graphical user interface"
+#: en/installing.dbk:92
+msgid "Support for <emphasis>volatile</emphasis>"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:99
+#: en/installing.dbk:95
 msgid ""
-"If you prefer a graphical user interface, try booting the installer with "
-"<literal>installgui</literal>."
+"The installer can now optionally setup the installed system to use updated "
+"packages from <literal>volatile.debian.org</literal>. That archive hosts "
+"packages that provide data that needs to be regularly updated over time, "
+"such as timezones definitions, anti-virus signature files, etc."
 msgstr ""
 
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
 #: en/installing.dbk:103
-msgid ""
-"The functionality of the graphical installer is almost identical to the "
-"regular installer, only the presentation differs.  There is one exception: "
-"the graphical frontend does not support setting up encrypted partitions "
-"using random keys."
+msgid "New boot menu for Intel x86 and AMD64"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:109
+#: en/installing.dbk:106
 msgid ""
-"The major advantage of the graphical user interface is that it supports more "
-"languages than the regular user interface (newt).  Information about the "
-"graphical installer and the most important differences between the graphical "
-"and regular installer are documented in an appendix in the installation "
-"guide."
+"An interactive boot menu was added to make the choice of specific options "
+"and boot methods more intuitive for users."
+msgstr ""
+
+# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
+#: en/installing.dbk:112
+msgid "New ports"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
 #: en/installing.dbk:115
 msgid ""
-"Note: the graphical user interface is not available for all architectures."
+"The armel architecture is now supported. Images for i386 Xen guests are also "
+"provided."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
 #: en/installing.dbk:120
-msgid "Rescue mode"
+msgid "Support for hardware speech synthesis devices"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
 #: en/installing.dbk:123
 msgid ""
-"You can use the installer to solve problems with your system, for example "
-"when it refuses to boot.  The first steps will be just like a regular "
-"installation, but the installer will not start the partitioner.  Instead it "
-"will offer you a menu of rescue options."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:129
-msgid ""
-"Activate the rescue mode by booting the installer with <literal>rescue</"
-"literal>, or by adding a boot parameter <literal>rescue/enable=true</"
-"literal>."
+"Several devices designed to provide hardware speech synthesis are now "
+"supported by the installer, therefore improving its accessibility for "
+"visually-impaired users.  <indexterm><primary>visually-impaired "
+"users</primary></indexterm>"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:136
-msgid "Using sudo instead of root account"
+#: en/installing.dbk:131
+msgid "Support for <literal>relatime</literal> mount options"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:139
+#: en/installing.dbk:134
 msgid ""
-"During expert installations you can choose to not set up the root account "
-"(it will be locked), but instead set up <command>sudo</command> so that the "
-"first user can use that for system administration."
+"The installer can now setup partitions with the <literal>relatime</literal> "
+"mount option, allowing access time on files and directories to be updated "
+"only if the previous access time was earlier than the current modify or "
+"change time."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:146
-msgid "Cryptographic verification of downloaded packages"
+#: en/installing.dbk:140
+msgid "NTP clock synchronization at installation time"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:149
+#: en/installing.dbk:143
 msgid ""
-"Packages downloaded with the installer are now cryptographically checked "
-"using <command>apt</command>, making it more difficult to compromise a "
-"system being installed over the network."
+"The computer clock is now synchronized with NTP servers over the network "
+"during installation so that the installed system immediately has an accurate "
+"clock."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:156
-msgid "Simplified mail configuration"
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:159
-msgid ""
-"If the standard system is installed, the installer sets up a basic "
-"configuration for the system's mail server which will only provide for local "
-"e-mail delivery.  The mail server will be unavailable to other systems "
-"connected to the same network.  If you want to configure your system to "
-"handle e-mail not local to the system (either to send e-mail or to receive "
-"it), you will have to reconfigure the mail system after installation."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:169
-msgid "Desktop selection"
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:172
-msgid ""
-"The installation system will install a GNOME desktop as the default desktop "
-"if the user asks for one."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:176
-msgid ""
-"However, users wishing to install alternate desktop environments can easily "
-"do so by adding boot parameters: <literal>tasks=standard, kde-desktop</"
-"literal> for KDE and <literal>tasks=standard, xfce-desktop</literal> for "
-"Xfce.  Note that this will not work when installing from a full CD image "
-"without using a network mirror as an additional package source; it will work "
-"when using a DVD image or any other installation method."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:184
-msgid ""
-"There are also separate CD images available that install the KDE or Xfce "
-"desktop environment by default."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:190
+#: en/installing.dbk:150
 msgid "New languages"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:193
+#: en/installing.dbk:153
 msgid ""
-"Thanks to the huge efforts of translators, Debian can now be installed in 47 "
-"languages using the text-based installation user interface.  This is six "
-"languages more than in &oldreleasename;.  Languages added in this release "
-"include Belarusian, Esperanto, Estonian, Kurdish, Macedonian, Tagalog, "
-"Vietnamese and Wolof.  Due to lack of translation updates, two languages "
-"have been dropped in this release: Persian and Welsh."
+"Thanks to the huge efforts of translators, Debian can now be installed in 63 "
+"languages (50 using the text-based installation user interface and 13 "
+"supported only with the graphical user interface).  This is five languages "
+"more than in &oldreleasename;.  Languages added in this release include "
+"Amharic, Marathi, Irish, Northern Sami, Serbian.  Due to lack of translation "
+"updates, one language has been dropped in this release: Estonian. Another "
+"language that was disabled in &oldreleasename; has been reactivated: Welsh."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:201
+#: en/installing.dbk:161
 msgid ""
-"If the graphical user interface is used, an additional eleven languages are "
-"supported.  These languages can only be selected using this installer as "
-"their character sets cannot be presented in a non-graphical environment.  "
-"The new languages are: Bengali, Dzongkha, Gujarati, Hindi, Georgian, Khmer, "
-"Malayalam, Nepali, Punjabi, Tamil and Thai."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:208
-msgid ""
-"Users that do not wish to use any locale can now select <emphasis>C</"
-"emphasis> as their preferred locale in the installer's language selection.  "
-"More information on language coverage is available at the <ulink url="
-"\"http://d-i.alioth.debian.org/i18n-doc/languages.html\">d-i languages list</"
-"ulink>."
+"The languages that can only be selected using the graphical installer as "
+"their character sets cannot be presented in a non-graphical environment are: "
+"Amharic, Bengali, Dzongkha, Gujarati, Hindi, Georgian, Khmer, Malayalam, "
+"Marathi, Nepali, Punjabi, Tamil and Thai."
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:217
-msgid "Simplified localization and timezone selection"
+#: en/installing.dbk:168
+msgid "Simplified country choice"
 msgstr ""
 
 # type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:220
+#: en/installing.dbk:171
 msgid ""
-"Configuration of language, countries and timezones has been simplified to "
-"reduce the amount of information needed from the user.  The installer will "
-"now guess what the system's country and timezone is based on the language "
-"selected, or will provide a limited selection if it cannot.  Users can still "
-"introduce obscure combinations if need be."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><term>
-#: en/installing.dbk:229
-msgid "Improved system-wide localization"
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:232
-msgid ""
-"Most of the internationalization and localization tasks that were previously "
-"handled by the <systemitem role=\"package\">localization-config</systemitem> "
-"tool are now included in the stock Debian installer or in packages "
-"themselves.  This means that selection of a language will automatically "
-"install packages necessary for that language (dictionaries, documentation, "
-"fonts...) in both standard and desktop environments.  Configuration that is "
-"no longer handled automatically includes the papersize configuration and "
-"some advanced X Windows keyboard settings for some languages."
-msgstr ""
-
-# type: Content of: <chapter><section><section><variablelist><varlistentry><listitem><para>
-#: en/installing.dbk:242
-msgid ""
-"Note that language-specific packages will only be installed automatically if "
-"they are available during the installation."
+"The country choice list is now grouped by continents, allowing an easier "
+"selection of country, when users don't want to pick the ones associated with "
+"the chosen language."
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
-#: en/installing.dbk:251
+#: en/installing.dbk:179
 msgid "Automated installation"
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/installing.dbk:253
+#: en/installing.dbk:181
 msgid ""
-"A lot of the changes mentioned in the previous section also imply changes in "
-"the support in the installer for automated installation using "
-"preconfiguration files.  This means that if you have existing "
-"preconfiguration files that worked with the &oldreleasename; installer, you "
-"cannot expect these to work with the new installer without modification."
+"Some changes mentioned in the previous section also imply changes in the "
+"support in the installer for automated installation using preconfiguration "
+"files.  This means that if you have existing preconfiguration files that "
+"worked with the &oldreleasename; installer, you cannot expect these to work "
+"with the new installer without modification."
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/installing.dbk:260
+#: en/installing.dbk:188
 msgid ""
-"The good news is that the <ulink url=\"http://www.debian.org/releases/stable/"
-"installmanual\">Installation Guide</ulink> now has a separate appendix with "
-"extensive documentation on using preconfiguration."
-msgstr ""
-
-# type: Content of: <chapter><section><section><para>
-#: en/installing.dbk:266
-msgid ""
-"The &releasename; installer introduces some exciting new features that allow "
-"further and easier automation of installs.  It also adds support for "
-"advanced partitioning using RAID, LVM and encrypted LVM.  See the "
-"documentation for details."
-msgstr ""
-
-# type: Content of: <chapter><section><title>
-#: en/installing.dbk:275
-msgid "Popularity contest"
-msgstr ""
-
-# type: Content of: <chapter><section><para>
-#: en/installing.dbk:277
-msgid ""
-"The installation system will again offer to install the <systemitem role="
-"\"package\">popularity-contest</systemitem> package.  This package was not "
-"installed by default in &oldreleasename; but it was installed in older "
-"releases."
-msgstr ""
-
-# type: Content of: <chapter><section><para>
-#: en/installing.dbk:282
-msgid ""
-"<systemitem role=\"package\">popularity-contest</systemitem> provides the "
-"Debian project with valuable information on which packages in the "
-"distribution are actually used.  This information is used mainly to decide "
-"the order in which packages are included on installation CD-ROMs, but is "
-"also often consulted by Debian developers in deciding whether or not to "
-"adopt a package that no longer has a maintainer."
-msgstr ""
-
-# type: Content of: <chapter><section><para>
-#: en/installing.dbk:290
-msgid ""
-"Information from <systemitem role=\"package\">popularity-contest</"
-"systemitem> is processed anonymously.  We would appreciate it if you would "
-"participate in this official survey, helping to improve Debian."
+"The <ulink url=\"&url-install-manual;\">Installation Guide</ulink> has an "
+"updated separate appendix with extensive documentation on using "
+"preconfiguration."
 msgstr ""

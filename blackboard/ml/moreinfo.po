@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: release-notes 5.0\n"
-"POT-Creation-Date: 2008-08-07 07:55+0300\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-01-26 19:48-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,44 +15,49 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: Attribute 'lang' of: <chapter>
+#: en/moreinfo.dbk:7
+msgid "en"
+msgstr ""
+
 # type: Content of: <chapter><title>
-#: en/moreinfo.dbk:9
+#: en/moreinfo.dbk:8
 msgid "More information on &debian;"
 msgstr ""
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:11
+#: en/moreinfo.dbk:10
 msgid "Further reading"
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:13
+#: en/moreinfo.dbk:12
 msgid ""
 "Beyond these release notes and the installation guide, further documentation "
 "on &debian; is available from the Debian Documentation Project (DDP), whose "
 "goal is to create high-quality documentation for Debian users and "
 "developers.  Documentation, including the Debian Reference, Debian New "
 "Maintainers Guide, and Debian FAQ are available, and many more.  For full "
-"details of the existing resources see the <ulink url=\"http://www.debian.org/"
-"doc/ddp\">DDP website</ulink>."
+"details of the existing resources see the <ulink url=\"&url-ddp;\">DDP "
+"website</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:22
+#: en/moreinfo.dbk:21
 msgid ""
-"Documentation for individual packages is installed into <filename>/usr/share/"
-"doc/<replaceable>package</replaceable></filename>.  This may include "
-"copyright information, Debian specific details and any upstream "
-"documentation."
+"Documentation for individual packages is installed into "
+"<filename>/usr/share/doc/<replaceable>package</replaceable></filename>.  "
+"This may include copyright information, Debian specific details and any "
+"upstream documentation."
 msgstr ""
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:30
+#: en/moreinfo.dbk:29
 msgid "Getting help"
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:32
+#: en/moreinfo.dbk:31
 msgid ""
 "There are many sources of help, advice and support for Debian users, but "
 "these should only be considered if research into documentation of the issue "
@@ -61,28 +66,28 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
-#: en/moreinfo.dbk:38
+#: en/moreinfo.dbk:37
 msgid "Mailing lists"
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:40
+#: en/moreinfo.dbk:39
 msgid ""
 "The mailing lists of most interest to Debian users are the debian-user list "
 "(English) and other debian-user-<replaceable>language</replaceable> lists "
 "(for other languages).  For information on these lists and details of how to "
-"subscribe see <ulink url=\"http://lists.debian.org/\"></ulink>.  Please "
+"subscribe see <ulink url=\"&url-debian-list-archives;\"></ulink>.  Please "
 "check the archives for answers to your question prior to posting and also "
 "adhere to standard list etiquette."
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
-#: en/moreinfo.dbk:50
+#: en/moreinfo.dbk:49
 msgid "Internet Relay Chat"
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:52
+#: en/moreinfo.dbk:51
 msgid ""
 "Debian has an IRC channel dedicated to the support and aid of Debian users "
 "located on the OFTC IRC network.  To access the channel, point your favorite "
@@ -90,38 +95,38 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:57
+#: en/moreinfo.dbk:56
 msgid ""
 "Please follow the channel guidelines, respecting other users fully.  The "
-"guidelines are available at the <ulink url=\"http://wiki.debian.org/DebianIRC"
-"\">Debian Wiki</ulink>."
+"guidelines are available at the <ulink url=\"&url-wiki;DebianIRC\">Debian "
+"Wiki</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
-#: en/moreinfo.dbk:62
+#: en/moreinfo.dbk:61
 msgid ""
-"For more information on OFTC please visit the <ulink url=\"http://www.oftc."
-"net/\">website</ulink>."
+"For more information on OFTC please visit the <ulink "
+"url=\"&url-irc-host;\">website</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:70
+#: en/moreinfo.dbk:69
 msgid "Reporting bugs"
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:72
+#: en/moreinfo.dbk:71
 msgid ""
 "We strive to make &debian; a high quality operating system, however that "
 "does not mean that the packages we provide are totally free of bugs.  "
-"Consistent with Debian's open development philosophy and as a service to our "
-"users, we provide all the information on reported bugs at our own Bug "
-"Tracking System (BTS).  The BTS is browseable at <ulink url=\"http://bugs."
-"debian.org/\">bugs.debian.org</ulink>."
+"Consistent with Debian's <quote>open development</quote> philosophy and as a "
+"service to our users, we provide all the information on reported bugs at our "
+"own Bug Tracking System (BTS).  The BTS is browseable at <ulink "
+"url=\"&url-bts;\"></ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:80
+#: en/moreinfo.dbk:79
 msgid ""
 "If you find a bug in the distribution or in packaged software that is part "
 "of it, please report it so that it can be properly fixed for future "
@@ -131,54 +136,55 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:87
+#: en/moreinfo.dbk:86
 msgid ""
 "You can submit a bug report using the program <command>reportbug</command> "
 "or manually using email.  You can read more about the Bug Tracking System "
-"and how to use it by reading the reference cards (available at <filename>/"
-"usr/share/doc/debian</filename> if you have <systemitem role=\"package\">doc-"
-"debian</systemitem> installed) or online at the <ulink url=\"http://bugs."
-"debian.org/\">Bug Tracking System</ulink>."
+"and how to use it by reading the reference cards (available at "
+"<filename>/usr/share/doc/debian</filename> if you have <systemitem "
+"role=\"package\">doc-debian</systemitem> installed) or online at the <ulink "
+"url=\"&url-bts;\">Bug Tracking System</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><title>
-#: en/moreinfo.dbk:97
+#: en/moreinfo.dbk:96
 msgid "Contributing to Debian"
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:99
+#: en/moreinfo.dbk:98
 msgid ""
 "You do not need to be an expert to contribute to Debian.  By assisting users "
-"with problems on the various user support <ulink url=\"http://lists.debian."
-"org/\">lists</ulink> you are contributing to the community.  Identifying "
-"(and also solving) problems related to the development of the distribution "
-"by participating on the development <ulink url=\"http://lists.debian.org/"
-"\">lists</ulink> is also extremely helpful.  To maintain Debian's high "
-"quality distribution, <ulink url=\"http://bugs.debian.org/\">submit bugs</"
-"ulink> and help developers track them down and fix them.  If you have a way "
-"with words then you may want to contribute more actively by helping to write "
-"<ulink url=\"http://www.debian.org/doc/ddp\">documentation</ulink> or <ulink "
-"url=\"http://www.debian.org/international/\">translate</ulink> existing "
-"documentation into your own language."
+"with problems on the various user support <ulink "
+"url=\"&url-debian-list-archives;\">lists</ulink> you are contributing to the "
+"community.  Identifying (and also solving) problems related to the "
+"development of the distribution by participating on the development <ulink "
+"url=\"&url-debian-list-archives;\">lists</ulink> is also extremely helpful.  "
+"To maintain Debian's high quality distribution, <ulink "
+"url=\"&url-bts;\">submit bugs</ulink> and help developers track them down "
+"and fix them.  If you have a way with words then you may want to contribute "
+"more actively by helping to write <ulink "
+"url=\"&url-ddp;\">documentation</ulink> or <ulink "
+"url=\"&url-debian-i18n;\">translate</ulink> existing documentation into your "
+"own language."
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:114
+#: en/moreinfo.dbk:113
 msgid ""
 "If you can dedicate more time, you could manage a piece of the Free Software "
 "collection within Debian.  Especially helpful is if people adopt or maintain "
 "items that people have requested for inclusion within Debian.  The <ulink "
-"url=\"http://www.debian.org/devel/wnpp/\">Work Needing and Prospective "
-"Packages database</ulink> details this information.  If you have an interest "
-"in specific groups then you may find enjoyment in contributing to some of "
-"Debian's subprojects which include ports to particular architectures, <ulink "
-"url=\"http://www.debian.org/devel/debian-jr/\">Debian Jr.</ulink> and <ulink "
-"url=\"http://www.debian.org/devel/debian-med/\">Debian Med</ulink>."
+"url=\"&url-wnpp;\">Work Needing and Prospective Packages database</ulink> "
+"details this information.  If you have an interest in specific groups then "
+"you may find enjoyment in contributing to some of Debian's subprojects which "
+"include ports to particular architectures, <ulink "
+"url=\"&url-debian-jr;\">Debian Jr.</ulink> and <ulink "
+"url=\"&url-debian-med;\">Debian Med</ulink>."
 msgstr ""
 
 # type: Content of: <chapter><section><para>
-#: en/moreinfo.dbk:125
+#: en/moreinfo.dbk:124
 msgid ""
 "In any case, if you are working in the free software community in any way, "
 "as a user, programmer, writer or translator you are already helping the free "
