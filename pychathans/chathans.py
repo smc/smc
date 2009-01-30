@@ -44,7 +44,7 @@ gettext.textdomain(PACKAGE)
 #_ = gettext.gettext
 
 name = _("Chathans")
-version = "0.3"
+version = "0.4"
 title = name + " " + version
 
 
@@ -75,6 +75,10 @@ class Chathans (gtk.Window):
 		ascii_btn   = gtk.FileChooserButton(_("Select the ASCII File (.txt,.pdf)"))
 		mapping_btn = gtk.FileChooserButton(_("Select the ASCII-Unicode Mapping File"))
 		unicode_btn = gtk.FileChooserButton(_("Select Output Unicode File"))
+
+		# ആസ്കി-യൂണിക്കോഡ് ആണോ, അതോ യൂണിക്കോഡ്-ആസ്കിയോ?
+		a2u_radio   = gtk.RadioButton(None, (_("ASCII-to-Unicode")))
+		u2a_radio   = gtk.RadioButton(a2u_radio, (_("Unicode-to-ASCII")))
 		
 		# മാപ്പ്, സാധാരണ എവിടെ കിട്ടും? അല്ല, എവിടെ കിട്ടും?
 		mapping_dir = sys.prefix + "/share/payyans/maps/"
@@ -95,6 +99,9 @@ class Chathans (gtk.Window):
 		ascii_filter.add_pattern("*.[Pp][Dd][Ff]")
 		ascii_btn.add_filter(ascii_filter)
 		
+		self.a2u_radio 	 = a2u_radio
+		self.u2a_radio	 = u2a_radio
+
 		self.ascii_btn   = ascii_btn
 		self.mapping_btn = mapping_btn
 		self.unicode_btn = unicode_btn
@@ -115,17 +122,23 @@ class Chathans (gtk.Window):
 		hbox3.pack_start(unicode_lbl)
 		hbox3.pack_end(unicode_btn)
 					
+		radio_box = gtk.HBox()
+		radio_box.set_border_width(12)
+		radio_box.pack_start(a2u_radio)
+		radio_box.pack_start(u2a_radio)
+		
 		btn_box = gtk.HButtonBox()
 		btn_box.set_border_width(4)
 		btn_box.pack_start(convert_btn)
 		btn_box.pack_start(about_btn)
 		btn_box.pack_start(cancel_btn)
-		
+
 		vbox1 = gtk.VBox()
 		vbox1.set_border_width(4)
 		vbox1.pack_start(hbox1)
 		vbox1.pack_start(hbox2)
 		vbox1.pack_start(hbox3)
+		vbox1.pack_start(radio_box)
 		vbox1.pack_end(btn_box)
 		
 		frame = gtk.Frame()
@@ -140,28 +153,47 @@ class Chathans (gtk.Window):
 		self.AsciiFile   = self.ascii_btn.get_filename()
 		self.MappingFile = self.mapping_btn.get_filename()
 		self.UnicodeFile = self.unicode_btn.get_filename()
+
+		if self.a2u_radio.get_active() == True:
+			direction = "a2u"
+			from_file = self.AsciiFile
+			to_file	  = self.UnicodeFile
+		else:
+			direction = "u2a"
+			from_file = self.UnicodeFile
+			to_file	  = self.AsciiFile
 		
-		if (   self.AsciiFile 	== None
+		if (   from_file 	== None
 		   or  self.MappingFile == None ):
 			   dlg = gtk.MessageDialog(self.get_toplevel(),
 					gtk.DIALOG_MODAL,
 					gtk.MESSAGE_INFO,
 					gtk.BUTTONS_OK,
-					_("Please select both ASCII file and Mapping file"))
+					_("Please select both Input file and Mapping file"))
 			   dlg.run()
 			   dlg.destroy()
 			   return
 			   
-		if self.UnicodeFile == None:
-			(inp_file, inp_ext) = os.path.splitext(self.AsciiFile)
-			self.UnicodeFile = inp_file + "-unicode" + ".txt"
+		if to_file == None:
+			(inp_file, inp_ext) = os.path.splitext(from_file)
+			if direction == "a2u":
+				self.UnicodeFile = inp_file + "-unicode" + ".txt"
+			else:
+				self.AsciiFile   = inp_file + "-ascii"   + ".txt"
 			   
 		# ഓഹ്, പയ്യന്‍! നീ വ്യാഘ്രമാകുന്നു.
-		payyan = Payyans(self.AsciiFile, self.UnicodeFile, self.MappingFile)
-		status = payyan.ascii2unicode()
+		if direction == "a2u":
+			payyan = Payyans(self.AsciiFile, self.UnicodeFile, self.MappingFile)
+			status = payyan.ascii2unicode()
+		else:
+			payyan = Payyans(self.UnicodeFile, self.AsciiFile, self.MappingFile)
+			status = payyan.unicode2ascii()
 		print status
-		if status == None:
-			msg = _("Coversion Done - Unicode file :") + self.UnicodeFile
+		if status == 0:
+			if direction == "a2u":
+				msg = _("Coversion Done - Unicode file : ") + self.UnicodeFile
+			else:
+				msg = _("Conversion Done - ASCII file : ") + self.AsciiFile
 		if status == 1:
 			msg = _("Could not find the pdftotext utility. Exiting...")
 		if status == 2:
@@ -198,7 +230,7 @@ class Chathans (gtk.Window):
 	def __quit(self, event):
 		''' ന്നാ, കട്ടേം പടോം മടക്കാം ! '''
 		dlg = gtk.MessageDialog(self.get_toplevel(),
-					gtk.DIALOG_MODAL,
+					gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT,
 					gtk.MESSAGE_QUESTION,
 					gtk.BUTTONS_YES_NO,
 					_("Do you really want to Quit?"))
