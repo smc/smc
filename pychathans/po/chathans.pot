@@ -1,14 +1,14 @@
-# Chathans Localization template file.
-# Copyright (c) 2009 Rajeesh K Nambiar
-# This file is distributed under the same license as Chathans package.
-# Rajeesh K Nambiar <rajeeshknambiar@gmail.com>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-24 14:26+0530\n"
+"POT-Creation-Date: 2009-02-01 10:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,93 +16,105 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: chathans.py:29
+#: chathans.py:30
 msgid "Chathans requires PyGTK"
 msgstr ""
 
-#: chathans.py:36
-msgid "Chathans require Payyans"
+#: chathans.py:37
+msgid "Chathans requires Payyans"
 msgstr ""
 
-#: chathans.py:45
+#: chathans.py:46
 msgid "Chathans"
 msgstr ""
 
-#: chathans.py:69
+#: chathans.py:70
 msgid "ASCII File : "
 msgstr ""
 
-#: chathans.py:70
+#: chathans.py:71
 msgid "Mapping File : "
 msgstr ""
 
-#: chathans.py:71
+#: chathans.py:72
 msgid "Unicode File : "
 msgstr ""
 
-#: chathans.py:74
-msgid "Select the ASCII File (.txt,.pdf)"
-msgstr ""
-
-#: chathans.py:75
+#: chathans.py:80
 msgid "Select the ASCII-Unicode Mapping File"
 msgstr ""
 
-#: chathans.py:76
-msgid "Select Output Unicode File"
-msgstr ""
-
-#: chathans.py:83
-msgid "Convert"
+#: chathans.py:84
+msgid "ASCII-to-Unicode"
 msgstr ""
 
 #: chathans.py:85
+msgid "Unicode-to-ASCII"
+msgstr ""
+
+#: chathans.py:92
+msgid "Convert"
+msgstr ""
+
+#: chathans.py:94
 msgid "Quit"
 msgstr ""
 
-#: chathans.py:87
+#: chathans.py:96
 msgid "About"
 msgstr ""
 
-#: chathans.py:149
-msgid "Please select both ASCII file and Mapping file"
+#: chathans.py:153
+msgid "Select the ASCII File (.txt,.pdf)"
 msgstr ""
 
-#: chathans.py:163
-msgid "Coversion Done - Unicode file :"
+#: chathans.py:179
+msgid "Select the Unicode File"
 msgstr ""
 
-#: chathans.py:165
+#: chathans.py:207
+msgid "Please select both Input file and Mapping file"
+msgstr ""
+
+#: chathans.py:229
+msgid "Coversion Done - Unicode file : "
+msgstr ""
+
+#: chathans.py:231
+msgid "Conversion Done - ASCII file : "
+msgstr ""
+
+#: chathans.py:233
 msgid "Could not find the pdftotext utility. Exiting..."
 msgstr ""
 
-#: chathans.py:167
+#: chathans.py:235
 msgid "Syntax Error in Mapping file. Exiting..."
 msgstr ""
 
-#: chathans.py:182
+#: chathans.py:250
 msgid "Chathans: Rajeesh K Nambiar <rajeeshknambiar@gmail.com>"
 msgstr ""
 
-#: chathans.py:183
+#: chathans.py:251
 msgid ""
 "Payyans : Santhosh Thottingal, Nishan Naseer,\n"
 "\t\t  Manu S Madhav, Rajeesh K Nambiar"
 msgstr ""
 
-#: chathans.py:185
+#: chathans.py:253
 msgid ""
 "Chathans is an easy to use GUI frontend to Payyans ASCII<->Unicode Converter"
 msgstr ""
 
-#: chathans.py:190
+#: chathans.py:258
 msgid "Copyright (c) Rajeesh K Nambiar"
 msgstr ""
 
-#: chathans.py:191
+#: chathans.py:259
 msgid "Chathans is licensed under GNU GPL version 3"
 msgstr ""
 
-#: chathans.py:203
+#: chathans.py:271
 msgid "Do you really want to Quit?"
 msgstr ""

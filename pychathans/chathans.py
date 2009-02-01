@@ -34,7 +34,7 @@ try:
 	from payyans import Payyans
 except ImportError:
 	''' ഹൈയ്, പയ്യന്റെ ദുര്‍ജ്ജനസംസര്‍ഗ്ഗമില്ലാതെ നോം സാധനം തൊടാറില്ല! '''
-	print _("Chathans require Payyans")
+	print _("Chathans requires Payyans")
 	raise SystemExit
 
 
@@ -44,7 +44,7 @@ gettext.textdomain(PACKAGE)
 #_ = gettext.gettext
 
 name = _("Chathans")
-version = "0.4"
+version = "0.5"
 title = name + " " + version
 
 
@@ -72,9 +72,13 @@ class Chathans (gtk.Window):
 		unicode_lbl = gtk.Label(_("Unicode File : "))
 		
 		# പ്രമാണോം പത്രോം ആധാരോം എടുക്ക്വാ..
-		ascii_btn   = gtk.FileChooserButton(_("Select the ASCII File (.txt,.pdf)"))
+		#ascii_btn   = gtk.FileChooserButton(_("Select the ASCII File (.txt,.pdf)"))
+		ascii_btn   = gtk.Button("ASCII File...",None)
+		ascii_btn.connect("clicked", self.__choose_ascii_file)
+		unicode_btn = gtk.Button("Unicode File...",None)
+		unicode_btn.connect("clicked", self.__choose_unicode_file)
 		mapping_btn = gtk.FileChooserButton(_("Select the ASCII-Unicode Mapping File"))
-		unicode_btn = gtk.FileChooserButton(_("Select Output Unicode File"))
+		#unicode_btn = gtk.FileChooserButton(_("Select Output Unicode File"))
 
 		# ആസ്കി-യൂണിക്കോഡ് ആണോ, അതോ യൂണിക്കോഡ്-ആസ്കിയോ?
 		a2u_radio   = gtk.RadioButton(None, (_("ASCII-to-Unicode")))
@@ -91,13 +95,6 @@ class Chathans (gtk.Window):
 		cancel_btn.connect("clicked", self.__quit)
 		about_btn = gtk.Button(_("About"), gtk.STOCK_ABOUT)
 		about_btn.connect("clicked", self.__show_about)
-		
-		# Add File Filter for ASCII input file. അരിപ്പ!
-		ascii_filter = gtk.FileFilter()
-		ascii_filter.set_name("*.txt,*.pdf")
-		ascii_filter.add_pattern("*.[Tt][Xx][Tt]")
-		ascii_filter.add_pattern("*.[Pp][Dd][Ff]")
-		ascii_btn.add_filter(ascii_filter)
 		
 		self.a2u_radio 	 = a2u_radio
 		self.u2a_radio	 = u2a_radio
@@ -148,11 +145,49 @@ class Chathans (gtk.Window):
 		
 		self.show_all()
 		
+	def __choose_ascii_file(self, event):
+		if self.u2a_radio.get_active() == True:
+			the_action = gtk.FILE_CHOOSER_ACTION_SAVE
+		else:
+			the_action = gtk.FILE_CHOOSER_ACTION_OPEN
+		filechooser = gtk.FileChooserDialog(title=_("Select the ASCII File (.txt,.pdf)"),
+						    action=the_action,
+						    buttons=(gtk.STOCK_OPEN, gtk.RESPONSE_ACCEPT,
+					 		     gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL))
+		# Add File Filter for ASCII input file. അരിപ്പ!
+		ascii_filter = gtk.FileFilter()
+		ascii_filter.set_name("*.txt,*.pdf")
+		ascii_filter.add_pattern("*.[Tt][Xx][Tt]")
+		ascii_filter.add_pattern("*.[Pp][Dd][Ff]")
+		filechooser.add_filter(ascii_filter)
+		filechooser.connect("response", self.__get_file, "a")
+		filechooser.run()
+		
+	def __get_file(self, dialog, response, in_data):
+		dialog.hide()
+		if response == gtk.RESPONSE_ACCEPT:
+			if in_data == "a":
+				self.AsciiFile = dialog.get_filename()
+			else:
+				self.UnicodeFile = dialog.get_filename()
+		
+	def __choose_unicode_file(self, event):
+		if self.a2u_radio.get_active() == True:
+			the_action = gtk.FILE_CHOOSER_ACTION_SAVE
+		else:
+			the_action = gtk.FILE_CHOOSER_ACTION_OPEN
+		filechooser = gtk.FileChooserDialog(title=_("Select the Unicode File"),
+						    action=the_action,
+						    buttons=(gtk.STOCK_OPEN, gtk.RESPONSE_ACCEPT,
+					 		     gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL))
+		filechooser.connect("response", self.__get_file, "u")
+		filechooser.run()
+		
 	def __convert_file(self, event):
 		''' പയ്യനെ വിളിക്ക്യാ, ഇനി നോം ഗ്യാലറിയിലിരുന്ന് കളി കാണട്ടെ. '''
-		self.AsciiFile   = self.ascii_btn.get_filename()
+		#self.AsciiFile   = self.ascii_btn.get_filename()
 		self.MappingFile = self.mapping_btn.get_filename()
-		self.UnicodeFile = self.unicode_btn.get_filename()
+		#self.UnicodeFile = self.unicode_btn.get_filename()
 
 		if self.a2u_radio.get_active() == True:
 			direction = "a2u"
