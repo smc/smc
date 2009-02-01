@@ -168,8 +168,10 @@ class Chathans (gtk.Window):
 		if response == gtk.RESPONSE_ACCEPT:
 			if in_data == "a":
 				self.AsciiFile = dialog.get_filename()
+				self.ascii_btn.set_label(os.path.basename(self.AsciiFile))
 			else:
 				self.UnicodeFile = dialog.get_filename()
+				self.unicode_btn.set_label(os.path.basename(self.UnicodeFile))
 		
 	def __choose_unicode_file(self, event):
 		if self.a2u_radio.get_active() == True:
