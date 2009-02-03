@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Payyans Ascii to Unicode Convertor
-# Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
+# Copyright 2008-2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
 # Nishan Naseer <nishan.naseer@gmail.com>, Manu S Madhav <manusmad@gmail.com>,
 # Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
 # http://www.smc.org.in
@@ -57,7 +57,7 @@ class Payyan:
 				letter = unicode_text[index:index+charNo]
 				if letter in self.rulesDict:
 					ascii_letter = self.rulesDict[letter]
-					letter = letter.encode('utf8')
+					letter = letter.encode('utf-8')
 					'''കിട്ടിയ അക്ഷരങ്ങളുടെ അപ്പുറത്തും ഇപ്പുറത്തും സ്വരചിഹ്നങ്ങള്‍ ഫിറ്റ് ചെയ്യാനുള്ള ബദ്ധപ്പാട്'''
 					if letter == 'ൈ':	# പിറകില്‍ രണ്ടു സാധനം പിടിപ്പിക്കുക
 						ascii_text = ascii_text[:-1] + ascii_letter*2 + ascii_text[-1:]
@@ -118,12 +118,16 @@ class Payyan:
 			else:
 				unicode_letter = letter	
 			if(self.isPrebase(unicode_letter)):
-				prebase_letter = unicode_letter 
+				# "ൈ" എന്നത് ആസ്കിയില്‍ 2 "െ" ചേര്‍ന്നതാണ്. It is unique!
+				if prebase_letter.encode('utf-8') == "െ" and unicode_letter.encode('utf-8') == "െ":
+					prebase_letter = u"ൈ"
+				else:
+					prebase_letter = unicode_letter
 			else:
 				if  ((unicode_letter.encode('utf-8') == "എ") | ( unicode_letter.encode('utf-8') == "ഒ" )):
 					unicode_text = unicode_text +  self.getVowelSign(prebase_letter , unicode_letter)
 				else:
-					unicode_text = unicode_text + unicode_letter+ prebase_letter
+					unicode_text = unicode_text + unicode_letter + prebase_letter
 				prebase_letter=""	
 
 			index = index + 1
@@ -140,7 +144,7 @@ class Payyan:
 				'''ഊഹും. കൊന്നാലും ഇനി മുന്നോട്ടില്ല. മുന്നില്‍ മറ്റവനാകുന്നു. ഏതു്? '''
 				return 1	# Error - no pdftotext !
 			else:
-				self.input_filename =  self.input_filename.split(".") [0]+ ".txt"
+				self.input_filename =  os.path.splitext(self.input_filename)[0] + ".txt"
 		if self.input_filename :
 			ascii_file = codecs.open(self.input_filename, encoding = 'utf-8', errors = 'ignore')
 		else :
