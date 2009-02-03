@@ -25,9 +25,10 @@
 from payyans import Payyans
 from optparse import OptionParser
 import sys,os
+VERSION=0.7
 def error_exit():
 	print '''
-	Payyans Malayalam Ascii <--> Unicode Converter Version 0.3
+	Payyans Malayalam Ascii <--> Unicode Converter 
 	Please use --help or -h argument to see the options'''
 	sys.exit(1)
 
@@ -47,7 +48,7 @@ class Payyan:
 		'''നീ ആരാകുന്നു?'''
 		if options.version :
 			'''ഞാന്‍ പയ്യനാകുന്നു. പയ്യെ ജനനം. പൈത്തണ്‍കുലം. ഇങ്ങടു് കടിച്ചാല്‍ അങ്ങടും കടിക്കും- അതു്  ജന്മ സ്വഭാവം'''
-			print "Payyans Malayalam Ascii <--> Unicode Converter Version 0.3"
+			print "Payyans Malayalam Ascii <--> Unicode Converter Version" , VERSION,
 			return
 		if (options.mapping_filename is None):
 			''' മാപ്പിങ്ങ് ഇല്ലാതെ നമുക്കെന്താഘാഷം'''

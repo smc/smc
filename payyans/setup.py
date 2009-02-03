@@ -4,7 +4,7 @@ from distutils.core import setup
 
 doclines = __doc__.split("\n")
 setup(name='payyans',
-      version='0.6',
+      version='0.7',
       description=doclines[0],
       long_description = "\n".join(doclines[:]),
       platforms = ["Linux"],
