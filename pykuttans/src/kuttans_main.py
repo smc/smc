@@ -53,7 +53,16 @@ class StartKuttans(QtGui.QMainWindow):
 		Ui.toolBar.setWindowTitle("Format Actions")
 		Ui.comboFont = QtGui.QFontComboBox(Ui.toolBar)
 		Ui.toolBar.addWidget(Ui.comboFont)
-		self.connect(Ui.comboFont, QtCore.SIGNAL("activated(QtCore.QString)"), self.textFamily)
+		self.connect(Ui.comboFont, QtCore.SIGNAL("activated(QString)"), self.textFamily)
+		Ui.comboSize = QtGui.QComboBox(Ui.toolBar)
+		Ui.comboSize.setObjectName("comboSize")
+		Ui.comboSize.setEditable(True)
+		#Ui.comboSize.setCurrentIndex(Ui.comboSize.findText(str(QtGui.QApplication.font().pointSize())))
+		Ui.toolBar.addWidget(Ui.comboSize)
+		fontDb = QtGui.QFontDatabase
+		for size in fontDb.standardSizes():
+			Ui.comboSize.addItem(str(size))
+		self.connect(Ui.comboSize, QtCore.SIGNAL("activated(QString)"), self.textSize)
 		
 		self.connect(Ui.textEdit, QtCore.SIGNAL("copyAvailable(bool)"), Ui.actionCut, QtCore.SLOT("setEnabled(bool)"))	#ഉപയോക്താവ് ഏതെങ്കിലും പാഠഭാഗം തിരഞ്ഞെടുത്തെങ്കില്‍ മാത്രം...
 		self.connect(Ui.textEdit, QtCore.SIGNAL("copyAvailable(bool)"), Ui.actionCopy, QtCore.SLOT("setEnabled(bool)"))	#'cut', 'copy' എന്നിവ സജ്ജീവമാക്കുക
@@ -78,6 +87,24 @@ class StartKuttans(QtGui.QMainWindow):
 		self.connect(Ui.actionIndulekha_u2a, QtCore.SIGNAL("triggered()"), self.Indulekha_u2a)
 		self.connect(Ui.actionKarthika_u2a, QtCore.SIGNAL("triggered()"), self.Karthika_u2a)
 		self.connect(Ui.actionSelectFontMap_u2a, QtCore.SIGNAL("triggered()"), self.customMap_u2a)
+	
+	def textSize(self, qString):
+		fmt = QtGui.QTextCharFormat()
+     		fmt.setFontPointSize(float(qString));
+     		self.mergeFormatOnWordOrSelection(fmt)
+		
+	def textFamily(self, qString):
+		print "In textFamily"
+		fmt = QtGui.QTextCharFormat()
+		fmt.setFontFamily(qString);
+		self.mergeFormatOnWordOrSelection(fmt)
+		
+	def mergeFormatOnWordOrSelection(self, format):
+		cursor = self.ui.textEdit.textCursor()
+		if not cursor.hasSelection():
+			cursor.select(QtGui.QTextCursor.WordUnderCursor)
+		cursor.mergeCharFormat(format)
+		self.ui.textEdit.mergeCurrentCharFormat(format)
 		
 	def directoryName(self, fullname):
 		return QtCore.QFileInfo(fullname).absolutePath()
@@ -115,11 +142,6 @@ class StartKuttans(QtGui.QMainWindow):
 		
 	def documentWasModified(self):
 		pass
-		
-	def textFamily(self, qString):
-		fmt = QtGui.QTextCharFormat()
-		fmt.setFontFamily(qString);
-		QtCore.mergeFormatOnWordOrSelection(fmt);
 		
 	def Revathi_a2u(self):
 		self.OutputFile  = self.directoryName(self.InputFile) + "/unicode-" + self.strippedFileName(self.InputFile)
