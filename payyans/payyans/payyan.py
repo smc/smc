@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Payyans Ascii to Unicode Convertor
-# Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
+# Copyright 2008-2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
 # Nishan Naseer <nishan.naseer@gmail.com>, Manu S Madhav <manusmad@gmail.com>,
 # Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
 # http://www.smc.org.in
@@ -57,7 +57,7 @@ class Payyan:
 				letter = unicode_text[index:index+charNo]
 				if letter in self.rulesDict:
 					ascii_letter = self.rulesDict[letter]
-					letter = letter.encode('utf8')
+					letter = letter.encode('utf-8')
 					'''കിട്ടിയ അക്ഷരങ്ങളുടെ അപ്പുറത്തും ഇപ്പുറത്തും സ്വരചിഹ്നങ്ങള്‍ ഫിറ്റ് ചെയ്യാനുള്ള ബദ്ധപ്പാട്'''
 					if letter == 'ൈ':	# പിറകില്‍ രണ്ടു സാധനം പിടിപ്പിക്കുക
 						ascii_text = ascii_text[:-1] + ascii_letter*2 + ascii_text[-1:]
@@ -107,26 +107,45 @@ class Payyan:
 		
 	def word2Unicode(self, ascii_text):
 		index = 0
+		post_index = 0
 		prebase_letter = ""
+		postbase_letter = ""	# "‌‌്യ", "്വ"
 		unicode_text = ""
+		next_ucode_letter = ""
 		self.direction="a2u"
 		self.rulesDict = self.LoadRules()
 		while index < len(ascii_text):
-			letter = ascii_text[index]
-			if letter in self.rulesDict:
-				unicode_letter = self.rulesDict[letter]
-			else:
-				unicode_letter = letter	
-			if(self.isPrebase(unicode_letter)):
-				prebase_letter = unicode_letter 
-			else:
-				if  ((unicode_letter.encode('utf-8') == "എ") | ( unicode_letter.encode('utf-8') == "ഒ" )):
-					unicode_text = unicode_text +  self.getVowelSign(prebase_letter , unicode_letter)
+			for charNo in [2,1]:
+				letter = ascii_text[index:index+charNo]
+				if letter in self.rulesDict:
+					unicode_letter = self.rulesDict[letter]
+					if(self.isPrebase(unicode_letter)):	#സ്വരചിഹ്നമാണോ?
+						prebase_letter = unicode_letter
+					else:					#സ്വരചിഹ്നമല്ല
+						#എങ്കില്‍ വ്യഞ്ജനത്തിനു ശേഷം പോസ്റ്റ്-ബേസ് ഉണ്ടോ എന്നു നോക്കൂ
+						post_index = index+charNo
+						if post_index < len(ascii_text):
+							letter = ascii_text[post_index]
+							if letter in self.rulesDict:
+								next_ucode_letter = self.rulesDict[letter]
+								if self.isPostbase(next_ucode_letter):
+									postbase_letter = next_ucode_letter
+									index = index + 1
+						if  ((unicode_letter.encode('utf-8') == "എ") |
+						    ( unicode_letter.encode('utf-8') == "ഒ" )):
+							unicode_text = unicode_text + postbase_letter + self.getVowelSign(prebase_letter , unicode_letter)
+						else:
+							unicode_text = unicode_text + unicode_letter + postbase_letter + prebase_letter
+						prebase_letter=""
+						postbase_letter=""
+					index = index + charNo
+					break
 				else:
-					unicode_text = unicode_text + unicode_letter+ prebase_letter
-				prebase_letter=""	
-
-			index = index + 1
+					if charNo == 1:
+						unicode_text = unicode_text + letter
+						index = index + 1
+						break
+					unicode_letter = letter
 		return unicode_text	# മതം മാറ്റി തിരിച്ചു കൊടുക്ക്വാ ! 
 	
 	def Ascii2Uni(self):
@@ -140,7 +159,7 @@ class Payyan:
 				'''ഊഹും. കൊന്നാലും ഇനി മുന്നോട്ടില്ല. മുന്നില്‍ മറ്റവനാകുന്നു. ഏതു്? '''
 				return 1	# Error - no pdftotext !
 			else:
-				self.input_filename =  self.input_filename.split(".") [0]+ ".txt"
+				self.input_filename =  os.path.splitext(self.input_filename)[0] + ".txt"
 		if self.input_filename :
 			ascii_file = codecs.open(self.input_filename, encoding = 'utf-8', errors = 'ignore')
 		else :
@@ -191,8 +210,21 @@ class Payyan:
 		 if(   ( unicode_letter == "േ"  ) | (   unicode_letter ==  "ൈ" ) |   ( unicode_letter ==  "ൊ" ) 	| ( unicode_letter ==  "ോ"  ) |  ( unicode_letter == "ൌ"  )
 		 			|  ( unicode_letter == "്ര"  )  |  ( unicode_letter == "െ"  ) 
 		 			 ):
-			return "ഇതു സത്യം... അ...സത്യം.... അസത്യം...!"
-						
+			return True #"ഇതു സത്യം... അ...സത്യം.... അസത്യം...!"
+		 else:
+			return False
+			
+	def isPostbase(self, letter):
+		'''
+		"ക്യ" എന്നതിലെ "്യ", "ക്വ" എന്നതിലെ "്വ" എന്നിവ പോസ്റ്റ്-ബേസ് ആണ്.
+		"ത്യേ" എന്നത് ആസ്കിയില്‍ "ഏ+ത+്യ" എന്നാണ് എഴുതുന്നത്. അപ്പോള്‍ വ്യഞ്ജനം കഴിഞ്ഞ് പോസ്റ്റ്-ബേസ്
+		ഉണ്ടെങ്കില്‍ വ്യഞ്ജനം+പോസ്റ്റ്-ബേസ് കഴിഞ്ഞേ പ്രീ-ബേസ് ചേര്‍ക്കാവൂ! ഹൊ, പയ്യന്‍ പാണിനീശിഷ്യനാണ്!!
+		'''
+		unicode_letter = letter.encode('utf-8')
+		if ( (unicode_letter == "്യ") | (unicode_letter == "്വ") ):
+			return True
+		else:
+			return False
 					
 	def LoadRules(self):	
 		'''

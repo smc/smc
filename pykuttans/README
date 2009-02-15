@@ -1,0 +1,26 @@
+                    Kuttans
+=======================================================
+VERSION: 0.1
+
+INFO:
+  QT+payyans=Qtans (pronounced Kuttans in Malayalam)
+  Kuttans is a GUI frontend for Payyans based on PyQT
+
+DEPENDENCIES:
+  payyans
+  PyQT4
+  pdftotext (optional)
+
+AUTHOR:
+  Rahul
+  Rajeesh K Nambiar
+
+LISCENCE:
+  GPL V3
+
+INSTALL:
+  $ python src/kuttans_main.py
+
+USAGE:
+  1. Open the document to convert
+  2. Click Convert(പരിവര്‍ത്തനം) -> <select a font>

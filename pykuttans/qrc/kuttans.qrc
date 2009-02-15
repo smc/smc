@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="Kuttans" >
+    <file>system-help.png</file>
+    <file>face-confused.png</file>
+    <file>preferences-desktop-font.png</file>
+    <file>application-illustrator.png</file>
+    <file>document-new.png</file>
+    <file>document-open.png</file>
+    <file>document-save-as.png</file>
+    <file>document-save.png</file>
+    <file>document-print.png</file>
+    <file>document-print-preview.png</file>
+    <file>edit-delete.png</file>
+    <file>edit-clear.png</file>
+    <file>edit-copy.png</file>
+    <file>edit-cut.png</file>
+    <file>edit-paste.png</file>
+    <file>edit-select-all.png</file>
+    <file>edit-undo.png</file>
+    <file>window-close.png</file>
+    <file>edit-redo.png</file>
+  </qresource>
+</RCC>

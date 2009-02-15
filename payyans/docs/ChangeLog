@@ -1,7 +1,9 @@
 Change Log:
+	version 0.7
+		* Bug fix to handle prebase, postbase matras correctly
+		* Added Ambili Map. Thanks to zyxware
 	version 0.6
-		* Added word2Unicode and word2ASCII APIs
-		* Move the doc files to /usr/share/doc/payyans-<ver> directory
+		* Loading the rules file multiple times fixed
 	version 0.5
 		* Python API fixes
 		* pdf option detection from input file name extension
