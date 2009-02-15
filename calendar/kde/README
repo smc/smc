@@ -3,7 +3,7 @@ Follow the steps given below to build the code.
 1. Build KDE 4 from source
 	- use kdesvn-build from http://kdesvn-build.kde.org/
 	- build only kdelibs and kdebase
-	- take qt from your distro (if older build qt-copy as well)
+	- take qt from your distro (if older than 4.4, build qt-copy as well)
 2. Sync files from smc git to kde source tree
 	- rsync -av --progress  <path-to-smc-git>/calendar/kde/* <path-to-kdesvn-tree>
 3. Run tests
