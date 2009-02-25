@@ -31,6 +31,9 @@ from kuttans_ui import Ui_Kuttans
 
 QObj = QtCore.QObject	# Short name ;-)
 
+_app_name = "Kuttans"
+_app_version = "0.1"
+
 class StartKuttans(QtGui.QMainWindow):
 	def __init__(self, parent=None):
 		
@@ -183,8 +186,8 @@ class StartKuttans(QtGui.QMainWindow):
 			self.setWindowTitle(self.tr("%1[*] - %2").arg(shownName).arg(self.tr("Kuttans")))
 		
 	def About(self):
-		QtGui.QMessageBox.about(self, self.tr("About Kuttans"),
-            self.tr("<h1 align=\"center\">Kuttans 0.1<p><h4 align=\"center\">A GUI frontend for Payyans<p><h4 align=\"center\"><a href=\"www.smc.org.in\">Swathanthra Malayalam Computing</a>"))
+		QtGui.QMessageBox.about(self, self.tr("About"+ _app_name),
+            self.tr("<h1 align=\"center\">"+_app_name+" "+_app_version+"<p><h4 align=\"center\">A GUI frontend for Payyans<p><h4 align=\"center\"><a href=\"www.smc.org.in\">Swathanthra Malayalam Computing</a>"))
 		
 	def newFile(self):
 		if self.maybeSave():
