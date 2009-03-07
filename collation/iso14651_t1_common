@@ -62,7 +62,12 @@ script <ARMENIAN>
 script <GEORGIAN>
 script <DEVANAGARI>
 script <GUJARATI>
+script <TELUGU>
+script <GURUMUKHI>
+script <KANNADA>
+script <SINHALA>
 script <MALAYALAM>
+script <TAMIL>
 
 # Déclaration des symboles internes / Declaration of internal symbols
 #
@@ -653,10 +658,262 @@ collating-symbol <gvd-chandrabindu>
 collating-symbol <gvd-visarg>
 collating-symbol <g-halant>
 
+# <TELUGU>
+#
+# tvd - denotes Telugu vowel modifier
+# tm  -  denotes Telugu matras
+# tvw - denotes Telugu vowels
+
+# defining symbols
+collating-symbol <tummu>
+collating-symbol <tvw-a>
+collating-symbol <tvw-aa>
+collating-symbol <tvw-i>
+collating-symbol <tvw-ii>
+collating-symbol <tvw-u>
+collating-symbol <tvw-uu>
+collating-symbol <tvw-vocalicr>
+collating-symbol <tvw-vocalicrr>
+collating-symbol <tvw-vocalicl>
+collating-symbol <tvw-vocalicll>
+collating-symbol <tvw-candrae>
+collating-symbol <tvw-shorte>
+collating-symbol <tvw-e>
+collating-symbol <tvw-ai>
+collating-symbol <tvw-shorto>
+collating-symbol <tvw-o>
+collating-symbol <tvw-au>
+collating-symbol <t-ka>
+collating-symbol <t-kha>
+collating-symbol <t-ga>
+collating-symbol <t-gga>
+collating-symbol <t-gha>
+collating-symbol <t-nga>
+collating-symbol <t-ca>
+collating-symbol <t-tsa>
+collating-symbol <t-cha>
+collating-symbol <t-ja>
+collating-symbol <t-dza>
+collating-symbol <t-jja>
+collating-symbol <t-jha>
+collating-symbol <t-nya>
+collating-symbol <t-tta>
+collating-symbol <t-ttha>
+collating-symbol <t-dda>
+collating-symbol <t-ddda>
+collating-symbol <t-ddha>
+collating-symbol <t-nna>
+collating-symbol <t-ta>
+collating-symbol <t-tha>
+collating-symbol <t-da>
+collating-symbol <t-dha>
+collating-symbol <t-na>
+collating-symbol <t-pa>
+collating-symbol <t-pha>
+collating-symbol <t-ba>
+collating-symbol <t-bba>
+collating-symbol <t-bha>
+collating-symbol <t-ma>
+collating-symbol <t-ya>
+collating-symbol <t-ra>
+collating-symbol <t-rra>
+collating-symbol <t-la>
+collating-symbol <t-lla>
+collating-symbol <t-va>
+collating-symbol <t-sha>
+collating-symbol <t-ssa>
+collating-symbol <t-sa>
+collating-symbol <t-ha>
+collating-symbol <t-avagrah>
+collating-symbol <tm-aa>
+collating-symbol <tm-i>
+collating-symbol <tm-ii>
+collating-symbol <tm-u>
+collating-symbol <tm-uu>
+collating-symbol <tm-vocalicr>
+collating-symbol <tm-vocalicrr>
+collating-symbol <tm-vocalicl>
+collating-symbol <tm-vocalicll>
+collating-symbol <tm-shorte>
+collating-symbol <tm-e>
+collating-symbol <tm-ai>
+collating-symbol <tm-shorto>
+collating-symbol <tm-o>
+collating-symbol <tm-au>
+collating-symbol <tvd-chandrabindu>
+collating-symbol <tvd-anuswara>
+collating-symbol <tvd-visarg>
+collating-symbol <t-halant>
+collating-symbol <t-lenghtmark>
+collating-symbol <t-ailenghtmark>
+
+#<GURUMUKHI>
+#
+# pm - denotes panjabi matras
+# pvw - panjabi denotes vowels
+# pavd - denotes panjabi vowel modifier
+# PNKT - Punjabi Nukta
+
+# defning symbols
+collating-symbol <PNKT>
+collating-symbol <adi-shakti>
+collating-symbol <onkar>
+collating-symbol <ura>
+collating-symbol <pavw-u>
+collating-symbol <pavw-uu>
+collating-symbol <pavw-o>
+collating-symbol <pavw-a>
+collating-symbol <pavw-aa>
+collating-symbol <pavw-ai>
+collating-symbol <pavw-au>
+collating-symbol <iri>
+collating-symbol <pavw-i>
+collating-symbol <pavw-ii>
+collating-symbol <pavw-e>
+collating-symbol <pa-sa>
+collating-symbol <pa-ha>
+collating-symbol <pa-udatta>
+collating-symbol <pa-ka>
+collating-symbol <pa-kha>
+collating-symbol <pa-ga>
+collating-symbol <pa-gha>
+collating-symbol <pa-nga>
+collating-symbol <pa-ca>
+collating-symbol <pa-cha>
+collating-symbol <pa-ja>
+collating-symbol <pa-jha>
+collating-symbol <pa-nya>
+collating-symbol <pa-tta>
+collating-symbol <pa-ttha>
+collating-symbol <pa-dda>
+collating-symbol <pa-ddha>
+collating-symbol <pa-nna>
+collating-symbol <pa-ta>
+collating-symbol <pa-tha>
+collating-symbol <pa-da>
+collating-symbol <pa-dha>
+collating-symbol <pa-na>
+collating-symbol <pa-pa>
+collating-symbol <pa-pha>
+collating-symbol <pa-ba>
+collating-symbol <pa-bha>
+collating-symbol <pa-ma>
+collating-symbol <pa-ya>
+collating-symbol <sign-yakash>
+collating-symbol <pa-ra>
+collating-symbol <pa-la>
+collating-symbol <pa-va>
+collating-symbol <pa-rra>
+collating-symbol <pam-aa>
+collating-symbol <pam-i>
+collating-symbol <pam-ii>
+collating-symbol <pam-u>
+collating-symbol <pam-uu>
+collating-symbol <pam-e>
+collating-symbol <pam-ai>
+collating-symbol <pam-o>
+collating-symbol <pam-au>
+collating-symbol <pavd-adakbindi>
+collating-symbol <pavd-bindi>
+collating-symbol <pavd-visarg>
+collating-symbol <tippi>
+collating-symbol <adak>
+collating-symbol <pa-halant>
+
+#<KANNADA>
+#
+# kvd- denotes vowel modifier
+# km-  denotes matras
+# kvw- denotes vowels
+# <KNKT> denotes Nukta characters
+
+collating-element <kn-sign_ii> from "<U0CBF><U0CD5>"
+collating-element <kn-sign_e> from "<U0CC6><U0CD5>"
+collating-element <kn-sign_o> from "<U0CC6><U0CC2><U0CD5>"
+collating-element <kn-sign1_o> from "<U0CCA><U0CD5>"
+collating-element <kn-sign_shorto> from "<U0CC6><U0CC2>"
+collating-element <kn-sign_ai> from "<U0CC6><U0CD6>"
+
+# defning symbols
+
+collating-symbol <sign-jihvamuliya>
+collating-symbol <sign-upadhmaniya>
+collating-symbol <KNKT>
+collating-symbol <kvw-a>
+collating-symbol <kvw-aa>
+collating-symbol <kvw-i>
+collating-symbol <kvw-ii>
+collating-symbol <kvw-u>
+collating-symbol <kvw-uu>
+collating-symbol <kvw-vocalicr>
+collating-symbol <kvw-vocalicrr>
+collating-symbol <kvw-vocalicl>
+collating-symbol <kvw-vocalicll>
+collating-symbol <kvw-shorte>
+collating-symbol <kvw-e>
+collating-symbol <kvw-ai>
+collating-symbol <kvw-shorto>
+collating-symbol <kvw-o>
+collating-symbol <kvw-au>
+collating-symbol <k-ka>
+collating-symbol <k-kha>
+collating-symbol <k-ga>
+collating-symbol <k-gha>
+collating-symbol <k-nga>
+collating-symbol <k-ca>
+collating-symbol <k-cha>
+collating-symbol <k-ja>
+collating-symbol <k-jha>
+collating-symbol <k-nya>
+collating-symbol <k-tta>
+collating-symbol <k-ttha>
+collating-symbol <k-dda>
+collating-symbol <k-ddha>
+collating-symbol <k-nna>
+collating-symbol <k-ta>
+collating-symbol <k-tha>
+collating-symbol <k-da>
+collating-symbol <k-dha>
+collating-symbol <k-na>
+collating-symbol <k-pa>
+collating-symbol <k-pha>
+collating-symbol <k-ba>
+collating-symbol <k-bha>
+collating-symbol <k-ma>
+collating-symbol <k-ya>
+collating-symbol <k-ra>
+collating-symbol <k-rra>
+collating-symbol <k-la>
+collating-symbol <k-va>
+collating-symbol <k-sha>
+collating-symbol <k-ssa>
+collating-symbol <k-sa>
+collating-symbol <k-ha>
+collating-symbol <k-lla>
+collating-symbol <k-fa>
+collating-symbol <k-avagrah>
+collating-symbol <km-aa>
+collating-symbol <km-i>
+collating-symbol <km-ii>
+collating-symbol <km-u>
+collating-symbol <km-uu>
+collating-symbol <km-vocalicr>
+collating-symbol <km-vocalicrr>
+collating-symbol <km-vocalicl>
+collating-symbol <km-vocalicll>
+collating-symbol <km-shorte>
+collating-symbol <km-e>
+collating-symbol <km-ai>
+collating-symbol <km-shorto>
+collating-symbol <km-o>
+collating-symbol <km-au>
+collating-symbol <kvd-anuswara>
+collating-symbol <kvd-visarg>
+collating-symbol <k-halant>
+collating-symbol <k-lenght_mark>
+collating-symbol <k-ai_lenght_mark>
 #
 # <MALAYALAM>
-# Author: Santhosh Thottingal<santhosh.thottingal@gmail.com>,
-# Swathanthra Malayalam computing<smc.org.in>
 # mlvs-  denotes Malayalam vowel sign
 # mlvw- denotes Malayalam vowel
 # ml-visarga - dentos Malayalam Visarga
@@ -778,17 +1035,70 @@ collating-symbol <mlvs-o>
 collating-symbol <mlvs-au>
 collating-symbol <ml-visarga>
 collating-symbol <ml-virama>
+collating-symbol <ml-atomic-chillu-n>
+
+# <TAMIL>
+collating-element <ta_split_o> from "<U0BC6><U0BBE>"
+collating-element <ta_split_oo> from "<U0BC7><U0BBE>"
+collating-element <ta_split_au> from "<U0BC6><U0BD7>"
+collating-element <tagl_KSHA> from "<U0B95><U0BCD><U0BB7>"
+collating-element <tagl_SHRI> from "<U0BB8><U0BCD><U0BB0><U0BC0>"
+# defning symbols
+collating-symbol <ta-pulli> #virama
+collating-symbol <tavw-a>
+collating-symbol <tavw-aa>
+collating-symbol <tavw-i>
+collating-symbol <tavw-ii>
+collating-symbol <tavw-u>
+collating-symbol <tavw-uu>
+collating-symbol <tavw-e>
+collating-symbol <tavw-ee>
+collating-symbol <tavw-ai>
+collating-symbol <tavw-o>
+collating-symbol <tavw-oo>
+collating-symbol <tavw-au>
+collating-symbol <ta-aytham> #visarga
+collating-symbol <ta-ka>
+collating-symbol <ta-nga>
+collating-symbol <ta-cha>
+collating-symbol <ta-nya>
+collating-symbol <ta-ta>
+collating-symbol <ta-nnna>
+collating-symbol <ta-tha>
+collating-symbol <ta-na>
+collating-symbol <ta-pa>
+collating-symbol <ta-ma>
+collating-symbol <ta-ya>
+collating-symbol <ta-ra>
+collating-symbol <ta-la>
+collating-symbol <ta-va>
+collating-symbol <ta-zha>
+collating-symbol <ta-lla>
+collating-symbol <ta-rra>
+collating-symbol <ta-nna>
+collating-symbol <ta-ja>
+collating-symbol <ta-sha>
+collating-symbol <ta-ssa>
+collating-symbol <ta-sa>
+collating-symbol <ta-ha>
+collating-symbol <tavs-aa>
+collating-symbol <tavs-i>
+collating-symbol <tavs-ii>
+collating-symbol <tavs-u>
+collating-symbol <tavs-uu>
+collating-symbol <tavs-e>
+collating-symbol <tavs-ee>
+collating-symbol <tavs-ai>
+collating-symbol <tavs-o>
+collating-symbol <tavs-oo>
+collating-symbol <tavs-au>
 
 # Ordre des symboles internes / Order of internal symbols
 #
 # SYMB. N°
 #
 <RES-1>
-ifdef UPPERCASE_FIRST
-<CAP>
-else
 <MIN>
-endif
 # forme de base (bas de casse, arabe intrinsèque,
 # hébreu intrinsèque, etc.
 # basic form (lower case, intrinsic Arabic
@@ -807,21 +1117,14 @@ endif
 <AME> # medial/m<e'>dian
 # 6
 #
-ifdef UPPERCASE_FIRST
-<ICA> # 7
-<ECA> # 8
-<AMI> # 9
-<MIN> # 10
-<IMI> # 11
-<EMI> # 12
-else
 <IMI> # 7
 <EMI> # 8
 <CAP> # 9
 <ICA> # 10
 <ECA> # 11
-<AMI> # 12 alternate lower case
-endif
+<AMI>
+#alternate lower case/
+# 12
 #
 #minuscules spéciales après majuscules
 # <ARABINT>/<ARABFOR>
@@ -1344,12 +1647,12 @@ endif
 <g-ya>
 <g-ra>
 <g-la>
-<g-lla>
 <g-va>
 <g-sha>
 <g-ssa>
 <g-sa>
 <g-ha>
+<g-lla>
 <g-ksha>
 <g-dnya>
 <g-shra>
@@ -1375,10 +1678,247 @@ endif
 <gvd-visarg>
 <g-halant>
 #
-# <MALAYALAM>
+#<TELUGU>
 #
 # collation weights in order
 
+<tummu>
+<tvw-a>
+<tvw-aa>
+<tvw-i>
+<tvw-ii>
+<tvw-u>
+<tvw-uu>
+<tvw-vocalicr>
+<tvw-vocalicrr>
+<tvw-vocalicl>
+<tvw-vocalicll>
+<tvw-candrae>
+<tvw-shorte>
+<tvw-e>
+<tvw-ai>
+<tvw-shorto>
+<tvw-o>
+<tvw-au>
+<t-ka>
+<t-kha>
+<t-ga>
+<t-gga>
+<t-gha>
+<t-nga>
+<t-ca>
+<t-tsa>
+<t-cha>
+<t-ja>
+<t-dza>
+<t-jja>
+<t-jha>
+<t-nya>
+<t-tta>
+<t-ttha>
+<t-dda>
+<t-ddda>
+<t-ddha>
+<t-nna>
+<t-ta>
+<t-tha>
+<t-da>
+<t-dha>
+<t-na>
+<t-pa>
+<t-pha>
+<t-ba>
+<t-bba>
+<t-bha>
+<t-ma>
+<t-ya>
+<t-ra>
+<t-rra>
+<t-la>
+<t-lla>
+<t-va>
+<t-sha>
+<t-ssa>
+<t-sa>
+<t-ha>
+<t-avagrah>
+<tm-aa>
+<tm-i>
+<tm-ii>
+<tm-u>
+<tm-uu>
+<tm-vocalicr>
+<tm-vocalicrr>
+<tm-vocalicl>
+<tm-vocalicll>
+<tm-shorte>
+<tm-e>
+<tm-ai>
+<tm-shorto>
+<tm-o>
+<tm-au>
+<tvd-chandrabindu>
+<tvd-anuswara>
+<tvd-visarg>
+<t-halant>
+<t-lenghtmark>
+<t-ailenghtmark>
+
+#
+# <GURUMUKHI>
+#
+# collation weights in order
+
+<PNKT>
+<adak>
+<adi-shakti>
+<onkar>
+<ura>
+<pavw-u>
+<pavw-uu>
+<pavw-o>
+<pavw-a>
+<pavw-aa>
+<pavw-ai>
+<pavw-au>
+<iri>
+<pavw-i>
+<pavw-ii>
+<pavw-e>
+<pa-sa>
+<pa-ha>
+<pa-udatta>
+<pa-ka>
+<pa-kha>
+<pa-ga>
+<pa-gha>
+<pa-nga>
+<pa-ca>
+<pa-cha>
+<pa-ja>
+<pa-jha>
+<pa-nya>
+<pa-tta>
+<pa-ttha>
+<pa-dda>
+<pa-ddha>
+<pa-nna>
+<pa-ta>
+<pa-tha>
+<pa-da>
+<pa-dha>
+<pa-na>
+<pa-pa>
+<pa-pha>
+<pa-ba>
+<pa-bha>
+<pa-ma>
+<pa-ya>
+<sign-yakash>
+<pa-ra>
+<pa-la>
+<pa-va>
+<pa-rra>
+<pam-aa>
+<pam-i>
+<pam-ii>
+<pam-u>
+<pam-uu>
+<pam-e>
+<pam-ai>
+<pam-o>
+<pam-au>
+<pavd-adakbindi>
+<pavd-bindi>
+<pavd-visarg>
+<tippi>
+<pa-halant>
+
+#
+# <KANNADA>
+#
+# collation weights in order
+
+<KNKT>
+<sign-jihvamuliya>
+<sign-upadhmaniya>
+<kvw-a>
+<kvw-aa>
+<kvw-i>
+<kvw-ii>
+<kvw-u>
+<kvw-uu>
+<kvw-vocalicr>
+<kvw-vocalicrr>
+<kvw-vocalicl>
+<kvw-vocalicll>
+<kvw-shorte>
+<kvw-e>
+<kvw-ai>
+<kvw-shorto>
+<kvw-o>
+<kvw-au>
+<k-ka>
+<k-kha>
+<k-ga>
+<k-gha>
+<k-nga>
+<k-ca>
+<k-cha>
+<k-ja>
+<k-jha>
+<k-nya>
+<k-tta>
+<k-ttha>
+<k-dda>
+<k-ddha>
+<k-nna>
+<k-ta>
+<k-tha>
+<k-da>
+<k-dha>
+<k-na>
+<k-pa>
+<k-pha>
+<k-ba>
+<k-bha>
+<k-ma>
+<k-ya>
+<k-ra>
+<k-rra>
+<k-la>
+<k-va>
+<k-sha>
+<k-ssa>
+<k-sa>
+<k-ha>
+<k-lla>
+<k-fa>
+<k-avagrah>
+<km-aa>
+<km-i>
+<km-ii>
+<km-u>
+<km-uu>
+<km-vocalicr>
+<km-vocalicrr>
+<km-vocalicl>
+<km-vocalicll>
+<km-shorte>
+<km-e>
+<km-ai>
+<km-shorto>
+<km-o>
+<km-au>
+<kvd-anuswara>
+<kvd-visarg>
+<k-halant>
+<k-lenght_mark>
+<k-ai_lenght_mark>
+#
+# <MALAYALAM>
+#
+# collation weights in order
 <mlvw-shorta>
 <mlvw-aa>
 <mlvw-i>
@@ -1416,6 +1956,7 @@ endif
 <ml-thha>
 <ml-dda>
 <ml-ddha>
+<ml-atomic-chillu-n>
 <ml-na>
 <ml-pa>
 <ml-pha>
@@ -1452,6 +1993,58 @@ endif
 <mlvs-o>
 <mlvs-au>
 <ml-visarga>
+
+#<TAMIL>
+#
+# collation weights in order
+<ta-pulli> #virama
+<tavw-a>
+<tavw-aa>
+<tavw-i>
+<tavw-ii>
+<tavw-u>
+<tavw-uu>
+<tavw-e>
+<tavw-ee>
+<tavw-ai>
+<tavw-o>
+<tavw-oo>
+<tavw-au>
+<ta-aytham> #visarga
+<ta-ka>
+<ta-nga>
+<ta-cha>
+<ta-nya>
+<ta-ta>
+<ta-nnna>
+<ta-tha>
+<ta-na>
+<ta-pa>
+<ta-ma>
+<ta-ya>
+<ta-ra>
+<ta-la>
+<ta-va>
+<ta-zha>
+<ta-lla>
+<ta-rra>
+<ta-nna>
+<ta-ja>
+<ta-sha>
+<ta-ssa>
+<ta-sa>
+<ta-ha>
+<tavs-aa>
+<tavs-i>
+<tavs-ii>
+<tavs-u>
+<tavs-uu>
+<tavs-e>
+<tavs-ee>
+<tavs-ai>
+<tavs-o>
+<tavs-oo>
+<tavs-au>
 
 order_start <SPECIAL>;forward;backward;forward;forward,position
 #
@@ -2287,11 +2880,11 @@ endif
 <U0160> <s>;<CAR>;<CAP>;IGNORE # 742 <S<>
 <U015E> <s>;<CDI>;<CAP>;IGNORE # 743 <S,>
 <U0218> <s>;<CDI>;<CAP>;IGNORE # 744 Ș
-<U1E60> <r>;<PCT>;<CAP>;IGNORE # 745 Ṡ
-<U1E62> <r>;<BPT>;<CAP>;IGNORE # 746 Ṣ
-<U1E64> <r>;<ACA>;<CAP>;<PCT> # 747 Ṥ
-<U1E66> <r>;<CAR>;<CAP>;<PCT> # 748 Ṧ
-<U1E68> <r>;<BPT>;<CAP>;<PCT> # 749 Ṩ
+<U1E60> <s>;<PCT>;<CAP>;IGNORE # 745 Ṡ
+<U1E62> <s>;<BPT>;<CAP>;IGNORE # 746 Ṣ
+<U1E64> <s>;<ACA>;<CAP>;<PCT> # 747 Ṥ
+<U1E66> <s>;<CAR>;<CAP>;<PCT> # 748 Ṧ
+<U1E68> <s>;<BPT>;<CAP>;<PCT> # 749 Ṩ
 <U0054> <t>;<BAS>;<CAP>;IGNORE # 750 T
 <U0164> <t>;<CAR>;<CAP>;IGNORE # 751 <T<>
 <U0166> <t>;<OBL>;<CAP>;IGNORE # 752 <T//>
@@ -3219,7 +3812,6 @@ order_start <GEORGIAN>;forward;forward;forward;forward,position
 <U2D24> <GEORG-HAR>;<BAS>;<ANO>;IGNORE
 <U2D25> <GEORG-HOE>;<BAS>;<ANO>;IGNORE
 
-
 order_start <DEVANAGARI>;forward;forward;forward;forward,position
 <U0970> <dv-abbrevation>;<BAS>;<MIN>;IGNORE
 <U0966> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
@@ -3386,12 +3978,12 @@ order_start  <GUJARATI>;forward;forward;forward;forward,position
 <U0AAF> <g-ya>;<BAS>;<MIN>;IGNORE
 <U0AB0> <g-ra>;<BAS>;<MIN>;IGNORE
 <U0AB2> <g-la>;<BAS>;<MIN>;IGNORE
-<U0AB3> <g-lla>;<BAS>;<MIN>;IGNORE
 <U0AB5> <g-va>;<BAS>;<MIN>;IGNORE
 <U0AB6> <g-sha>;<BAS>;<MIN>;IGNORE
 <U0AB7> <g-ssa>;<BAS>;<MIN>;IGNORE
 <U0AB8> <g-sa>;<BAS>;<MIN>;IGNORE
-<U0AB9>   <g-ha>;<BAS>;<MIN>;IGNORE
+<U0AB9> <g-ha>;<BAS>;<MIN>;IGNORE
+<U0AB3> <g-lla>;<BAS>;<MIN>;IGNORE
 <gu-ksha> <g-ksha>;<BAS>;<MIN>;IGNORE
 <gu-dnya> <g-dnya>;<BAS>;<MIN>;IGNORE
 <gu-shra> <g-shra>;<BAS>;<MIN>;IGNORE
@@ -3418,6 +4010,359 @@ order_start  <GUJARATI>;forward;forward;forward;forward,position
 <U0ACD> <g-halant>;<BAS>;<MIN>;IGNORE
 <U0ABC> IGNORE;<GNKT>;<MIN>;IGNORE
 
+order_start <TELUGU>;forward;forward;forward;forward,position
+<U0C66> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C78> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C67> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C79> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7C> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C68> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7A> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7D> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C69> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7B> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7E> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6A> <4>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6B> <5>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6C> <6>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6D> <7>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6E> <8>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C6F> <9>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0C7F> <tummu> ;<BAS>;<MIN>;IGNORE
+<U0C05> <tvw-a> ;<BAS>;<MIN>;IGNORE
+<U0C06> <tvw-aa> ;<BAS>;<MIN>;IGNORE
+<U0C07> <tvw-i> ;<BAS>;<MIN>;IGNORE
+<U0C08> <tvw-ii> ;<BAS>;<MIN>;IGNORE
+<U0C09> <tvw-u> ;<BAS>;<MIN>;IGNORE
+<U0C0A> <tvw-uu>;<BAS>;<MIN>;IGNORE
+<U0C0B> <tvw-vocalicr>;<BAS>;<MIN>;IGNORE
+<U0C60> <tvw-vocalicrr>;<BAS>;<MIN>;IGNORE
+<U0C0C> <tvw-vocalicl>;<BAS>;<MIN>;IGNORE
+<U0C61> <tvw-vocalicll>;<BAS>;<MIN>;IGNORE
+<U0C0E> <tvw-shorte>;<BAS>;<MIN>;IGNORE
+<U0C0F> <tvw-e>;<BAS>;<MIN>;IGNORE
+<U0C10> <tvw-ai>;<BAS>;<MIN>;IGNORE
+<U0C12> <tvw-shorto>;<BAS>;<MIN>;IGNORE
+<U0C13> <tvw-o>;<BAS>;<MIN>;IGNORE
+<U0C14> <tvw-au>;<BAS>;<MIN>;IGNORE
+<U0C15> <t-ka>;<BAS>;<MIN>;IGNORE
+<U0C16> <t-kha>;<BAS>;<MIN>;IGNORE
+<U0C17> <t-ga>;<BAS>;<MIN>;IGNORE
+<U0C18> <t-gha>;<BAS>;<MIN>;IGNORE
+<U0C19> <t-nga>;<BAS>;<MIN>;IGNORE
+<U0C1A> <t-ca>;<BAS>;<MIN>;IGNORE
+<U0C58> <t-tsa>;<BAS>;<MIN>;IGNORE
+<U0C1B> <t-cha>;<BAS>;<MIN>;IGNORE
+<U0C1C> <t-ja>;<BAS>;<MIN>;IGNORE
+<U0C59> <t-dza>;<BAS>;<MIN>;IGNORE
+<U0C1D> <t-jha>;<BAS>;<MIN>;IGNORE
+<U0C1E> <t-nya>;<BAS>;<MIN>;IGNORE
+<U0C1F> <t-tta>;<BAS>;<MIN>;IGNORE
+<U0C20> <t-ttha>;<BAS>;<MIN>;IGNORE
+<U0C21> <t-dda>;<BAS>;<MIN>;IGNORE
+<U0C22> <t-ddha>;<BAS>;<MIN>;IGNORE
+<U0C23> <t-nna>;<BAS>;<MIN>;IGNORE
+<U0C24> <t-ta>;<BAS>;<MIN>;IGNORE
+<U0C25> <t-tha>;<BAS>;<MIN>;IGNORE
+<U0C26> <t-da>;<BAS>;<MIN>;IGNORE
+<U0C27> <t-dha>;<BAS>;<MIN>;IGNORE
+<U0C28> <t-na>;<BAS>;<MIN>;IGNORE
+<U0C2A> <t-pa>;<BAS>;<MIN>;IGNORE
+<U0C2B> <t-pha>;<BAS>;<MIN>;IGNORE
+<U0C2C> <t-ba>;<BAS>;<MIN>;IGNORE
+<U0C2D> <t-bha>;<BAS>;<MIN>;IGNORE
+<U0C2E> <t-ma>;<BAS>;<MIN>;IGNORE
+<U0C2F> <t-ya>;<BAS>;<MIN>;IGNORE
+<U0C30> <t-ra>;<BAS>;<MIN>;IGNORE
+<U0C31> <t-rra>;<BAS>;<MIN>;IGNORE
+<U0C32> <t-la>;<BAS>;<MIN>;IGNORE
+<U0C33> <t-lla>;<BAS>;<MIN>;IGNORE
+<U0C35> <t-va>;<BAS>;<MIN>;IGNORE
+<U0C36> <t-sha>;<BAS>;<MIN>;IGNORE
+<U0C37> <t-ssa>;<BAS>;<MIN>;IGNORE
+<U0C38> <t-sa>;<BAS>;<MIN>;IGNORE
+<U0C39> <t-ha>;<BAS>;<MIN>;IGNORE
+<U0C3D> <t-avagrah>;<BAS>;<MIN>;IGNORE
+<U0C3E> <tm-aa>;<BAS>;<MIN>;IGNORE
+<U0C3F> <tm-i>;<BAS>;<MIN>;IGNORE
+<U0C40> <tm-ii>;<BAS>;<MIN>;IGNORE
+<U0C41> <tm-u>;<BAS>;<MIN>;IGNORE
+<U0C42> <tm-uu>;<BAS>;<MIN>;IGNORE
+<U0C43> <tm-vocalicr>;<BAS>;<MIN>;IGNORE
+<U0C44> <tm-vocalicrr>;<BAS>;<MIN>;IGNORE
+<U0C62> <tm-vocalicl>;<BAS>;<MIN>;IGNORE
+<U0C63> <tm-vocalicll>;<BAS>;<MIN>;IGNORE
+<U0C46>  <tm-shorte>;<BAS>;<MIN>;IGNORE
+<U0C47> <tm-e>;<BAS>;<MIN>;IGNORE
+<U0C48> <tm-ai>;<BAS>;<MIN>;IGNORE
+<U0C4A> <tm-shorto>;<BAS>;<MIN>;IGNORE
+<U0C4B> <tm-o>;<BAS>;<MIN>;IGNORE
+<U0C4C> <tm-au>;<BAS>;<MIN>;IGNORE
+<U0C01> <tvd-chandrabindu>;<BAS>;<MIN>;IGNORE
+<U0C02> <tvd-anuswara>;<BAS>;<MIN>;IGNORE
+<U0C03> <tvd-visarg>;<BAS>;<MIN>;IGNORE
+<U0C4D> <t-halant>;<BAS>;<MIN>;IGNORE
+<U0C55> <t-lenghtmark>;<BAS>;<MIN>;IGNORE
+<U0C56> <t-ailenghtmark>;<BAS>;<MIN>;IGNORE
+
+order_start  <GURUMUKHI>;forward;forward;forward;forward,position
+<U0A66> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A67> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A68> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A69> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6A> <4>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6B> <5>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6C> <6>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6D> <7>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6E> <8>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0A6F> <9>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U262c> <adi-shakti>;<BAS>;<MIN>;IGNORE
+<U0A74> <onkar>;<BAS>;<MIN>;IGNORE
+<U0A73> <ura>;<BAS>;<MIN>;IGNORE
+<U0A09> <pavw-u> ;<BAS>;<MIN>;IGNORE
+<U0A0A> <pavw-uu>;<BAS>;<MIN>;IGNORE
+<U0A13> <pavw-o>;<BAS>;<MIN>;IGNORE
+<U0A05> <pavw-a> ;<BAS>;<MIN>;IGNORE
+<U0A06> <pavw-aa> ;<BAS>;<MIN>;IGNORE
+<U0A10> <pavw-ai>;<BAS>;<MIN>;IGNORE
+<U0A14> <pavw-au>;<BAS>;<MIN>;IGNORE
+<U0A72> <iri>;<BAS>;<MIN>;IGNORE
+<U0A07> <pavw-i> ;<BAS>;<MIN>;IGNORE
+<U0A08> <pavw-ii> ;<BAS>;<MIN>;IGNORE
+<U0A0F> <pavw-e>;<BAS>;<MIN>;IGNORE
+<U0A38> <pa-sa>;<BAS>;<MIN>;IGNORE
+<U0A36> <pa-sa>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A39>   <pa-ha>;<BAS>;<MIN>;IGNORE
+<U0A51> <pa-udatta>;<BAS>;<MIN>;IGNORE
+<U0A15> <pa-ka>;<BAS>;<MIN>;IGNORE
+<U0A16> <pa-kha>;<BAS>;<MIN>;IGNORE
+<U0A59> <pa-kha>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A17> <pa-ga>;<BAS>;<MIN>;IGNORE
+<U0A5A> <pa-ga>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A18> <pa-gha>;<BAS>;<MIN>;IGNORE
+<U0A19> <pa-nga>;<BAS>;<MIN>;IGNORE
+<U0A1A> <pa-ca>;<BAS>;<MIN>;IGNORE
+<U0A1B> <pa-cha>;<BAS>;<MIN>;IGNORE
+<U0A1C> <pa-ja>;<BAS>;<MIN>;IGNORE
+<U0A5B> <pa-ja>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A1D> <pa-jha>;<BAS>;<MIN>;IGNORE
+<U0A1E> <pa-nya>;<BAS>;<MIN>;IGNORE
+<U0A1F> <pa-tta>;<BAS>;<MIN>;IGNORE
+<U0A20> <pa-ttha>;<BAS>;<MIN>;IGNORE
+<U0A21> <pa-dda>;<BAS>;<MIN>;IGNORE
+<U0A22> <pa-ddha>;<BAS>;<MIN>;IGNORE
+<U0A23> <pa-nna>;<BAS>;<MIN>;IGNORE
+<U0A24> <pa-ta>;<BAS>;<MIN>;IGNORE
+<U0A25> <pa-tha>;<BAS>;<MIN>;IGNORE
+<U0A26> <pa-da>;<BAS>;<MIN>;IGNORE
+<U0A27> <pa-dha>;<BAS>;<MIN>;IGNORE
+<U0A28> <pa-na>;<BAS>;<MIN>;IGNORE
+<U0A2A> <pa-pa>;<BAS>;<MIN>;IGNORE
+<U0A2B> <pa-pha>;<BAS>;<MIN>;IGNORE
+<U0A5E> <pa-pha>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A2C> <pa-ba>;<BAS>;<MIN>;IGNORE
+<U0A2D> <pa-bha>;<BAS>;<MIN>;IGNORE
+<U0A2E> <pa-ma>;<BAS>;<MIN>;IGNORE
+<U0A2F> <pa-ya>;<BAS>;<MIN>;IGNORE
+<U0A75> <sign-yakash>;<BAS>;<MIN>;IGNORE
+<U0A30> <pa-ra>;<BAS>;<MIN>;IGNORE
+<U0A32> <pa-la>;<BAS>;<MIN>;IGNORE
+<U0A33> <pa-la>;"<BAS><PNKT>";"<MIN><MIN>";IGNORE
+<U0A35> <pa-va>;<BAS>;<MIN>;IGNORE
+<U0A5C> <pa-rra>;<BAS>;<MIN>;IGNORE
+<U0A3E> <pam-aa>;<BAS>;<MIN>;IGNORE
+<U0A3F> <pam-i>;<BAS>;<MIN>;IGNORE
+<U0A40> <pam-ii>;<BAS>;<MIN>;IGNORE
+<U0A41> <pam-u>;<BAS>;<MIN>;IGNORE
+<U0A42> <pam-uu>;<BAS>;<MIN>;IGNORE
+<U0A47> <pam-e>;<BAS>;<MIN>;IGNORE
+<U0A48> <pam-ai>;<BAS>;<MIN>;IGNORE
+<U0A4B> <pam-o>;<BAS>;<MIN>;IGNORE
+<U0A4C> <pam-au>;<BAS>;<MIN>;IGNORE
+<U0A01> <pavd-adakbindi>;<BAS>;<MIN>;IGNORE
+<U0A02> <pavd-bindi>;<BAS>;<MIN>;IGNORE
+<U0A03> <pavd-visarg>;<BAS>;<MIN>;IGNORE
+<U0A70> <tippi>;<BAS>;<MIN>;IGNORE
+<U0A4D> <pa-halant>;<BAS>;<MIN>;IGNORE
+<U0A3C> IGNORE;<PNKT>;<MIN>;IGNORE
+<U0A71> IGNORE;<adak>;<MIN>;IGNORE
+
+order_start  <KANNADA>;forward;forward;forward;forward,position
+<U0CE6> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CE7> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CE8> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CE9> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CEA> <4>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CEB> <5>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CEC> <6>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CED> <7>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CEE> <8>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CEF> <9>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0CF1> <sign-jihvamuliya>;<BAS>;<MIN>;IGNORE
+<U0CF2> <sign-upadhmaniya>;<BAS>;<MIN>;IGNORE
+<U0C85> <kvw-a>;<BAS>;<MIN>;IGNORE
+<U0C86> <kvw-aa>;<BAS>;<MIN>;IGNORE
+<U0C87> <kvw-i>;<BAS>;<MIN>;IGNORE
+<U0C88> <kvw-ii>;<BAS>;<MIN>;IGNORE
+<U0C89> <kvw-u>;<BAS>;<MIN>;IGNORE
+<U0C8A> <kvw-uu>;<BAS>;<MIN>;IGNORE
+<U0C8B> <kvw-vocalicr>;<BAS>;<MIN>;IGNORE
+<U0CE0> <kvw-vocalicrr>;<BAS>;<MIN>;IGNORE
+<U0C8C> <kvw-vocalicl>;<BAS>;<MIN>;IGNORE
+<U0CE1> <kvw-vocalicll>;<BAS>;<MIN>;IGNORE
+<U0C8E> <kvw-shorte>;<BAS>;<MIN>;IGNORE
+<U0C8F> <kvw-e>;<BAS>;<MIN>;IGNORE
+<U0C90> <kvw-ai>;<BAS>;<MIN>;IGNORE
+<U0C92> <kvw-shorto>;<BAS>;<MIN>;IGNORE
+<U0C93> <kvw-o>;<BAS>;<MIN>;IGNORE
+<U0C94> <kvw-au>;<BAS>;<MIN>;IGNORE
+<U0C95> <k-ka>;<BAS>;<MIN>;IGNORE
+<U0C96> <k-kha>;<BAS>;<MIN>;IGNORE
+<U0C97> <k-ga>;<BAS>;<MIN>;IGNORE
+<U0C98> <k-gha>;<BAS>;<MIN>;IGNORE
+<U0C99> <k-nga>;<BAS>;<MIN>;IGNORE
+<U0C9A> <k-ca>;<BAS>;<MIN>;IGNORE
+<U0C9B> <k-cha>;<BAS>;<MIN>;IGNORE
+<U0C9C> <k-ja>;<BAS>;<MIN>;IGNORE
+<U0C9D> <k-jha>;<BAS>;<MIN>;IGNORE
+<U0C9E> <k-nya>;<BAS>;<MIN>;IGNORE
+<U0C9F> <k-tta>;<BAS>;<MIN>;IGNORE
+<U0CA0> <k-ttha>;<BAS>;<MIN>;IGNORE
+<U0CA1> <k-dda>;<BAS>;<MIN>;IGNORE
+<U0CA2> <k-ddha>;<BAS>;<MIN>;IGNORE
+<U0CA3> <k-nna>;<BAS>;<MIN>;IGNORE
+<U0CA4> <k-ta>;<BAS>;<MIN>;IGNORE
+<U0CA5> <k-tha>;<BAS>;<MIN>;IGNORE
+<U0CA6> <k-da>;<BAS>;<MIN>;IGNORE
+<U0CA7> <k-dha>;<BAS>;<MIN>;IGNORE
+<U0CA8> <k-na>;<BAS>;<MIN>;IGNORE
+<U0CAA> <k-pa>;<BAS>;<MIN>;IGNORE
+<U0CAB> <k-pha>;<BAS>;<MIN>;IGNORE
+<U0CAC> <k-ba>;<BAS>;<MIN>;IGNORE
+<U0CAD> <k-bha>;<BAS>;<MIN>;IGNORE
+<U0CAE> <k-ma>;<BAS>;<MIN>;IGNORE
+<U0CAF> <k-ya>;<BAS>;<MIN>;IGNORE
+<U0CB0> <k-ra>;<BAS>;<MIN>;IGNORE
+<U0CB1> <k-rra>;<BAS>;<MIN>;IGNORE
+<U0CB2> <k-la>;<BAS>;<MIN>;IGNORE
+<U0CB5> <k-va>;<BAS>;<MIN>;IGNORE
+<U0CB6> <k-sha>;<BAS>;<MIN>;IGNORE
+<U0CB7> <k-ssa>;<BAS>;<MIN>;IGNORE
+<U0CB8> <k-sa>;<BAS>;<MIN>;IGNORE
+<U0CB9> <k-ha>;<BAS>;<MIN>;IGNORE
+<U0CB3> <k-lla>;<BAS>;<MIN>;IGNORE
+<U0CDE> <k-fa>;<BAS>;<MIN>;IGNORE
+<U0CBD> <k-avagrah>;<BAS>;<MIN>;IGNORE
+<U0CBE> <km-aa>;<BAS>;<MIN>;IGNORE
+<U0CBF> <km-i>;<BAS>;<MIN>;IGNORE
+<U0CC0> <km-ii>;<BAS>;<MIN>;IGNORE
+<kn-sign_ii> <km-ii>;<BAS>;<MIN>;IGNORE
+<U0CC1> <km-u>;<BAS>;<MIN>;IGNORE
+<U0CC2> <km-uu>;<BAS>;<MIN>;IGNORE
+<U0CC3> <km-vocalicr>;<BAS>;<MIN>;IGNORE
+<U0CC4> <km-vocalicrr>;<BAS>;<MIN>;IGNORE
+<U0CE2> <km-vocalicl>;<BAS>;<MIN>;IGNORE
+<U0CE3> <km-vocalicll>;<BAS>;<MIN>;IGNORE
+<U0CC6> <km-shorte>;<BAS>;<MIN>;IGNORE
+<U0CC7> <km-e>;<BAS>;<MIN>;IGNORE
+<kn-sign_e> <km-e>;<BAS>;<MIN>;IGNORE
+<U0CC8> <km-ai>;<BAS>;<MIN>;IGNORE
+<kn-sign_ai> <km-ai>;<BAS>;<MIN>;IGNORE
+<U0CCA> <km-shorto>;<BAS>;<MIN>;IGNORE
+<kn-sign_shorto> <km-shorto>;<BAS>;<MIN>;IGNORE
+<U0CCB> <km-o>;<BAS>;<MIN>;IGNORE
+<kn-sign_o> <km-o>;<BAS>;<MIN>;IGNORE
+<kn-sign1_o> <km-o>;<BAS>;<MIN>;IGNORE
+<U0CCC> <km-au>;<BAS>;<MIN>;IGNORE
+<U0C82> <kvd-anuswara>;<BAS>;<MIN>;IGNORE
+<U0C83> <kvd-visarg>;<BAS>;<MIN>;IGNORE
+<U0CCD> <k-halant>;<BAS>;<MIN>;IGNORE
+<U0CD5> <k-lenght_mark>;<BAS>;<MIN>;IGNORE
+<U0CD6> <k-ai_lenght_mark>;<BAS>;<MIN>;IGNORE
+<U0CBC> IGNORE;<KNKT>;<MIN>;IGNORE
+
+order_start <SINHALA>;forward;forward;forward;forward,position
+# SCCII Part 1 : Collation Sequence (SLS1134)
+<U0DF4> <U0DF4>;<BAS>;<MIN>;IGNORE
+<U0D85> <U0D85>;<BAS>;<MIN>;IGNORE
+<U0D86> <U0D86>;<BAS>;<MIN>;IGNORE
+<U0D87> <U0D87>;<BAS>;<MIN>;IGNORE
+<U0D88> <U0D88>;<BAS>;<MIN>;IGNORE
+<U0D89> <U0D89>;<BAS>;<MIN>;IGNORE
+<U0D8A> <U0D8A>;<BAS>;<MIN>;IGNORE
+<U0D8B> <U0D8B>;<BAS>;<MIN>;IGNORE
+<U0D8C> <U0D8C>;<BAS>;<MIN>;IGNORE
+<U0D8D> <U0D8D>;<BAS>;<MIN>;IGNORE
+<U0D8E> <U0D8E>;<BAS>;<MIN>;IGNORE
+<U0D8F> <U0D8F>;<BAS>;<MIN>;IGNORE
+<U0D90> <U0D90>;<BAS>;<MIN>;IGNORE
+<U0D91> <U0D91>;<BAS>;<MIN>;IGNORE
+<U0D92> <U0D92>;<BAS>;<MIN>;IGNORE
+<U0D93> <U0D93>;<BAS>;<MIN>;IGNORE
+<U0D94> <U0D94>;<BAS>;<MIN>;IGNORE
+<U0D95> <U0D95>;<BAS>;<MIN>;IGNORE
+<U0D96> <U0D96>;<BAS>;<MIN>;IGNORE
+<U0D82> <U0D82>;<BAS>;<MIN>;IGNORE
+<U0D83> <U0D83>;<BAS>;<MIN>;IGNORE
+<U0D9A> <U0D9A>;<BAS>;<MIN>;IGNORE
+<U0D9B> <U0D9B>;<BAS>;<MIN>;IGNORE
+<U0D9C> <U0D9C>;<BAS>;<MIN>;IGNORE
+<U0D9D> <U0D9D>;<BAS>;<MIN>;IGNORE
+<U0D9E> <U0D9E>;<BAS>;<MIN>;IGNORE
+<U0D9F> <U0D9F>;<BAS>;<MIN>;IGNORE
+<U0DA0> <U0DA0>;<BAS>;<MIN>;IGNORE
+<U0DA1> <U0DA1>;<BAS>;<MIN>;IGNORE
+<U0DA2> <U0DA2>;<BAS>;<MIN>;IGNORE
+<U0DA3> <U0DA3>;<BAS>;<MIN>;IGNORE
+<U0DA5> <U0DA5>;<BAS>;<MIN>;IGNORE
+<U0DA4> <U0DA4>;<BAS>;<MIN>;IGNORE
+<U0DA6> <U0DA6>;<BAS>;<MIN>;IGNORE
+<U0DA7> <U0DA7>;<BAS>;<MIN>;IGNORE
+<U0DA8> <U0DA8>;<BAS>;<MIN>;IGNORE
+<U0DA9> <U0DA9>;<BAS>;<MIN>;IGNORE
+<U0DAA> <U0DAA>;<BAS>;<MIN>;IGNORE
+<U0DAB> <U0DAB>;<BAS>;<MIN>;IGNORE
+<U0DAC> <U0DAC>;<BAS>;<MIN>;IGNORE
+<U0DAD> <U0DAD>;<BAS>;<MIN>;IGNORE
+<U0DAE> <U0DAE>;<BAS>;<MIN>;IGNORE
+<U0DAF> <U0DAF>;<BAS>;<MIN>;IGNORE
+<U0DB0> <U0DB0>;<BAS>;<MIN>;IGNORE
+<U0DB1> <U0DB1>;<BAS>;<MIN>;IGNORE
+<U0DB3> <U0DB3>;<BAS>;<MIN>;IGNORE
+<U0DB4> <U0DB4>;<BAS>;<MIN>;IGNORE
+<U0DB5> <U0DB5>;<BAS>;<MIN>;IGNORE
+<U0DB6> <U0DB6>;<BAS>;<MIN>;IGNORE
+<U0DB7> <U0DB7>;<BAS>;<MIN>;IGNORE
+<U0DB8> <U0DB8>;<BAS>;<MIN>;IGNORE
+<U0DB9> <U0DB9>;<BAS>;<MIN>;IGNORE
+<U0DBA> <U0DBA>;<BAS>;<MIN>;IGNORE
+<U0DBB> <U0DBB>;<BAS>;<MIN>;IGNORE
+<U0DBD> <U0DBD>;<BAS>;<MIN>;IGNORE
+<U0DC0> <U0DC0>;<BAS>;<MIN>;IGNORE
+<U0DC1> <U0DC1>;<BAS>;<MIN>;IGNORE
+<U0DC2> <U0DC2>;<BAS>;<MIN>;IGNORE
+<U0DC3> <U0DC3>;<BAS>;<MIN>;IGNORE
+<U0DC4> <U0DC4>;<BAS>;<MIN>;IGNORE
+<U0DC5> <U0DC5>;<BAS>;<MIN>;IGNORE
+<U0DC6> <U0DC6>;<BAS>;<MIN>;IGNORE
+<U0DCF> <U0DCF>;<BAS>;<MIN>;IGNORE
+<U0DD0> <U0DD0>;<BAS>;<MIN>;IGNORE
+<U0DD1> <U0DD1>;<BAS>;<MIN>;IGNORE
+<U0DD2> <U0DD2>;<BAS>;<MIN>;IGNORE
+<U0DD3> <U0DD3>;<BAS>;<MIN>;IGNORE
+<U0DD4> <U0DD4>;<BAS>;<MIN>;IGNORE
+<U0DD6> <U0DD6>;<BAS>;<MIN>;IGNORE
+<U0DD8> <U0DD8>;<BAS>;<MIN>;IGNORE
+<U0DF2> <U0DF2>;<BAS>;<MIN>;IGNORE
+<U0DDF> <U0DDF>;<BAS>;<MIN>;IGNORE
+<U0DF3> <U0DF3>;<BAS>;<MIN>;IGNORE
+<U0DD9> <U0DD9>;<BAS>;<MIN>;IGNORE
+<U0DDA> <U0DDA>;<BAS>;<MIN>;IGNORE
+<U0DDB> <U0DDB>;<BAS>;<MIN>;IGNORE
+<U0DDC> <U0DDC>;<BAS>;<MIN>;IGNORE
+<U0DDD> <U0DDD>;<BAS>;<MIN>;IGNORE
+<U0DDE> <U0DDE>;<BAS>;<MIN>;IGNORE
+<U0DCA> <U0DCA>;<BAS>;<MIN>;IGNORE
 
 order_start <MALAYALAM>;forward;forward;forward;forward,position
 <U0D66> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
@@ -3542,6 +4487,71 @@ order_start <MALAYALAM>;forward;forward;forward;forward,position
 <ml-split-o>  <mlvs-shorto>;<BAS>;<MIN>;IGNORE
 <ml-split-oo> <mlvs-o>;<BAS>;<MIN>;IGNORE
 <ml-split-au> <mlvs-au>;<BAS>;<MIN>;IGNORE
+<U0D7B>  <ml-chillu-n>;<BAS>;<MIN>;IGNORE
+order_start <TAMIL>;forward;forward;forward;forward,position
+<U0BE6> <0>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BE7> <1>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BE8> <2>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BE9> <3>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BEA> <4>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BEB> <5>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BEC> <6>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BED> <7>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BEE> <8>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0BEF> <9>;"<BAS><NUM>";"<MIN><MIN>";IGNORE
+<U0B85> <tavw-a>;<BAS>;<MIN>;IGNORE
+<U0B86> <tavw-aa>;<BAS>;<MIN>;IGNORE
+<U0B87> <tavw-i>;<BAS>;<MIN>;IGNORE
+<U0B88> <tavw-ii>;<BAS>;<MIN>;IGNORE
+<U0B89> <tavw-u>;<BAS>;<MIN>;IGNORE
+<U0B8A> <tavw-uu>;<BAS>;<MIN>;IGNORE
+<U0B8E> <tavw-e>;<BAS>;<MIN>;IGNORE
+<U0B8F> <tavw-ee>;<BAS>;<MIN>;IGNORE
+<U0B90> <tavw-ai>;<BAS>;<MIN>;IGNORE
+<U0B92> <tavw-o>;<BAS>;<MIN>;IGNORE
+<U0B93> <tavw-oo>;<BAS>;<MIN>;IGNORE
+<U0B94> <tavw-au>;<BAS>;<MIN>;IGNORE
+<U0B83> <ta-aytham>;<BAS>;<MIN>;IGNORE
+<U0B95> <ta-ka>;<BAS>;<MIN>;IGNORE
+<U0B99> <ta-nga>;<BAS>;<MIN>;IGNORE
+<U0B9A> <ta-cha>;<BAS>;<MIN>;IGNORE
+<U0B9E> <ta-nya>;<BAS>;<MIN>;IGNORE
+<U0B9F> <ta-ta>;<BAS>;<MIN>;IGNORE
+<U0BA3> <ta-nnna>;<BAS>;<MIN>;IGNORE
+<U0BA4> <ta-tha>;<BAS>;<MIN>;IGNORE
+<U0BA8> <ta-na>;<BAS>;<MIN>;IGNORE
+<U0BAA> <ta-pa>;<BAS>;<MIN>;IGNORE
+<U0BAE> <ta-ma>;<BAS>;<MIN>;IGNORE
+<U0BAF> <ta-ya>;<BAS>;<MIN>;IGNORE
+<U0BB0> <ta-ra>;<BAS>;<MIN>;IGNORE
+<U0BB2> <ta-la>;<BAS>;<MIN>;IGNORE
+<U0BB5> <ta-va>;<BAS>;<MIN>;IGNORE
+<U0BB4> <ta-zha>;<BAS>;<MIN>;IGNORE
+<U0BB3> <ta-ka>;<BAS>;<MIN>;IGNORE
+<U0BB1> <ta-rra>;<BAS>;<MIN>;IGNORE
+<U0BA9> <ta-nna>;<BAS>;<MIN>;IGNORE
+<U0B9C> <ta-ja>;<BAS>;<MIN>;IGNORE
+<U0BB6> <ta-sha>;<BAS>;<MIN>;IGNORE
+<U0BB7> <ta-ssa>;<BAS>;<MIN>;IGNORE
+<U0BB8> <ta-sa>;<BAS>;<MIN>;IGNORE
+<U0BB9> <ta-ha>;<BAS>;<MIN>;IGNORE
+<tagl_KSHA> "<U0B95><U0BCD><U0BB7>";<BAS>;<MIN>;IGNORE
+<U0BCD> <ta-pulli>;<BAS>;<MIN>;IGNORE
+<U0BBE> <tavs-aa>;<BAS>;<MIN>;IGNORE
+<U0BBF> <tavs-i>;<BAS>;<MIN>;IGNORE
+<U0BC0> <tavs-ii>;<BAS>;<MIN>;IGNORE
+<U0BC1> <tavs-u>;<BAS>;<MIN>;IGNORE
+<U0BC2> <tavs-uu>;<BAS>;<MIN>;IGNORE
+<U0BC6> <tavs-e>;<BAS>;<MIN>;IGNORE
+<U0BC7> <tavs-ee>;<BAS>;<MIN>;IGNORE
+<U0BC8> <tavs-ai>;<BAS>;<MIN>;IGNORE
+<U0BCA> <tavs-o>;<BAS>;<MIN>;IGNORE
+<U0BCB> <tavs-oo>;<BAS>;<MIN>;IGNORE
+<U0BCC> <tavs-au>;<BAS>;<MIN>;IGNORE
+<tagl_SHRI> "<U0BB6><U0BCD><U0BB0><U0BC0>";<BAS>;<MIN>;IGNORE
+<ta_split_o>  <tavs-o>;<BAS>;<MIN>;IGNORE
+<ta_split_oo> <tavs-oo>;<BAS>;<MIN>;IGNORE
+<ta_split_au> <tavs-au>;<BAS>;<MIN>;IGNORE
 
 order_end
 
