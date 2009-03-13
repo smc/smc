@@ -21,10 +21,11 @@
 import xmpp
 from xmpp.protocol import *
 import os
+import commands
 
 options = {
 	'JID': 'eng.mal.dict@gmail.com',
-	'Password': 'mail santhosh if you need password for this',
+	'Password': '*******',
 }
 
 class ConnectionError: pass
@@ -70,10 +71,13 @@ class Bot:
 	
 		if(mess_node.getBody()):
 			command = "dict --database dict-en-ml '" + mess_node.getBody() +"'"
-			stdin, stdout = os.popen2(command)
-			# ... put some content into reply node
-			conn.send( xmpp.Message( mess_node.getFrom() ,stdout.read()))
-			stdout.close()
+			output = commands.getoutput(command)
+			if output.find('No definitions found') is not -1:
+				print "No definitions found"
+				conn.send( xmpp.Message( mess_node.getFrom(),'No Definitions Found'))
+			else :
+                             	print "definition found"
+				conn.send( xmpp.Message( mess_node.getFrom() ,output))
 			raise NodeProcessed  # This stanza is fully processed			
 			
 			
