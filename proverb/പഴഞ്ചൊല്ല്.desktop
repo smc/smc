@@ -1,0 +1,22 @@
+
+[Desktop Entry]
+Comment[ml]=
+Comment=
+Exec=/usr/bin/proverb
+GenericName[ml]=പഴഞ്ചൊല്ലുകള്‍ തിരയാനുള്ള ഉപാധി
+GenericName=പഴഞ്ചൊല്ലുകള്‍ തിരയാനുള്ള ഉപാധി
+Icon=view-media-artist
+MimeType=
+Name[ml]=പഴഞ്ചൊല്ല്
+Name=Proverb
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Categories=Applications;Utility;
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-Desktop-File-Install-Version=0.15

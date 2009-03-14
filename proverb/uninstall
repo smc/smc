@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo Uninstalling...
+rm -f /usr/bin/proverb
+rm -f /usr/bin/proverb_ml.qm
+rm -f /usr/share/applications/പഴഞ്ചൊല്ല്.desktop
+echo done

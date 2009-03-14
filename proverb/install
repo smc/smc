@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo Installing...
+cp bin/proverb /usr/bin
+cp proverb_ml.qm /usr/bin
+desktop-file-install പഴഞ്ചൊല്ല്.desktop
+echo done
