@@ -21,6 +21,10 @@ def index(form):
 		response.setBreadcrumb(action)
 		ldetector=LangDetect()
 		response. setContent(ldetector.process(form))
+	if(action=="Hyphenate"):
+		response.setBreadcrumb(action)
+		hyphenator=Hyphenate()
+		response. setContent(hyphenator.process(form))	
 	response.setBreadcrumb("Coming Soon")	
 	response.setContent("Not implemented in current version...!")	
 	return response.toString();
