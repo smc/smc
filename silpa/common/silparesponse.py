@@ -1,19 +1,36 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-from templates import *
+from utils import *
 class SilpaResponse:
 	def __init__(self):
-		self.response =getBaseHTML()
-
+		self.response =getTemplate()
 	def toUnicode(self):
+		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
 		return self.response.encode('utf-8')
 	def toString(self):
+		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
 		return self.response
 	def getResponse(self):
+		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
 		return self.response	
 	def setBreadcrumb(self,navPath):
-		html=	"<div id=\"breadcrumb\"><a href=\"http://planet.smc.org.in/exp/silpa/silpa.py\">Home</a> /"
-		html=html+navPath+"</div>"
-		self.response=self.getResponse().replace("$$SILPA_BREADCRUMB$$",html)
+		if(navPath):
+			html=	"<div id=\"breadcrumb\"><a href=\"http://planet.smc.org.in/exp/silpa/silpa.py\">Home</a> /"
+			html=html+navPath+"</div>"
+			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
 	def setContent(self,value):
-		self.response=self.getResponse().replace("$$SILPA_CONTENT$$",value)
+		if(value):
+			self.response=self.response.replace("$$SILPA_CONTENT$$",value)
+		else:
+			self.response=self.response.replace("$$SILPA_CONTENT$$","")	
+	def setErrorMessage(self,value):
+		if(value):
+			self.response=self.response.replace("$$SILPA_ERROR$$",value)
+		else:
+			self.response=self.response.replace("$$SILPA_ERROR$$","")	
+	def setSuccessMessage(self,value):
+		if(value):
+			self.response=self.response.replace("$$SILPA_SUCCESS$$",value)
+		else:
+			self.response=self.response.replace("$$SILPA_SUCCESS$$","")
+	
