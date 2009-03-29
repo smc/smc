@@ -6,3 +6,5 @@ from transliterator import *
 from syllabalizer import *
 from guesslanguages import *
 from hyphenator import *
+from fortune import *
+
