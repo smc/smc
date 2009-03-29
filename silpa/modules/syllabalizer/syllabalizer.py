@@ -25,8 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import sys
 import re
 import codecs
-from langdetect import LangDetect
-class Syllabalizer:
+from common import *
+class Syllabalizer(SilpaModule):
 	def syllabalize_ml(self,text):
 		signs = [
 		u'\u0d02', u'\u0d03', u'\u0d3e', u'\u0d3f', u'\u0d40', u'\u0d41',
@@ -133,10 +133,44 @@ class Syllabalizer:
 
 		# Return the words splitted
 		return text
-
+	def process(self, form):
+		response = """
+		<h2>Syllabalizer</h2></hr>
+		<p>Enter the text for syllabalization in the below text area.
+		 Language of each  word will be detected. 
+		 You can give the text in any language and even with mixed language
+		</p>
+		<form action="" method="post">
+		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
+		<input  type="submit" id="Syllabalize" value="Syllabalize"  name="action" style="width:12em;"/>
+		<input type="reset" value="Clear" style="width:12em;"/>
+		</br>
+		</form>
+		"""
+		if(form.has_key('input_text')):
+			text = form['input_text'].value.decode('utf-8')
+			response=response % text
+			words = text.split(" ")
+			response = response+"<h2>Syllabalization Results</h2></hr>"
+			for word in words:
+				syllables = self.syllabalize(word)
+				syll_result=""
+				for syllable in syllables:
+					syll_result=syll_result+syllable + "-"
+				result =  syll_result.replace('\n', '<br/>')
+				response = response+result
+		else:
+			response=response % ""	
+		return response
+	def get_module_name(self):
+		return "Syllabalizer"
+	def get_info(self):
+		return 	"Syllabalize each word in the given text"
+		
 	def syllabalize(self,text):
-		ld=LangDetect()
-		lang=ld.detect_lang(text)
+		mm=ModuleManager()
+		ld = mm.getModuleInstance("Detect Language")
+		lang=ld.detect_lang(text)[text]
 		if(lang=="ml_IN"):
 			return self.syllabalize_ml(text)
 		if(lang=="hi_IN"):
@@ -147,3 +181,5 @@ class Syllabalizer:
 		for  char in text:
 			lst_chars.append(char)
 		return lst_chars	
+def getInstance():
+		return Syllabalizer()

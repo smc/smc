@@ -12,3 +12,5 @@ class SilpaModule:
 		return "Untitled Silpa Module"
 	def get_info(self):
 		return 	"Module description"
+	def process(self,object):
+		return 	"Not Implemented"

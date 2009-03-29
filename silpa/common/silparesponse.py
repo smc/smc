@@ -15,7 +15,7 @@ class SilpaResponse:
 		return self.response	
 	def setBreadcrumb(self,navPath):
 		if(navPath):
-			html=	"<div id=\"breadcrumb\"><a href=\"http://planet.smc.org.in/exp/silpa/silpa.py\">Home</a> /"
+			html=	"<div id=\"breadcrumb\"><a href=\"http://smc.org.in/silpa\">Home</a> /"
 			html=html+navPath+"</div>"
 			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
 	def setContent(self,value):

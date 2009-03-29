@@ -4,8 +4,9 @@
 #  Copyright © 2008  Santhosh Thottingal
 #  Released under the GPLV3+ license
 
+from common import *
 
-class LangDetect:
+class LangDetect(SilpaModule):
 		
 	def detect_lang(self, text):
 		words=text.split(" ")
@@ -63,11 +64,16 @@ class LangDetect:
 			response=response % text
 			detected_lang_dict = self.detect_lang(text)
 			response = response+"<h2>Language Detection Results</h2></hr>"
-			response = response+"<table><th><td>Word</td><td>Language</td></th>"
+			response = response+"<table class=\"table1\"><tr><th>Word</th><th>Language</th></tr>"
 			for key in detected_lang_dict:
 				response = response+"<tr><td>"+key+"</td><td>"+detected_lang_dict[key]+"</td></tr>"
 			response = response+"</table>	"
 		else:
 			response=response % ""	
 		return response
-		
+	def get_module_name(self):
+		return "Indian Language Detector"
+	def get_info(self):
+		return 	"Detects the language of the given text word by word. Supports only Indian Language"	
+def getInstance():
+	return LangDetect()

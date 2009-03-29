@@ -6,55 +6,19 @@ import codecs
 import os  
 import string
 import curses.ascii 
-class Lemmatizer:
+from common import SilpaModule
+class Lemmatizer(SilpaModule):
 
 	def __init__(self):
-		self.input_filename =""
-		self.output_filename = ""
-		self.rules_file = ""
+		self.rules_file = "./modules/lemmatizer/lemmatizer_ml.rules"
 		self.rulesDict = dict()
 		
-	def Lemmatize(self):
-		result = ""
-		self.rulesDict = self.LoadRules()
-		if self.input_filename :
-			uni_file = codecs.open(self.input_filename, encoding = 'utf-8', errors = 'ignore')
-		else :
-			uni_file = codecs.open(sys.stdin, encoding = 'utf-8', errors = 'ignore')			
-		text = ""
-		if self.output_filename :
-			output_file = codecs.open(self.output_filename, encoding = 'utf-8', errors = 'ignore',  mode='w+')			
-		line_number = 0
-		while 1:
-   			text = uni_file.readline()
-   			line_number = line_number + 1
-			if text == "":
-				break
-			words = text.split(" ")
-			word_count = len(words)
-			word_iter = 0
-			word = ""
-			while word_iter < word_count:
-				word = words[word_iter]
-				word_length = len(word)
-				print word_length
-				suffix_pos_itr = 2
-				while suffix_pos_itr   <  word_length : 
-					suffix = word[suffix_pos_itr:word_length]
-					if suffix in self.rulesDict:
-						word = word[0:suffix_pos_itr] +  self.rulesDict[suffix]
-						break
-					suffix_pos_itr = suffix_pos_itr + 1	
-				word_iter = word_iter + 1
-				print word	
-				result = result + word + ""
-			result="\n"	
-		return result
-	def Lemmatize(self, text):
+	def lemmatize(self, text):
 		result = ""
 		self.rulesDict = self.LoadRules()
 		words=text.split(" ")
 		word_count=len(words)
+		result_dict = dict()
 		word_iter=0
 		word=""
 		while word_iter < word_count:
@@ -62,16 +26,18 @@ class Lemmatizer:
 			word = self.trim(word)
 			word_length = len(word)
 			suffix_pos_itr = 2
+			word_lemmatized=""
 			while suffix_pos_itr < word_length :
 				suffix = word[suffix_pos_itr:word_length]
 				if suffix in self.rulesDict:
-					word= word[0:suffix_pos_itr] +  self.rulesDict[suffix]
+					word_lemmatized= word[0:suffix_pos_itr] +  self.rulesDict[suffix]
 					break;
 				suffix_pos_itr = suffix_pos_itr+1	
 			word_iter = word_iter+1
-			#print word	
-			result = result + word + " "
-		return result
+			if(word_lemmatized==""):
+				word_lemmatized=word
+			result_dict[ word ] = word_lemmatized
+		return result_dict
 					
 	def LoadRules(self):	
 		print "Loading the rules..."
@@ -125,8 +91,41 @@ class Lemmatizer:
 				break 
 			index=index-1	
 		return word
+	def process(self, form):
+		response = """
+		<h2>Lemmatization</h2></hr>
+		<p>Enter the text for lemmatization in the below text area.
+		 Language of each  word will be detected. 
+		 You can give the text in any language and even with mixed language
+		</p>
+		<form action="" method="post">
+		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
+		<input  type="submit" id="Lemmatize" value="Lemmatize"  name="action" style="width:12em;"/>
+		<input type="reset" value="Clear" style="width:12em;"/>
+		</br>
+		</form>
+		"""
+		if(form.has_key('input_text')):
+			text = action=form['input_text'].value	.decode('utf-8')
+			response=response % text
+			result_dict = self.lemmatize(text)
+			response = response+"<h2>Lemmatization Results</h2></hr>"
+			response = response+"<table class=\"table1\"><tr><th>Word</th><th>Lemmatized form</th></tr>"
+			for key in result_dict:
+				response = response+"<tr><td>"+key+"</td><td>"+result_dict[key]+"</td></tr>"
+			response = response+"</table>	"
+		else:
+			response=response % ""	
+		return response
+	def get_module_name(self):
+		return "Lemmatizer"
+	def get_info(self):
+		return 	"Malayalam Lemmatizer(Experimental)"
+		
+def getInstance():
+	return Lemmatizer()	
 if __name__ == "__main__":
 	lemmatizer= Lemmatizer()
 	lemmatizer.rules_file="/home/santhosh/www/malayalam.map"
-	lemmatizer.Lemmatize("മുദ്രാവാക്യവുമായി മുറ്റത്തില്‍")
+	lemmatizer.lemmatize("മുദ്രാവാക്യവുമായി മുറ്റത്തില്‍")
 	

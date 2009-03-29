@@ -20,20 +20,24 @@
 #
 # If you find any bugs or have any suggestions email: santhosh.thottingal@gmail.com
 # URL: http://www.smc.org.in
-from langdetect import LangDetect
-class Transliterator:
+from common import *
+class Transliterator(SilpaModule):
 	def transliterate(self,text, target_lang_code):
-		ld=LangDetect()
+		mm=ModuleManager()
+		ld = mm.getModuleInstance("Detect Language")
 		tx_str=""
 		words=text.split(" ")
 		for word in words:
-			src_lang_code= ld.detect_lang(word) 
-			tx_str = tx_str
-			for chr in word:
-				offset=ord(chr) + self.getOffset(src_lang_code, target_lang_code) 
-				if(offset>0):
-					tx_str=tx_str + unichr (offset) 
-			tx_str=tx_str	+ " "
+			if(word.strip()>""):
+				src_lang_code=ld.detect_lang(word)[word]
+				tx_str = tx_str
+				for chr in word:
+					offset=ord(chr) + self.getOffset(src_lang_code, target_lang_code) 
+					if(offset>0):
+						tx_str=tx_str + unichr (offset) 
+				tx_str=tx_str	+ " "
+			else:
+				tx_str=tx_str	+ word
 		return 	tx_str
 	def getOffset(self,src,target):
 		hi_IN = 0x0901
@@ -87,7 +91,53 @@ class Transliterator:
 			target_id=ml_IN	
 		if(src=="Unknown"):
 			return 0	
-		return (target_id - src_id)					
+		return (target_id - src_id)
+	def process(self, form):
+		response = """
+		<h2>Transliterator</h2></hr>
+		<p>Enter the text for transliteration in the below text area.
+		 Language of each  word will be detected. 
+		 You can give the text in any language and even with mixed language
+		</p>
+		<form action="" method="post">
+		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea></br> 
+		<select id="trans-lang" name="trans-lang" style="width:12em;">
+		  <option value="hi_IN">Hindi</option>
+		  <option value="ml_IN">Malayalam</option>
+		  <option value="bn_IN">Bengali</option>
+		  <option value="ta_IN">Tamil</option>
+		  <option value="te_IN">Telugu</option>
+		  <option value="or_IN">Oriya</option>
+		  <option value="gu_IN">Gujarai</option>
+		  <option value="pa_IN">Panjabi</option>
+		  <option value="ka_IN">Kannada</option>
+		</select>
+		<input  type="submit" id="Transliterate" value="Transliterate"  name="action" style="width:12em;"/>
+		<input type="reset" value="Clear" style="width:12em;"/>
+		</br>
+		</form>
+		"""
+		if(form.has_key('input_text')):
+			text = form['input_text'].value.decode('utf-8')
+			target_lang = form['trans-lang'].value.decode('utf-8')
+			response=response % text
+			response = response+"<h2>Transliterated Text</h2></hr>"
+			result = self.transliterate(text,target_lang)
+			result = result.replace('\n', '<br/>')
+			response = response+result
+		else:
+			response=response % ""	
+		return response		
+	def get_module_name(self):
+		return "Transliterator"
+	def get_info(self):
+		return 	"Transliterated the text between any Indian Language"	
+		
+		
+def getInstance():
+	return Transliterator()		
+		
+						
 if __name__ == "__main__":
 	t=Transliterator () 
 	print t.transliterate (u"കരയുന്നോ  കരയുന്നോ?" , "ta_IN")
