@@ -26,10 +26,12 @@ import codecs
 class NGramVisualizer:
 	depth=0
 	def loadCorpus(self, corpus_file_name):	
+		limiters = [".","!","?",",",";"]
 		graph_dict = dict()
 		line = []
 		line_number = 0
 		rule_number = 0
+		corpus=""
 		corpus_file = codecs. open(corpus_file_name,encoding='utf-8', errors='ignore')
 		while 1:
 			line_number = line_number +1 
@@ -42,10 +44,22 @@ class NGramVisualizer:
 			line = text.strip()
 			if(line == ""):
 				  continue 
+			corpus=corpus+" "+line
+		sentences=[]
+		sentence = ""
+		start = 0
+		for index in range(0,len(corpus)):
+			for delimit in limiters:
+				if corpus[index] == delimit:
+					sentence = corpus[start:index]
+					sentences.append(sentence)
+					start = index+1
+		for line in sentences:
 			words=line.split(" ")
 			word_count=len(words)
 			prev_word=""
 			for word in words:
+				#print word
 				word=word.strip()
 				if(prev_word==""):
 					prev_word=word	
@@ -56,7 +70,8 @@ class NGramVisualizer:
 					else:
 						graph_dict[prev_word]=word
 					prev_word=word	
-			prev_word=""		
+			prev_word=""
+
 		return graph_dict
 	def generate_full_graph(self, start_word, graph_dict,outputimage):
 		
@@ -95,8 +110,8 @@ class NGramVisualizer:
 		
 if __name__ == "__main__":
 	ngv=NGramVisualizer () 
-	graph_dict=ngv.loadCorpus ("hi.txt")
+	graph_dict=ngv.loadCorpus ("ml.txt")
 	graph=pydot.Dot()
-	graph=ngv.generate_graph(graph_dict, graph,u"भारत")
+	graph=ngv.generate_graph(graph_dict, graph,u"നീലത്തിമിംഗലങ്ങള്‍ക്ക്")
 	print graph.to_string().encode("utf-8")
 	#graph.write("ngvgraph-hi.png","dot", "raw" )
