@@ -26,17 +26,7 @@ import codecs
 import pickle
 import sys 
 from visualizer import NGramVisualizer
-def genCorpus(infile,corpus):
-	ngv=NGramVisualizer ()
-	try:
-		corpusfile = open(corpus)
-	except IOError:
-		graph_dict = dict()
-	else:
-		graph_dict = pickle.load(corpusfile)
-#	corpusfile.close()
-	graph_dict=ngv.loadCorpus (infile,graph_dict)
-	pickle.dump(graph_dict,open(corpus,'w'))
+
 def printGraph(corpus,start_word):
 	ngv=NGramVisualizer ()
 	graph_dict=pickle.load(open(corpus))
@@ -51,7 +41,7 @@ if __name__ == "__main__":
 	"""
 		python sample_ngram.py <input file> <corpus path> 1 
 		this will generate the corpus for the given input file, if corpus specified at 
-		corpus path is empty. Else it will recreate the corpus for the with the additional files.
+		corpus path is empty. Else it will recreate the corpus with the additional data.
 
 		python sample_ngram.py <corpus path> <start word> 2
 		this will generate the graph for the given start word in the given corpus at corpus path.
@@ -59,6 +49,7 @@ if __name__ == "__main__":
 		This is just a crude attempt, a lot more improvement is to be done. 		 
 	"""
 	if sys.argv[3] == "1":
-		genCorpus(sys.argv[1],sys.argv[2])
+		ngv=NGramVisualizer ()
+		ngv.loadCorpus(sys.argv[1],sys.argv[2])
 	elif sys.argv[3] == "2":
 		printGraph(sys.argv[1],sys.argv[2])
