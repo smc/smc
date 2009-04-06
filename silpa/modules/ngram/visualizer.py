@@ -22,18 +22,27 @@
 # URL: http://www.smc.org.in
 import pydot
 import codecs
+import pickle
 
 class NGramVisualizer:
 	depth=0
-	def loadCorpus(self, corpus_file_name):	
-		graph_dict = dict()
+	def loadCorpus(self,new_file_name,corpus_file_name):	
+		limiters = [".","!","?",",",";"]
+		try:
+			corpusfile = open(corpus_file_name)
+		except IOError:
+			graph_dict = dict()
+		else:
+			graph_dict = pickle.load(corpusfile)
+	#	graph_dict = dict()
 		line = []
 		line_number = 0
 		rule_number = 0
-		corpus_file = codecs. open(corpus_file_name,encoding='utf-8', errors='ignore')
+		corpus=""
+		data_file = codecs. open(new_file_name,encoding='utf-8', errors='ignore')
 		while 1:
 			line_number = line_number +1 
-   			text = unicode( corpus_file.readline())
+   			text = unicode( data_file.readline())
 			if text == "":
 			      break
 			if text[0] == '#': 
@@ -42,10 +51,22 @@ class NGramVisualizer:
 			line = text.strip()
 			if(line == ""):
 				  continue 
+			corpus=corpus+" "+line
+		sentences=[]
+		sentence = ""
+		start = 0
+		for index in range(0,len(corpus)):
+			for delimit in limiters:
+				if corpus[index] == delimit:
+					sentence = corpus[start:index]
+					sentences.append(sentence)
+					start = index+1
+		for line in sentences:
 			words=line.split(" ")
 			word_count=len(words)
 			prev_word=""
 			for word in words:
+				#print word
 				word=word.strip()
 				if(prev_word==""):
 					prev_word=word	
@@ -56,8 +77,10 @@ class NGramVisualizer:
 					else:
 						graph_dict[prev_word]=word
 					prev_word=word	
-			prev_word=""		
-		return graph_dict
+			prev_word=""
+
+		pickle.dump(graph_dict,open(corpus_file_name,'w'))
+		#return graph_dict
 	def generate_full_graph(self, start_word, graph_dict,outputimage):
 		
 		for key in graph_dict.iterkeys():
@@ -93,10 +116,12 @@ class NGramVisualizer:
 				
 		return graph
 		
-if __name__ == "__main__":
-	ngv=NGramVisualizer () 
-	graph_dict=ngv.loadCorpus ("hi.txt")
-	graph=pydot.Dot()
-	graph=ngv.generate_graph(graph_dict, graph,u"भारत")
-	print graph.to_string().encode("utf-8")
+#if __name__ == "__main__":
+#	ngv=NGramVisualizer () 
+#	graph_dict = dict()
+#	graph_dict=ngv.loadCorpus ("ml.txt",graph_dict)
+#	pickle.dump(graph_dict,open('ngram_ml.txt','w'))
+#	graph=pydot.Dot()
+#	graph=ngv.generate_graph(graph_dict, graph,u"നീലത്തിമിംഗലങ്ങള്‍ക്ക്")
+#	print graph.to_string().encode("utf-8")
 	#graph.write("ngvgraph-hi.png","dot", "raw" )
