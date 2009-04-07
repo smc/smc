@@ -32,11 +32,14 @@ class Syllabalizer(SilpaModule):
 		u'\u0d02', u'\u0d03', u'\u0d3e', u'\u0d3f', u'\u0d40', u'\u0d41',
 		u'\u0d42', u'\u0d43', u'\u0d44', u'\u0d46', u'\u0d47', u'\u0d48',
 		u'\u0d4a', u'\u0d4b', u'\u0d4c', u'\u0d4d']
+		limiters = ['.','\"','\'','`','!',';',',','?']
 
 		chandrakkala = u'\u0d4d'
 		lst_chars = []
 		for char in text:
-			if char in signs:
+			if char in limiters:
+				lst_chars.append(char)
+			elif char in signs:
 				lst_chars[-1] = lst_chars[-1] + char
 			else:
 				try:
@@ -53,11 +56,14 @@ class Syllabalizer(SilpaModule):
 		u'\u0902', u'\u0903', u'\u093e', u'\u093f', u'\u0940', u'\u0941',
 		u'\u0942', u'\u0943', u'\u0944', u'\u0946', u'\u0947', u'\u0948',
 		u'\u094a', u'\u094b', u'\u094c', u'\u094d']
+		limiters = ['.','\"','\'','`','!',';',',','?']
 
 		chandrakkala = u'\u094d'
 		lst_chars = []
 		for char in text:
-			if char in signs:
+			if char in limiters:
+				lst_chars.append(char)
+			elif char in signs:
 				lst_chars[-1] = lst_chars[-1] + char
 			else:
 				try:
