@@ -7,6 +7,7 @@
 # Free Software Foundation
 
 import sys
+sys.path.append(sys.prefix + '/share/kuttans/')
 from kuttans import KuttansApp
 from PyQt4 import QtGui
 
