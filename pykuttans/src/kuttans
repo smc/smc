@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# Copyright (c) 2009 Rajeesh K Nambiar
+#
+# This program is a free software, you can redistribute it
+# under the license of GNU General Public License, verstion 3
+# or a later version (at your option) as published by the
+# Free Software Foundation
+
+import sys
+from kuttans import KuttansApp
+from PyQt4 import QtGui
+
+if __name__ == "__main__":
+        app = QtGui.QApplication(sys.argv)
+        myapp = KuttansApp()
+        myapp.show()
+        sys.exit(app.exec_())

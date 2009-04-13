@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2009 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>,
-# 					 Rahul <rahulrs@gmx.com>
+# 		     Rahul <rahulrs@gmx.com>
 #
 # This program is free software you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ QObj = QtCore.QObject	# Short name ;-)
 _app_name = "Kuttans"
 _app_version = "0.1"
 
-class StartKuttans(QtGui.QMainWindow):
+class KuttansApp(QtGui.QMainWindow):
 	def __init__(self, parent=None):
 		
 		self.direction		= None
@@ -365,10 +365,4 @@ class StartKuttans(QtGui.QMainWindow):
 		size = settings.value("size", QtCore.QVariant(QtCore.QSize(400, 400))).toSize()
 		self.resize(size)
 		self.move(pos)
-
-if __name__ == "__main__":
-	app = QtGui.QApplication(sys.argv)
-	myapp = StartKuttans()
-	myapp.show()
-	sys.exit(app.exec_())
 
