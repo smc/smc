@@ -26,7 +26,7 @@ import pickle
 
 class NGramVisualizer:
 	depth=0
-	def loadCorpus(self,new_file_name,corpus_file_name):	
+	def loadCorpus(self,corpus,corpus_file_name):	
 		limiters = [".","!","?",",",";"]
 		try:
 			corpusfile = open(corpus_file_name)
@@ -35,23 +35,6 @@ class NGramVisualizer:
 		else:
 			graph_dict = pickle.load(corpusfile)
 	#	graph_dict = dict()
-		line = []
-		line_number = 0
-		rule_number = 0
-		corpus=""
-		data_file = codecs. open(new_file_name,encoding='utf-8', errors='ignore')
-		while 1:
-			line_number = line_number +1 
-   			text = unicode( data_file.readline())
-			if text == "":
-			      break
-			if text[0] == '#': 
-			      continue 
-			line_number = line_number +1       
-			line = text.strip()
-			if(line == ""):
-				  continue 
-			corpus=corpus+" "+line
 		sentences=[]
 		sentence = ""
 		start = 0
