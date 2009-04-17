@@ -9,16 +9,21 @@ class ModuleManager:
 			obj= sys.modules[name]
 		except KeyError:
 			obj  = __import__(".".join(parts[:-1]))
-			print "Loading " , obj
 		if(len(parts)>1):	
 			for part in parts[1:]:
-				obj = getattr(obj,part)
+				try:
+					obj = getattr(obj,part)
+				except:
+					obj = None	
 		return obj
 
 	def getModuleInstance(self,action):
 		module_name = self.find_module(action)
 		if(module_name):
-			return self.import_module(module_name).getInstance()
+			try:
+				return self.import_module(module_name).getInstance()
+			except:
+				print dir(self.import_module(module_name))	
 		else:
 			return None	
 	def find_module(self,action):
@@ -26,6 +31,15 @@ class ModuleManager:
 			return getModulesList()[action]
 		except:	
 			return None
+	def getModulesInfoAsHTML(self):
+		module_dict=getModulesList	()
+		response = "<h2>Available Modules</h2></hr>"
+		response = response+"<table class=\"table1\"><tr><th>Module</th><th>Description</th><th>Status</th></tr>"
+		for action in 	module_dict:
+			module_instance=self.getModuleInstance(action)
+			response = response+"<tr><td><a href='?action="+ action +"'>"+module_instance.get_module_name()+"</a></td>"
+			response = response+"<td>"+module_instance.get_info()+"</td><td>OK</td></tr>"
+		return  response+"</table>"	
 if __name__ == '__main__':
 	mm=ModuleManager()
 	print mm.getModuleInstance("lemmatize")

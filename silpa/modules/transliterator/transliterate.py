@@ -20,6 +20,7 @@
 #
 # If you find any bugs or have any suggestions email: santhosh.thottingal@gmail.com
 # URL: http://www.smc.org.in
+
 from common import *
 class Transliterator(SilpaModule):
 	def transliterate(self,text, target_lang_code):
@@ -39,59 +40,18 @@ class Transliterator(SilpaModule):
 			else:
 				tx_str=tx_str	+ word
 		return 	tx_str
+
 	def getOffset(self,src,target):
-		hi_IN = 0x0901
-		bn_IN = 0x0981
-		pa_IN = 0x0A01
-		gu_IN = 0x0A81 
-		or_IN = 0x0B01
-		ta_IN = 0x0B81
-		te_IN = 0x0C01
-		ka_IN = 0x0C81	
-		ml_IN = 0x0D01
+		lang_bases={'en_US':0,'hi_IN': 0x0901,'bn_IN': 0x0981, 'pa_IN':0x0A01,'gu_IN':0x0A81 , 'or_IN': 0x0B01,'ta_IN': 0x0B81,'te_IN' : 0x0C01,	'ka_IN' :0x0C81	,'ml_IN': 0x0D01}
 		src_id=0
 		target_id=0
-		if(src=="en_US"):
-			return 0
-		if(src=="hi_IN"):
-			src_id=hi_IN
-		if(src=="bn_IN"):
-			src_id=bn_IN
-		if(src=="pa_IN"):
-			src_id=pa_IN
-		if(src=="gu_IN"):
-			src_id=gu_IN
-		if(src=="or_IN"):
-			src_id=or_IN
-		if(src=="ta_IN"):
-			src_id=ta_IN
-		if(src=="te_IN"):
-			src_id=te_IN
-		if(src=="ka_IN"):
-			src_id=ka_IN
-		if(src=="ml_IN"):
-			src_id=ml_IN
-		if(target=="hi_IN"):
-			target_id=hi_IN
-		if(target=="bn_IN"):
-			target_id=bn_IN
-		if(target=="pa_IN"):
-			target_id=pa_IN
-		if(target=="gu_IN"):
-			target_id=gu_IN
-		if(target=="or_IN"):
-			target_id=or_IN
-		if(target=="ta_IN"):
-			target_id=ta_IN
-		if(target=="te_IN"):
-			target_id=te_IN
-		if(target=="ka_IN"):
-			target_id=ka_IN
-		if(target=="ml_IN"):
-			target_id=ml_IN	
-		if(src=="Unknown"):
+		try:
+			src_id=lang_bases[src]
+			target_id=lang_bases[target]
+			return (target_id - src_id)
+		except:
 			return 0	
-		return (target_id - src_id)
+
 	def process(self, form):
 		response = """
 		<h2>Transliterator</h2></hr>
