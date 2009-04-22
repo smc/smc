@@ -244,7 +244,7 @@ class Hyphenator(SilpaModule):
 			text = action=form['input_text'].value	.decode('utf-8')
 			response=response % text
 			words=text.split(" ")
-			response = response+"<h2>Language Detection Results</h2></hr>"
+			response = response+"<h2>Hyphenation Results</h2></hr>"
 			response = response+"<table class=\"table1\"><tr><th>Word</th><th>Hyphenated Word</th></tr>"
 			for word in words:
 				word=word.strip()
