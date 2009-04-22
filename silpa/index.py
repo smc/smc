@@ -15,6 +15,7 @@ def index(form):
 	response=SilpaResponse()
 	if(action):
 		module_manager=ModuleManager()
+		action=action.replace(" ","_")
 		module_instance =  module_manager.getModuleInstance(action)
 		if(module_instance):
 			response.setBreadcrumb(module_instance.get_module_name())
