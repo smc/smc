@@ -9,4 +9,5 @@ from hyphenator import *
 from fortune import *
 from inexactsearch import *
 from dictionary import *
+from anagram import *
 
