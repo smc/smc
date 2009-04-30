@@ -24,6 +24,7 @@ a:hover,a:active {color:#069}
 /* FORMS */
 form {margin: 0 0 1.5em}
 input {font-family: arial,tahoma,verdana,sans-serif;margin: 2px 0}
+textarea {font-family: arial,tahoma,verdana,sans-serif;margin: 2px 0;width: 100%;height:300px}
 fieldset {border: none}
 label {display:block;padding: 5px 0}
 label br {clear:left}

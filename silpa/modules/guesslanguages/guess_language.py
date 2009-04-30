@@ -531,7 +531,7 @@ def normalize(u):
 class LangGuess(SilpaModule):
 	def process(self, form):
 		response = """
-		<h2>Lemmatization</h2></hr>
+		<h2>Guess the language</h2></hr>
 		<p>Enter the text for guessing the language in the below text area.
 		 You can give the text in any language and even with mixed language
 		</p>

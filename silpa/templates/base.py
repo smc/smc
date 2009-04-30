@@ -63,7 +63,7 @@ http://creativecommons.org/licenses/GPL/2.0/
 
 			<ul id="nav-secondary">
 			<li class="first"><a href="?action=Detect+Language">Language Detection</a></li>
-			<li><a href="?action=Spellcheck">Spellcheck</a></li>
+			<li><a href="?action=spellcheck">Spellcheck</a></li>
 			<li class="active"><a href="#">Font Conversion</a>
 				<ul>
 				<li class="first"><a href="?action=To+Unicode">Ascii to Unicode</a></li>
@@ -72,8 +72,8 @@ http://creativecommons.org/licenses/GPL/2.0/
 			</li>
 			<li><a href="#">Lemmatizer</a></li>
 			<li><a href="#">Normalizer</a></li>
-			<li class="last"><a href="?action=Sort"">Sort</a></li>
-			<li class="last"><a href="?action=Hyphenate">Hyphenate</a></li>
+
+			<li class="last"><a href="#">Sort</a></li>
 			</ul>
 		</div>
 		

@@ -1,22 +1,37 @@
-#  Spellchecker with language detection
-#  coding: utf-8
+# Fortune
+# -*- coding: utf-8 -*-
 #
 #  Copyright © 2008  Santhosh Thottingal
 #  Released under the GPLV3+ license
 
-import os
+import os,random
 from common import *
 class Fortune(SilpaModule):
+	def fortunes(self,infile,pattern=None):
+		""" Yield fortunes as lists of lines """
+		result = []
+		for line in infile:
+			line=line.decode("utf-8")
+			if line == "%\n":
+				yield result
+				result = []
+			else:
+				if(pattern==None):
+					result.append(line)
+				else:
+					if(line.find(pattern)==-1):
+						result.append(line)		
+		if result:
+			yield result
+			
 	def fortune_ml(self, word):
-		if(word>""):
-			command = "/usr/games/fortune -m " + word + " ./modules/fortune/database/fortune-ml"
-		else:
-			command = "/usr/games/fortune ./modules/fortune/database/fortune-ml"	
-		command=command.encode('utf-8')	
-		pipe = os.popen('{ ' + command + '; } 2>&1', 'r')
-		text = pipe.read().decode('utf-8')
-		pipe.close()
-		return text
+		filename="./modules/fortune/database/fortune-ml"
+		""" Pick a random fortune from a file """
+		for index, fortune in enumerate(self.fortunes(file(filename),None)):
+			if random.random() < (1.0 / (index+1)):
+				chosen = fortune
+
+		return "".join(chosen)
 
 	def process(self, form):
 		response = """

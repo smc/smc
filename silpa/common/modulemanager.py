@@ -18,6 +18,7 @@ class ModuleManager:
 		return obj
 
 	def getModuleInstance(self,action):
+		action=action.replace(" ","_")
 		module_name = self.find_module(action)
 		if(module_name):
 			try:
@@ -37,8 +38,12 @@ class ModuleManager:
 		response = response+"<table class=\"table1\"><tr><th>Module</th><th>Description</th><th>Status</th></tr>"
 		for action in 	module_dict:
 			module_instance=self.getModuleInstance(action)
-			response = response+"<tr><td><a href='?action="+ action +"'>"+module_instance.get_module_name()+"</a></td>"
-			response = response+"<td>"+module_instance.get_info()+"</td><td>OK</td></tr>"
+			if(module_instance!=None):
+				response = response+"<tr><td><a href='?action="+ action +"'>"+module_instance.get_module_name()+"</a></td>"
+				response = response+"<td>"+module_instance.get_info()+"</td><td>OK</td></tr>"
+			else:
+				response = response+"<tr><td>"+action.replace("_"," ")+"</td>"
+				response = response+"<td>Error while retrieving module details</td><td>Fail</td></tr>"	
 		return  response+"</table>"	
 if __name__ == '__main__':
 	mm=ModuleManager()

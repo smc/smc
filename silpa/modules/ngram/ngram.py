@@ -305,7 +305,7 @@ class NGram:
 		pickle.dump(self.getRoot(),open(PICKLED_TREE,'w'))	
 if __name__ == "__main__":
 	usage = "usage: %prog [options] inputfile"
-	parser = OptionParser(version="%prog 0.1",description="Malayalama NGram Analyser")
+	parser = OptionParser(version="%prog 0.1",description="Malayalam NGram Analyser")
 	parser.set_usage(usage)
 	parser.add_option("-g", "--generate-graph", dest="gen_graph",help="Generates a graph in png format to visualize the ngram")
 	parser.add_option("-p", "--print", action="store_true",default=False,dest="print_ngram",help="Print the Ngram")
@@ -317,9 +317,9 @@ if __name__ == "__main__":
 	if(options.gen_graph):
 		ng = NGram () 	
 		ng.toGraph(options.gen_graph)
-	if(options.	input_file):
+	if(options.input_file):
 		if not os.path.exists(options.input_file):
-			print "File Doesnot Existis"
+			print "File Doesnot Exist"
 			sys.exit(1)
 		else:
 			corpus_file = codecs. open(options.input_file,encoding='utf-8', errors='ignore')
@@ -332,16 +332,16 @@ if __name__ == "__main__":
 				ng.populateSyllableNgram(text)
 				ng.populateWordNgram(text)
 			print "Populated"
-	if(options.	print_ngram):
+	if(options.print_ngram):
 		ng = NGram () 	
 		print ng.getRoot().toString()
-	if(options.	suggest_syllables):
+	if(options.suggest_syllables):
 		ng = NGram () 	
 		print "Searching for" + options.suggest_words
-		print ng.searchNodeByName(unicode(options.	suggest_syllables))
-	if(options.	suggest_syllables):
+		print ng.searchNodeByName(unicode(options.suggest_syllables))
+	if(options.suggest_syllables):
 		ng = NGram () 	
 		print "Searching  for "+ options.suggest_words
-		print ng.searchNodeByName(unicode(options.	suggest_words))
+		print ng.searchNodeByName(unicode(options.suggest_words))
 
 	
