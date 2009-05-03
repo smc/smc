@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="48"
+   height="48"
+   id="svg2383">
+  <defs
+     id="defs2385">
+    <linearGradient
+       id="linearGradient3237">
+      <stop
+         id="stop3239"
+         style="stop-color:#256fef;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3241"
+         style="stop-color:#256fef;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3177">
+      <stop
+         id="stop3179"
+         style="stop-color:#0000fb;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3251"
+         style="stop-color:#0000fb;stop-opacity:0.49803922"
+         offset="0.83333331" />
+      <stop
+         id="stop3181"
+         style="stop-color:#0000fb;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="5.5772877"
+       y1="22.953403"
+       x2="42.784321"
+       y2="22.953403"
+       id="linearGradient3187"
+       xlink:href="#linearGradient3177"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad" />
+    <linearGradient
+       x1="5.0772877"
+       y1="22.953403"
+       x2="43.284321"
+       y2="22.953403"
+       id="linearGradient3243"
+       xlink:href="#linearGradient3237"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     style="opacity:1">
+    <flowRoot
+       id="flowRoot2393"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"><flowRegion
+         id="flowRegion2395"><rect
+           width="42.857143"
+           height="44.285713"
+           x="2.5714285"
+           y="2"
+           id="rect2397" /></flowRegion><flowPara
+         id="flowPara2399">മമ</flowPara></flowRoot>    <text
+       x="-0.42857155"
+       y="42.142857"
+       id="text2401"
+       xml:space="preserve"
+       style="font-size:100px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#2682ff;fill-opacity:1;stroke:#2331ef;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans"><tspan
+         x="-0.42857155"
+         y="42.142857"
+         id="tspan2403"
+         style="fill:#2682ff;fill-opacity:1;stroke:#2331ef;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">മ</tspan></text>
+  </g>
+</svg>
