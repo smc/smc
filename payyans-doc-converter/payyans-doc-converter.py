@@ -19,6 +19,7 @@
 
 import sys
 import os
+from optparse import OptionParser
 
 # import the oorunner helper module we've written
 import oorunner
@@ -41,8 +42,8 @@ class OOWrapper:
 			# Add to path so we can find uno.
 			if sys.path.count(OPENOFFICE_LIBPATH) == 0:
 				sys.path.insert(0, OPENOFFICE_LIBPATH)
+				# This is required for loadComponentFromURL to work properly                                 	
                 		os.putenv('URE_BOOTSTRAP','vnd.sun.star.pathname:' + OPENOFFICE_PATH + '/fundamentalrc')
-			# This is required for loadComponentFromURL to work properly                                 	
 			break	
 
 		# start the openoffice instance
@@ -96,18 +97,28 @@ class OOWrapper:
 
 
 if __name__ == "__main__":
-	if sys.argv.__len__() != 5:
-		raise SystemExit("usage: "+sys.argv[0]+" <infile> <outfile> <mapfile> <direction>")
-	infile    = sys.argv[1]
-	outfile   = sys.argv[2]
-	mapfile   = sys.argv[3]
-	direction = sys.argv[4]
-	if not os.path.exists(os.path.abspath(infile)):
-		raise SystemExit("Cannot find Input file")
-	if not os.path.exists(os.path.abspath(mapfile)):
-		raise SystemExit("Cannot find Mapping file")
+
+	usage = "usage: %prog [options] arg"
+	parser = OptionParser(usage)
+	parser.add_option("-i", "--input-file", dest="input_filename",   help="the input file in ascii format")
+	parser.add_option("-o", "--output-file", dest="output_filename",   help="the output file name")
+	parser.add_option("-d", "--direction", dest="direction", help="'a2u': Ascii to Unicode, 'u2a': Unicode to Ascii")
+	parser.add_option("-m", "--mapping-file", dest="mapping_filename", help="the ascii to unicode mapping file name")
+	(options, args) = parser.parse_args()
+	infile = outfile = mapfile = "" 
+	if (options.input_filename):
+		infile    = os.path.abspath(options.input_filename)
+	if (options.output_filename):
+		outfile   = os.path.abspath(options.output_filename)
+	if (options.mapping_filename):
+		mapfile   = os.path.abspath(options.mapping_filename)
+	direction = options.direction
+	if not os.path.exists(infile):
+		raise SystemExit("Error : Input file doesn't exist")
+	if not os.path.exists(mapfile):
+		raise SystemExit("Error : Mapping file doesn't exist")
 	if not direction in ['a2u', 'u2a']:
-	 	raise SystemExit("Direction should be either 'a2u' or 'u2a'")
+	 	raise SystemExit("Error :Direction should be either 'a2u' or 'u2a'")
 	
 	app = OOWrapper()	 
 	app.covertDocWithPayyans(infile, mapfile, outfile, direction)
