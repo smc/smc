@@ -1,0 +1,9 @@
+ChangeLog
+--------------
+2009-05-12: Version 0.2
+  * Vowel sign + [anuswaram|visargam|chandrabindu] fix for Bengali as reported by Runa B.
+  * Vowel sign + [visargam] fix for Malayalam
+
+2008-12-14: Version 0.1
+  * Initial version
+  * Hyphenation Patterns for 9 Languages
