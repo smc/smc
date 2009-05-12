@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# eng-mal-bot.py A Jabbe buddy bot which provide eng-mal dictionary lookup service
+# eng-mal-bot.py A Jabber buddy bot which provide eng-mal dictionary lookup service
 #       
 # Copyright (c) 2009
 #	 Santhosh Thottingal <santhosh.thottingal@gmail.com>
@@ -23,10 +23,11 @@ import xmpp
 from xmpp.protocol import *
 import os
 import commands
+from dictdlib import DictDB
 
 options = {
 	'JID': 'eng.mal.dict@gmail.com',
-	'Password': '*******',
+	'Password': 'eng.mal.', #This is fake password.
 }
 
 class ConnectionError: pass
@@ -68,37 +69,35 @@ class Bot:
 		except KeyboardInterrupt:
 			pass
 			
-	def messageHandler(self, conn,mess_node):
-	
-		if(mess_node.getBody()):
-			command = "dict --database dict-en-ml '" + mess_node.getBody() +"'"
-			output = commands.getoutput(command)
-			if output.find('No definitions found') is not -1:
-				print "No definitions found"
-				conn.send( xmpp.Message( mess_node.getFrom(),'No Definitions Found'))
-			else :
-                             	print "definition found"
-				conn.send( xmpp.Message( mess_node.getFrom() ,output))
+	def messageHandler(self, conn,message_node):
+		word = message_node.getBody()
+		if  word :
+			output = self.getdef(word)
+			conn.send( xmpp.Message( message_node.getFrom() ,output))
 			raise NodeProcessed  # This stanza is fully processed			
 			
-			
-			
+	def getdef(self, word):
+		en_ml_db = None
+		try:
+			#search the dictionary in same directory of program
+			en_ml_db = DictDB("freedict-eng-mal")
+		except:
+			#retry in standard directory of dictd
+			en_ml_db = DictDB("/usr/share/dictd/freedict-eng-mal")	
+		if en_ml_db == None:
+			return "[FATAL ERROR] Dictionary not found."	
+		try:
+			return en_ml_db.getdef(word)[0]
+		except:	
+			return "No definitions found"
+		
 	def presenceHandler(self, conn, presence):
-
 		'''Auto authorizing chat invites''' 
 		if presence:
-			if presence.getType()=='subscribe':
-				jid = presence.getFrom().getStripped()
-				self.connection.getRoster().Authorize(jid)
+			if presence.getType() == 'subscribe':
+				jabber_id = presence.getFrom().getStripped()
+				self.connection.getRoster().Authorize(jabber_id)
 	
-		targetJID='node@domain.org'
-		print presence.getFrom()
-		if presence.getFrom().bareMatch(targetJID):
-			# play a sound
-			pass
-    	    
-
-
 bot = Bot(**options)
 bot.loop()
 
