@@ -1,7 +1,7 @@
 # Fortune
 # -*- coding: utf-8 -*-
 #
-#  Copyright © 2008  Santhosh Thottingal
+#  Copyright © 2009  Santhosh Thottingal <santhosh.thottingal@gmai.com>
 #  Released under the GPLV3+ license
 
 import os,random
@@ -13,24 +13,24 @@ class Fortune(SilpaModule):
 		for line in infile:
 			line=line.decode("utf-8")
 			if line == "%\n":
-				yield result
-				result = []
+				continue
 			else:
 				if(pattern==None):
 					result.append(line)
 				else:
-					if(line.find(pattern)==-1):
+					if(line.find(pattern)>0):
 						result.append(line)		
 		if result:
-			yield result
-			
-	def fortune_ml(self, word):
-		filename="./modules/fortune/database/fortune-ml"
-		""" Pick a random fortune from a file """
-		for index, fortune in enumerate(self.fortunes(file(filename),None)):
-			if random.random() < (1.0 / (index+1)):
-				chosen = fortune
+			return result
 
+			
+	def fortune_ml(self, pattern):
+		filename = os.path.join(os.path.dirname(__file__), 'database/fortune-ml')
+		""" Pick a random fortune from a file """
+		fortunes_list=self.fortunes(file(filename),pattern)
+		chosen=""
+		if fortunes_list:
+			chosen= random.choice(fortunes_list)
 		return "".join(chosen)
 
 	def process(self, form):
@@ -46,9 +46,10 @@ class Fortune(SilpaModule):
 		"""
 		if(form.has_key('input_text')):
 			text = form['input_text'].value	.decode('utf-8')
+			response=response % text
 		else:
-			text=""	
-		response=response % text
+			text= None
+			response=response % ""
 		result = self.fortune_ml(text)
 		response = response+"<h2>Random Quote</h2></hr>"
 		response = response+"<b>"+result+"</b>"

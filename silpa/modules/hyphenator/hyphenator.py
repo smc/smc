@@ -234,9 +234,8 @@ class Hyphenator(SilpaModule):
 		 You can give the text in any language and even with mixed language
 		</p>
 		<form action="" method="post">
-		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
+		<textarea  name='input_text' id='id1'>%s</textarea>
 		<input  type="submit" id="Hyphenate" value="Hyphenate"  name="action" style="width:12em;"/>
-		<input type="reset" value="Clear" style="width:12em;"/>
 		</br>
 		</form>
 		"""

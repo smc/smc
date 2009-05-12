@@ -28,6 +28,7 @@ import pickle
 class Dictionary(SilpaModule):
 	
 	def lookup_en_ml(self, key):
+		key=key.lower()
 		self.dictFile=os.path.dirname(__file__) + "/data/dict.dat"
 		pickled_dict=open(self.dictFile,'r')
 		self.dictionary=pickle.load(pickled_dict)
@@ -44,14 +45,15 @@ class Dictionary(SilpaModule):
 		<h2>English Malayalam Dictionary</h2></hr>
 		<p>Enter the word to lookup in the dictionary
 		</p>
-		<form action="" method="get">
+		<form action="" method="post">
 		<input type="text" value="%s" name="word"/>
-		<input  type="submit" id="Find_Meaning" value="Find Meaning"  name="action" style="width:12em;"/>
+		<input type="hidden" name="action" value="Dictionary">
+		<input  type="submit" id="Find_Meaning" value="Find Meaning"  style="width:12em;"/>
 		</br>
 		</form>
 		"""
 		if(form.has_key('word')):
-			search_key = form['word'].value.decode('utf-8')
+			search_key = form['word'].value
 			response=response % search_key
 			response = response+"<h2>Search Results</h2></hr>"
 			if(search_key==None):

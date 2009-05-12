@@ -273,7 +273,7 @@ class Payyans(SilpaModule):
 		<p>Enter the text for detecting the language in the below text area.
 		</p>
 		<form action="" method="post">
-		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea><br/>
+		<textarea  name='input_text' id='id1'>%s</textarea><br/>
 		Select Font : <select id="font" name="%s" style="width:12em;">
 		<option value="karthika">Karthika</option>
 		<option value="bhavana">Bhavana</option>
@@ -282,7 +282,6 @@ class Payyans(SilpaModule):
 		<option value="manorama">Manorama</option>
 		</select>
 		<input  type="submit" id="Convert To Unicode" value="%s"  name="action" style="width:12em;"/>
-		<input type="reset" value="Clear" style="width:12em;"/>
 		</br>
 		</form>
 		"""

@@ -10,4 +10,5 @@ from fortune import *
 from inexactsearch import *
 from dictionary import *
 from anagram import *
+from normalizer import *
 

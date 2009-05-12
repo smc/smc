@@ -35,15 +35,15 @@ class ModuleManager:
 	def getModulesInfoAsHTML(self):
 		module_dict=getModulesList	()
 		response = "<h2>Available Modules</h2></hr>"
-		response = response+"<table class=\"table1\"><tr><th>Module</th><th>Description</th><th>Status</th></tr>"
+		response = response+"<table class=\"table1\"><tr><th>Module</th><th>Description</th></tr>"
 		for action in 	module_dict:
 			module_instance=self.getModuleInstance(action)
 			if(module_instance!=None):
-				response = response+"<tr><td><a href='?action="+ action +"'>"+module_instance.get_module_name()+"</a></td>"
-				response = response+"<td>"+module_instance.get_info()+"</td><td>OK</td></tr>"
+				response = response+"<tr><td><a href='"+ action +"'>"+module_instance.get_module_name()+"</a></td>"
+				response = response+"<td>"+module_instance.get_info()+"</td></tr>"
 			else:
 				response = response+"<tr><td>"+action.replace("_"," ")+"</td>"
-				response = response+"<td>Error while retrieving module details</td><td>Fail</td></tr>"	
+				response = response+"<td>Error while retrieving module details</td></tr>"	
 		return  response+"</table>"	
 if __name__ == '__main__':
 	mm=ModuleManager()
