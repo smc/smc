@@ -1,0 +1,330 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-CommandLineArguments</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-ProFile</variable>
+  <value type="QString" >/home/rahul/Programming/chollu/proverb.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString" >proverb</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString" >Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int" >0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString" >Debug</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-Debug</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
+   <value key="buildDirectory" type="QString" >/home/rahul/Programming/chollu</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RAM9mXCDvk,guid=4527dab5ad93bbffb83f768f49af1962</value>
+    <value type="QString" >DESKTOP_SESSION=kde</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISABLE_IMSETTINGS=1</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >DRY_RUN=1</value>
+    <value type="QString" >GNOME_KEYRING_PID=2248</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-ImWb2g/socket</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-TLKsJh/S.gpg-agent:2483:1</value>
+    <value type="QString" >GS_LIB=</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/rahul/.gtkrc-2.0::/home/rahul/.kde/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/rahul/.gtkrc::/home/rahul/.kde/share/config/gtkrc</value>
+    <value type="QString" >G_BROKEN_FILENAMES=1</value>
+    <value type="QString" >HISTSIZE=1000</value>
+    <value type="QString" >HOME=/home/rahul</value>
+    <value type="QString" >HOSTNAME=tiger.in</value>
+    <value type="QString" >INPUTRC=/etc/inputrc</value>
+    <value type="QString" >KDEDIRS=/usr</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_IS_PRELINKED=1</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=500</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LANG=ml_IN.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=rahul</value>
+    <value type="QString" >MAIL=/var/spool/mail/rahul</value>
+    <value type="QString" >MALLOC_CHECK_=2</value>
+    <value type="QString" >NXDIR=/usr/NX</value>
+    <value type="QString" >PATH=/usr/lib/qt4/bin:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/NX/bin:/opt/real/RealPlayer:/home/rahul/bin</value>
+    <value type="QString" >PWD=/home/rahul</value>
+    <value type="QString" >QTDIR=/usr</value>
+    <value type="QString" >QTINC=/usr/lib/qt-3.3/include</value>
+    <value type="QString" >QTLIB=/usr/lib/qt-3.3/lib</value>
+    <value type="QString" >QT_IM_MODULE=scim-bridge</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/:/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2561,unix/unix:/tmp/.ICE-unix/2561</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SHLVL=2</value>
+    <value type="QString" >SSH_AGENT_PID=2422</value>
+    <value type="QString" >SSH_ASKPASS=/usr/bin/ksshaskpass</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-hrGejR2250/agent.2250</value>
+    <value type="QString" >TERM=dumb</value>
+    <value type="QString" >USER=rahul</value>
+    <value type="QString" >WINDOWPATH=1</value>
+    <value type="QString" >XCURSOR_THEME=default</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share</value>
+    <value type="QString" >XDG_MENU_PREFIX=kde4-</value>
+    <value type="QString" >XDG_SESSION_COOKIE=c7c0a3de41d115126a62467e492a5f0f-1236212065.498694-1435713794</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
+    <value type="QString" >_=/usr/bin/kdeinit4</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >/home/rahul/Programming/chollu/proverb.pro</value>
+    <value type="QString" >-spec</value>
+    <value type="QString" >/usr/lib/qt4/mkspecs/linux-g++</value>
+    <value type="QString" >-r</value>
+    <value type="QString" >CONFIG+=debug</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/qmake-qt4</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/rahul/Programming/chollu</value>
+   <value key="buildConfiguration" type="int" >2</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep2</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RAM9mXCDvk,guid=4527dab5ad93bbffb83f768f49af1962</value>
+    <value type="QString" >DESKTOP_SESSION=kde</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISABLE_IMSETTINGS=1</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >DRY_RUN=1</value>
+    <value type="QString" >GNOME_KEYRING_PID=2248</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-ImWb2g/socket</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-TLKsJh/S.gpg-agent:2483:1</value>
+    <value type="QString" >GS_LIB=</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/rahul/.gtkrc-2.0::/home/rahul/.kde/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/rahul/.gtkrc::/home/rahul/.kde/share/config/gtkrc</value>
+    <value type="QString" >G_BROKEN_FILENAMES=1</value>
+    <value type="QString" >HISTSIZE=1000</value>
+    <value type="QString" >HOME=/home/rahul</value>
+    <value type="QString" >HOSTNAME=tiger.in</value>
+    <value type="QString" >INPUTRC=/etc/inputrc</value>
+    <value type="QString" >KDEDIRS=/usr</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_IS_PRELINKED=1</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=500</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LANG=ml_IN.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=rahul</value>
+    <value type="QString" >MAIL=/var/spool/mail/rahul</value>
+    <value type="QString" >MALLOC_CHECK_=2</value>
+    <value type="QString" >NXDIR=/usr/NX</value>
+    <value type="QString" >PATH=/usr/lib/qt4/bin:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/NX/bin:/opt/real/RealPlayer:/home/rahul/bin</value>
+    <value type="QString" >PWD=/home/rahul</value>
+    <value type="QString" >QTDIR=/usr</value>
+    <value type="QString" >QTINC=/usr/lib/qt-3.3/include</value>
+    <value type="QString" >QTLIB=/usr/lib/qt-3.3/lib</value>
+    <value type="QString" >QT_IM_MODULE=scim-bridge</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/:/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2561,unix/unix:/tmp/.ICE-unix/2561</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SHLVL=2</value>
+    <value type="QString" >SSH_AGENT_PID=2422</value>
+    <value type="QString" >SSH_ASKPASS=/usr/bin/ksshaskpass</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-hrGejR2250/agent.2250</value>
+    <value type="QString" >TERM=dumb</value>
+    <value type="QString" >USER=rahul</value>
+    <value type="QString" >WINDOWPATH=1</value>
+    <value type="QString" >XCURSOR_THEME=default</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share</value>
+    <value type="QString" >XDG_MENU_PREFIX=kde4-</value>
+    <value type="QString" >XDG_SESSION_COOKIE=c7c0a3de41d115126a62467e492a5f0f-1236212065.498694-1435713794</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
+    <value type="QString" >_=/usr/bin/kdeinit4</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/rahul/Programming/chollu</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RAM9mXCDvk,guid=4527dab5ad93bbffb83f768f49af1962</value>
+    <value type="QString" >DESKTOP_SESSION=kde</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISABLE_IMSETTINGS=1</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >DRY_RUN=1</value>
+    <value type="QString" >GNOME_KEYRING_PID=2248</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-ImWb2g/socket</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-TLKsJh/S.gpg-agent:2483:1</value>
+    <value type="QString" >GS_LIB=</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/rahul/.gtkrc-2.0::/home/rahul/.kde/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/rahul/.gtkrc::/home/rahul/.kde/share/config/gtkrc</value>
+    <value type="QString" >G_BROKEN_FILENAMES=1</value>
+    <value type="QString" >HISTSIZE=1000</value>
+    <value type="QString" >HOME=/home/rahul</value>
+    <value type="QString" >HOSTNAME=tiger.in</value>
+    <value type="QString" >INPUTRC=/etc/inputrc</value>
+    <value type="QString" >KDEDIRS=/usr</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_IS_PRELINKED=1</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=500</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LANG=ml_IN.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=rahul</value>
+    <value type="QString" >MAIL=/var/spool/mail/rahul</value>
+    <value type="QString" >MALLOC_CHECK_=2</value>
+    <value type="QString" >NXDIR=/usr/NX</value>
+    <value type="QString" >PATH=/usr/lib/qt4/bin:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/NX/bin:/opt/real/RealPlayer:/home/rahul/bin</value>
+    <value type="QString" >PWD=/home/rahul</value>
+    <value type="QString" >QTDIR=/usr</value>
+    <value type="QString" >QTINC=/usr/lib/qt-3.3/include</value>
+    <value type="QString" >QTLIB=/usr/lib/qt-3.3/lib</value>
+    <value type="QString" >QT_IM_MODULE=scim-bridge</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/:/home/rahul/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2561,unix/unix:/tmp/.ICE-unix/2561</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SHLVL=2</value>
+    <value type="QString" >SSH_AGENT_PID=2422</value>
+    <value type="QString" >SSH_ASKPASS=/usr/bin/ksshaskpass</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-hrGejR2250/agent.2250</value>
+    <value type="QString" >TERM=dumb</value>
+    <value type="QString" >USER=rahul</value>
+    <value type="QString" >WINDOWPATH=1</value>
+    <value type="QString" >XCURSOR_THEME=default</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share</value>
+    <value type="QString" >XDG_MENU_PREFIX=kde4-</value>
+    <value type="QString" >XDG_SESSION_COOKIE=c7c0a3de41d115126a62467e492a5f0f-1236212065.498694-1435713794</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
+    <value type="QString" >_=/usr/bin/kdeinit4</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >clean</value>
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/rahul/Programming/chollu</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >Debug</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="mkspec" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep2</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.gdbmaros</value>
+   <value type="QString" >trolltech.qt4projectmanager.qmake</value>
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="clean" type="bool" >true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleanstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="clean" type="bool" >true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.gdbmaros</value>
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray" >UTF-8</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap" />
+ </data>
+</qtcreator>

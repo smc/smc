@@ -1,11 +1,13 @@
-#!/usr/bin/python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# eng-mal-bot.py A Jabbe buddy bot which provide eng-mal dictionary lookup service
+# eng-mal-bot.py A Jabber buddy bot which provide eng-mal dictionary lookup service
 #       
-# Copyright (c) 2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>
-# http://smc.org.in/
+# Copyright (c) 2009
+#	 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+#	 Sarath Lakshman <sarathlakshman@gmail.com> 
+#	 Ragsagar <ragsagar@gmail.com>
+# Swathanthra Malayalam Computing(http://smc.org.in/)
 #       
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,53 +21,14 @@
 
 import xmpp
 from xmpp.protocol import *
-from xmpp.roster import *
 import os
+import commands
+from dictdlib import DictDB
 
 options = {
 	'JID': 'eng.mal.dict@gmail.com',
-	'Password': 'രഹസ്യം(പറയൂല!) !',
+	'Password': 'eng.mal.', #This is fake password.
 }
-
-def presenceHandler(conn,presence_node):
-    """ Handler for playing a sound when particular contact became online """
-    targetJID='node@domain.org'
-    print presence_node.getFrom()
-    if presence_node.getFrom().bareMatch(targetJID):
-        # play a sound
-        pass
-def iqHandler(conn,iq_node):
-    """ Handler for processing some "get" query from custom namespace"""
-    reply=iq_node.buildReply('result')
-    # ... put some content into reply node
-    conn.send(reply)
-    raise NodeProcessed  # This stanza is fully processed
-
-        
-def messageHandler(conn,message):
-	user = message.getFrom()
-	text = message.getBody()
-	if(text):
-		if " " in text:
-			command, args = text.split(" ", 1)
-		else:
-			command, text = text, ""
-		command = command.upper()
-		#ഇതു വര്‍ക്കു ചെയ്യുന്നില്ല! :(
-		if command == "SUBSCRIBE":
-			rost=Roster().PlugIn(conn)
-			rost=Roster.getRoster() 
-			ros.Authorize(user)
-			reply = "Authorized."
-			conn.send(reply)
-			raise NodeProcessed  # This stanza is fully processed
-		else:
-			command = "dict --database dict-en-ml '" + message.getBody() +"'"
-			stdin, stdout = os.popen2(command)
-			# ... put some content into reply node
-			conn.send( xmpp.Message( user,stdout.read()))
-			stdout.close()
-			raise NodeProcessed  # This stanza is fully processed
 
 class ConnectionError: pass
 class AuthorizationError: pass
@@ -79,9 +42,9 @@ class Bot:
 
 		# connect...
 		jid = xmpp.JID(JID)
-		self.connection = xmpp.Client(jid.getDomain(), debug=['always', 'browser', 'testcommand'])
+		self.connection = xmpp.Client(jid.getDomain(), debug=[])
 		result = self.connection.connect()
-		
+
 		if result is None:
 			raise ConnectionError
 
@@ -91,13 +54,12 @@ class Bot:
 		if result is None:
 			raise AuthorizationError
 
-		self.connection.RegisterHandler('presence',presenceHandler)
-		self.connection.RegisterHandler('iq',iqHandler)
-		self.connection.RegisterHandler('message',messageHandler)
+		self.connection.RegisterHandler('presence',self.presenceHandler)
+		self.connection.RegisterHandler('message',self.messageHandler)
 		# ...become available
 		self.connection.sendInitPresence()
 		# presence
-		self.connection.sendInitPresence(requestRoster=0)
+		#self.connection.sendInitPresence(requestRoster=0)
 
 	def loop(self):
 		""" Do nothing except handling new xmpp stanzas. """
@@ -106,7 +68,37 @@ class Bot:
 				pass
 		except KeyboardInterrupt:
 			pass
-
+			
+	def messageHandler(self, conn,message_node):
+		word = message_node.getBody()
+		if  word :
+			output = self.getdef(word)
+			conn.send( xmpp.Message( message_node.getFrom() ,output))
+			raise NodeProcessed  # This stanza is fully processed			
+			
+	def getdef(self, word):
+		en_ml_db = None
+		try:
+			#search the dictionary in same directory of program
+			en_ml_db = DictDB("freedict-eng-mal")
+		except:
+			#retry in standard directory of dictd
+			en_ml_db = DictDB("/usr/share/dictd/freedict-eng-mal")	
+		if en_ml_db == None:
+			return "[FATAL ERROR] Dictionary not found."	
+		try:
+			return en_ml_db.getdef(word)[0]
+		except:	
+			return "No definitions found"
+		
+	def presenceHandler(self, conn, presence):
+		'''Auto authorizing chat invites''' 
+		if presence:
+			if presence.getType() == 'subscribe':
+				jabber_id = presence.getFrom().getStripped()
+				self.connection.getRoster().Authorize(jabber_id)
+	
 bot = Bot(**options)
 bot.loop()
+
 

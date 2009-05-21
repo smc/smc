@@ -33,7 +33,6 @@ def error_exit():
 	sys.exit(1)
 
 
-'''പയ്യന്റെ ക്ലാസ് ഉന്നതകുലമാകുന്നു. ച്ചാല്‍ ആഢ്യന്‍ തന്നെ. ഏ ക്ലാസ് പയ്യന്‍...!'''
 class Payyan:
 
 	def __init__(self):
@@ -45,21 +44,16 @@ class Payyan:
 		parser.add_option("-m", "--mapping-file", dest="mapping_filename", help="the ascii to unicode mapping file name")
 		parser.add_option("-v", "--version", action="store_true",  dest="version", help="print the version of this program")
 		(options, args) = parser.parse_args()
-		'''നീ ആരാകുന്നു?'''
 		if options.version :
-			'''ഞാന്‍ പയ്യനാകുന്നു. പയ്യെ ജനനം. പൈത്തണ്‍കുലം. ഇങ്ങടു് കടിച്ചാല്‍ അങ്ങടും കടിക്കും- അതു്  ജന്മ സ്വഭാവം'''
 			print "Payyans Malayalam Ascii <--> Unicode Converter Version" , VERSION,
 			return
 		if (options.mapping_filename is None):
-			''' മാപ്പിങ്ങ് ഇല്ലാതെ നമുക്കെന്താഘാഷം'''
 			print "\tEnter mapping file"
 			error_exit()
 		if not os.path.exists(options.mapping_filename):
-			'''ഇല്ലാത്ത മാപ്പ് ഉണ്ടാക്കാന്‍ പയ്യനാരാ, കൊളംബസോ? വേല കയ്യിലിലിരിക്കട്ടെ...'''
 			print "\tMap file " + options.mapping_filename + " not found"
 			error_exit()
 		if options.direction not in ['a2u','u2a']:
-			'''വഴി പറയൂ സഖാവേ'''
 			print "\tInvalid direction"
 			error_exit()
 		p=Payyans(options.input_filename ,options.output_filename, options.mapping_filename)
@@ -69,6 +63,5 @@ class Payyan:
 			p.unicode2ascii()
 	
 if __name__ == "__main__":
-	'''ഒരു പയ്യന്‍ അവതരിക്കുന്നു. '''
-	rule= Payyan()
+	payyan = Payyan()
 	

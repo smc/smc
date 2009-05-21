@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>598</width>
+    <height>388</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Proverb</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/icons/icon.png</normaloff>:/icons/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.QWidget 
+{
+	background-color: rgb(152, 152, 152);
+}
+QStatusBar
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.557, stop:0 rgba(143, 143, 143, 255), stop:1 rgba(55, 53, 53, 255));
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="3">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="getButton">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton 
+{		      
+	background-color: qlineargradient(spread:reflect, x1:1, y1:0.085, x2:1, y2:0.511, stop:0.158192 rgba(177, 177, 177, 255), stop:1 rgba(255, 255, 255, 255));
+	border-width: 2px;
+	border-color: rgb(148, 148, 148);
+	border-style: solid;
+    border-radius: 5;
+    padding: 3px;
+    min-width: 9ex;
+    min-height: 2.5ex;
+}
+QPushButton:hover 
+{
+	border-width: 2px;
+	border-color: rgb(45, 45, 45);
+    border-style: solid;
+    border-radius: 5;
+}
+QPushButton:pressed 
+{
+    padding-left: 5px;
+    padding-top: 5px;
+	background-color: qlineargradient(spread:reflect, x1:1, y1:0.085, x2:1, y2:0.511, stop:0.158192 rgba(177, 177, 177, 255), stop:1 rgba(255, 255, 255, 255));
+	border-color: rgb(22, 17, 159);
+}</string>
+      </property>
+      <property name="text">
+       <string>Get</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QToolButton" name="aboutButton">
+      <property name="styleSheet">
+       <string notr="true">QToolButton 
+{		      
+	background-color: qlineargradient(spread:reflect, x1:1, y1:0.085, x2:1, y2:0.511, stop:0.158192 rgba(177, 177, 177, 255), stop:1 rgba(255, 255, 255, 255));
+	border-width: 2px;
+	border-color: rgb(148, 148, 148);
+	border-style: solid;
+    border-radius: 5;
+    padding: 3px;
+}
+QToolButton:hover 
+{
+	border-width: 2px;
+	border-color: rgb(45, 45, 45);
+    border-style: solid;
+    border-radius: 5;
+}
+QToolButton:pressed 
+{
+    padding-left: 5px;
+    padding-top: 5px;
+	background-color: qlineargradient(spread:reflect, x1:1, y1:0.085, x2:1, y2:0.511, stop:0.158192 rgba(177, 177, 177, 255), stop:1 rgba(255, 255, 255, 255));
+	border-color: rgb(22, 17, 159);
+}</string>
+      </property>
+      <property name="text">
+       <string>About</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/icons/about.png</normaloff>:/icons/about.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonIconOnly</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>textEdit</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

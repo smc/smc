@@ -1,0 +1,6 @@
+
+$ qmake-qt4
+$ make
+$ su
+$ ./install
+$ proverb
