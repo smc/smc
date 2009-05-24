@@ -51,6 +51,54 @@ class Syllabalizer(SilpaModule):
 					lst_chars.append(char)
 
 		return lst_chars
+	def syllabalize_kn(self,text):
+		signs = [
+		u'\u0c82', u'\u0c83', u'\u0cbd', u'\u0cbe', u'\u0cbf', u'\u0cc0', u'\u0cc1',
+		u'\u0cc2', u'\u0cc3', u'\u0cc4', u'\u0cc6', u'\u0cc7', u'\u0cc8',
+		u'\u0cca', u'\u0ccb', u'\u0ccc', u'\u0ccd']
+		limiters = ['.','\"','\'','`','!',';',',','?']
+
+		halant = u'\u0ccd'
+		lst_chars = []
+		for char in text:
+			if char in limiters:
+				lst_chars.append(char)
+			elif char in signs:
+				lst_chars[-1] = lst_chars[-1] + char
+			else:
+				try:
+					if lst_chars[-1][-1] == halant:
+						lst_chars[-1] = lst_chars[-1] + char
+					else:
+						lst_chars.append(char)
+				except IndexError:
+					lst_chars.append(char)
+
+		return lst_chars	
+	def syllabalize_bn(self,text):
+		signs = [
+		u'\u0981', u'\u0982', u'\u0983', u'\u09bd', u'\u09be', u'\u09bf', u'\u09c0', u'\u09c1',
+		u'\u09c2', u'\u09c3', u'\u09c4', u'\u09c6', u'\u09c7', u'\u09c8',
+		u'\u09ca', u'\u09cb', u'\u09cc', u'\u09cd', u'\u09d7']
+		limiters = ['.','\"','\'','`','!',';',',','?']
+
+		halant = u'\u09cd'
+		lst_chars = []
+		for char in text:
+			if char in limiters:
+				lst_chars.append(char)
+			elif char in signs:
+				lst_chars[-1] = lst_chars[-1] + char
+			else:
+				try:
+					if lst_chars[-1][-1] == halant:
+						lst_chars[-1] = lst_chars[-1] + char
+					else:
+						lst_chars.append(char)
+				except IndexError:
+					lst_chars.append(char)
+
+		return lst_chars		
 	def syllabalize_hi(self,text):
 		signs = [
 		u'\u0902', u'\u0903', u'\u093e', u'\u093f', u'\u0940', u'\u0941',
@@ -176,11 +224,19 @@ class Syllabalizer(SilpaModule):
 	def syllabalize(self,text):
 		mm=ModuleManager()
 		ld = mm.getModuleInstance("Detect Language")
-		lang=ld.detect_lang(text)[text]
+		lang = None
+		try:
+			lang=ld.detect_lang(text)[text]
+		except:
+			pass #FIXME	
 		if(lang=="ml_IN"):
 			return self.syllabalize_ml(text)
 		if(lang=="hi_IN"):
 			return self.syllabalize_hi(text)
+		if(lang=="kn_IN"):
+			return self.syllabalize_kn(text)	
+		if(lang=="bn_IN"):
+			return self.syllabalize_bn(text)		
 		if(lang=="en_US"):
 			return self.syllabalize_en(text)
 		lst_chars=[]
