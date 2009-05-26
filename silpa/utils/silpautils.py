@@ -14,6 +14,24 @@ def getModulesList():
 		if(item.startswith("SILPA_ACTION.")):
 			action_dict[item.replace("SILPA_ACTION.","")]=conf_dict[item]
 	return 	action_dict	
+def getStaticContent(page):
+	try:
+		return open("doc/"+page).read()
+	except:
+		return "Could not find the requested page "+	page
+def handleStats():
+	Hits="0"	
+	try:
+		InFile = open("count.dat", "r")	# Text file with total hits
+		Hits = InFile.readline()
+	except:
+		pass	
+	x = int(Hits) + 1
+	h = str(x)
+	OutFile = open("count.dat", "w")
+	OutFile.write(str(x))
+	OutFile.close()
+
 def loadConfiguration():
 	conf_dict={}
 	conffile = codecs. open("silpa.conf",encoding='utf-8', errors='ignore')

@@ -18,6 +18,9 @@ class SilpaResponse:
 			html=	"<div id=\"breadcrumb\"><a href=\"http://smc.org.in/silpa\">Home</a> /"
 			html=html+navPath+"</div>"
 			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
+		else:
+			html=	"<div id=\"breadcrumb\"><a href=\"http://smc.org.in/silpa\">Home</a></div>"
+			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
 	def setContent(self,value):
 		if(value):
 			self.response=self.response.replace("$$SILPA_CONTENT$$",value)

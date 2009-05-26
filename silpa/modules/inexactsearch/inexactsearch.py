@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-# Paralperu
+# Approximate Search
 # Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>
 # http://www.smc.org.in
 #
@@ -28,32 +28,11 @@ from common import *
 
 class ApproximateSearch(SilpaModule):
 	
-	def syllabalize_ml(self, text):
-		signs = [
-		u'\u0d02', u'\u0d03', u'\u0d3e', u'\u0d3f', u'\u0d40', u'\u0d41',
-		u'\u0d42', u'\u0d43', u'\u0d44', u'\u0d46', u'\u0d47', u'\u0d48',
-		u'\u0d4a', u'\u0d4b', u'\u0d4c', u'\u0d4d']
-		limiters = ['.','\"','\'','`','!',';',',','?']
-
-		chandrakkala = u'\u0d4d'
-		lst_chars = []
-		for char in text:
-			if char in limiters:
-				lst_chars.append(char)
-			elif char in signs:
-				lst_chars[-1] = lst_chars[-1] + char
-			else:
-				try:
-					if lst_chars[-1][-1] == chandrakkala:
-						lst_chars[-1] = lst_chars[-1] + char
-					else:
-						lst_chars.append(char)
-				except IndexError:
-					lst_chars.append(char)
-
-		return lst_chars
-
-
+	def syllabalize(self, text):
+		mm=ModuleManager()
+		syllabalizer = mm.getModuleInstance("Syllabalize")
+		return syllabalizer.syllabalize(text)
+		
 	def bigram_search(self, str1, str2, syllable_search=False):
 		"""Return approximate string comparator measure (between 0.0 and 1.0)
 		using bigrams.
@@ -84,10 +63,19 @@ class ApproximateSearch(SilpaModule):
 
 		# Make a list of bigrams for both strings - - - - - - - - - - - - - - - - - -
 		#
-		for i in range(1,len(str1)):
-			bigr1.append(str1[i-1:i+1])
-		for i in range(1,len(str2)):
-			bigr2.append(str2[i-1:i+1])
+		if(syllable_search):
+			str1_syllables = self. syllabalize(str1)
+			str2_syllables = self. syllabalize(str2)
+			for i in range(1,len(str1_syllables)):
+				bigr1.append(str1_syllables[i-1:i+1])
+			for i in range(1,len(str2_syllables)):
+				bigr2.append(str2_syllables[i-1:i+1])
+		else:	
+			for i in range(1,len(str1)):
+				bigr1.append(str1[i-1:i+1])
+			for i in range(1,len(str2)):
+				bigr2.append(str2[i-1:i+1])
+
 
 		# Compute average number of bigrams - - - - - - - - - - - - - - - - - - - - -
 		#
@@ -105,11 +93,22 @@ class ApproximateSearch(SilpaModule):
 		else:
 			short_bigr = bigr2
 			long_bigr  = bigr1
-
-		for b in short_bigr:
-			if (b in long_bigr):
-				common += 1.0
-				long_bigr[long_bigr.index(b)] = []  # Mark this bigram as counted
+		if(syllable_search):
+			for b in short_bigr:
+				if (b in long_bigr):
+					if long_bigr.index(b) == short_bigr.index(b) :
+						common += 1.0
+					else:
+						dislocation=(long_bigr.index(b) - short_bigr.index(b))/ average
+						if dislocation < 0 :
+							dislocation = dislocation * -1
+						common += 1.0 - dislocation
+					long_bigr[long_bigr.index(b)] = []  # Mark this bigram as counted
+		else:
+			for b in short_bigr:
+				if (b in long_bigr):
+					common += 1.0
+					long_bigr[long_bigr.index(b)] = []  # Mark this bigram as counted
 
 		w = common / average
 		if(w>=0.6):
@@ -139,30 +138,47 @@ class ApproximateSearch(SilpaModule):
 		<form action="" method="post">
 		<textarea cols='100' rows='25' name='input_text' id='input_text'>%s</textarea>
 		<br/>
-		<input type="text" name="search_key" value="%s"/>
-		<input  type="submit" id="Hyphenate" value="Approximate Search"  name="action" style="width:12em;"/>
+		<p align="center">
+		Search :<input type="text" name="search_key" value="%s"/>
+		Algorithm : <select id="algorithm" name="algorithm"  value="%s" style="width:12em;">
+		  <option value="sb">Syllable Bigram</option>
+		  <option value="lb">Letter Bigram</option>
+		</select>
 		</br>
+		<input type="hidden" name="action" value="Approximate Search">
+		
+		<input  type="submit" id="ApproximateSearch" value="Search" style="width:12em;"/>
+		</p>
 		</form>
 		"""
+		algorithm = 'sb'	
+		if(form.has_key('algorithm')):		
+				algorithm = form['algorithm'].value
 		if(form.has_key('input_text')):
 			text = action=form['input_text'].value	.decode('utf-8')
 			if(form.has_key('search_key')):	
-				key = action=form['search_key'].value	.decode('utf-8')
-				response=response % (text,key)
+				key =form['search_key'].value	.decode('utf-8')
+				response=response % (text,key,algorithm)
 				words=text.split(" ")
 				response = response+"<h2>Search Results</h2></hr>"
 				response = response+"<p>Words in green are with exact match. Words in Yellow are with approximate Match."
 				response = response+" Move your mouse pointer over the words to get more information on matching.</p></hr>"
 			else:
 				response = response+ "Enter a string to search."
-				return response % (text,"")
+				return response % (text,"", algorithm)
 			for word in words:
 				word=word.strip()
 				if(word>""):
-					response = response+ self.bigram_search(word, key)
+					if word[0]>'0' and word[0]<'Z':
+						response = response+ self.bigram_search(word, key,False)
+					else:	
+						if algorithm == 'sb':
+							response = response+ self.bigram_search(word, key, True)
+						else:
+							response = response+ self.bigram_search(word, key, False)	
 					response = response+ "<div  style='float: left;'>&nbsp;</div>"
 		else:
-			response=response % ("","")	
+			response=response % ("","","sb")	
 		return response
 	def get_module_name(self):
 		return "Approximate Search"
