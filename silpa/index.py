@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/smcweb/bin/python
 # -*- coding: utf-8 -*-
 
 from common import *
@@ -6,7 +6,7 @@ from utils import *
 import traceback
 import cgitb
 import cgi
-cgitb.enable()
+cgitb.enable(True, "logs/")
 def index(form):
 	if(form.has_key('action')):
 		action=form['action'].value	
