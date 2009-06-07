@@ -50,7 +50,7 @@ def charCompare(char1, char2):
 				char2_index = charmap[lang].index(char2)			
 				
 	if char1_index == -1 or char1_index  == -1:	return -1
-	if	 char1_index == -1 or char1_index : return 1
+	if	 char1_index ==  char2_index : return 1
 	
 def language(char):
 	for lang in charmap:
