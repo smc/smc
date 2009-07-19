@@ -1,39 +1,39 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 from utils import *
+from PyMeld import Meld
+
 class SilpaResponse:
 	def __init__(self):
-		self.response =getTemplate()
-	def toUnicode(self):
-		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
-		return self.response.encode('utf-8')
+		xhtml = getTemplate()
+		self.page = Meld(xhtml) 	
 	def toString(self):
-		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
-		return self.response
-	def getResponse(self):
-		self.response=self.response.replace("$$SILPA_COPYRIGHT$$",getCopyrightInfo());
-		return self.response	
+		return str(self.page)
+	def __str__(self):	
+		return str(self.page)
 	def setBreadcrumb(self,navPath):
 		if(navPath):
-			html=	"<div id=\"breadcrumb\"><a href=\"http://smc.org.in/silpa\">Home</a> /"
-			html=html+navPath+"</div>"
-			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
+			html= "<a href=\"http://smc.org.in/silpa\">Home</a> &gt; "
+			html=html + navPath
 		else:
-			html=	"<div id=\"breadcrumb\"><a href=\"http://smc.org.in/silpa\">Home</a></div>"
-			self.response=self.response.replace("$$SILPA_BREADCRUMB$$",html)
-	def setContent(self,value):
+			html="<a href=\"http://smc.org.in/silpa\">Home</a>"
+		self.page.breadcrumb = html	
+	def setForm(self,value):
 		if(value):
-			self.response=self.response.replace("$$SILPA_CONTENT$$",value)
-		else:
-			self.response=self.response.replace("$$SILPA_CONTENT$$","")	
+			self.page.form= value
+	def setResult(self,value):
+		if(value):
+			self.page.result= value	
 	def setErrorMessage(self,value):
 		if(value):
-			self.response=self.response.replace("$$SILPA_ERROR$$",value)
-		else:
-			self.response=self.response.replace("$$SILPA_ERROR$$","")	
+			self.page.errormessage = value
 	def setSuccessMessage(self,value):
 		if(value):
-			self.response=self.response.replace("$$SILPA_SUCCESS$$",value)
-		else:
-			self.response=self.response.replace("$$SILPA_SUCCESS$$","")
-	
+			self.page.successmessage = value
+	def setContent(self, value):
+		if value:
+			self.page.content = value			
+	def setFooter(self, value):
+		if value:
+			self.page.footer = value
+		

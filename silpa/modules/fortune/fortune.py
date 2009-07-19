@@ -23,8 +23,8 @@ class Fortune(SilpaModule):
 		if result:
 			return result
 
-			
-	def fortune_ml(self, pattern):
+	@ServiceMethod			
+	def fortune_ml(self, pattern=None):
 		filename = os.path.join(os.path.dirname(__file__), 'database/fortune-ml')
 		""" Pick a random fortune from a file """
 		fortunes_list=self.fortunes(file(filename),pattern)
@@ -34,26 +34,38 @@ class Fortune(SilpaModule):
 		return "".join(chosen)
 
 	def process(self, form):
-		response = """
+		htmlform = """
 		<h2>Fortune Malayalam</h2></hr>
 		<p>Enter the text for getting a random quote with the given string in the below text area.
 		</p>
-		<form action="" method="post">
-		<input type="text" cols='100' name='input_text' id='id1' value="%s"/>
+		<form action="" method="post" onsubmit="xmlhttpPost(this,'index.py','content'); return false;">
+		<input type="text" cols='100' name='input_text' id='input_text' value='%s' />
 		<input  type="submit" id="Fortune" value="Fortune"  name="action" style="width:12em;"/>
 		</br>
 		</form>
 		"""
+		response=htmlform
+		text=None
 		if(form.has_key('input_text')):
 			text = form['input_text'].value	.decode('utf-8')
-			response=response % text
+			response =response % text
 		else:
-			text= None
-			response=response % ""
+			response=htmlform	% s	
 		result = self.fortune_ml(text)
-		response = response+"<h2>Random Quote</h2></hr>"
+		response =response+ "<h2>Random Quote</h2></hr>"
 		response = response+"<b>"+result+"</b>"
 		return response
+	def get_form():
+		htmlform = """
+		<h2>Fortune Malayalam</h2></hr>
+		<p>Enter the text for getting a random quote with the given string in the below text area.
+		</p>
+		<form action="" method="post" onsubmit="xmlhttpPost(this,'index.py','content'); return false;">
+		<input type="text" cols='100' name='input_text' id='input_text' value='%s' />
+		<input  type="submit" id="Fortune" value="Fortune"  name="action" style="width:12em;"/>
+		</br>
+		</form>
+		"""
 	def get_module_name(self):
 		return "Fortune Malayalam"
 	def get_info(self):

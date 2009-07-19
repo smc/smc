@@ -85,7 +85,7 @@ class Soundex(SilpaModule):
 		Search :<input type="text" name="search_key" value="%s"/>
 		</br>
 		<input type="hidden" name="action" value="Soundex">
-		<input  type="submit" id="ApproximateSearch" value="Search" style="width:12em;"/>
+		<input  type="submit" id="SoundexSearch" value="Search" style="width:12em;"/>
 		</p>
 		</form>
 		"""
@@ -103,15 +103,17 @@ class Soundex(SilpaModule):
 				word=word.strip()
 				if(word>""):
 					if word[0]>'0' and word[0]<'Z':
+						soundexStr=self.soundex(word, indic=False)
 						if self.compare(word, key, False) :
-							response += "<div  style='float: left; background-color: yellow;'>"+word+"</div>"
+							response += "<div  style='float: left; background-color: yellow;' title='"+soundexStr+"'>"+word+"</div>"
 						else:
-							response += "<div  style='float: left;'>"+word+"</div>"
+							response += "<div  style='float: left;' title='"+soundexStr+"'>"+word+"</div>"
 					else:
+						soundexStr=self.soundex(word, indic=False)
 						if self.compare(word, key,  True) :
-							response += "<div  style='float: left; background-color: yellow;'>"+word+"</div>"
+							response += "<div  style='float: left; background-color: yellow;' title='"+soundexStr+"'>"+word+"</div>"
 						else:
-							response += "<div  style='float: left;'>"+word+"</div>"
+							response += "<div  style='float: left;' title='"+soundexStr+"'>"+word+"</div>"
 							
 					response = response+ "<div  style='float: left;'>&nbsp;</div>"
 		else:
