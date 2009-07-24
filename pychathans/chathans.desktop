@@ -8,5 +8,5 @@ Exec=chathans
 Terminal=false
 Type=Application
 StartupNotify=true
-Icon=user_icon
+Icon=chathans
 Categories=Applications;Utility;
