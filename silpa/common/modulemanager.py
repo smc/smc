@@ -21,10 +21,12 @@ class ModuleManager:
 		action=action.replace(" ","_")
 		module_name = self.find_module(action)
 		if(module_name):
-			try:
-				return self.import_module(module_name).getInstance()
-			except:
-				print dir(self.import_module(module_name))	
+			#print module_name
+			return self.import_module(module_name).getInstance()
+			#try:
+			#	return self.import_module(module_name).getInstance()
+			#except:
+			#	print dir(self.import_module(module_name))	
 		else:
 			return None	
 	def find_module(self,action):
@@ -45,8 +47,12 @@ class ModuleManager:
 				response = response+"<tr><td>"+action.replace("_"," ")+"</td>"
 				response = response+"<td>Error while retrieving module details</td></tr>"	
 		return  response+"</table>"	
-if __name__ == '__main__':
-	mm=ModuleManager()
-	print mm.getModuleInstance("lemmatize")
-	print mm.import_module("modules.lemmatizer").getInstance()
-	 
+	def getAllModules(self):
+		modules=[]
+		module_dict=getModulesList	()
+		for action in 	module_dict:
+			module_instance=self.getModuleInstance(action)
+			modules.append(module_instance)
+		modules.sort()
+		return modules	
+		

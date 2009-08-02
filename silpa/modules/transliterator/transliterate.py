@@ -72,7 +72,10 @@ class Transliterator(SilpaModule):
 		words=text.split(" ")
 		for word in words:
 			if(word.strip()>""):
-				src_lang_code=ld.detect_lang(word)[word]
+				try:
+					src_lang_code=ld.detect_lang(word)[word]
+				except:
+					continue #FIXME	
 				if((target_lang_code=="en_US") and (src_lang_code=="ml_IN")):
 					tx_str=tx_str + self.transliterate_ml_en(word)
 					continue	

@@ -11,4 +11,8 @@ from inexactsearch import *
 from dictionary import *
 from anagram import *
 from normalizer import *
+from ocr import *
+from sort import *
+from chardetails import *
+from soundex import *
 

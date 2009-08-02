@@ -218,8 +218,10 @@ class Payyan:
 					print "Error: Syntax Error in the Ascii to Unicode Map in line number ",  line_number
 				  	print "Line: "+ text
 				  	return 2	# Error - Syntax error in Mapping file 
-	 		lhs = line.split("=") [ 0 ]  
-	 		rhs = line.split("=") [ 1 ]  
+			lhs = line.split("=") [ 0 ]  
+			rhs = line.split("=") [ 1 ]  
+			lhs=lhs.strip()
+	 		rhs=rhs.strip()
 			if self.direction == 'a2u':
 				rules_dict[lhs]=rhs
 			else:

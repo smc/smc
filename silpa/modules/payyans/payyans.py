@@ -261,6 +261,8 @@ class Payyans(SilpaModule):
 	 		rhs = line.split("=") [ 1 ]  
 	 		'''ഇതിനിടക്കിനി മൂന്നാമനു സ്കോപ്പിണ്ടോ? '''
 	 		'''മറക്കാതെ ഇരിക്കട്ടെ. ആവശ്യം വരും '''
+	 		lhs=lhs.strip()
+	 		rhs=rhs.strip()
 			if self.direction == 'a2u':
 				rules_dict[lhs]=rhs
 			else:
@@ -274,24 +276,26 @@ class Payyans(SilpaModule):
 		</p>
 		<form action="" method="post">
 		<textarea  name='input_text' id='id1'>%s</textarea><br/>
-		Select Font : <select id="font" name="%s" style="width:12em;">
-		<option value="karthika">Karthika</option>
-		<option value="bhavana">Bhavana</option>
-		<option value="revathi">Revathi</option>
+		Select Font : <select id="font" name="font" style="width:12em;">
 		<option value="ambili">Ambili</option>
+		<option value="karthika">Karthika</option>
+		<option value="matweb">Mathrubhumi</option>
 		<option value="manorama">Manorama</option>
+		<option value="revathi">Revathi</option>
+		<option value="uma">Uma</option>
+		
 		</select>
 		<input  type="submit" id="Convert To Unicode" value="%s"  name="action" style="width:12em;"/>
 		</br>
 		</form>
 		"""
 		action=form['action'].value.decode('utf-8')	
-		if(action=="To Unicode"):
+		if(action=="To_Unicode"):
 			if(form.has_key('input_text')):
 				text = form['input_text'].value	.decode('utf-8')
-				response=response % (text,"a2ufont", form['action'].value.decode('utf-8')	)
-				if(form.has_key('a2ufont')):
-					font = form['a2ufont'].value	.decode('utf-8')
+				response=response % (text, form['action'].value.decode('utf-8')	)
+				if(form.has_key('font')):
+					font = form['font'].value	.decode('utf-8')
 					self.mapping_filename="./modules/payyans/maps/"+font+".map"
 					if (len(text)>0):
 						result = "<p> "+self.word2Unicode(text) .replace('\n', '<br/>') +"</p>"
@@ -299,21 +303,21 @@ class Payyans(SilpaModule):
 						result=""
 					response=response+result
 			else:
-				response=response % ("","a2ufont", form['action'].value.decode('utf-8')	)			
-		if(action=="To ASCII"):
+				response=response % ("", form['action'].value.decode('utf-8')	)			
+		if(action=="To_ASCII"):
 			if(form.has_key('input_text')):
 				text = form['input_text'].value	.decode('utf-8')
-				response=response % (text,"u2afont", form['action'].value.decode('utf-8')	)
-				if(form.has_key('u2afont')):
-					font = form['u2afont'].value	.decode('utf-8')
+				response=response % (text, form['action'].value.decode('utf-8')	)
+				if(form.has_key('font')):
+					font = form['font'].value	.decode('utf-8')
 					self.mapping_filename="./modules/payyans/maps/"+font+".map"
 					if (len(text)>0):
-						result = "<p> "+self.word2Unicode(text) .replace('\n', '<br/>') +"</p>"
+						result = "<p> "+self.word2ASCII(text) .replace('\n', '<br/>') +"</p>"
 					else :
 						result=""
 					response=response+result	
 			else:
-				response=response % ("","u2afont", form['action'].value.decode('utf-8')	)						
+				response=response % ("", form['action'].value.decode('utf-8')	)						
 		return response	
 	def get_module_name(self):
 		return "Payyans Unicode-ASCII Converter"

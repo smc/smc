@@ -14,3 +14,7 @@ class SilpaModule:
 		return 	"Module description"
 	def process(self,object):
 		return 	"Not Implemented"
+
+def ServiceMethod(fn):
+	fn.IsServiceMethod = True
+	return fn
