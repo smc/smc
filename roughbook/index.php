@@ -1,12 +1,12 @@
 <?php
   exit();
-  $page_title = "KDE 4.3.0 Caizen Release Announcement";
+  $page_title = "കെഡിഇ 4.3.0 കൈസെന്‍ പ്രകാശനത്തിന്റെ അറിയിപ്പു്";
   $site_root = "../";
   include "header.inc";
   include "helperfunctions.inc";
 ?>
 
-Also available in:
+ഇതു് ലഭ്യമായിട്ടുള്ള മറ്റു് ഭാഷകള്‍:
 <?php
   $release = '4.3';
   include "../announce-i18n-bar.inc";
@@ -15,20 +15,20 @@ Also available in:
 <!-- // Boilerplate -->
 
 <h3 align="center">
-  KDE Community Delivers Incremental Innovations With New KDE 4.3 Release
+  പതിയ പതിപ്പായ കെഡിഇ  4.3 നൊപ്പം കൂടുതല്‍ പുതുമകളും കെഡിഇ കൂട്ടായ്മ കാഴ്ച വയ്ക്കുന്നു
 </h3>
 
 <p align="justify">
   <strong>
-    KDE 4.3 (Codename: <i>"Caizen"</i>) Delivers Incremental Innovations to the Free Desktop Users and Software Developers
+    കെഡിഇ 4.3 (രഹസ്യനാമം: <i>"കൈസന്‍"</i>) സ്വതന്ത്ര പണിയിടത്തിന്റെ ഉപയോക്താക്കള്‍ക്കും സോഫ്റ്റ്‌വെയര്‍ രചയിതാക്കള്‍ക്കും കൂടിയ പുതുമകള്‍ കാഴ്ച വെയ്ക്കുന്നു
   </strong>
 </p>
 
 <p align="justify">
-6 August, 2009. The <a href=http://www.kde.org/>KDE Community</a> today announces the immediate availability of <i>"Caizen"</i>, (a.k.a KDE 4.3), bringing many improvements to the user experience and development platform. KDE 4.3 continues to refine the unique features brought in previous releases while bringing new innovations. With the 4.2 release aimed at the majority of end users, KDE 4.3 offers a more stable and complete product for the home and small office.
+ആഗസ്റ്റ് 6 , 2009. ഉപയോക്താക്കളുടെ അനുഭവത്തിനും വികസന വേദിയ്ക്കും വളരെയധികം മേന്മകള്‍ കൊണ്ടുവരുന്ന <i>"കൈസന്റെ"</i>, (അഥവ കെഡിഇ 4.3 ന്റെ), ഉടനടിയുള്ള ലഭ്യത <a href=http://www.kde.org/>കെഡിഇ കൂട്ടായ്മ</a> ഇന്നു് അറിയിയ്ക്കുന്നു. പുതിയ പുതുമകള്‍ കൊണ്ടുവരുന്നതിനോടൊപ്പം തന്നെ കെഡിഇ 4.3 മുന്‍ പതിപ്പുകളില്‍ പരിചയപ്പെടുത്തിയ നിരുപമ ഗുണങ്ങളെ തുടര്‍ന്നും തേച്ചു് മിനുക്കിയിട്ടുണ്ടു്. 4.2 പതിപ്പു് ഭൂരിപക്ഷം സാധാരണക്കാര്‍ക്കും ഉപയോഗിയ്ക്കാന്‍ ലക്ഷ്യമിട്ടതു് പോലെ, കെഡിഇ 4.3 വീട്ടുപയോഗത്തിനും ചെറിയ ആപ്പീസുകളിലും ഉപയോഗിയ്ക്കാവുന്ന കൂടുതല്‍ സുസ്ഥിരവും പൂര്‍ണ്ണവുമായ ഉത്പന്നം സമര്‍പ്പിയ്ക്കുന്നു.
 </p>
 <p align=justify>
-  The KDE community has <strong>fixed over 10,000 bugs</strong> and <strong>implemented almost 2,000 feature requests</strong> in the last 6 months. Close to 63,000 changes were checked in by a little under 700 contributors. Read on for an overview of the changes in the KDE 4.3 Desktop Workspace, Application Suites and the KDE 4.3 Development Platform.
+  കെഡിഇ കൂട്ടായ്മ കഴിഞ്ഞ 6 മാസങ്ങള്‍ക്കുള്ളില്‍ <strong>10,000 ത്തിലധികം പിഴവുകള്‍ പരിഹരിയ്ക്കുകയും</strong> <strong>2,000 ത്തിലധികം ആഗ്രഹങ്ങള്‍ നടപ്പിലാക്കുകയും</strong> ചെയ്തു. എണ്ണിയാല്‍ 700 ല്‍ ഇത്തിരി മാത്രം കുറവുള്ള സംഭാവന നല്‍കിയവര്‍ 63,000 ത്തോടടുത്തു് വരുന്ന മാറ്റങ്ങള്‍ കൂട്ടിച്ചേര്‍ത്തിട്ടുണ്ടു്. കെഡിഇ 4.3 പണിയിടസ്ഥലം, പ്രയോഗ കൂട്ടങ്ങള്‍ എന്നിവയ്ക്കൊപ്പം കെഡിഇ 4.3 പണിയിട വേദിയിലും വന്ന മാറ്റങ്ങളുടെ ഒരു സംഗ്രഹത്തിനു് തുടര്‍ന്നു് വായിയ്ക്കുക.
 </p>
 
 <div  align="center" style="width: auto; margin-top: 20px; margin-botton: 20px;">
