@@ -33,29 +33,29 @@
 
 <div  align="center" style="width: auto; margin-top: 20px; margin-botton: 20px;">
 <a href="screenshots/desktop.png"><img src="screenshots/desktop_thumb.png" align="center" width="504" height="315"  /></a><br />
-<em>The KDE 4.3 Desktop</em></div>
+<em>കെഡിഇ 4.3 പണിയിടം</em></div>
 
 <h3>
-  Desktop Improves Performance And Usability
+  പണിയിടം പ്രകടനത്തിലും ഉപയോഗ യോഗ്യതയിലും മെച്ചപ്പെട്ടു
 </h3>
 <br>
 <p align=justify>
-    The KDE Desktop Workspace provides a powerful and complete desktop experience that features excellent integration with Linux and UNIX operating systems. The key components that make up the KDE Desktop Workspace include:
+    ഗ്നു/ലിനക്സ്, യുണിക്സ് പ്രവര്‍ത്തക സംവിധാനങ്ങളുമായി വളരെ മികവുറ്റ രീതിയില്‍ യോജിച്ചു് പ്രവര്‍ത്തിയ്ക്കുന്ന ശക്തവും പൂര്‍ണ്ണമായതുമൊയരു് പണിയിട അനുഭവമാണു് കെഡിഇ പണിയിടസ്ഥലം നല്‍കുന്നതു്. കെഡിഇ പണിയിടസ്ഥലം താഴെ പറയുന്ന പ്രധാന ഘടകങ്ങളാല്‍ നിര്‍മ്മിച്ചിട്ടുള്ളതാണു്:
 <ul>
   <li>
-    <strong>KWin</strong>, a powerful window manager that provides modern 3D graphical effects
+    <strong>കെവിന്‍</strong>, ആധുനിക ത്രിമാന ഗ്രാഫിയ്ക്കല്‍ പ്രഭാവങ്ങള്‍ നല്‍കുന്ന ഒരു ശക്തമായ ജാലക പാലകന്‍
   </li>
   <li>
-    <strong>The Plasma Desktop Shell</strong>, a cutting-edge desktop and panels system that features productivity enhancements and online integration through customizable widgets
+    <strong>പ്ലാസ്മാ പണിയിട കവചം</strong>, ജോലി ചെയ്യാനുള്ള കഴിവുകള്‍ കൂട്ടുകയും ഇഷ്ടാനുസരണം മാറ്റാവുന്ന ഉരുപ്പടികളുടെ സഹായത്തോടെ ഇന്റര്‍നെറ്റുമായി ബന്ധിപ്പിച്ചതുമായ ഏറ്റവും പുതിയ പണിയിടത്തിന്റേയും പാളികളുടേയും സംവിധാനം
   </li>
   <li>
-    <strong>Dolphin</strong>, a user-friendly, network- and content-aware file manager
+    <strong>ഡോള്‍ഫിന്‍</strong>, വളരെ എളുപ്പമായതും ശൃഖലയും ഉള്ളടക്കവും കൈകാര്യം ചെയ്യുന്നതുമായ ഫയലുകളുടെ നടത്തിപ്പുകാരന്‍
   </li>
   <li>
-    <strong>KRunner</strong>, a search and launch system for running commands and finding useful information
+    <strong>കെറണ്ണര്‍</strong>, തെരയാനും ഉപയോഗപ്രദമായ കാര്യങ്ങള്‍ കണ്ടുപിടിയ്ക്കാനും ആജ്ഞകള്‍ പ്രവര്‍ത്തിപ്പിയ്ക്കാനുള്ള സ്ഥാനമായും പ്രവര്‍ത്തിയ്ക്കുന്നു
   </li>
   <li>
-    easy access to desktop and system controls through <strong>SystemSettings</strong>.
+    പണിയിടത്തിലേയ്ക്കും സിസ്റ്റത്തിന്റെ നിയന്ത്രണോപാധികളിലേയ്ക്കും എളുപ്പം കടക്കാവുന്ന <strong>സിസ്റ്റംസജ്ജീകരണങ്ങള്‍</strong>.
   </li>
 </ul>
 Below you can find a short list of improvements to the KDE Desktop Workspace.
