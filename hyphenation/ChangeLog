@@ -1,5 +1,10 @@
 ChangeLog
 --------------
+2009-08-12: Version 0.3
+  * Removed unnecessary zwj/zwnj rules
+  * Added LEFTHYPHENMIN  and RIGHTHYPHENMIN for rules
+  * Added Marathi Rules 
+
 2009-05-12: Version 0.2
   * Vowel sign + [anuswaram|visargam|chandrabindu] fix for Bengali as reported by Runa B.
   * Vowel sign + [visargam] fix for Malayalam
