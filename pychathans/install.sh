@@ -25,5 +25,8 @@ for lc in po/chathans-*.po; do
        	mkdir -p /usr/share/locale/${_lang}/LC_MESSAGES/
 	install -m 0644 ${mo_file} /usr/share/locale/${_lang}/LC_MESSAGES/chathans.mo
 done
+for sz in 16x16 24x24 32x32 128x128; do
+	install -m 0644 icons/$sz.png /usr/share/icons/hicolor/$sz/apps/chathans.png
+done
 echo "Installation complete"
 exit 0
