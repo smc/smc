@@ -1,14 +1,19 @@
 ChangeLog
 --------------
+2009-08-13: Version 0.4
+	* The patters for all languages made compatible with tex rules for hyphenation
+	* Don't break on either side of zwj/zwnj for all languages
+	* LEFTHYPHENMIN  and RIGHTHYPHENMIN properties removed. It can be configured from applications
+	
 2009-08-12: Version 0.3
-  * Removed unnecessary zwj/zwnj rules
-  * Added LEFTHYPHENMIN  and RIGHTHYPHENMIN for rules
-  * Added Marathi Rules 
+	* Removed unnecessary zwj/zwnj rules
+	* Added LEFTHYPHENMIN  and RIGHTHYPHENMIN for rules
+	* Added Marathi Rules 
 
 2009-05-12: Version 0.2
-  * Vowel sign + [anuswaram|visargam|chandrabindu] fix for Bengali as reported by Runa B.
-  * Vowel sign + [visargam] fix for Malayalam
+	* Vowel sign + [anuswaram|visargam|chandrabindu] fix for Bengali as reported by Runa B.
+	* Vowel sign + [visargam] fix for Malayalam
 
 2008-12-14: Version 0.1
-  * Initial version
-  * Hyphenation Patterns for 9 Languages
+	* Initial version
+	* Hyphenation Patterns for 9 Languages

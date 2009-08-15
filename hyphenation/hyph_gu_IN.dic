@@ -1,5 +1,5 @@
 UTF-8
-%  Hyphenation for Gujarati
+%  Hyphenation for Guajrati
 %  Copyright (C) 2008-2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>
 %
 %  This library is free software; you can redistribute it and/or
@@ -16,72 +16,116 @@ UTF-8
 %  License along with this library; if not, write to the Free Software
 %  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 %
-LEFTHYPHENMIN 2
-RIGHTHYPHENMIN 2
-અ1
-આ1
-ઇ1
-ઈ1
-ઉ1
-ઊ1
-ઋ1
-એ1
-ઐ1
-ઔ1
-ા1
-િ1
-ી1
-ુ1
-ૂ1
-ૃ1
-ે1
-ો1
-ૈ1
-ૌ1
-્2
-ઃ1
-ં1
-1ન
-ન્2
-2ન્‍
-1ર
-ર્2
-2ર્‍
-1લ
-લ્2
-2લ્‍
-1ળ
-ળ્2
-2ળ્‍
-1ણ
-ણ્2
-2ણ્‍
-1ક
-1ગ
-1ખ
-1ઘ
-1ઙ
-1ચ
-1છ
-1જ
-1ઝ
-1ઞ
-1ટ
-1ઠ
-1ડ
-1ઢ
-1ત
-1થ
-1દ
-1ધ
-1પ
-1ફ
-1બ
-1ભ
-1મ
-1ય
-1વ
-1શ
-1ષ
-1સ
-1હ
+% GENERAL RULE
+% Do not break either side of ZERO-WIDTH JOINER
+% (U+200D) and ZERO-WIDTH NON-JOINER (U+200C)
+2‍2
+2‌2
+% Break before or after any independent vowel.
+1અ1
+1આ1
+1ઇ1
+1ઈ1
+1ઉ1
+1ઊ1
+1ઋ1
+1ૠ1
+1એ1
+1ઐ1
+1ઓ1
+1ઔ1
+% Break after any dependent vowel but not before.
+2ા1
+2િ1
+2ી1
+2ુ1
+2ૂ1
+2ૃ1
+2ૄ1
+2ૢ1
+2ૣ1
+2ે1
+2ૈ1
+2ો1
+2ૌ1
+% Break before or after any consonant.
+1ક1
+1ખ1
+1ગ1
+1ઘ1
+1ઙ1
+1ચ1
+1છ1
+1જ1
+1ઝ1
+1ઞ1
+1ટ1
+1ઠ1
+1ડ1
+1ઢ1
+1ણ1
+1ત1
+1થ1
+1દ1
+1ધ1
+1ન1
+1પ1
+1ફ1
+1બ1
+1ભ1
+1મ1
+1ય1
+1ર1
+1લ1
+1ળ1
+1વ1
+1શ1
+1ષ1
+1સ1
+1હ1
+% Do not break before a final consonant or conjunct.
+2ક્.
+2ખ્.
+2ગ્.
+2ઘ્.
+2ઙ્.
+2ચ્.
+2છ્.
+2જ્.
+2ઝ્.
+2ઞ્.
+2ટ્.
+2ઠ્.
+2ડ્.
+2ઢ્.
+2ણ્.
+2ત્.
+2થ્.
+2દ્.
+2ધ્.
+2ન્.
+2પ્.
+2ફ્.
+2બ્.
+2ભ્.
+2મ્.
+2ય્.
+2ર્.
+2લ્.
+2ળ્.
+2વ્.
+2શ્.
+2ષ્.
+2સ્.
+2હ્.
+2ર્ક્.
+2ર્ટ્.
+2ર્ત્.
+2ર્પ્.
+% Do not break before chandrabindu, anusvara, visarga, avagraha
+% and accents.
+2ઁ
+2ઃ
+2ઽ
+% Do not break either side of virama (may be within conjunct).
+2્2
