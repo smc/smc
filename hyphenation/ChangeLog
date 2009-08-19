@@ -1,5 +1,8 @@
 ChangeLog
 --------------
+2009-08-18: Version 0.41
+	* Assamese hyphenation patters added. Copied from Bengali.
+
 2009-08-13: Version 0.4
 	* The patters for all languages made compatible with tex rules for hyphenation
 	* Don't break on either side of zwj/zwnj for all languages
