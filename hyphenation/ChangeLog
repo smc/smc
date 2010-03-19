@@ -1,7 +1,14 @@
 ChangeLog
 --------------
+2010-03-19: Version 0.5.2
+	* Do not break before cons+virama in Tamil- Thanks to Kevin for patch.
+	* Do not break before the Vowel in Tamil and Malayalam (eg: Transliterated Arabic words) - Thanks to Kevin for patch. 
+	* We can break after virama in Tamil- Thanks Kevin for the patch
+	* Many cosmetic fixes- Thanks to Mojca Miklavec, texhyphens
+	
 2010-02-04: Version 0.5.1
 	* Fixed the confusing license headers, thanks to Parag for reporting.
+	
 2009-08-22: Version 0.5
 	* Fixed the bugs reported by Kevin for Malayalam
 	* For all patterns the problems with incompatibility between tex patterns and libhyphen of Openoffice fixed
