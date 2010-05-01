@@ -1,5 +1,7 @@
 ChangeLog
 --------------
+2010-05-01: Version 0.5.3
+    * Minor type fix in Gujarati rules. Thanks to Mojca Miklavec
 2010-03-19: Version 0.5.2
 	* Do not break before cons+virama in Tamil- Thanks to Kevin for patch.
 	* Do not break before the Vowel in Tamil and Malayalam (eg: Transliterated Arabic words) - Thanks to Kevin for patch. 
