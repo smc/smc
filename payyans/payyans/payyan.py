@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env pythno
 # -*- coding: utf-8 -*-
 # Payyans Ascii to Unicode Convertor
 # Copyright 2008-2009 Santhosh Thottingal <santhosh.thottingal@gmail.com>,
@@ -55,6 +55,11 @@ class Payyan:
 					elif (letter == 'ോ') | (letter == 'ൊ') | (letter == 'ൌ'):	#prebase+postbase mathra case
 						ascii_text = ascii_text[:-1] + ascii_letter[0] + ascii_text[-1:] + ascii_letter[1]
 					elif (letter == 'െ') | (letter == 'േ') |(letter == '്ര'):	#only prebase
+						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
+					elif (letter == '्र'):	#only prebase
+						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
+					# Devanagari prebase
+					elif (letter == 'ि') | (letter == 'िं') :	#only prebase
 						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
 					else:
 						ascii_text = ascii_text + ascii_letter						
@@ -182,7 +187,7 @@ class Payyan:
 	def isPrebase(self, letter):
 		 unicode_letter = letter.encode('utf-8')
 		 if(   ( unicode_letter == "േ"  ) | (   unicode_letter ==  "ൈ" ) |   ( unicode_letter ==  "ൊ" ) 	| ( unicode_letter ==  "ോ"  ) |  ( unicode_letter == "ൌ"  )
-		 			|  ( unicode_letter == "്ര"  )  |  ( unicode_letter == "െ"  ) 
+		 			|  ( unicode_letter == "്ര"  )  |  ( unicode_letter == "െ"  )  | ( unicode_letter == "ि"  ) | ( unicode_letter == "िं"  )
 		 			 ):
 			return True
 		 else:
