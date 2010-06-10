@@ -28,7 +28,7 @@ from optparse import OptionParser
  
 class Payyan:
 
-<<<<<<< HEAD
+
     def __init__(self):
         self.input_filename =""
         self.output_filename=""
@@ -68,55 +68,7 @@ class Payyan:
                         break;
                     '''Did not get'''                
                     ascii_letter = letter
-=======
-	def __init__(self):
-		self.input_filename =""
-		self.output_filename=""
-		self.mapping_filename=""
-		self.rulesDict=None
-		self.pdf=0
-		
-	def word2ASCII(self, unicode_text):
-		index = 0
-		prebase_letter = ""
-		ascii_text=""
-		self.direction = "u2a"
-		self.rulesDict = self.LoadRules()
-		while index < len(unicode_text):
-			'''This takes care of conjuncts '''
-			for charNo in [3,2,1]:
-				letter = unicode_text[index:index+charNo]
-				if letter in self.rulesDict:
-					ascii_letter = self.rulesDict[letter]
-					letter = letter.encode('utf-8')
-					'''Fixing the prebase mathra'''
-					'''TODO: Make it generic , so that usable for all indian languages'''
-					if letter == 'ൈ':
-						ascii_text = ascii_text[:-1] + ascii_letter*2 + ascii_text[-1:]
-					elif (letter == 'ോ') | (letter == 'ൊ') | (letter == 'ൌ'):	#prebase+postbase mathra case
-						ascii_text = ascii_text[:-1] + ascii_letter[0] + ascii_text[-1:] + ascii_letter[1]
-					elif (letter == 'െ') | (letter == 'േ') |(letter == '്ര'):	#only prebase
-						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
-					elif (letter == '्र'):	#only prebase
-						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
-					# Devanagari prebase
-					elif (letter == 'ि') | (letter == 'िं') :	#only prebase
-						ascii_text = ascii_text[:-1] + ascii_letter + ascii_text[-1:]
-					else:
-						ascii_text = ascii_text + ascii_letter						
-					index = index+charNo
-					break
-				else:
-					if(charNo==1):
-						index=index+1
-						ascii_text = ascii_text + letter
-						break;
-					'''Did not get'''				
-					ascii_letter = letter
->>>>>>> f880822e15f4b9325387cb18540c0980e0f9e44a
-
         return ascii_text
-        
     def Uni2Ascii(self):
         if self.input_filename :
             uni_file = codecs.open(self.input_filename, encoding = 'utf-8', errors = 'ignore')
@@ -233,7 +185,6 @@ class Payyan:
                 return "ഔ"
         return (vowel_letter+ vowel_sign_letter)
 
-<<<<<<< HEAD
     def isPrebase(self, letter):
          unicode_letter = letter.encode('utf-8')
          #Add the prebase signs in the below table. 
@@ -319,53 +270,3 @@ class Payyan:
             else:
                 rules_dict[rhs]=lhs
         return rules_dict
-=======
-	def isPrebase(self, letter):
-		 unicode_letter = letter.encode('utf-8')
-		 if(   ( unicode_letter == "േ"  ) | (   unicode_letter ==  "ൈ" ) |   ( unicode_letter ==  "ൊ" ) 	| ( unicode_letter ==  "ോ"  ) |  ( unicode_letter == "ൌ"  )
-		 			|  ( unicode_letter == "്ര"  )  |  ( unicode_letter == "െ"  )  | ( unicode_letter == "ि"  ) | ( unicode_letter == "िं"  )
-		 			 ):
-			return True
-		 else:
-			return False
-			
-	def isPostbase(self, letter):
-		unicode_letter = letter.encode('utf-8')
-		if ( (unicode_letter == "്യ") | (unicode_letter == "്വ") ):
-			return True
-		else:
-			return False
-					
-	def LoadRules(self):	
-		if(self.rulesDict):
-			return self.rulesDict
-		rules_dict = dict()
-		line = []
-		line_number = 0
-		rules_file = codecs. open(self.mapping_filename,encoding='utf-8', errors='ignore')
-		while 1:
-			''' Keep the line number. Required for error reporting'''
-			line_number = line_number +1 
-   			text = unicode( rules_file.readline())
-			if text == "":
-			      break
-			'''Ignore the comments'''
-			if text[0] == '#': 
-			      continue 
-			line = text.strip()
-			if(line == ""):
-				  continue 
-			if(len(line.split("=")) != 2):
-					print "Error: Syntax Error in the Ascii to Unicode Map in line number ",  line_number
-				  	print "Line: "+ text
-				  	return 2	# Error - Syntax error in Mapping file 
-			lhs = line.split("=") [ 0 ]  
-			rhs = line.split("=") [ 1 ]  
-			lhs=lhs.strip()
-	 		rhs=rhs.strip()
-			if self.direction == 'a2u':
-				rules_dict[lhs]=rhs
-			else:
-				rules_dict[rhs]=lhs
-		return rules_dict
->>>>>>> f880822e15f4b9325387cb18540c0980e0f9e44a
