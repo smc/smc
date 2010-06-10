@@ -1,9 +1,29 @@
-#Anagram Maker
+"""
+	Anagram Maker
+	Copyright 2010 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+	
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
 import random
 import array
-import sys
+import os,sys
 from common import *
 class Anagram(SilpaModule):
+	def __init__(self):
+		self.template=os.path.join(os.path.dirname(__file__), 'anagram.html')
+	
+	@ServiceMethod				
 	def getRandomWord (self):
 		words = [ i.rstrip () for i in file ('./modules/anagram/ml_IN.dic') ]
 		len_words = len (words)
@@ -34,7 +54,8 @@ class Anagram(SilpaModule):
 					lst_chars.append(char)
 
 		return lst_chars
-	
+		
+	@ServiceMethod				
 	def scramble(self, word):
 		newword = ""
 		randused = []
@@ -52,7 +73,8 @@ class Anagram(SilpaModule):
 	def check_answer(self,ans_hint):
 		words = [ i.rstrip () for i in file ('./modules/anagram/ml_IN.dic') ]
 		return words[ans_hint].decode("utf-8")
-		
+	
+	@ServiceMethod				
 	def anagram(self):
 		ans_hint,orig_word=self.getRandomWord()
 		scrambled_word=self.scramble(self.syllabalize_ml(orig_word))

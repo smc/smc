@@ -1,21 +1,43 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+# Copyright 2010 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+# http://www.smc.org.in
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+# If you find any bugs or have any suggestions email: santhosh.thottingal@gmail.com
+# URL: http://www.smc.org.in
 
 import sys  
 import codecs  
 import os  
 import string
-import curses.ascii 
-from common import SilpaModule
+from common import *
+from utils import *
 class Stemmer(SilpaModule):
 
 	def __init__(self):
-		self.rules_file = "./modules/stemmer/stemmer_ml.rules"
-		self.rulesDict = dict()
-		
-	def lemmatize(self, text):
+		self.template=os.path.join(os.path.dirname(__file__), 'stemmer.html')
+		self.rules_file = os.path.join(os.path.dirname(__file__), 'stemmer_ml.rules')
+		self.rulesDict = None
+	@ServiceMethod	
+	def stem(self, text):
 		result = ""
-		self.rulesDict = self.LoadRules()
+		text =  normalize(text)
+		if self.rulesDict == None:
+			self.rulesDict = self.LoadRules()
 		words=text.split(" ")
 		word_count=len(words)
 		result_dict = dict()
@@ -24,6 +46,7 @@ class Stemmer(SilpaModule):
 		while word_iter < word_count:
 			word = words[word_iter]
 			word = self.trim(word)
+			word= word.strip('!,.?:')
 			word_length = len(word)
 			suffix_pos_itr = 2
 			word_stemmed=""
@@ -37,7 +60,7 @@ class Stemmer(SilpaModule):
 			if(word_stemmed==""):
 				word_stemmed=word
 			result_dict[ word ] = word_stemmed
-		return result_dict
+		return dumps(result_dict)
 					
 	def LoadRules(self):	
 		print "Loading the rules..."
@@ -91,32 +114,7 @@ class Stemmer(SilpaModule):
 				break 
 			index=index-1	
 		return word
-	def process(self, form):
-		response = """
-		<h2>Stemmer</h2></hr>
-		<p>Enter the text for stemming in the below text area.
-		 Language of each  word will be detected. 
-		 You can give the text in any language and even with mixed language
-		</p>
-		<form action="" method="post">
-		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
-		<input  type="submit" id="Stem" value="Stem"  name="action" style="width:12em;"/>
-		<input type="reset" value="Clear" style="width:12em;"/>
-		</br>
-		</form>
-		"""
-		if(form.has_key('input_text')):
-			text = form['input_text'].value	.decode('utf-8')
-			response=response % text
-			result_dict = self.lemmatize(text)
-			response = response+"<h2>Stemming Results</h2></hr>"
-			response = response+"<table class=\"table1\"><tr><th>Word</th><th>Stem</th></tr>"
-			for key in result_dict:
-				response = response+"<tr><td>"+key+"</td><td>"+result_dict[key]+"</td></tr>"
-			response = response+"</table>	"
-		else:
-			response=response % ""	
-		return response
+	
 	def get_module_name(self):
 		return "Stemmer"
 	def get_info(self):

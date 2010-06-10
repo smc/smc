@@ -119,6 +119,7 @@ public class HinduSolar extends StandardDate
 
     public static int zodiac(double kyTime)
     {
+		//System.out.println("Solar longitude " + solarLongitude(kyTime) +" at time " + kyTime);
         return ProtoDate.quotient(solarLongitude(kyTime), 1800D) + 1;
     }
 

@@ -27,7 +27,7 @@ from dictdlib import DictDB
 
 options = {
 	'JID': 'eng.mal.dict@gmail.com',
-	'Password': 'eng.mal.', #This is fake password.
+	'Password': '3n9.m41.', #This is fake password.
 }
 
 class ConnectionError: pass

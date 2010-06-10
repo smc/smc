@@ -1,11 +1,31 @@
+# -*- coding: utf-8 -*-
+# Copyright 2009-2010
+# Santhosh Thottingal <santhosh.thottingal@gmail.com>
+# This code is part of Silpa project.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
 import sys, os
 from jsonrpc import ServiceHandler
-
+import traceback
+import cgitb
+cgitb.enable(True, "logs/")
 class CGIServiceHandler(ServiceHandler):
     def __init__(self, service):
         if service == None:
             import __main__ as service
-
         ServiceHandler.__init__(self, service)
 
     def handleRequest(self, fin=None, fout=None, env=None):
@@ -18,7 +38,7 @@ class CGIServiceHandler(ServiceHandler):
         
         try:
             contLen=int(env['CONTENT_LENGTH'])
-            data = fin.read(contLen)
+            data = fin.read(contLen).decode("utf-8")
         except Exception, e:
             data = ""
 
@@ -38,7 +58,7 @@ class CGIServiceHandler(ServiceHandler):
             except:
                 pass
         #put out the response
-        fout.write(response)
+        fout.write(response.encode('utf-8'))
         fout.flush()
 
 def handleCGI(service=None, fin=None, fout=None, env=None):

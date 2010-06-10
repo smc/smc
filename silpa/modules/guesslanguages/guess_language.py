@@ -31,8 +31,12 @@
 '''
 
 import codecs, os, re, sys, unicodedata
+from common import *
+from utils import *
+__all__ = ["LangGuess", "getInstance"]
+
 try:
-	from collections import defaultdict
+    from collections import defaultdict
 except:
     class defaultdict(dict):
         def __init__(self, default_factory=None, *a, **kw):
@@ -69,31 +73,31 @@ except:
             return 'defaultdict(%s, %s)' % (self.default_factory,
                                             dict.__repr__(self))
 
-from blocks import unicodeBlock
-from common import SilpaModule
+
+
 
 MIN_LENGTH = 20
 
-BASIC_LATIN = "en ceb ha so tlh id haw la sw eu nr nso zu xh ss st tn ts".split()
-EXTENDED_LATIN = "cs af pl hr ro sk sl tr hu az et sq ca es fr de nl it da is nb sv fi lv pt ve lt tl cy".split()
+BASIC_LATIN = "en_US ceb ha so tlh id haw la sw eu nr nso zu_ZA xh ss st tn ts".split()
+EXTENDED_LATIN = "cs af_ZA pl_PL hr_HR ro sk sl tr hu_HU az et sq ca es fr de nl it_IT da is nb sv fi lv pt ve lt tl cy".split()
 ALL_LATIN = BASIC_LATIN + EXTENDED_LATIN
 CYRILLIC = "ru uk kk uz mn sr mk bg ky".split()
 ARABIC = "ar fa ps ur".split()
-DEVANAGARI = "hi ne".split()
+DEVANAGARI = "hi_IN ne".split()
 
 # NOTE mn appears twice, once for mongolian script and once for CYRILLIC
 SINGLETONS = [
     ('Armenian', 'hy'),
     ('Hebrew', 'he'),
-    ('Bengali', 'bn'),
+    ('Bengali', 'bn_IN'),
     ('Gurmukhi', 'pa'),
     ('Greek', 'el'),
-    ('Gujarati', 'gu'),
-    ('Oriya', 'or'),
-    ('Tamil', 'ta'),
-    ('Telugu', 'te'),
-    ('Kannada', 'kn'),
-    ('Malayalam', 'ml'),
+    ('Gujarati', 'gu_IN'),
+    ('Oriya', 'or_IN'),
+    ('Tamil', 'ta_IN'),
+    ('Telugu', 'te_IN'),
+    ('Kannada', 'kn_IN'),
+    ('Malayalam', 'ml_IN'),
     ('Sinhala', 'si'),
     ('Thai', 'th'),
     ('Lao', 'lo'),
@@ -112,7 +116,7 @@ models = {}
 
 NAME_MAP = {
     "ab" : "Abkhazian",
-    "af" : "Afrikaans",
+    "af_ZA" : "Afrikaans",
     "ar" : "Arabic",
     "az" : "Azeri",
     "be" : "Byelorussian",
@@ -125,9 +129,9 @@ NAME_MAP = {
     "cs" : "Czech",
     "cy" : "Welsh",
     "da" : "Danish",
-    "de" : "German",
+    "de_DE" : "German",
     "el" : "Greek",
-    "en" : "English",
+    "en_US" : "English",
     "eo" : "Esperanto",
     "es" : "Spanish",
     "et" : "Estonian",
@@ -139,20 +143,21 @@ NAME_MAP = {
     "fy" : "Frisian",
     "gd" : "Scots Gaelic",
     "gl" : "Galician",
-    "gu" : "Gujarati",
+    "gu_IN" : "Gujarati",
     "ha" : "Hausa",
     "haw" : "Hawaiian",
     "he" : "Hebrew",
-    "hi" : "Hindi",
-    "hr" : "Croatian",
-    "hu" : "Hungarian",
+    "hi_IN" : "Hindi",
+    "hr_HR" : "Croatian",
+    "hu_HU" : "Hungarian",
     "hy" : "Armenian",
     "id" : "Indonesian",
     "is" : "Icelandic",
-    "it" : "Italian",
-    "ja" : "Japanese",
+    "it_IT" : "Italian",
+    "ja_JP" : "Japanese",
     "ka" : "Georgian",
     "kk" : "Kazakh",
+    "kn_IN" : "Kannada",
     "km" : "Cambodian",
     "ko" : "Korean",
     "ku" : "Kurdish",
@@ -162,9 +167,9 @@ NAME_MAP = {
     "lv" : "Latvian",
     "mg" : "Malagasy",
     "mk" : "Macedonian",
-    "ml" : "Malayalam",
+    "ml_IN" : "Malayalam",
     "mn" : "Mongolian",
-    "mr" : "Marathi",
+    "mr_IN" : "Marathi",
     "ms" : "Malay",
     "nd" : "Ndebele",
     "ne" : "Nepali",
@@ -172,13 +177,13 @@ NAME_MAP = {
     "nn" : "Nynorsk",
     "no" : "Norwegian",
     "nso" : "Sepedi",
-    "pa" : "Punjabi",
-    "pl" : "Polish",
+    "pa_IN" : "Punjabi",
+    "pl_PL" : "Polish",
     "ps" : "Pashto",
     "pt" : "Portuguese",
     "ro" : "Romanian",
     "ru" : "Russian",
-    "sa" : "Sanskrit",
+    "sa_IN" : "Sanskrit",
     "sh" : "Serbo-Croatian",
     "sk" : "Slovak",
     "sl" : "Slovene",
@@ -187,8 +192,8 @@ NAME_MAP = {
     "sr" : "Serbian",
     "sv" : "Swedish",
     "sw" : "Swahili",
-    "ta" : "Tamil",
-    "te" : "Telugu",
+    "ta_IN" : "Tamil",
+    "te_IN" : "Telugu",
     "th" : "Thai",
     "tl" : "Tagalog",
     "tlh" : "Klingon",
@@ -205,12 +210,12 @@ NAME_MAP = {
     "xh" : "Xhosa",
     "zh" : "Chinese",
     "zh-tw" : "Traditional Chinese (Taiwan)",
-    "zu" : "Zulu",
+    "zu_ZA" : "Zulu",
 }
 
 IANA_MAP = {
     "ab" : 12026,
-    "af" : 40,
+    "af_ZA" : 40,
     "ar" : 26020,
     "az" : 26030,
     "be" : 11890,
@@ -223,7 +228,7 @@ IANA_MAP = {
     "cs" : 26080,
     "cy" : 26560,
     "da" : 26090,
-    "de" : 26160,
+    "de_DE" : 26160,
     "el" : 26165,
     "en" : 26110,
     "eo" : 11933,
@@ -241,13 +246,13 @@ IANA_MAP = {
     "ha" : 26170,
     "haw" : 26180,
     "he" : 26592,
-    "hi" : 26190,
-    "hr" : 26070,
-    "hu" : 26200,
+    "hi_IN" : 26190,
+    "hr_HR" : 26070,
+    "hu_HU" : 26200,
     "hy" : 26597,
     "id" : 26220,
     "is" : 26210,
-    "it" : 26230,
+    "it_IT" : 26230,
     "ja" : 26235,
     "ka" : 26600,
     "kk" : 26240,
@@ -304,7 +309,6 @@ IANA_MAP = {
 def _load_models():
     modelsDir = os.path.join(os.path.dirname(__file__), 'trigrams')
     modelsList = os.listdir(modelsDir)
-    
     lineRe = re.compile(r"(.{3})\s+(.*)")
     for modelFile in modelsList:
         modelPath = os.path.join(modelsDir, modelFile)
@@ -318,9 +322,8 @@ def _load_models():
                 model[m.group(1)] = int(m.group(2))
                 
         models[modelFile.lower()] = model
+    
 
-
-_load_models()
 
 def guessLanguage(text):
     ''' Returns the language code, i.e. 'en' '''
@@ -381,7 +384,7 @@ def find_runs(text):
     run_types = defaultdict(int)
 
     totalCount = 0
-
+    from blocks import unicodeBlock
     for c in text:
         if c.isalpha():
             block = unicodeBlock(c)
@@ -517,46 +520,50 @@ def _makeNonAlphaRe():
     return re.compile(nonAlpha)
 
 
-nonAlphaRe = _makeNonAlphaRe()
+
 spaceRe = re.compile('\s+', re.UNICODE)
     
 def normalize(u):
     ''' Convert to normalized unicode.
         Remove non-alpha chars and compress runs of spaces.
     '''
+    nonAlphaRe = _makeNonAlphaRe()
     u = unicodedata.normalize('NFC', u)
     u = nonAlphaRe.sub(' ', u)
     u = spaceRe.sub(' ', u)
     return u
 class LangGuess(SilpaModule):
-	def process(self, form):
-		response = """
-		<h2>Guess the language</h2></hr>
-		<p>Enter the text for guessing the language in the below text area.
-		 You can give the text in any language and even with mixed language
-		</p>
-		<form action="" method="post">
-		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
-		<input  type="submit" id="Guess Language" value="Guess Language"  name="action" style="width:12em;"/>
-		<input type="reset" value="Clear" style="width:12em;"/>
-		</br>
-		</form>
-		"""
-		if(form.has_key('input_text')):
-			text = action=form['input_text'].value	.decode('utf-8')
-			response=response % text
-			result = guessLanguageName(text)
-			response = response+"<h2>Guess Language Results</h2></hr>"
-			response = response+result
-		else:
-			response=response % ""	
-		return response
-	def get_module_name(self):
-		return "Guess Language"
-	def get_info(self):
-		return 	"Guess the language of given text. This module can detect more than 50 languages. Based on Language::Guess by Maciej Ceglowski(http://languid.cantbedone.org/)"
-		
+    def __init__(self):
+        self.template=os.path.join(os.path.dirname(__file__), 'guess_language.html')
+        _load_models()    
+        
+    @ServiceMethod          
+    def guessLanguage(self,text):
+        
+        lang = guessLanguageName(text)
+        if lang ==  'UNKNOWN':
+            firstWord = text.split()[0] 
+            lang = detect_lang(firstWord)[firstWord]
+            lang = _getName(lang.split("_")[0])
+        return lang 
+    @ServiceMethod          
+    def guessLanguageId(self,text):
+        lang = guessLanguage(text)
+        if lang ==  'UNKNOWN':
+            firstWord = text.split()[0] 
+            lang = detect_lang(firstWord)[firstWord]
+        return lang 
+        
+    @ServiceMethod          
+    def getScriptName(self,text):
+        return  dumps(detect_lang(text))
+        
+    def get_module_name(self):
+        return "Guess Language"
+    def get_info(self):
+        return  "Guess the language of given text. This module can detect more than 50 languages. Based on Language::Guess by Maciej Ceglowski(http://languid.cantbedone.org/)"
+        
 def getInstance():
-	return LangGuess()	
+    return LangGuess()  
 
-	
+    

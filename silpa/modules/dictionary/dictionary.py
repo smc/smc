@@ -5,14 +5,14 @@
 # http://www.smc.org.in
 #
 # This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
+# it under the terms of the GNU Lesser General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Library General Public License for more details.
+# GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
@@ -25,55 +25,56 @@
 from common import *
 import os
 from dictdlib import DictDB
+from jsonrpc import *
 class Dictionary(SilpaModule):
-	
-	def getdef(self, word, dictionary):
-		dict_dir=os.path.join(os.path.dirname(__file__), 'dictionaries')
-		dictdata=dict_dir+ "/"+dictionary
-		dict=DictDB(dictdata)
-		meanings =  dict.getdef(word)
-		meaningstring= ""
-		if (meanings==None):
-			meaningstring = "No definition found"
-			return meaningstring
-		for meaning in meanings:
-			meaningstring += meaning
-		return meaningstring.decode("utf-8")
-	def process(self,form):
-		response = """
-		<h2>Dictionary</h2></hr>
-		<p>Enter the word to lookup in the dictionary
-		</p>
-		<form action="" method="post">
-		 <p align="center">
-		Word : <input type="text" value="%s" name="word"/>
-		Dictionary :<select id="dictionary" name="dictionary" style="width:12em;">
-		  <option value="freedict-eng-hin">English-Hindi</option>
-		  <option value="freedict-eng-mal">English-Malayalam</option>
-		</select>
-		<input type="hidden" name="action" value="Dictionary">
-		</br>
-		<input  type="submit" id="Find_Meaning" value="Find Meaning"  style="width:12em;"/>
-		</br>
-		</p>
-		</form>
-		"""
-		if(form.has_key('word')):
-			search_key = form['word'].value
-			dictionary =  form['dictionary'].value
-			response=response % search_key
-			response = response+"<h2>Search Results</h2></hr>"
-			if(search_key==None):
-				response = response+ "Enter a word to find meaning."
-			else:		
-				response = response+ "<pre> "+ self.getdef(search_key,dictionary) + "</pre> "
-		else:
-			response=response % ""	
-		return response
-	def get_module_name(self):
-		return "Dictionary"
-	def get_info(self):
-		return 	"Bilingual Dictionaries"	
-		
+    
+    def __init__(self):
+        self.template=os.path.join(os.path.dirname(__file__), 'dictionary.html')    
+        
+    def get_json_result(self):
+        error=None
+        _id = 0
+        try:
+            if self.request.get('word'):
+                definition = self.getdef(self.request.get('word'),self.request.get('dictionary'))
+            data = dumps({"result":definition, "id":_id, "error":error})
+        except JSONEncodeException:
+            #translate the exception also to the error
+            error = {"name": "JSONEncodeException", "message":"Result Object Not Serializable"}
+            data = dumps({"result":None, "id":id_, "error":error})
+        return data
+        
+    def get_form(self):
+        page = open(self.template,'r').read()
+        return page
+    def get_free_dict(self, src, dest):
+        dict_dir=os.path.join(os.path.dirname(__file__), 'dictionaries')
+        dictdata=dict_dir+ "/freedict-"+src+"-"+dest
+        if os.path.isfile(dictdata+".index"):
+            return dictdata
+        return None    
+
+    @ServiceMethod  
+    def getdef(self, word, dictionary):
+        meaningstring= ""
+        src = dictionary.split("-")[0]
+        dest = dictionary.split("-")[1]
+        dictdata = self.get_free_dict(src,dest)
+        if dictdata:
+            dict = DictDB(dictdata)
+            meanings =  dict.getdef(word)
+            for meaning in meanings:
+                meaningstring += meaning
+        if meaningstring == "None":
+            meaningstring = "No definition found"
+            return meaningstring
+        return meaningstring
+        
+    def get_module_name(self):
+        return "Dictionary"
+        
+    def get_info(self):
+        return  "Bilingual Dictionaries"    
+        
 def getInstance():
-	return Dictionary()
+    return Dictionary()

@@ -1,91 +1,81 @@
-#  Spellchecker with language detection
-#  coding: utf-8
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+#Language Detection based on unicode range
+# Copyright 2008 Santhosh Thottingal <santhosh.thottingal@gmail.com>
+# http://www.smc.org.in
 #
-#  Copyright © 2008  Santhosh Thottingal
-#  Released under the GPLV3+ license
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-from common import *
+import string
 
-class LangDetect(SilpaModule):
-		
-	def detect_lang(self, text):
-		words=text.split(" ")
-		word_count=len(words)
-		word_iter=0
-		word=""
-		result_dict=dict()
-		while word_iter < word_count:
-			word=words[word_iter]
-			if(word):
-				length = len(word)
-				index = 0
-				while index < length:
-					letter=word[index]
-					if not letter.isalpha():
-						index=index+1	
-						continue
-					if ((letter >= u'ം') &  (letter <=u'൯')):
-						result_dict[word]= "ml_IN"
-						break;
-					if ((letter >= u'ঁ') &  (letter <= u'৺')):
-						result_dict[word]= "bn_IN"
-						break
-					if ((letter >= u'ँ') &  (letter <= u'ॿ')):
-						result_dict[word]= "hi_IN"
-						break
-					if ((letter >=u'ઁ') &  (letter <= u'૱')):
-						result_dict[word]= "gu_IN"
-						break
-					if ((letter >= u'ਁ') &  (letter <=u'ੴ')):
-						result_dict[word]= "pa_IN"
-						break
-					if ((letter >= u'ಂ') &  (letter <=u'ೲ')):
-						result_dict[word]= "kn_IN"
-						break
-					if ((letter >= u'ଁ') &  (letter <= u'ୱ')):
-						result_dict[word]= "or_IN"
-						break
-					if ((letter >=u'ஂ') &  (letter <= u'௺')):
-						result_dict[word]= "ta_IN"
-						break
-					if ((letter >=u'ఁ') &  (letter <= u'౯')):
-						result_dict[word]= "te_IN"
-						break
-					if ((letter <= u'z')):
-						result_dict[word]= "en_US"
-						break
-					index=index+1	
-			word_iter=word_iter+1	
-		return result_dict
-	def process(self,form):
-		response = """
-		<h2>Language Detection</h2></hr>
-		<p>Enter the text for detecting the language in the below text area.
-		 Language of each  word will be detected. 
-		 You can give the text in any language and even with mixed language
-		</p>
-		<form action="" method="post">
-		<textarea cols='100' rows='25' name='input_text' id='id1'>%s</textarea>
-		<input  type="submit" id="Detect Language" value="Detect Language"  name="action" style="width:12em;"/>
-		<input type="reset" value="Clear" style="width:12em;"/>
-		</br>
-		</form>
-		"""
-		if(form.has_key('input_text')):
-			text = action=form['input_text'].value	.decode('utf-8')
-			response=response % text
-			detected_lang_dict = self.detect_lang(text)
-			response = response+"<h2>Language Detection Results</h2></hr>"
-			response = response+"<table class=\"table1\"><tr><th>Word</th><th>Language</th></tr>"
-			for key in detected_lang_dict:
-				response = response+"<tr><td>"+key+"</td><td>"+detected_lang_dict[key]+"</td></tr>"
-			response = response+"</table>	"
-		else:
-			response=response % ""	
-		return response
-	def get_module_name(self):
-		return "Indian Language Detector"
-	def get_info(self):
-		return 	"Detects the language of the given text word by word. Supports only Indian Language"	
-def getInstance():
-	return LangDetect()
+def detect_lang(text):
+    """
+    Detect the language of the given text using the unicode range.
+    This function can take a chunk of text and return a dictionary
+    containing word-language key-value pairs.
+    """
+    words=text.split(" ")
+    word_count=len(words)
+    word_iter=0
+    word=""
+    result_dict=dict()
+    while word_iter < word_count:
+        word=words[word_iter]
+        if(word):
+            orig_word =  word 
+            #remove the punctuations
+            for punct in string.punctuation:
+                word = word.replace(punct," ")    
+            length = len(word)
+            index = 0
+            # scan left to write, skip any punctuations, the detection stops in the first match itself.
+            while index < length:
+                letter=word[index]
+                if not letter.isalpha():
+                    index=index+1   
+                    continue
+                if ((ord(letter) >= 0x0D00) &  (ord(letter) <=0x0D7F)):
+                    result_dict[orig_word]= "ml_IN"
+                    break
+                if ((ord(letter) >= 0x0980) &  (ord(letter) <= 0x09FF)):
+                    result_dict[orig_word]= "bn_IN"
+                    break
+                if ((ord(letter) >= 0x0900) &  (ord(letter) <= 0x097F)):
+                    result_dict[orig_word]= "hi_IN"
+                    break
+                if ((ord(letter) >=0x0A80) &  (ord(letter) <= 0x0AFF)):
+                    result_dict[orig_word]= "gu_IN"
+                    break
+                if ((ord(letter) >= 0x0A00) &  (ord(letter) <=0x0A7F)):
+                    result_dict[orig_word]= "pa_IN"
+                    break
+                if ((ord(letter) >= 0x0C80) &  (ord(letter) <=0x0CFF)):
+                    result_dict[orig_word]= "kn_IN"
+                    break
+                if ((ord(letter) >= 0x0B00) &  (ord(letter) <= 0x0B7F)):
+                    result_dict[orig_word]= "or_IN"
+                    break
+                if ((ord(letter) >= 0x0B80) &  (ord(letter) <= 0x0BFF)):
+                    result_dict[orig_word]= "ta_IN"
+                    break
+                if ((ord(letter) >= 0x0C00) &  (ord(letter) <= 0x0C7F)):
+                    result_dict[orig_word]= "te_IN"
+                    break
+                if ((letter <= u'z')): #this is fallback case.
+                    result_dict[orig_word]= "en_US"
+                    break
+                index=index+1   
+        word_iter=word_iter+1   
+    return result_dict

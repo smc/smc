@@ -77,8 +77,9 @@ public class MalayalamCalendar {
         double samk2 = 0;
         double srise2 = 0;
         double aparahna2 = 0;
-        int kyTime = OldHinduSolar.dayCount(Gregorian.toFixed(4, 14, 1993));
-
+        int kyTime = OldHinduSolar.dayCount(Gregorian.toFixed(12, 27, 2009));
+		System.out.println("Day Count" + kyTime);
+		System.out.println("Gregorian.toFixed"+Gregorian.toFixed(12, 27, 2009));
         /*
          * We find rise2 and month2 at kyTime + 1 because under certain
          * criteria, the Malayali calendar date is ahead of the HinduSolar
@@ -86,13 +87,19 @@ public class MalayalamCalendar {
          * the malayaliMonth and malayaliYear.
          */
         double rise1 = HinduSolar.sunriseAtUjjain(kyTime);
+        System.out.println("Sunrise Ujjain" + rise1);
         double rise2 = HinduSolar.sunriseAtUjjain(kyTime + 1);
         int month1 = HinduSolar.zodiac(rise1);
+        System.out.println("Month1 "+ month1);
+        
         int month2 = HinduSolar.zodiac(rise2);
+        System.out.println("Month2 "+ month2);
         year1 = HinduSolar.calendarYear(rise1) - HinduSolar.SOLAR_ERA;
         // HinduSolar.SOLAR_ERA; = Years from Kali Yuga until Saka era. =
         // (AD+3101)-(AD-78) =3179
-       
+        System.out.println("HinduSolar.calendarYear(rise1)"+ HinduSolar.calendarYear(rise1) );
+        
+        System.out.println("Year1 "+ year1);
         int approx1 = kyTime - 3
             - ProtoDate.quotient(HinduSolar.solarLongitude(rise1) % 1800, 60);
         int begin1 = approx1 + MSum(approx1, month1);
