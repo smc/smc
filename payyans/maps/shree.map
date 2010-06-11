@@ -1,4 +1,4 @@
-#Shreelipi Marathi/Devanagari mapping by Praveen Arimbrathodyil <pravi.a@gmail.com>
+# Shreelipi Marathi/Devanagari mapping by Praveen Arimbrathodyil <pravi.a@gmail.com>
 1=१
 2=२
 3=३
@@ -86,11 +86,12 @@ rm§=रां
 |=ें
 m|=ॊ
 °=ॉ
+m°=ो
 =क्
 =ल्ल
 ø=ह्य
 ¡=ै
-m¡=ौ
+m¡¡=ौ
 ©=र्
 U©=र्ण
 `m©=र्या
@@ -162,15 +163,28 @@ U©=र्ण
 ù=ळ्
 ú=क्ष्
 û=श्र्
-ü=श्र्य
+ü=श्र्च
+ý=श्र्न
 þ=ु
 ÿ=ू
 Œ=्र
+œ=श्र्व
+Š=क्
+ƒ=च्च
+ˆ=ह्व
+˜=ख़
+–=ड्ढ
+‘=ङ्क
+—=्र
+‘=ङ्क
+’=ङ्ख
+‚=ज्ज
 mª=्र
 ±=ॉ
 «=्र
-´=ट्र¥
+´=ट्र
 ¥=ृ
 Am°=ऒ
+Eo=ऐ
 
 
