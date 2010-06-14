@@ -1,0 +1,3 @@
+[submodule "fonts"]
+	path = fonts
+	url = ../smc/fonts.git
