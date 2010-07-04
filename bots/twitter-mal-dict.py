@@ -5,6 +5,7 @@
 #       
 # Copyright (c) 2010
 #	 Ershad K <ershad92@gmail.com>
+#        Hrishikesh K B <hrishi.kb@gmail.com>
 #
 # Swathanthra Malayalam Computing(http://smc.org.in/)
 #       
@@ -41,18 +42,10 @@ while True:
 		dict_keyword_find = -1
 		check_duplicate = 0;
 		#print "%s --> %s" % (s.user.name, s.text)
+
+
 		tweet = s.user.name + "\t" + s.text
-
-		"""
-		The following line is indented to check the 'dict' keyword,
-		but it gives postive output even if it's present anywhere in the twit, ie
-		* @username dict test --> ok and the correct method
-		* @username This is a sample dict --> wrong, but the find function return positive value.
-
-		Hence, this is a bug, please try to fix it.		
-		"""
-		
-		dict_keyword_find = tweet.find("dict") 
+		dict_keyword_find = tweet.find(username +"dict") 
 
 		if dict_keyword_find > 0:
 			fin = open('dataFile', 'r')
