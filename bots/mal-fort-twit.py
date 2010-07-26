@@ -6,6 +6,7 @@
 #
 #
 # Copyright 2010 Hrishikesh K B <hrishi.kb@gmail.com>
+# Copyright 2010 Ershad K <ershad92@gmail.com>
 # Swathanthra Malayalam Computing(http://smc.org.in/)
 #
 #
@@ -37,36 +38,10 @@ import time
 import twitter
 import random
 
+from jsonrpc import ServiceProxy
 
-def fortunes(infile, pattern=None):
-        """ Yield fortunes as lists of lines """
-        quotes = []
-        results = []
-        quote = ''
-        for line in infile:
-            if line == "%\n":
-                quotes.append(quote)
-                quote = ''
-            else:
-                quote += line 
-        if pattern:
-            for quote in  quotes:
-                if quote.find(pattern) >= 0:
-                    results.append(quote)
-            return results 
-        return quotes  
- 
-def fortune_fn():
-        fortunes_file = codecs. open('malayalam_proverbs',encoding='utf-8', errors='ignore') 
+silpaService = ServiceProxy("http://smc.org.in/silpa/JSONRPC")
 
-        #the malayalam_proverbs database is available at http://git.savannah.gnu.org/cgit/silpa.git/tree/modules/fortune/database/malayalam_proverbs
-        
-	""" Pick a random fortune from a file """
-        fortunes_list =fortunes(fortunes_file)
-        chosen = ""
-        if fortunes_list:
-            chosen = random.choice(fortunes_list)
-        return chosen
  
 # Change the following values
 username = 'USERNAME'
@@ -92,7 +67,7 @@ while True:
 		fin.close()
 	if check_duplicate < 0:
          	print "%s --> %s" % (s.user.name, s.text)
-		fortun = fortune_fn()
+		fortun = silpaService.modules.Fortune.fortune('malayalam_proverbs')
 		print fortun  #for debugging			
 		fort = fortun [0:110]
 		output = '@' + s.user.screen_name + ' ' + fort
