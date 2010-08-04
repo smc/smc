@@ -1,3 +1,6 @@
 [submodule "fonts"]
 	path = fonts
 	url = git://git.sv.gnu.org/smc/fonts.git
+[submodule "encoding-converters"]
+	path = encoding-converters
+	url = git://git.sv.gnu.org/smc/encoding-converters.git
