@@ -4,3 +4,9 @@
 [submodule "encoding-converters"]
 	path = encoding-converters
 	url = git://git.sv.gnu.org/smc/encoding-converters.git
+[submodule "input-methods"]
+	path = input-methods
+	url = git://git.sv.gnu.org/smc/input-methods.git
+[submodule "hyphenation"]
+	path = hyphenation
+	url = git://git.sv.gnu.org/smc/hyphenation.git
