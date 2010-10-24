@@ -1,0 +1,27 @@
+LibreOffice Autocorrect Extension (മലയാളം)
+Version 0.02-1
+2010-10-24
+Word List By:
+Manoj.K(മനോജ് കെ) <manojkmohanme03107 at gmail dot com>
+Copyright Terms: GPLv3 (see the file Copyright for the exact terms)
+Wordlist URL: http://wiki.smc.org.in/Autocorrect-database
+Source Verson: 1.0
+This word list is considered incomplete.
+
+This is the Malayalam autocorrect extension for Libreoffice(OpenOffice).
+
+Copy the file "acor_mr-IN.dat" and save it in the following location.
+
+The location for Linux OS is /Home/User Name/.openoffice.org/3/user/autocorr
+If the folder is not visible, try ... ctrl+h
+
+The location for Windows OS is 
+C:\Documents and Settings\UserName?\Application Data\OpenOffice.org\3\user\autocorr
+or in the folder: C:\Program Files\OpenOffice.org 3\Basis\share\autocorr
+If the folder is not visible, try ... Tools - Folder Options - View - Show hidden files and folders
+
+Make sure that open office detect the language as "Malayalam" on the status bar. If it doesn't then...
+Tools - Options - Language settings - Languages - Enable for Complex Text should be checked and CTL should be Malayalam
+
+Now you can use any Input Method for e.g. Swanalekha and type the word അക്ഷറം if it changes to അക്ഷരം then the software is installed correctly.
+more http://wiki.smc.org.in/Autocorrect
