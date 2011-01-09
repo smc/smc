@@ -7,6 +7,7 @@
 #     Santhosh Thottingal <santhosh.thottingal@gmail.com>
 #     Sarath Lakshman <sarathlakshman@gmail.com> 
 #     Ragsagar <ragsagar@gmail.com>
+#     Ershad K <ershad92@gmail.com>
 # Swathanthra Malayalam Computing(http://smc.org.in/)
 #       
 # This program is free software; you can redistribute it and/or modify
@@ -99,6 +100,19 @@ class Bot:
                     output += wikioutput.encode("utf-8")
                 if dictoutput== None and wikioutput==None:
                     output = "ക്ഷമിക്കണം. ഈ  വാക്കിന്റെ അര്‍ത്ഥം കണ്ടെത്താനായില്ല."
+                    
+                    hun = hunspell.HunSpell('/usr/share/myspell/dicts/en_US.dic', '/usr/share/myspell/dicts/en_US.aff')
+                    output += "\nDid you mean: \n"
+                    if hun.spell(word) is False:
+                        wordlist = hun.suggest(word)
+                        #print wordlist
+                        for suggword in wordlist:
+                            #print suggword
+                            hdictoutput = self.getdef(suggword)
+                            hwikioutput  = wiktionary.get_def(suggword, "ml","ml")
+                            if hdictoutput is not None or hwikioutput is not None:
+                                output+= "\t" + suggword + "\n"
+                                
             conn.send( xmpp.Message( message_node.getFrom() ,output))    
             raise NodeProcessed  # This stanza is fully processed                    
             
