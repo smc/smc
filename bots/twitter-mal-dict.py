@@ -24,15 +24,13 @@ import time
 import twitter
 from dictdlib import DictDB
 
-# Change the following values
-username = 'USERNAME'
-password = 'PASSWORD'
+
 sleep_time = 1
 
 
 fout = open('dataFile', 'a') #to create such a file
 fout.close()
-api = twitter.Api(username, password)
+api = twitter.Api(consumer_key='consumer_key', consumer_secret='consumer_secret', access_token_key='access_token', access_token_secret='access_token_secret')
 
 while True:
 	time.sleep(sleep_time)
